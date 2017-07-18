@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="com.synectiks.eskaySoft">
+<head>
+    <base href="/">
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="icon" type="image/png" href="public/ico/favicon.ico"/>
+    <link href="build/style.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+  <div class="fixedHeader row">
+    <div class="contact-details col-md-6">
+      <i class="fa fa-at"></i>
+      <span class="mailingAddress">support@synectiks.com</span>
+      <i class="fa fa-phone"></i>
+      <span class="contactPhone">6096080429</span>
+    </div>
+
+    <div class="col-md-4 contactUsIcons">
+      <a href="/contact" class="linkColor">Contact Us</a>
+      <span class="spanPadding">|</span>
+      <span class="spanPadding">FAQs</span>
+      <i class="fa fa-facebook spanPadding"></i>
+      <i class="fa fa-twitter spanPadding"></i>
+      <i class="fa fa-google-plus spanPadding"></i>
+      <i class="fa fa-linkedin spanPadding"></i>
+      <i class="fa fa-envelope spanPadding"></i>
+    </div>
+  </div>
+<ui-view></ui-view>
+<!-- <script src="build/app.min.js"></script> -->
+<script src="bower_components/angular/angular.min.js"></script>
+<script src="bower_components/angular-ui-router/release/angular-ui-router.min.js"></script>
+<script src="bower_components/jquery/dist/jquery.min.js"></script>
+<script src="bower_components/tether/dist/js/tether.min.js"></script>
+<script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+<script src="app.js"></script>
+<script src="src/_config/config.js"></script>
+<script src="src/components/firstComponent/firstcomponent.js"></script>
+<script src="src/controller/contactController.js"></script>
+<script src="src/controller/mainController.js"></script>
+<script src="src/modules/broadcast/broadcast.js"></script>
+<script src="src/modules/main/main.js"></script>
+<script src="src/providers/mainProvider.js"></script>
+<script src="src/services/mainService.js"></script>
+
+<div class="footerContainer">
+  <div class="aboutUsContainer">
+  <h3>About Us</h3>
+  <p>"syn-ec-tics - [si-nek-tiks] – the study of creative processes, esp. as applied to the solution of problems by a group of diverse individuals."
+We are a team of highly qualified and experienced professionals from various fields who are determined and dedicated to delivering world class professional services to our patrons.</p>
+</div>
+
+</div>
+</body>
+</html>
