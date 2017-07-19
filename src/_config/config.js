@@ -24,7 +24,7 @@ angular.module('com.synectiks.eskaySoft')
             .state('registrationForm', {
                 url         : '/registrationForm',
                 templateUrl : 'public/templates/registrationForm.html',
-                controller  : 'registrationController',
+                controller  : 'registrationFormController',
                 controllerAs : 'vm'
             })
             .state('component', {

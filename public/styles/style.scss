@@ -49,3 +49,40 @@ a:hover{
 .buttonSpacing{
       margin-left: 1%;
 }
+.footerContainer{
+  background-color: #161515;
+  color:#FFF;
+  height: 225px;
+}
+.aboutUsContainer{
+  margin-left:5%;
+  max-width:90%;
+}
+ul {
+    margin: 0.75em 0;
+    padding: 0 1em;
+    list-style: none;
+}
+li:before {
+    content: "";
+    border-color: transparent #FFF;
+    margin-bottom:-3%;
+    border-style: solid;
+    border-width: 0.35em 0 0.35em 0.45em;
+    display: block;
+    height: 0;
+    width: 0;
+    left: -1em;
+    top: 0.9em;
+    position: relative;
+}
+.transparentButton{
+color: #fff!important;
+background-color: transparent !important;
+}
+.fixed {
+    max-width: 80%;
+    background-color: #FFF;
+    margin: auto !important;
+    padding: 1.5%;
+}
