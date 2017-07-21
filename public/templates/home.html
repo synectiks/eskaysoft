@@ -1,14 +1,36 @@
-<div>
-<h1>Synectiks</h1>
-</div>
-<div>
-<h2>Welcome to Synectiks</h2>
-</div>
-<div><strong>Select your Application to load</strong>
-</div>
-<div class="row">
-  <div class="col-md-3"><a class="modules" href="/registrationForm">Click here for Registering for a New Account</a></div>
-  <div class="col-md-3"><a class="modules" href="#">Click here to Login</a></div>
-  <div class="col-md-3"><a class="modules" href="#">Click here to know About Us</a></div>
-  <div class="col-md-3"><a class="modules" href="#">Click here for our Address</a></div>
+<div class="content">
+  <div class="indexContainer">
+    <div class="welocmeContainer centreAllign">
+      <h1>Synectiks</h1>
+    </div>
+    <div class="selectApplication"><br>
+      <div class="centreAllign fontColor"><strong>Select Application to Load</strong></div>
+      <div class="row imageContainer">
+        <div class="col-md-2 linkContainer" ng-click="vm.registration('reg')">Registration</div>
+        <div class="col-md-2 linkContainer" ng-click="vm.registration('log')">Login</div>
+        <div class="col-md-2 linkContainer" ng-click="vm.registration('about')">About Us</div>
+        <div class="col-md-2 linkContainer" ng-click="vm.registration('contact')">Contact Us</div>
+      </div>
+      <div class="moduleContainer" ng-if="vm.reg">
+      <strong>You are in Registartion module<strong><br>
+        <p>Know more about product</p><br>
+          <button type="submit" class="btn btn-secondary transparentButton floatingButton"><a class="modules linkColor" href="/registrationForm">Know More</a></button>
+      </div>
+      <div class="moduleContainer" ng-if="vm.log">
+        <strong>You are in Login module<strong><br>
+          <p>Know more about Application</p><br>
+            <button type="submit" class="btn btn-secondary transparentButton floatingButton"><a class="modules linkColor" href="#">Know More</a></button>
+        </div>
+      <div class="moduleContainer" ng-if="vm.about">
+        <strong>You are in About Us module<strong><br>
+          <p>Know more about Us</p><br>
+            <button type="submit" class="btn btn-secondary transparentButton floatingButton"><a class="modules linkColor" href="#">Know More</a></button>
+        </div>
+      <div class="moduleContainer" ng-if="vm.contact">
+        <strong>You are in Conatct Us module<strong><br>
+          <p>Know more about Us</p><br>
+            <button type="submit" class="btn btn-secondary transparentButton floatingButton"><a class="modules linkColor" href="#">Know More</a></button>
+        </div>
+    </div>
+  </div>
 </div>

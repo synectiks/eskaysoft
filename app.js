@@ -4,5 +4,7 @@
 angular.module('com.synectiks.eskaySoft', [
   'ui.router',
   'main',
-  'broadcast']);
+  //'ngMap',
+  'broadcast'
+  ]);
 }());

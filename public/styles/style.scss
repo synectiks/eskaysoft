@@ -86,3 +86,33 @@ background-color: transparent !important;
     margin: auto !important;
     padding: 1.5%;
 }
+.selectApplication{
+  background-image: url("../public/ico/services-background.jpg");
+  max-height: 400px;
+  min-height: 300px;
+  width: 100%;
+}
+.indexContainer{
+  width:80%;
+  margin: auto;
+  background-color:#FFF;
+}
+.fontColor{
+  color:#FFF;
+}
+.linkContainer {
+  border: 1px solid;
+  margin: 2% 2% 0 5.4%;
+  color: #FFF;
+ }
+.imageContainer{
+  padding: 2%;
+}
+.moduleContainer{
+  height: 200px;
+  width: 80%;
+  margin: auto;
+}
+.floatingButton{
+  flaot: right;
+}

@@ -13,7 +13,8 @@ angular.module('com.synectiks.eskaySoft')
             .state('home', {
                 url         : '/',
                 templateUrl : 'public/templates/home.html',
-                controller  : 'mainController'
+                controller  : 'mainController',
+                controllerAs : 'vm'
             })
             .state('contact', {
                 url         : '/contact',
