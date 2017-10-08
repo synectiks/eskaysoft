@@ -7,21 +7,220 @@
   <title>Title</title>
   <link rel="icon" type="image/png" href="public/ico/favicon.ico" />
   <link href="build/style.css" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-  <link href="bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="css/main.scss">
+
+
+-->
+<link href="bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+
+
 </head>
 
 <body>
-  <div class="fixedHeader row">
+
+  <header>
+    <div class="eskay-title">
+    <h1>ESKAY SOFT</h1>
+  </div>
+  <div class="eskay-nav-main">
+
+  <div class="dropdown">
+          <button class="dropbtn btn btn-style btn-default"
+          type="button"
+          id="dropdownMenu1"
+          data-toggle="dropdown"
+          aria-haspopup="true"
+          aria-expanded="true">
+              Masters
+
+          </button>
+          <ul class="dropdown-content dropdown-menu list-scroll-style" aria-labelledby="dropdownMenu1">
+            <li><a href="/schedule">Schedules</a></li>
+            <li><a href="#">Sub-Schedules</a></li>
+            <li><a href="#">States</a></li>
+            <li><a href="#">Districts</a></li>
+            <li><a href="#">Sales Man</a></li>
+            <li><a href="#">Areas</a></li>
+            <li><a href="#">Accounts</a></li>
+            <li><a href="#">Manufacturers</a></li>
+            <li><a href="#">Companies</a></li>
+            <li><a href="#">Products Grouping</a></li>
+            <li><a href="#">Products</a></li>
+            <li><a href="#">Stocks</a></li>
+            <li><a href="#">Discount</a></li>
+            <li><a href="#">Cash Discounts</a></li>
+            <li><a href="#">Account Openings</a></li>
+            <li><a href="#">Schemes</a></li>
+            <li><a href="#">Area Managers</a></li>
+            <li><a href="#">Companywise Representatives</a></li>
+            <li><a href="#">Reps. Yearly Target Entry</a></li>
+            <li><a href="#">Rep./Area/ Customers Entry</a></li>
+            <li><a href="#">Representatives (P.O.B.)</a></li>
+            <li><a href="#">Schedul1es</a></li>
+            <li><a href="#">Sub-Schedules</a></li>
+            <li><a href="#">States</a></li>
+          </ul>
+      </div>
+      <div class="dropdown">
+              <button class="dropbtn btn btn-style btn-default "
+              type="button"
+              id="dropdownMenu1"
+              data-toggle="dropdown"
+              aria-haspopup="true"
+              aria-expanded="true">
+                  Purchases
+
+              </button>
+              <ul class="dropdown-content dropdown-menu list-scroll-style" aria-labelledby="dropdownMenu1">
+                <li><a href="/schedule">link1</a></li>
+                <li><a href="#">link2</a></li>
+                <li><a href="#">link3</a></li>
+              </ul>
+          </div>
+          <div class="dropdown">
+                  <button class="dropbtn btn btn-style btn-default "
+                  type="button"
+                  id="dropdownMenu1"
+                  data-toggle="dropdown"
+                  aria-haspopup="true"
+                  aria-expanded="true">
+                      Sales
+
+                  </button>
+                  <ul class="dropdown-content dropdown-menu list-scroll-style" aria-labelledby="dropdownMenu1">
+                    <li><a href="/schedule">link1</a></li>
+                    <li><a href="#">link2</a></li>
+                    <li><a href="#">link3</a></li>
+                  </ul>
+              </div>
+              <div class="dropdown">
+                      <button class="dropbtn btn btn-style btn-default "
+                      type="button"
+                      id="dropdownMenu1"
+                      data-toggle="dropdown"
+                      aria-haspopup="true"
+                      aria-expanded="true">
+                          Inventory Reports
+
+                      </button>
+                      <ul class="dropdown-content dropdown-menu list-scroll-style" aria-labelledby="dropdownMenu1">
+                        <li><a href="/schedule">link1</a></li>
+                        <li><a href="#">link2</a></li>
+                        <li><a href="#">link3</a></li>
+                      </ul>
+                  </div>
+                  <div class="dropdown">
+                          <button class="dropbtn btn btn-style btn-default "
+                          type="button"
+                          id="dropdownMenu1"
+                          data-toggle="dropdown"
+                          aria-haspopup="true"
+                          aria-expanded="true">
+                              Finance
+
+                          </button>
+                          <ul class="dropdown-content dropdown-menu list-scroll-style" aria-labelledby="dropdownMenu1">
+                            <li><a href="/schedule">link1</a></li>
+                            <li><a href="#">link2</a></li>
+                            <li><a href="#">link3</a></li>
+                          </ul>
+                      </div>
+                      <div class="dropdown">
+                              <button class="dropbtn btn btn-style btn-default "
+                              type="button"
+                              id="dropdownMenu1"
+                              data-toggle="dropdown"
+                              aria-haspopup="true"
+                              aria-expanded="true">
+                                  Finance Reports
+
+                              </button>
+                              <ul class="dropdown-content dropdown-menu list-scroll-style" aria-labelledby="dropdownMenu1">
+                                <li><a href="/schedule">link1</a></li>
+                                <li><a href="#">link2</a></li>
+                                <li><a href="#">link3</a></li>
+                              </ul>
+                          </div>
+                          <div class="dropdown">
+                                  <button class="dropbtn btn btn-style btn-default "
+                                  type="button"
+                                  id="dropdownMenu1"
+                                  data-toggle="dropdown"
+                                  aria-haspopup="true"
+                                  aria-expanded="true">
+                                      GST Reports
+
+                                  </button>
+                                  <ul class="dropdown-content dropdown-menu list-scroll-style" aria-labelledby="dropdownMenu1">
+                                    <li><a href="/schedule">link1</a></li>
+                                    <li><a href="#">link2</a></li>
+                                    <li><a href="#">link3</a></li>
+                                  </ul>
+                              </div>
+                              <div class="dropdown">
+                                      <button class="dropbtn btn btn-style btn-default "
+                                      type="button"
+                                      id="dropdownMenu1"
+                                      data-toggle="dropdown"
+                                      aria-haspopup="true"
+                                      aria-expanded="true">
+                                          Miscellaneous
+
+                                      </button>
+                                      <ul class="dropdown-content dropdown-menu list-scroll-style" aria-labelledby="dropdownMenu1">
+                                        <li><a href="/schedule">link1</a></li>
+                                        <li><a href="#">link2</a></li>
+                                        <li><a href="#">link3</a></li>
+                                      </ul>
+                                  </div>
+      </div>
+    </header>
+
+  <!-- <main-banner></main-banner> -->
+
+  <ui-view></ui-view>
+
+  <!-- <script src="build/app.min.js"></script><main-banner><main-banner> -->
+
+  <script src="bower_components/jquery/dist/jquery.min.js"></script>
+  <script src="bower_components/angular/angular.min.js"></script>
+  <script src="bower_components/angular-ui-router/release/angular-ui-router.min.js"></script>
+  <script src="bower_components/angular-resource/angular-resource.js"></script>
+
+  <script src="bower_components/tether/dist/js/tether.min.js"></script>
+  <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+  <!-- <script src="/bower_components/ngmap/build/scripts/ng-map.min.js"></script>
+  <script src="src/components/firstComponent/firstcomponent.js"></script>
+<script src="src/components/mainBanner/mainBanner.js"></script>-->
+
+
+
+  <script src="bower_components/downloadjs/download.js"></script>
+  <script src="app.js"></script>
+  <script src="src/_config/config.js"></script>
+
+
+  <script src="src/controller/registrationFormController.js"></script>
+  <script src="src/controller/contactController.js"></script>
+  <script src="src/controller/mainController.js"></script>
+  <script src="src/controller/scheduleController.js"></script>
+  <script src="src/modules/broadcast/broadcast.js"></script>
+  <script src="src/modules/main/main.js"></script>
+  <script src="src/providers/mainProvider.js"></script>
+  <script src="src/services/mainService.js"></script>
+
+<!-- footer -->
+  <div class="fixed-footer row">
     <div class="contact-details col-md-6">
       <i class="fa fa-at"></i>
-      <span class="mailingAddress">support@synectiks.com</span>
+      <span class="mailingAddress"> © 2017 Aditya Enterprises</span>
+      <span class="mailingAddress"> support@synectiks.com</span>
       <i class="fa fa-phone"></i>
-      <span class="contactPhone">6096080429</span>
     </div>
 
     <div class="col-md-4 contactUsIcons">
-      <a href="/contact" class="linkColor">Contact Us</a>
+      <a href="/contact" class="linkColor">Contact Us 6096080429</a>
       <span class="spanPadding">|</span>
       <span class="spanPadding">FAQs</span>
       <i class="fa fa-facebook spanPadding"></i>
@@ -31,54 +230,7 @@
       <i class="fa fa-envelope spanPadding"></i>
     </div>
   </div>
-  <ui-view></ui-view>
-  <!-- <script src="build/app.min.js"></script> -->
-  <script src="bower_components/angular/angular.min.js"></script>
-  <script src="bower_components/angular-ui-router/release/angular-ui-router.min.js"></script>
-  <script src="bower_components/jquery/dist/jquery.min.js"></script>
-  <script src="bower_components/tether/dist/js/tether.min.js"></script>
-  <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
-  <!-- <script src="/bower_components/ngmap/build/scripts/ng-map.min.js"></script> -->
 
-  <script src="app.js"></script>
-  <script src="src/_config/config.js"></script>
-  <script src="src/components/firstComponent/firstcomponent.js"></script>
-  <script src="src/controller/registrationFormController.js"></script>
-  <script src="src/controller/contactController.js"></script>
-  <script src="src/controller/mainController.js"></script>
-  <script src="src/modules/broadcast/broadcast.js"></script>
-  <script src="src/modules/main/main.js"></script>
-  <script src="src/providers/mainProvider.js"></script>
-  <script src="src/services/mainService.js"></script>
-
-  <div class="footerContainer row">
-    <div class="aboutUsContainer col-md-5">
-      <h3>About Us</h3>
-      <p>"syn-ec-tics - [si-nek-tiks] – the study of creative processes, esp. as applied to the solution of problems by a group of diverse individuals." We are a team of highly qualified and experienced professionals from various fields who are determined
-        and dedicated to delivering world class professional services to our patrons.</p>
-      <button type="submit" class="btn btn-secondary transparentButton">Know More</button>
-    </div>
-    <div class="col-md-3">
-      <h3>Quick Links</h3>
-      <ul>
-        <li>About Us</li>
-        <li>Services</li>
-        <li>Technology Partaners</li>
-        <li>Colocation</li>
-        <li>Contact Us</li>
-      </ul>
-    </div>
-    <div class="col-md-2">
-      <h3>Services</h3>
-      <ul>
-        <li>Consulting</li>
-        <li>S Cloud</li>
-        <li>Data Centre</li>
-        <li>Micro Services</li>
-        <li>Productivity</li>
-      </ul>
-    </div>
-  </div>
 </body>
 
 </html>

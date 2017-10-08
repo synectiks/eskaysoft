@@ -16,6 +16,12 @@ angular.module('com.synectiks.eskaySoft')
                 controller  : 'mainController',
                 controllerAs : 'vm'
             })
+            .state('schedule', {
+                url         : '/schedule',
+                templateUrl : 'public/templates/schedule.html',
+                controller  : 'scheduleController',
+                controllerAs : 'vm'
+            })
             .state('contact', {
                 url         : '/contact',
                 templateUrl : 'public/templates/contact.html',

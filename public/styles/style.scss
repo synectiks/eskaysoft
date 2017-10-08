@@ -1,7 +1,18 @@
+.formLabelPadding{
+      padding-top: 0.75%;
+}
+.inputTypeMargin
+{    margin-left: -50px;}
 .mailingAddress{
   padding: 0 20px 0 5px;
 }
-
+.errorMessageDivContainer{
+      text-align: center;
+}
+.errorMessageContainer{
+  width: 30%;
+background-color: red;
+}
 .contact-details {
   padding: 1px 90px 0 !important; }
 
@@ -19,12 +30,12 @@
   padding-left: 100px;
 }
 a.linkColor{
-  color: #FFF !important;
-  text-decoration: none !important;
+  color: #FFF;
+  text-decoration: none;
 }
 a:hover{
-  color: #FFF !important;
-  text-decoration: none !important;
+  color: #FFF;
+  text-decoration: none;
   cursor: pointer;
 }
 .spanPadding{
