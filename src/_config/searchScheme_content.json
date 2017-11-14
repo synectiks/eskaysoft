@@ -1,0 +1,20 @@
+{
+   "SearchSchemeCodes":[{
+      "name": "first",
+      "no": 1,
+      "type": "firstType"
+	  },{
+       "name": "second",
+       "no": 2,
+       "type": "secondType"
+ 	  },{
+       "name": "third",
+       "no": 3,
+       "type": "thirdType"
+ 	  },{
+       "name": "fourth",
+       "no": 4,
+       "type": "fourthType"
+ 	  }
+  ]
+}

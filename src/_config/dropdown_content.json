@@ -1,0 +1,15 @@
+{  
+   "DropDownCodes":[{  
+      "code": "Ass",
+      "description": "Asserts"
+	  },{  
+      "code": "Lia",
+      "description": "Liabilities"
+	  },{  
+      "code": "Trade",
+      "description": "Trading"
+	  },{  
+      "code": "Pnl",
+      "description": "Profit and Loss"
+	  }]
+}

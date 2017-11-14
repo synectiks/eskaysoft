@@ -22,6 +22,12 @@ angular.module('com.synectiks.eskaySoft')
                 controller  : 'scheduleController',
                 controllerAs : 'vm'
             })
+            .state('scheme', {
+                url         : '/scheme',
+                templateUrl : 'public/templates/scheme.html',
+                controller  : 'schemeController',
+                controllerAs : 'vm'
+            })
             .state('contact', {
                 url         : '/contact',
                 templateUrl : 'public/templates/contact.html',

@@ -1,3 +1,4 @@
+
 .formLabelPadding{
       padding-top: 0.75%;
 }
@@ -6,13 +7,7 @@
 .mailingAddress{
   padding: 0 20px 0 5px;
 }
-.errorMessageDivContainer{
-      text-align: center;
-}
-.errorMessageContainer{
-  width: 30%;
-background-color: red;
-}
+
 .contact-details {
   padding: 1px 90px 0 !important; }
 
@@ -29,15 +24,15 @@ background-color: red;
   padding-top: 2px;
   padding-left: 100px;
 }
-a.linkColor{
-  color: #FFF;
-  text-decoration: none;
-}
-a:hover{
-  color: #FFF;
-  text-decoration: none;
-  cursor: pointer;
-}
+// a.linkColor{
+//   color: #FFF !important;
+//   text-decoration: none !important;
+// }
+// a:hover{
+//   color: #FFF !important;
+//   text-decoration: none !important;
+//   cursor: pointer;
+// }
 .spanPadding{
   padding: 10px;
   margin-top: -5px;

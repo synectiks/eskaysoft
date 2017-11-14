@@ -1,0 +1,21 @@
+{  
+   "SearchScheduleCodes":[{  
+      "schedule": "first",
+      "mainSchedule": "Asserts"
+	  },{  
+      "schedule": "second",
+      "mainSchedule": "Liabilities"
+	  },{  
+      "schedule": "third",
+      "mainSchedule": "Trading"
+	  },{  
+      "schedule": "fourth",
+      "mainSchedule": "Profit and Loss"
+	  },{  
+      "schedule": "fifth",
+      "mainSchedule": "Trading"
+	  },{  
+      "schedule": "sixth",
+      "mainSchedule": "Profit and Loss"
+	  }]
+}
