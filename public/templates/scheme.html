@@ -1,22 +1,22 @@
 <div class="content">
   <div class="row fixed">
     <div class="col-md-12">
-      <h1 ng-if="vm.normalScreen">Scheme Form</h1>
-      <h1 ng-if="vm.editScreen">Edit Scheme</h1>
+      <h1 ng-if="vm.normalScreen">Schedule Form</h1>
+      <h1 ng-if="vm.editScreen">Edit Schedule</h1>
     </div>
   </div>
   <div class="formContainer">
     <form name="schemeInformation">
       <div class="form-group">
-        <label for="schemeName">SchemeName</label>
-        <input type="text" class="form-control formWidthClass" id="schemeName" placeholder="SchemeName" ng-model="vm.schemeName">
+        <label for="schemeName">ScheduleName</label>
+        <input type="text" class="form-control formWidthClass" id="schemeName" placeholder="ScheduleName" ng-model="vm.schemeName">
       </div>
       <div class="form-group">
-        <label for="schemeNo">SchemeNo</label>
-        <input type="text" class="form-control formWidthClass" id="SchemeNo" placeholder="SchemeNo" ng-model="vm.schemeNo">
+        <label for="schemeNo">ScheduleNo</label>
+        <input type="text" class="form-control formWidthClass" id="SchemeNo" placeholder="ScheduleNo" ng-model="vm.schemeNo">
       </div>
       <div class="form-group">
-        <label for="schemeType">SchemeType</label>
+        <label for="schemeType">ScheduleType</label>
         <select ng-model="vm.schemeType"  class="form-control formWidthClass">
                   <option value="0">Select</option>
                   <option ng-repeat="schemeTypes in vm.schemeTypes" value="{{schemeTypes.name}}" ng-selected="schemeTypes.name === vm.schemeType">{{schemeTypes.name}}</option>
@@ -31,13 +31,13 @@
     <form name="searchDetails">
       <div class="form-group row">
         <div class="col-md-2 formLabelPadding">
-        <label for="schemeName">SchemeName:</label>
+        <label for="schemeName">ScheduleName:</label>
       </div>
         <div class="col-md-3">
           <input type="text" class="form-control" id="schemeName" placeholder="SchemeName" ng-model="vm.searchSchemeName">
         </div>
         <div class="col-md-2 formLabelPadding">
-        <label for="schemeNo">SchemeNo:</label>
+        <label for="schemeNo">ScheduleNo:</label>
       </div>
       <div class="col-md-3 inputTypeMargin2">
         <input type="text" class="form-control" id="SchemeNo" placeholder="SchemeNo" ng-model="vm.searchSchemeNo">
@@ -57,9 +57,9 @@
     <table class="table table-bordered">
       <thead>
         <tr>
-          <th>Scheme Name</th>
-          <th>Scheme No</th>
-          <th>Scheme Type</th>
+          <th>Schedule Name</th>
+          <th>Schedule No</th>
+          <th>Schedule Type</th>
         </tr>
       </thead>
       <tbody>
