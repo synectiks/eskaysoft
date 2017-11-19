@@ -10,12 +10,6 @@ angular.module('com.synectiks.eskaySoft')
         $locationProvider.html5Mode(true);
 
         $stateProvider
-            .state('home', {
-                url         : '/',
-                templateUrl : 'public/templates/home.html',
-                controller  : 'mainController',
-                controllerAs : 'vm'
-            })
             .state('schedule', {
                 url         : '/schedule',
                 templateUrl : 'public/templates/schedule.html',
@@ -26,6 +20,48 @@ angular.module('com.synectiks.eskaySoft')
                 url         : '/scheme',
                 templateUrl : 'public/templates/scheme.html',
                 controller  : 'schemeController',
+                controllerAs : 'vm'
+            })
+            .state('bankInfo', {
+                url         : '/bankInfo',
+                templateUrl : 'public/templates/bankInfo.html',
+                controller  : 'bankInfoController',
+                controllerAs : 'vm'
+            })
+            .state('statesInfo', {
+                url         : '/statesInfo',
+                templateUrl : 'public/templates/statesInfo.html',
+                controller  : 'statesInfoController',
+                controllerAs : 'vm'
+            })
+            .state('districtsInfo', {
+                url         : '/districtsInfo',
+                templateUrl : 'public/templates/districtsInfo.html',
+                controller  : 'districtsInfoController',
+                controllerAs : 'vm'
+            })
+            .state('businessExeInfo', {
+                url         : '/businessExeInfo',
+                templateUrl : 'public/templates/businessExeInfo.html',
+                controller  : 'businessExeInfoController',
+                controllerAs : 'vm'
+            })
+            .state('areasInfo', {
+                url         : '/areasInfo',
+                templateUrl : 'public/templates/areasInfo.html',
+                controller  : 'areasInfoController',
+                controllerAs : 'vm'
+            })
+            .state('login', {
+                url         : '/login',
+                templateUrl : 'public/templates/login.html',
+                controller  : 'loginInfoController',
+                controllerAs : 'vm'
+            })
+            .state('registration', {
+                url         : '/registration',
+                templateUrl : 'public/templates/registration.html',
+                controller  : 'registrationInfoController',
                 controllerAs : 'vm'
             })
             .state('contact', {
