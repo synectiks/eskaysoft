@@ -26,7 +26,7 @@
 			<div class="col-md-4">
 				<select ng-model="vm.scheduleType"  class="form-control formWidthClass">
 				<option value="0">Select</option>
-				<option ng-repeat="scheduleType in vm.scheduleType" value="{{scheduleType.name}}" ng-selected="scheduleType.name === vm.scheduleType">{{scheduleType.name}}</option>
+				<option ng-repeat="scheduleType in vm.scheduleTypes" value="{{scheduleType.name}}" ng-selected="scheduleType.name === vm.scheduleType">{{scheduleType.name}}</option>
 				</select>
 			</div>
 		</div>

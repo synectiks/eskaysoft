@@ -8,77 +8,94 @@
 
   angular.module('com.synectiks.eskaySoft')
     .controller('scheduleController', ['$scope', 'commonLoaderService', function($scope, commonLoaderService) {
-      var vm = this; // jshint ignore:line
-      vm.showTable = false;
-      vm.showModel = false;
-      vm.edit = true;
+		console.log("111111111");
+		var vm = this; // jshint ignore:line
+      var x = {
+         "scheduleTypes":[{
+            "name": "firstType",
+            "description": ""
+      	  },{
+            "name": "secondType",
+            "description": ""
+      	  },{
+            "name": "thirdType",
+            "description": ""
+      	  },{
+            "name": "fourthType",
+            "description": ""
+      	  }]
+      };
+      vm.scheduleTypes = x.scheduleTypes;
+      vm.scheduleType = "0";
+      vm.selected = false;
+      vm.scheduleName = "";
+      vm.scheduleNo = "";
+      vm.data = [];
+      vm.editScreen = false;
+      vm.normalScreen = true;
       vm.errorMessage = "";
       vm.messageContainer = false;
-      var editObjectIndex;
-
-
-      function onLoad() {
-        commonLoaderService.load_Data(null, 'src/_config/dropdown_content.json', 'GET', null).then(function(data) {
-          vm.dropdownValues = data.DropDownCodes;
-        }, function(error) { // jshint ignore:line
-          console.log("error", error);
-        });
-      }
-      vm.delete = function(deleteAll, index) {
-        vm.messageContainer = true;
-        if (deleteAll) {
-          vm.data = [];
-          vm.showTable = false;
-          vm.errorMessage = "Deleted All Schedules Succesfully";
-        } else {
-          vm.data.splice(index, 1);
-          vm.errorMessage = "Deleted Schedule Succesfully";
-        }
-      };
+      var list = {};
       vm.search = function() {
-		  console.log("hhhhhh");
-        vm.showTable = true;
-        vm.messageContainer = false;
-        commonLoaderService.load_Data(null, 'src/_config/searchSchedule_content.json', 'GET', null).then(function(searchContent) {
-          vm.data = searchContent.SearchScheduleCodes;
-
+		  console.log("rrrr");
+        vm.editScreen = false;
+        vm.normalScreen = true;
+        commonLoaderService.load_Data(null, 'src/_config/searchScheme_content.json', 'GET', null).then(function(searchContent) {
+          vm.data = searchContent.SearchSchemeCodes;
+          vm.selectedName = "";
+          vm.messageContainer = false;
+          vm.errorMessage = "";
         }, function(error) { // jshint ignore:line
           console.log("error", error);
         });
       };
-      vm.addEditSchedule = function(schedule, mainschedule, index) {
-        vm.showModel = true;
-        vm.schedule = schedule;
-        vm.mainSchedule = mainschedule;
-        if (mainschedule === '0') {
-          vm.edit = false;
-        } else {
-          editObjectIndex = index;
-        }
-      };
-      vm.createSchedule = function() {
-        vm.showModel = false;
-        vm.messageContainer = true;
-        vm.errorMessage = "Created Schedule Succesfully";
-        var obj = {
-          "schedule": vm.schedule,
-          "mainSchedule": vm.mainSchedule
-        };
-        vm.data.push(obj);
-      };
-      vm.editSchedule = function() {
-        vm.showModel = false;
-        vm.messageContainer = true;
-        vm.data.splice(editObjectIndex, 1);
-        var obj = {
-          "schedule": vm.schedule,
-          "mainSchedule": vm.mainSchedule
-        };
-        vm.data.push(obj);
-        vm.errorMessage = "Edited Schedule Succesfully";
+
+      vm.setSelected = function(name, no, type, index) {
+        vm.selectedName = name;
+        vm.selected = true;
+        list.name = name;
+        list.no = no;
+        list.type = type;
+        list.index = index;
+        vm.messageContainer = false;
+        vm.errorMessage = "";
       };
 
-      onLoad();
+      vm.edit = function() {
+        vm.scheduleName = list.name;
+        vm.scheduleNo = list.no;
+        vm.scheduleType = list.type;
+        vm.editScreen = true;
+        vm.normalScreen = false;
+        vm.messageContainer = false;
+        vm.errorMessage = "";
+      };
+
+      vm.delete = function() {
+        vm.data.splice(list.index, 1);
+        vm.selected = false;
+        vm.messageContainer = true;
+        vm.errorMessage = "schedule has been Deleted Succesfully";
+      };
+
+      vm.save = function() {
+		  
+		  console.log("222")
+        vm.data.splice(list.index, 1);
+        var obj = {
+          "name": vm.scheduleName,
+          "no": vm.scheduleNo,
+          "type": vm.scheduleType
+        };
+        vm.data.push(obj);
+        vm.selected = false;
+        vm.selectedName = "";
+        vm.scheduleName = "";
+        vm.scheduleNo = "";
+        vm.scheduleType = "0";
+        vm.messageContainer = true;
+        vm.errorMessage = "schedule has been Updated Succesfully";
+      };
 
     }]);
 })();
