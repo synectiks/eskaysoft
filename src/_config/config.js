@@ -10,18 +10,19 @@ angular.module('com.synectiks.eskaySoft')
         $locationProvider.html5Mode(true);
 
         $stateProvider
+		 .state('home', {
+            url: '/',
+             templateUrl : 'public/templates/login.html',
+                controller  : 'loginInfoController',
+                controllerAs : 'vm'
+        })
             .state('schedule', {
                 url         : '/schedule',
                 templateUrl : 'public/templates/schedule.html',
                 controller  : 'scheduleController',
                 controllerAs : 'vm'
             })
-            .state('scheme', {
-                url         : '/scheme',
-                templateUrl : 'public/templates/scheme.html',
-                controller  : 'schemeController',
-                controllerAs : 'vm'
-            })
+          
             .state('bankInfo', {
                 url         : '/bankInfo',
                 templateUrl : 'public/templates/bankInfo.html',

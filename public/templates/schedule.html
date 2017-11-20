@@ -1,98 +1,45 @@
-<div class="content">
-  <div class="row fixed">
-    <div class="col-md-12">
-      <h1>Schedule</h1>
-    </div>
-  </div>
-  <div class="formContainer">
-    <form name="accountInformation">
-      <div class="form-group row">
-        <div class="col-md-2 formLabelPadding">
-        <label for="address1">Schedule:</label>
-      </div>
-        <div class="col-md-3 inputTypeMargin1">
-          <input type="text" class="form-control" id="InputAddress1" placeholder="Enter Schedule Name">
-        </div>
-        <div class="col-md-2 formLabelPadding">
-        <label for="address1">Main Schedule:</label>
-      </div>
-        <div class="col-md-3 inputTypeMargin">
-          <input type="text" class="form-control" id="InputAddress2">
-        </div>
-        <div class="col-md-2">
-          <button type="submit" class="btn btn-primary" ng-click="vm.search()">Search</button>
-        </div>
-      </div>
-    </form>
-  </div>
-  <div class="formContainer errorMessageDivContainer">
-    <label for="newSchedule" ng-if="vm.messageContainer" class="errorMessageContainer">{{vm.errorMessage}}</label>
-  </div>
-  <div class="row fixed" ng-if="vm.showTable">
-    <table class="table">
-      <thead>
-        <tr>
-          <th>Schedule</th>
-          <th>Main Schedule</th>
-          <th>Edit</th>
-          <th>Delete</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr ng-repeat="schedules in vm.data track by $index">
-          <td>{{schedules.schedule}}</td>
-          <td>{{schedules.mainSchedule}}</td>
-          <td><button type="submit" class="btn btn-primary"  data-toggle="modal" data-target="#exampleModal" ng-click="vm.addEditSchedule(schedules.schedule, schedules.mainSchedule, $index)">Edit</button></td>
-          <td><button type="submit" class="btn btn-primary" ng-click="vm.delete(false, $index)">Delete</button></td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
+<header-component></header-component>
+	<div class="row fixed">
+		<div class="col-md-12">
+		<h1 ng-if="vm.normalScreen">Schedule Form</h1>
+		<h1 ng-if="vm.editScreen">Edit Schedule</h1>
+		</div>
+	</div>
+	<div class="formContainer">
+		
+		<div class="form-group row">
+			<div class="col-2"><label for="scheduleName">Schedule Name:</label></div>
+			<div class="col-md-4">
+			<input type="text" class="form-control formWidthClass" id="scheduleName" placeholder="Schedule Name" ng-model="vm.scheduleName">
+			</div>
+		</div>
+	
+		<div class="form-group row">
+			<div class="col-2"><label for="scheduleNumber">Schedule #:</label></div>
+			<div class="col-md-4">
+			<input type="text" class="form-control formWidthClass" id="scheduleNumber" placeholder="Schedule Number" ng-model="vm.scheduleNumber">
+			</div>
+		</div>
+		
+		<div class="form-group row">
+			<div class="col-2"><label for="scheduleNumber">Schedule Type:</label></div>
+			<div class="col-md-4">
+				<select ng-model="vm.scheduleType"  class="form-control formWidthClass">
+				<option value="0">Select</option>
+				<option ng-repeat="scheduleType in vm.scheduleType" value="{{scheduleType.name}}" ng-selected="scheduleType.name === vm.scheduleType">{{scheduleType.name}}</option>
+				</select>
+			</div>
+		</div>
+		<div class="form-group row">
+			<div class="col-md-2 ">
+				<button type="submit" class="btn btn-primary" ng-click="vm.save()">Save</button>
+			</div>
+		</div>
 
-  <div class="row fixed" style="cursor: pointer;">
-    <div class="col-md-2"><button type="submit" class="btn btn-primary"  data-toggle="modal" data-target="#exampleModal" ng-click="vm.addEditSchedule('','0')">Add Schedule</button>
-    </div>
-    <div class="col-md-2"><button type="submit" class="btn btn-primary" ng-click="vm.delete(true)">Delete All</button>
-    </div>
-  </div>
+	</div>
+	
+	
+<search-schedule-component></search-schedule-component>
 
-  <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog" role="document">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel"ng-if="vm.edit">Edit schedule</h5>
-          <h5 class="modal-title" id="exampleModalLabel"ng-if="!vm.edit">Add schedule</h5>
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button>
-        </div>
-        <div class="modal-body">
-          <form>
-            <div class="form-group row">
-              <div class="col-md-4 formLabelPadding">
-              <label class="form-control-label">Schedule:</label>
-            </div>
-              <div class="col-md-6 inputTypeMargin">
-                <input type="text" ng-model="vm.schedule" class="form-control" id="schedule-name">
-              </div>
-            </div>
-            <div class="form-group row">
-              <div class="col-md-4 formLabelPadding">
-              <label class="form-control-label">Main Schedule:</label>
-            </div>
-              <div class="col-md-6 inputTypeMargin">
-                <select ng-model="vm.mainSchedule"  class="form-control">
-                          <option value="0">Select</option>
-                          <option ng-repeat="mainschedules in vm.dropdownValues" value="{{mainschedules.description}}" ng-selected="mainschedules.description === vm.mainSchedule">{{mainschedules.description}}</option>
-                </select>
-              </div>
-            </div>
-          </form>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-dismiss="modal" ng-click="vm.editSchedule()" ng-if="vm.edit">Edit</button>
-          <button type="button" class="btn btn-secondary" data-dismiss="modal" ng-click="vm.createSchedule()" ng-if="!vm.edit">Create</button>
-        </div>
-      </div>
-    </div>
-  </div>
+
+<footer-component></footer-component>

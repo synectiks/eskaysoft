@@ -36,6 +36,7 @@
       vm.messageContainer = false;
       var list = {};
       vm.search = function() {
+		  console.log("rrrr");
         vm.editScreen = false;
         vm.normalScreen = true;
         commonLoaderService.load_Data(null, 'src/_config/searchScheme_content.json', 'GET', null).then(function(searchContent) {

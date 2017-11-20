@@ -1,19 +1,78 @@
-<div class="login-page">
-  <div class="form">
-    <form class="login-form">
-<form class="register-form">
-  <input type="text" ng-model="vm.userName"  placeholder="User Name"/>
-  <input type="password" ng-model="vm.password" placeholder="Password"/>
-  <input type="password" ng-model="vm.confirmPassword"  placeholder="Confirm Password"/>
-  <input type="text"  ng-model="vm.address" placeholder="Address"/>
-  <input type="text" ng-model="vm.town"  placeholder="Town"/>
-  <input type="tel" ng-model="vm.mobile" placeholder="Mobile"/>
-  <input type="email" ng-model="vm.email" placeholder="Email Address"/>
-  <input type="text" ng-model="vm.designation" placeholder="Designation"/>
-  <input type="text" ng-model="vm.userLevel"  placeholder="UserLevel"/>
-  <button ng-click="vm.create()">create</button>
-  <p class="message">Already registered? <a href="/login">Sign In</a></p>
-</form>
-</form>
-</div>
-</div>
+<div class="formContainer">
+
+	<div class="form-group row"><div class="col-md-4"><h1> Registration</h1></div></div>
+	
+	<div class="form-group row">
+		<div class="col-2"><label for="userName">User Name:</label></div>
+		<div class="col-md-4">
+		<input type="text" class="form-control formWidthClass" id="userName" placeholder="user name" ng-model="vm.userName">
+		</div>
+	</div>
+
+	<div class="form-group row">
+		<div class="col-2"><label for="password">Password:</label></div>
+		<div class="col-md-4">
+		<input type="password" class="form-control formWidthClass" id="password" placeholder="Password" ng-model="vm.password">
+		</div>
+	</div>
+
+	<div class="form-group row">
+		<div class="col-md-2"><label for="confirmPassword">Confirm Password:</label></div>
+		<div class="col-md-4">
+		<input type="password" class="form-control formWidthClass" id="confirmPassword" placeholder="user name" ng-model="vm.confirmPassword">
+		</div>
+	</div>
+
+	<div class="form-group row">
+		<div class="col-2"><label for="address">Address:</label></div>
+		<div class="col-md-4">
+		<input type="text" class="form-control formWidthClass" id="address" placeholder="Address" ng-model="vm.address">
+		</div>
+	</div>
+
+	<div class="form-group row">
+		<div class="col-2"><label for="town">Town:</label></div>
+		<div class="col-md-4">
+		<input type="text" class="form-control formWidthClass" id="town" placeholder="Town" ng-model="vm.town">
+		</div>
+	</div>
+
+	<div class="form-group row">
+		<div class="col-2"><label for="mobile">Mobile:</label></div>
+		<div class="col-md-4">
+		<input type="text" class="form-control formWidthClass" id="mobile" placeholder="mobile" ng-model="vm.mobile">
+		</div>
+	</div>
+
+	<div class="form-group row">
+		<div class="col-2"><label for="userName">Email:</label></div>
+		<div class="col-md-4">
+		<input type="email" class="form-control formWidthClass" id="email" placeholder="Email" ng-model="vm.email">
+		</div>
+	</div>
+
+	<div class="form-group row">
+		<div class="col-2"><label for="designation">Designation:</label></div>
+		<div class="col-md-4">
+		<input type="text" class="form-control formWidthClass" id="designation" placeholder="Designation" ng-model="vm.designation">
+		</div>
+	</div>
+
+	<div class="form-group row">
+		<div class="col-md-2"><label for="userLevel">User Level:</label></div>
+		<div class="col-md-4">
+		<input type="text" class="form-control formWidthClass" id="userLevel" placeholder="UserLevel" ng-model="vm.userLevel">
+		</div>
+	</div>
+
+	<div class="form-group row">
+		<div class="col-md-2"><button type="submit" class="btn btn-primary" ng-click="vm.create()">Register</button></div>
+	</div>
+
+</div> 
+	
+ 
+
+
+
+

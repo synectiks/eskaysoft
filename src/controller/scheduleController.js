@@ -36,6 +36,7 @@
         }
       };
       vm.search = function() {
+		  console.log("hhhhhh");
         vm.showTable = true;
         vm.messageContainer = false;
         commonLoaderService.load_Data(null, 'src/_config/searchSchedule_content.json', 'GET', null).then(function(searchContent) {
