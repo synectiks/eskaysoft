@@ -1,13 +1,32 @@
 .section{
   display: block;
   background-color: white;
-  padding-left: 15%;
-  padding-right: 15%;
+  margin-left: 15%;
+  margin-right: 15%;
+  padding-bottom: 40px;
 }
-
-
-
-
+.section-inner{
+  padding: 30px;
+}
+.section-inner-wrp{
+  padding: 10px;
+}
+.form-padding{
+  padding-top: 10px;
+}
+.login-user-name{
+    margin-right: 15px;
+}
+.login-pw{
+  margin-right: 15px;
+  margin-left: 15px;
+}
+.login-btn{
+  margin-left: 15px;
+}
+.login-p{
+  margin-top: 10px;
+}
 .formLabelPadding{
       padding-top: 0.75%;
 }

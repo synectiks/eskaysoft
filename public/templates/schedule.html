@@ -1,4 +1,6 @@
 <header-component></header-component>
+<header-menu-bar></header-menu-bar>
+<div>
 	<div class="row fixed">
 		<div class="col-md-12">
 		<h1 ng-if="vm.normalScreen">Schedule Form</h1>
@@ -6,21 +8,21 @@
 		</div>
 	</div>
 	<div class="formContainer">
-		
+
 		<div class="form-group row">
 			<div class="col-2"><label for="scheduleName">Schedule Name:</label></div>
 			<div class="col-md-4">
 			<input type="text" class="form-control formWidthClass" id="scheduleName" placeholder="Schedule Name" ng-model="vm.scheduleName">
 			</div>
 		</div>
-	
+
 		<div class="form-group row">
 			<div class="col-2"><label for="scheduleNumber">Schedule #:</label></div>
 			<div class="col-md-4">
 			<input type="text" class="form-control formWidthClass" id="scheduleNumber" placeholder="Schedule Number" ng-model="vm.scheduleNumber">
 			</div>
 		</div>
-		
+
 		<div class="form-group row">
 			<div class="col-2"><label for="scheduleNumber">Schedule Type:</label></div>
 			<div class="col-md-4">
@@ -37,9 +39,9 @@
 		</div>
 
 	</div>
-	
-	
+</div>
+<div>
 <search-schedule-component></search-schedule-component>
-
+</div>
 
 <footer-component></footer-component>
