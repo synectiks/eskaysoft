@@ -8,7 +8,7 @@
 
   angular.module('com.synectiks.eskaySoft')
     .controller('scheduleController', ['$scope', 'commonLoaderService', function($scope, commonLoaderService) {
-		
+
 		var vm = this; // jshint ignore:line
       var x = {
          "scheduleTypes":[{
@@ -37,7 +37,7 @@
       vm.messageContainer = false;
       var list = {};
       vm.search = function() {
-		 
+
         vm.editScreen = false;
         vm.normalScreen = true;
         commonLoaderService.load_Data(null, 'src/_config/searchScheme_content.json', 'GET', null).then(function(searchContent) {
@@ -79,7 +79,7 @@
       };
 
       vm.save = function() {
-		  
+
         vm.data.splice(list.index, 1);
         var obj = {
           "name": vm.scheduleName,
@@ -87,13 +87,26 @@
           "type": vm.scheduleType
         };
         vm.data.push(obj);
-        vm.selected = false;
-        vm.selectedName = "";
-        vm.scheduleName = "";
-        vm.scheduleNo = "";
-        vm.scheduleType = "0";
+        vm.reset();
         vm.messageContainer = true;
         vm.errorMessage = "Schedule saved.";
+      };
+
+      vm.create = function(){
+        vm.reset();
+        vm.messageContainer = true;
+        vm.errorMessage = "Schedule Created.";
+      };
+
+      vm.reset = function(){
+        vm.scheduleName = "";
+        vm.selected = false;
+        vm.scheduleNo = "";
+        vm.scheduleType = "0";
+        vm.selectedName = "";
+        vm.messageContainer = false;
+        vm.editScreen = false;
+        vm.data = [];
       };
 
     }]);

@@ -4,7 +4,15 @@
   margin-left: 15%;
   margin-right: 15%;
   padding-bottom: 40px;
-  padding-top: 75px;
+  padding-top: 7%;
+  }
+
+  .registrationsection{
+    display: block;
+    background-color: white;
+    margin-left: 15%;
+    margin-right: 15%;
+    padding-top: 5%!important;
   }
 
 .section-inner {
@@ -26,62 +34,6 @@
 .login-p {
   margin-top: 10px; }
 
-	.formLable{
-	  margin-right: 10px;
-	  font-size: 14px;
-	}
-	.formInput{
-	  padding: 5px !important;
-	  margin-left: -50px;
-	}
-	.col-4{
-	margin-top: -10px;
-	}
-	.h5{
-	  font-size: 14px !important;
-	}
-	.searchInputs{
-	  width: 29.5% !important;
-	  height: fit-content;
-	}
-	.searchBtn{
-	  margin-left: 75%
-	}
-	.searchEdit{
-	  margin-right: 10px;
-	}
-	.formRow{
-	  display: flex;
-	  flex-wrap: wrap;
-	}
-
-.formWidthClass{
-	width: 60%!important;
-}
-
-.searchMarginButton{
-	margin-left: -5px;
-	margin-top: -5px;
-}
-
-.inputTypeMargin2{
-    margin-left: -20px;
-}
-.saveButtonMargin{
-    margin-left: 48.8%;
-	}
-
-	.selected{
-	  background-color: #b12727;
-		color: white;
-	}
-	  .tableButtonAllignment{
-			margin-left: 78%!important;
-		}
-
-.edit-delete-message{margin-left: 34%;
-    color: #b12727;}
-
 .formLabelPadding {
   padding-top: 0.75%; }
 
@@ -94,6 +46,34 @@
 .contact-details {
   padding: 1px 90px 0 !important; }
 
+.formLable{
+  margin-right: 10px;
+  font-size: 14px;
+}
+.formInput{
+  padding: 5px !important;
+  margin-left: -50px;
+}
+.col-4{
+margin-top: -10px;
+}
+.h5{
+  font-size: 14px !important;
+}
+.searchInputs{
+  width: 29.5% !important;
+  height: fit-content;
+}
+.searchBtn{
+  margin-left: 75%
+}
+.searchEdit{
+  margin-right: 10px;
+}
+.formRow{
+  display: flex;
+  flex-wrap: wrap;
+}
 .fixedHeader {
   background-color: #d00c2d;
   font-size: 18px;
@@ -196,6 +176,29 @@ li:before {
 .floatingButton {
   flaot: right; }
 
+.formWidthClass {
+  width: 60% !important; }
+
+.form-padding {
+  padding-top: 10px; }
+
+.searchMarginButton {
+  margin-left: -5px;
+  margin-top: -5px; }
+
+.inputTypeMargin2 {
+  margin-left: -20px; }
+
+.saveButtonMargin {
+  margin-left: 48.8%; }
+
+.selected {
+  background-color: #b12727;
+  color: white; }
+
+.tableButtonAllignment {
+  margin-left: 78% !important; }
+
 .broadcastModule {
   display: flex;
   justify-content: center;
@@ -203,20 +206,23 @@ li:before {
   flex-grow: 1;
   flex-wrap: wrap;
   width: 100%; }
-  .broadcastModule .broadcastModuleDiv {
-    flex-basis: 100%;
-    text-align: center; }
-  .broadcastModule h2 {
-    text-align: center; }
-  .broadcastModule h3, .broadcastModule h4 {
-    padding: 20px; }
+
+.broadcastModule .broadcastModuleDiv {
+  flex-basis: 100%;
+  text-align: center; }
+
+.broadcastModule h2 {
+  text-align: center; }
+
+.broadcastModule h3, .broadcastModule h4 {
+  padding: 20px; }
 
 .emitController {
   border-right: 1px solid #000; }
 
 body {
   background-color: #c8d4e8 !important;
-  overflow-x: hidden;}
+  overflow-x: hidden; }
 
 ul > li a {
   color: white !important; }
@@ -231,8 +237,9 @@ ul > li:hover {
 
 .eskay-nav-main {
   display: flex;
-	padding-top: 5.5%;
-	z-index: 1;}
+  z-index: 1;
+  padding-top: 5.5%;
+  position: fixed;}
 
 .btn {
   border-radius: 0px !important;
@@ -250,8 +257,10 @@ ul > li:hover {
 .eskay-title {
   background-color: #ecae3b;
   padding: 10px;
-	position: fixed;}
-
+  z-index: 1;
+	position: fixed;
+  width: 100%;
+}
 
 .list-style {
   overflow: hidden;
@@ -317,6 +326,15 @@ ul > li:hover {
 .dropdown .dropbtn {
   width: 158px;
   text-align: center; }
+
+.dropdown-menu {
+  left: -1.8px !important;
+  min-width: 10.1rem !important; }
+
+.edit-delete-message {
+  color: #b12727;
+  margin-left: 20%;
+}
 
 .dropdown-menu {
   left: -1.8px !important;

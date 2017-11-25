@@ -2,20 +2,23 @@
 <header-menu-bar></header-menu-bar>
 <section class="section">
 <div class="section-inner">
-		<h2 ng-if="vm.normalScreen">Schedule Form</h2>
+		<h2 ng-if="!vm.editScreen">Schedule Form</h2>
 		<h2 ng-if="vm.editScreen">Edit Schedule</h2>
 <form class="section-inner-wrp">
 		<h5 class="h5">Schedule Name:</h5>
-		<input class="form-control formWidthClass" type="text" name="Name" value="Edit Schedule" id="scheduleName" ng-model="vm.scheduleName">
+		<input class="form-control formWidthClass" type="text" name="Name" id="scheduleName" ng-model="vm.scheduleName">
 		<h5 class="h5 form-padding">Schedule #:</h5>
-		<input class="form-control formWidthClass" type="text" name="Name" value="Schedule Number" id="scheduleNumber" ng-model="vm.scheduleNumber">
+		<input class="form-control formWidthClass" type="text" name="Name" id="scheduleNumber" ng-model="vm.scheduleNo">
 		<h5 class="h5 form-padding">Schedule Type:</h5>
 		<select ng-model="vm.scheduleType" class="form-control formWidthClass">
 			<option value="0">Select</option>
 			<option ng-repeat="scheduleType in vm.scheduleTypes" value="{{scheduleType.name}}" ng-selected="scheduleType.name === vm.scheduleType">{{scheduleType.name}}</option>
     </select>
 		<br><br>
-		<button type="submit" class="btn btn-primary" ng-click="vm.save()">Save</button>
+		<button ng-if="!vm.editScreen" type="submit" class="btn btn-primary" ng-click="vm.create()">Save</button>
+		<button ng-if="vm.editScreen" type="submit" class="btn btn-primary" ng-click="vm.save()">Save</button>
+		<button type="submit" class="btn btn-primary" ng-click="vm.reset()">Reset</button>
+		<label ng-if="vm.messageContainer" class="edit-delete-message">{{vm.errorMessage}}</label>
 	</form>
 	<br><br>
 	<div class="section-inner-wrp">
@@ -27,7 +30,7 @@
 	<button type="submit" class="btn btn-primary" ng-click="vm.search()">Search</button>
 	</div>
 
-<label ng-if="vm.messageContainer" class="edit-delete-message">{{vm.errorMessage}}</label>
+
 
 <div class="form-group formRow">
 	<table class="table table-bordered">
@@ -47,7 +50,7 @@
 		</tbody>
 	</table>
 </div>
-<div  class="form-group formRow searchBtn">
+<div class="form-group formRow searchBtn">
 		<button type="submit" class="btn btn-primary searchEdit" ng-click="vm.edit()">Edit</button>
 		<button type="submit" class="btn btn-primary" ng-click="vm.delete()">Delete</button>
 </div>
