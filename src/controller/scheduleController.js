@@ -8,7 +8,7 @@
 
   angular.module('com.synectiks.eskaySoft')
     .controller('scheduleController', ['$scope', 'commonLoaderService', function($scope, commonLoaderService) {
-		console.log("111111111");
+		
 		var vm = this; // jshint ignore:line
       var x = {
          "scheduleTypes":[{
@@ -37,7 +37,7 @@
       vm.messageContainer = false;
       var list = {};
       vm.search = function() {
-		  console.log("rrrr");
+		 
         vm.editScreen = false;
         vm.normalScreen = true;
         commonLoaderService.load_Data(null, 'src/_config/searchScheme_content.json', 'GET', null).then(function(searchContent) {
@@ -75,12 +75,11 @@
         vm.data.splice(list.index, 1);
         vm.selected = false;
         vm.messageContainer = true;
-        vm.errorMessage = "schedule has been Deleted Succesfully";
+        vm.errorMessage = "Schedule deleted.";
       };
 
       vm.save = function() {
 		  
-		  console.log("222")
         vm.data.splice(list.index, 1);
         var obj = {
           "name": vm.scheduleName,
@@ -94,7 +93,7 @@
         vm.scheduleNo = "";
         vm.scheduleType = "0";
         vm.messageContainer = true;
-        vm.errorMessage = "schedule has been Updated Succesfully";
+        vm.errorMessage = "Schedule saved.";
       };
 
     }]);
