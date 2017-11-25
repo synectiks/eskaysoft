@@ -1,3 +1,60 @@
+.section {
+  display: block;
+  background-color: white;
+  margin-left: 15%;
+  margin-right: 15%;
+  padding-bottom: 40px;
+  padding-top: 75px;
+  }
+
+.section-inner {
+  padding: 30px; }
+
+.section-inner-wrp {
+  padding: 10px; }
+
+.login-user-name {
+  margin-right: 15px; }
+
+.login-pw {
+  margin-right: 15px;
+  margin-left: 15px; }
+
+.login-btn {
+  margin-left: 15px; }
+
+.login-p {
+  margin-top: 10px; }
+
+	.formLable{
+	  margin-right: 10px;
+	  font-size: 14px;
+	}
+	.formInput{
+	  padding: 5px !important;
+	  margin-left: -50px;
+	}
+	.col-4{
+	margin-top: -10px;
+	}
+	.h5{
+	  font-size: 14px !important;
+	}
+	.searchInputs{
+	  width: 29.5% !important;
+	  height: fit-content;
+	}
+	.searchBtn{
+	  margin-left: 75%
+	}
+	.searchEdit{
+	  margin-right: 10px;
+	}
+	.formRow{
+	  display: flex;
+	  flex-wrap: wrap;
+	}
+
 .formWidthClass{
 	width: 60%!important;
 }
@@ -159,8 +216,7 @@ li:before {
 
 body {
   background-color: #c8d4e8 !important;
-  overflow-x: -webkit-paged-x;
-  overflow-y: -webkit-paged-y; }
+  overflow-x: hidden;}
 
 ul > li a {
   color: white !important; }
@@ -174,7 +230,9 @@ ul > li:hover {
   text-decoration: none !important; }
 
 .eskay-nav-main {
-  display: flex; }
+  display: flex;
+	padding-top: 5.5%;
+	z-index: 1;}
 
 .btn {
   border-radius: 0px !important;
@@ -191,7 +249,9 @@ ul > li:hover {
 
 .eskay-title {
   background-color: #ecae3b;
-  padding: 10px; }
+  padding: 10px;
+	position: fixed;}
+
 
 .list-style {
   overflow: hidden;

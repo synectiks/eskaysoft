@@ -1,47 +1,57 @@
 <header-component></header-component>
 <header-menu-bar></header-menu-bar>
-<div>
-	<div class="row fixed">
-		<div class="col-md-12">
-		<h1 ng-if="vm.normalScreen">Schedule Form</h1>
-		<h1 ng-if="vm.editScreen">Edit Schedule</h1>
-		</div>
+<section class="section">
+<div class="section-inner">
+		<h2 ng-if="vm.normalScreen">Schedule Form</h2>
+		<h2 ng-if="vm.editScreen">Edit Schedule</h2>
+<form class="section-inner-wrp">
+		<h5 class="h5">Schedule Name:</h5>
+		<input class="form-control formWidthClass" type="text" name="Name" value="Edit Schedule" id="scheduleName" ng-model="vm.scheduleName">
+		<h5 class="h5 form-padding">Schedule #:</h5>
+		<input class="form-control formWidthClass" type="text" name="Name" value="Schedule Number" id="scheduleNumber" ng-model="vm.scheduleNumber">
+		<h5 class="h5 form-padding">Schedule Type:</h5>
+		<select ng-model="vm.scheduleType" class="form-control formWidthClass">
+			<option value="0">Select</option>
+			<option ng-repeat="scheduleType in vm.scheduleTypes" value="{{scheduleType.name}}" ng-selected="scheduleType.name === vm.scheduleType">{{scheduleType.name}}</option>
+    </select>
+		<br><br>
+		<button type="submit" class="btn btn-primary" ng-click="vm.save()">Save</button>
+	</form>
+	<br><br>
+	<div class="section-inner-wrp">
+	<div class="form-group formRow">
+		<h5 class="h5 formLable form-padding">Schedule Name:</h5>
+		<input class="form-control formLable searchInputs" type="text" name="Name" value="Edit Schedule" id="scheduleName" ng-model="vm.searchScheduleName">
+		<h5 class="h5 formLable form-padding">Schedule #:</h5>
+		<input class="form-control formLable searchInputs" type="text" name="Name" value="Schedule Number" id="scheduleNumber" ng-model="vm.searchScheduleNumber">
+	<button type="submit" class="btn btn-primary" ng-click="vm.search()">Search</button>
 	</div>
-	<div class="formContainer">
 
-		<div class="form-group row">
-			<div class="col-2"><label for="scheduleName">Schedule Name:</label></div>
-			<div class="col-md-4">
-			<input type="text" class="form-control formWidthClass" id="scheduleName" placeholder="Schedule Name" ng-model="vm.scheduleName">
-			</div>
-		</div>
+<label ng-if="vm.messageContainer" class="edit-delete-message">{{vm.errorMessage}}</label>
 
-		<div class="form-group row">
-			<div class="col-2"><label for="scheduleNumber">Schedule #:</label></div>
-			<div class="col-md-4">
-			<input type="text" class="form-control formWidthClass" id="scheduleNumber" placeholder="Schedule Number" ng-model="vm.scheduleNumber">
-			</div>
-		</div>
-
-		<div class="form-group row">
-			<div class="col-2"><label for="scheduleNumber">Schedule Type:</label></div>
-			<div class="col-md-4">
-				<select ng-model="vm.scheduleType"  class="form-control formWidthClass">
-				<option value="0">Select</option>
-				<option ng-repeat="scheduleType in vm.scheduleTypes" value="{{scheduleType.name}}" ng-selected="scheduleType.name === vm.scheduleType">{{scheduleType.name}}</option>
-				</select>
-			</div>
-		</div>
-		<div class="form-group row">
-			<div class="col-md-2 ">
-				<button type="submit" class="btn btn-primary" ng-click="vm.save()">Save</button>
-			</div>
-		</div>
-
-	</div>
+<div class="form-group formRow">
+	<table class="table table-bordered">
+		<thead>
+			<tr>
+			<th>Schedule Name</th>
+			<th>Schedule #</th>
+			<th>Schedule Type</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr ng-repeat="schemes in vm.data" ng-if="vm.data.length>0" ng-click="vm.setSelected(schemes.name, schemes.no, schemes.type, $index)" ng-class="{selected: schemes.name === vm.selectedName}">
+			<td>{{schemes.name}}</td>
+			<td>{{schemes.no}}</td>
+			<td>{{schemes.type}}</td>
+			</tr>
+		</tbody>
+	</table>
 </div>
-<div>
-<search-schedule-component></search-schedule-component>
+<div ng-if="vm.selected" class="form-group formRow searchBtn">
+		<button type="submit" class="btn btn-primary searchEdit" ng-click="vm.edit()">Edit</button>
+		<button type="submit" class="btn btn-primary" ng-click="vm.delete()">Delete</button>
 </div>
-
+</div>
+</div>
+</section>
 <footer-component></footer-component>
