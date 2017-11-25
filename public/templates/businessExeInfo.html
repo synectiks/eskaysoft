@@ -2,7 +2,7 @@
 <header-menu-bar></header-menu-bar>
 <section class="section">
 <div class="section-inner">
-<h2>Business Executives Information</h2>
+<h2>Business Executives</h2>
   <form class="section-inner-wrp">
     <h5 class="h5">Executives Name:</h5>
     <input class="form-control formWidthClass" type="text" name="Name" value="">
@@ -13,7 +13,8 @@
     <h5 class="h5 form-padding">Mobile:</h5>
     <input class="form-control formWidthClass" type="tel" name="tel" value="">
     <br><br>
-    <button class="btn btn-primary"> Save </button>
+	<button type="submit" class="btn btn-primary" ng-click="vm.reset()">Reset</button>
+    <button type="submit" class="btn btn-primary" ng-click="vm.save()"> Save </button>
   </form>
 </div>
 </section>

@@ -4,15 +4,18 @@
 <div class="section-inner">
 <h2>Districts Information</h2>
 <div class="section-inner-wrp">
-  <form action="">
+ 
     <h5>District name:</h5>
-    <input class="form-control formWidthClass" type="text" name="DistrictsName" value="">
+    <input class="form-control formWidthClass" type="text" name="DistrictsName" id="districtName" ng-model="vm.districtName">
     <h5 class="form-padding">State Name:<h5>
-    <select class="form-control formWidthClass">
+    <select ng-model="vm.stateName" class="form-control formWidthClass">{{vm.stateobj}}----
+	<option value="0">Select</option>
+			<option ng-repeat="states in vm.stateobj.states" value="{{states.name}}" ng-selected="states.name === vm.stateName" >{{states.name}}</option>
     </select>
     <br><br>
-    <button class="btn btn-primary"> Save </button>
-  </form>
+	<button type="submit" class="btn btn-primary" ng-click="vm.reset()">Reset</button>
+    <button type="submit" class="btn btn-primary" ng-click="vm.save()"> Save </button>
+ 	<label ng-if="vm.messageContainer" class="edit-delete-message">{{vm.errorMessage}}</label>
 </div>
 </div>
 <div></div>

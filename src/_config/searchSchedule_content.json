@@ -1,21 +1,20 @@
-{  
-   "SearchScheduleCodes":[{  
-      "schedule": "first",
-      "mainSchedule": "Asserts"
-	  },{  
-      "schedule": "second",
-      "mainSchedule": "Liabilities"
-	  },{  
-      "schedule": "third",
-      "mainSchedule": "Trading"
-	  },{  
-      "schedule": "fourth",
-      "mainSchedule": "Profit and Loss"
-	  },{  
-      "schedule": "fifth",
-      "mainSchedule": "Trading"
-	  },{  
-      "schedule": "sixth",
-      "mainSchedule": "Profit and Loss"
-	  }]
+{
+   "SearchSchemeCodes":[{
+      "name": "Sundry Debtorts",
+      "no": 1,
+      "type": "Assets"
+	  },{
+       "name": "eskaysoft",
+       "no": 2,
+       "type": "Liabilities"
+ 	  },{
+       "name": "synectiks",
+       "no": 3,
+       "type": "Trading"
+ 	  },{
+       "name": "cipla",
+       "no": 4,
+       "type": "Profit and Loss"
+ 	  }
+  ]
 }

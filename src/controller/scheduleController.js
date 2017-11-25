@@ -12,16 +12,16 @@
 		var vm = this; // jshint ignore:line
       var x = {
          "scheduleTypes":[{
-            "name": "firstType",
+            "name": "Assets",
             "description": ""
       	  },{
-            "name": "secondType",
+            "name": "Liabilities",
             "description": ""
       	  },{
-            "name": "thirdType",
+            "name": "Trading",
             "description": ""
       	  },{
-            "name": "fourthType",
+            "name": "Profit & Loss",
             "description": ""
       	  }]
       };
@@ -40,7 +40,7 @@
 
         vm.editScreen = false;
         vm.normalScreen = true;
-        commonLoaderService.load_Data(null, 'src/_config/searchScheme_content.json', 'GET', null).then(function(searchContent) {
+        commonLoaderService.load_Data(null, 'src/_config/searchSchedule_content.json', 'GET', null).then(function(searchContent) {
           vm.data = searchContent.SearchSchemeCodes;
           vm.selectedName = "";
           vm.messageContainer = false;

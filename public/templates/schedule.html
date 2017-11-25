@@ -14,13 +14,13 @@
 			<option value="0">Select</option>
 			<option ng-repeat="scheduleType in vm.scheduleTypes" value="{{scheduleType.name}}" ng-selected="scheduleType.name === vm.scheduleType">{{scheduleType.name}}</option>
     </select>
-		<br><br>
+		<br>
+		<button type="submit" class="btn btn-primary" ng-click="vm.reset()">Reset</button>
 		<button ng-if="!vm.editScreen" type="submit" class="btn btn-primary" ng-click="vm.create()">Save</button>
 		<button ng-if="vm.editScreen" type="submit" class="btn btn-primary" ng-click="vm.save()">Save</button>
-		<button type="submit" class="btn btn-primary" ng-click="vm.reset()">Reset</button>
 		<label ng-if="vm.messageContainer" class="edit-delete-message">{{vm.errorMessage}}</label>
 	</form>
-	<br><br>
+	
 	<div class="section-inner-wrp">
 	<div class="form-group formRow">
 		<h5 class="h5 formLable form-padding">Schedule Name:</h5>
