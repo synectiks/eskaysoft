@@ -1,0 +1,868 @@
+.section {
+  display: block;
+  background-color: white;
+  margin-left: 15%;
+  margin-right: 15%;
+  padding-bottom: 40px;
+  padding-top: 75px;
+  }
+
+.section-inner {
+  padding: 30px; }
+
+.section-inner-wrp {
+  padding: 10px; }
+
+.login-user-name {
+  margin-right: 15px; }
+
+.login-pw {
+  margin-right: 15px;
+  margin-left: 15px; }
+
+.login-btn {
+  margin-left: 15px; }
+
+.login-p {
+  margin-top: 10px; }
+
+.formLabelPadding {
+  padding-top: 0.75%; }
+
+.inputTypeMargin {
+  margin-left: -50px; }
+
+.mailingAddress {
+  padding: 0 20px 0 5px; }
+
+.contact-details {
+  padding: 1px 90px 0 !important; }
+.formLable{
+  margin-right: 10px;
+  font-size: 14px;
+}
+.formInput{
+  padding: 5px !important;
+  margin-left: -50px;
+}
+.col-4{
+margin-top: -10px;
+}
+.h5{
+  font-size: 14px !important;
+}
+.searchInputs{
+  width: 29.5% !important;
+  height: fit-content;
+}
+.searchBtn{
+  margin-left: 75%
+}
+.searchEdit{
+  margin-right: 10px;
+}
+.formRow{
+  display: flex;
+  flex-wrap: wrap;
+}
+.fixedHeader {
+  background-color: #d00c2d;
+  font-size: 18px;
+  height: 30px;
+  color: #FFF; }
+
+.contactPhone {
+  margin-left: 10px; }
+
+.Contact-Us {
+  padding-top: 2px;
+  padding-left: 100px; }
+
+.spanPadding {
+  padding: 10px;
+  margin-top: -5px; }
+
+.contactUsIcons {
+  margin-left: 200px; }
+
+.content {
+  background-color: rgba(204, 204, 204, 0.19); }
+
+.formContainer {
+  max-width: 80%;
+  margin: auto;
+  padding: 1.5%;
+  background-color: #FFF; }
+
+.centreAllign {
+  text-align: center; }
+
+.buttonSpacing {
+  margin-left: 1%; }
+
+.footerContainer {
+  background-color: #161515;
+  color: #FFF;
+  height: 225px; }
+
+.aboutUsContainer {
+  margin-left: 5%;
+  max-width: 90%; }
+
+ul {
+  margin: 0.75em 0;
+  padding: 0 1em;
+  list-style: none; }
+
+li:before {
+  content: "";
+  border-color: transparent #FFF;
+  margin-bottom: -3%;
+  border-style: solid;
+  border-width: 0.35em 0 0.35em 0.45em;
+  display: block;
+  height: 0;
+  width: 0;
+  left: -1em;
+  top: 0.9em;
+  position: relative; }
+
+.transparentButton {
+  color: #fff !important;
+  background-color: transparent !important; }
+
+.fixed {
+  max-width: 80%;
+  background-color: #FFF;
+  margin: auto !important;
+  padding: 1.5%; }
+
+.selectApplication {
+  background-image: url("../public/ico/services-background.jpg");
+  max-height: 400px;
+  min-height: 300px;
+  width: 100%; }
+
+.indexContainer {
+  width: 80%;
+  margin: auto;
+  background-color: #FFF; }
+
+.fontColor {
+  color: #FFF; }
+
+.linkContainer {
+  border: 1px solid;
+  margin: 2% 2% 0 5.4%;
+  color: #FFF; }
+
+.imageContainer {
+  padding: 2%; }
+
+.moduleContainer {
+  height: 200px;
+  width: 80%;
+  margin: auto; }
+
+.floatingButton {
+  flaot: right; }
+
+.formWidthClass {
+  width: 60% !important; }
+
+.form-padding {
+  padding-top: 10px; }
+
+.searchMarginButton {
+  margin-left: -5px;
+  margin-top: -5px; }
+
+.inputTypeMargin2 {
+  margin-left: -20px; }
+
+.saveButtonMargin {
+  margin-left: 48.8%; }
+
+.selected {
+  background-color: #b12727;
+  color: white; }
+
+.tableButtonAllignment {
+  margin-left: 78% !important; }
+
+.edit-delete-message {
+  margin-left: 34%;
+  color: #b12727; }
+
+.formLabelPadding {
+  padding-top: 0.75%; }
+
+.inputTypeMargin {
+  margin-left: -50px; }
+
+.mailingAddress {
+  padding: 0 20px 0 5px; }
+
+.contact-details {
+  padding: 1px 90px 0 !important; }
+
+.fixedHeader {
+  background-color: #d00c2d;
+  font-size: 18px;
+  height: 30px;
+  color: #FFF; }
+
+.contactPhone {
+  margin-left: 10px; }
+
+.Contact-Us {
+  padding-top: 2px;
+  padding-left: 100px; }
+
+.spanPadding {
+  padding: 10px;
+  margin-top: -5px; }
+
+.contactUsIcons {
+  margin-left: 200px; }
+
+.content {
+  background-color: rgba(204, 204, 204, 0.19); }
+
+.formContainer {
+  max-width: 80%;
+  margin: auto;
+  padding: 1.5%;
+  background-color: #FFF; }
+
+.centreAllign {
+  text-align: center; }
+
+.buttonSpacing {
+  margin-left: 1%; }
+
+.footerContainer {
+  background-color: #161515;
+  color: #FFF;
+  height: 225px; }
+
+.aboutUsContainer {
+  margin-left: 5%;
+  max-width: 90%; }
+
+ul {
+  margin: 0.75em 0;
+  padding: 0 1em;
+  list-style: none; }
+
+li:before {
+  content: "";
+  border-color: transparent #FFF;
+  margin-bottom: -3%;
+  border-style: solid;
+  border-width: 0.35em 0 0.35em 0.45em;
+  display: block;
+  height: 0;
+  width: 0;
+  left: -1em;
+  top: 0.9em;
+  position: relative; }
+
+.transparentButton {
+  color: #fff !important;
+  background-color: transparent !important; }
+
+.fixed {
+  max-width: 80%;
+  background-color: #FFF;
+  margin: auto !important;
+  padding: 1.5%; }
+
+.selectApplication {
+  background-image: url("../public/ico/services-background.jpg");
+  max-height: 400px;
+  min-height: 300px;
+  width: 100%; }
+
+.indexContainer {
+  width: 80%;
+  margin: auto;
+  background-color: #FFF; }
+
+.fontColor {
+  color: #FFF; }
+
+.linkContainer {
+  border: 1px solid;
+  margin: 2% 2% 0 5.4%;
+  color: #FFF; }
+
+.imageContainer {
+  padding: 2%; }
+
+.moduleContainer {
+  height: 200px;
+  width: 80%;
+  margin: auto; }
+
+.floatingButton {
+  flaot: right; }
+
+.broadcastModule {
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  flex-grow: 1;
+  flex-wrap: wrap;
+  width: 100%; }
+
+.broadcastModule .broadcastModuleDiv {
+  flex-basis: 100%;
+  text-align: center; }
+
+.broadcastModule h2 {
+  text-align: center; }
+
+.broadcastModule h3, .broadcastModule h4 {
+  padding: 20px; }
+
+.emitController {
+  border-right: 1px solid #000; }
+
+body {
+  background-color: #c8d4e8 !important;
+  overflow-x: hidden; }
+
+ul > li a {
+  color: white !important; }
+
+ul > li a:hover {
+  text-decoration: none !important; }
+
+ul > li:hover {
+  color: black !important;
+  background-color: red !important;
+  text-decoration: none !important; }
+
+.eskay-nav-main {
+  display: flex;
+  z-index: 1;
+  padding-top: 5.5%;
+  position: fixed;}
+
+.btn {
+  border-radius: 0px !important;
+  padding-left: 28px !important;
+  padding-right: 28px !important; }
+
+.btn-style {
+  background-color: black !important;
+  color: white !important; }
+
+.btn-style:hover {
+  background-color: red !important;
+  color: black !important; }
+
+.eskay-title {
+  background-color: #ecae3b;
+  padding: 10px;
+  z-index: 1;
+	position: fixed;
+  width: 100%;}
+
+.list-style {
+  overflow: hidden;
+  background-color: #333;
+  font-family: Arial; }
+
+.list-style-items {
+  float: left;
+  font-size: 16px;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none; }
+
+.list-scroll-style {
+  overflow-x: hidden;
+  overflow-y: auto;
+  min-height: 30px;
+  max-height: 350px;
+  background-color: black !important;
+  padding-left: 8px !important;
+  width: 50% !important;
+  margin-top: -2px !important; }
+
+.fixed-footer {
+  background-color: #726a6c;
+  font-size: 18px;
+  height: 50px;
+  color: #FFF;
+  text-align: center;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 102%; }
+
+.dropbtn {
+  color: white;
+  padding: 16px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer; }
+
+.dropdown {
+  position: relative;
+  display: inline-block; }
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1; }
+
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block; }
+
+.dropdown:hover .dropdown-content {
+  display: block; }
+
+.dropdown .dropbtn {
+  width: 158px;
+  text-align: center; }
+
+.dropdown-menu {
+  left: -1.8px !important;
+  min-width: 10.1rem !important; }
+
+.broadcastModule {
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  flex-grow: 1;
+  flex-wrap: wrap;
+  width: 100%; }
+
+.broadcastModule .broadcastModuleDiv {
+  flex-basis: 100%;
+  text-align: center; }
+
+.broadcastModule h2 {
+  text-align: center; }
+
+.broadcastModule h3, .broadcastModule h4 {
+  padding: 20px; }
+
+.emitController {
+  border-right: 1px solid #000; }
+
+ul > li a {
+  color: white !important; }
+
+ul > li a:hover {
+  text-decoration: none !important; }
+
+ul > li:hover {
+  color: black !important;
+  background-color: red !important;
+  text-decoration: none !important; }
+
+.eskay-nav-main {
+  display: flex; }
+
+.btn {
+  border-radius: 0px !important;
+  padding-left: 28px !important;
+  padding-right: 28px !important; }
+
+.btn-style {
+  background-color: black !important;
+  color: white !important; }
+
+.btn-style:hover {
+  background-color: red !important;
+  color: black !important; }
+
+.eskay-title {
+  background-color: #ecae3b;
+  padding: 10px; }
+
+.list-style {
+  overflow: hidden;
+  background-color: #333;
+  font-family: Arial; }
+
+.list-style-items {
+  float: left;
+  font-size: 16px;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none; }
+
+.list-scroll-style {
+  overflow-x: hidden;
+  overflow-y: auto;
+  min-height: 30px;
+  max-height: 350px;
+  background-color: black !important;
+  padding-left: 8px !important;
+  width: 50% !important;
+  margin-top: -2px !important; }
+
+.fixed-footer {
+  background-color: #726a6c;
+  font-size: 18px;
+  height: 50px;
+  color: #FFF;
+  text-align: center;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 102%; }
+
+.dropbtn {
+  color: white;
+  padding: 16px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer; }
+
+.dropdown {
+  position: relative;
+  display: inline-block; }
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1; }
+
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block; }
+
+.dropdown:hover .dropdown-content {
+  display: block; }
+
+.dropdown .dropbtn {
+  width: 158px;
+  text-align: center; }
+
+.dropdown-menu {
+  left: -1.8px !important;
+  min-width: 10.1rem !important; }
+
+.broadcastModule {
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  flex-grow: 1;
+  flex-wrap: wrap;
+  width: 100%; }
+  .broadcastModule .broadcastModuleDiv {
+    flex-basis: 100%;
+    text-align: center; }
+  .broadcastModule h2 {
+    text-align: center; }
+  .broadcastModule h3, .broadcastModule h4 {
+    padding: 20px; }
+
+.emitController {
+  border-right: 1px solid #000; }
+
+.section {
+  display: block;
+  background-color: white;
+  margin-left: 15%;
+  margin-right: 15%;
+  padding-bottom: 40px; }
+
+.section-inner {
+  padding: 30px; }
+
+.section-inner-wrp {
+  padding: 10px; }
+
+.login-user-name {
+  margin-right: 15px; }
+
+.login-pw {
+  margin-right: 15px;
+  margin-left: 15px; }
+
+.login-btn {
+  margin-left: 15px; }
+
+.login-p {
+  margin-top: 10px; }
+
+.formWidthClass {
+  width: 60% !important; }
+
+.searchMarginButton {
+  margin-left: -5px;
+  margin-top: -5px; }
+
+.inputTypeMargin2 {
+  margin-left: -20px; }
+
+.saveButtonMargin {
+  margin-left: 48.8%; }
+
+.selected {
+  background-color: #b12727;
+  color: white; }
+
+.tableButtonAllignment {
+  margin-left: 78% !important; }
+
+.edit-delete-message {
+  margin-left: 34%;
+  color: #b12727; }
+
+.formLabelPadding {
+  padding-top: 0.75%; }
+
+.inputTypeMargin {
+  margin-left: -50px; }
+
+.mailingAddress {
+  padding: 0 20px 0 5px; }
+
+.contact-details {
+  padding: 1px 90px 0 !important; }
+
+.fixedHeader {
+  background-color: #d00c2d;
+  font-size: 18px;
+  height: 30px;
+  color: #FFF; }
+
+.contactPhone {
+  margin-left: 10px; }
+
+.Contact-Us {
+  padding-top: 2px;
+  padding-left: 100px; }
+
+.spanPadding {
+  padding: 10px;
+  margin-top: -5px; }
+
+.contactUsIcons {
+  margin-left: 200px; }
+
+.content {
+  background-color: rgba(204, 204, 204, 0.19); }
+
+.formContainer {
+  max-width: 80%;
+  margin: auto;
+  padding: 1.5%;
+  background-color: #FFF; }
+
+.centreAllign {
+  text-align: center; }
+
+.buttonSpacing {
+  margin-left: 1%; }
+
+.footerContainer {
+  background-color: #161515;
+  color: #FFF;
+  height: 225px; }
+
+.aboutUsContainer {
+  margin-left: 5%;
+  max-width: 90%; }
+
+ul {
+  margin: 0.75em 0;
+  padding: 0 1em;
+  list-style: none; }
+
+li:before {
+  content: "";
+  border-color: transparent #FFF;
+  margin-bottom: -3%;
+  border-style: solid;
+  border-width: 0.35em 0 0.35em 0.45em;
+  display: block;
+  height: 0;
+  width: 0;
+  left: -1em;
+  top: 0.9em;
+  position: relative; }
+
+.transparentButton {
+  color: #fff !important;
+  background-color: transparent !important; }
+
+.fixed {
+  max-width: 80%;
+  background-color: #FFF;
+  margin: auto !important;
+  padding: 1.5%; }
+
+.selectApplication {
+  background-image: url("../public/ico/services-background.jpg");
+  max-height: 400px;
+  min-height: 300px;
+  width: 100%; }
+
+.indexContainer {
+  width: 80%;
+  margin: auto;
+  background-color: #FFF; }
+
+.fontColor {
+  color: #FFF; }
+
+.linkContainer {
+  border: 1px solid;
+  margin: 2% 2% 0 5.4%;
+  color: #FFF; }
+
+.imageContainer {
+  padding: 2%; }
+
+.moduleContainer {
+  height: 200px;
+  width: 80%;
+  margin: auto; }
+
+.floatingButton {
+  flaot: right; }
+
+.broadcastModule {
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  flex-grow: 1;
+  flex-wrap: wrap;
+  width: 100%; }
+
+.broadcastModule .broadcastModuleDiv {
+  flex-basis: 100%;
+  text-align: center; }
+
+.broadcastModule h2 {
+  text-align: center; }
+
+.broadcastModule h3, .broadcastModule h4 {
+  padding: 20px; }
+
+.emitController {
+  border-right: 1px solid #000; }
+
+body {
+  background-color: #c8d4e8 !important;
+  overflow-x: hidden; }
+
+ul > li a {
+  color: white !important; }
+
+ul > li a:hover {
+  text-decoration: none !important; }
+
+ul > li:hover {
+  color: black !important;
+  background-color: red !important;
+  text-decoration: none !important; }
+
+.eskay-nav-main {
+  display: flex; }
+
+.btn {
+  border-radius: 0px !important;
+  padding-left: 28px !important;
+  padding-right: 28px !important; }
+
+.btn-style {
+  background-color: black !important;
+  color: white !important; }
+
+.btn-style:hover {
+  background-color: red !important;
+  color: black !important; }
+
+.eskay-title {
+  background-color: #ecae3b;
+  padding: 10px; }
+
+.list-style {
+  overflow: hidden;
+  background-color: #333;
+  font-family: Arial; }
+
+.list-style-items {
+  float: left;
+  font-size: 16px;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none; }
+
+.list-scroll-style {
+  overflow-x: hidden;
+  overflow-y: auto;
+  min-height: 30px;
+  max-height: 350px;
+  background-color: black !important;
+  padding-left: 8px !important;
+  width: 50% !important;
+  margin-top: -2px !important; }
+
+.fixed-footer {
+  background-color: #726a6c;
+  font-size: 18px;
+  height: 50px;
+  color: #FFF;
+  text-align: center;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 102%; }
+
+.dropbtn {
+  color: white;
+  padding: 16px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer; }
+
+.dropdown {
+  position: relative;
+  display: inline-block; }
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1; }
+
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block; }
+
+.dropdown:hover .dropdown-content {
+  display: block; }
+
+.dropdown .dropbtn {
+  width: 158px;
+  text-align: center; }
+
+.dropdown-menu {
+  left: -1.8px !important;
+  min-width: 10.1rem !important; }
