@@ -1,19 +1,65 @@
 <header-component></header-component>
 <header-menu-bar></header-menu-bar>
 <section class="section">
-<div class="section-inner">
-<h2>Area Information</h2>
+  <div class="row">
+<div class="col-1 section-inner">
+<h2 class="font-width">Area Information</h2>
 <div class="section-inner-wrp">
   <form action="">
-    <h5>Area Name:</h5>
-    <input class="form-control formWidthClass" type="text" name="Name" value="">
-    <h5 class="form-padding">Executive Name:</h5>
-    <input class="form-control formWidthClass" type="text" name="town" value="">
+    <h5>Area Name:*</h5>
+    <input class="form-control formWidthClass" type="text" name="Name" value="Area Name" required>
+    <h5 class="form-padding">Executive Name:*</h5>
+    <input class="form-control formWidthClass" type="text" name="town" value="Executive Name" required>
     <br><br>
 	<button type="submit" class="btn btn-primary" ng-click="vm.reset()">Reset</button>
     <button type="submit" class="btn btn-primary" ng-click="vm.save()"> Save </button>
   </form>
 </div>
 </div>
+  <!--Added by Mustafa Starts here-->
+    <div class="col-2">
+      <div class="section-inner-wrp">
+    <div class="form-group formRow">
+      <h5 class="h5 formLable form-padding">Area Name:*</h5>
+      <input class="form-control formLable searchInputs" type="text" name="Name" value="Area Name" id="areaName" ng-model="vm.searchScheduleName" required>
+      <h5 class="h5 formLable form-padding">Executive Name:*</h5>
+      <input class="form-control formLable searchInputs" type="text" name="Name" value="Executive Name" id="executiveName" ng-model="vm.searchScheduleNumber" required >
+      <button type="submit" class="btn btn-primary dist-search" ng-click="vm.search()">Search</button>
+    </div>
+    <div class="form-group formRow">
+      <table class="table table-bordered">
+        <thead>
+        <tr>
+          <th>Area Name</th>
+          <th>Executive Name </th>
+          <!--<th>Schedule Type</th>-->
+        </tr>
+        </thead>
+        <tbody>
+        <tr ng-repeat="schemes in vm.data" ng-if="vm.data.length>0" ng-click="vm.setSelected(schemes.name, schemes.no, schemes.type, $index)" ng-class="{selected: schemes.name === vm.selectedName}">
+          <td>{{schemes.name}}</td>
+          <td>{{schemes.no}}</td>
+          <td>{{schemes.type}}</td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="form-group formRow searchBtn">
+      <button type="submit" class="btn btn-primary searchEdit" ng-click="vm.edit()">Edit</button>
+      <button type="submit" class="btn btn-primary" ng-click="vm.delete()">Delete</button>
+    </div>
+  </div>
+    </div>
+  <!--Added by Mustafa Ends here-->
+    <div class="pagin">
+      <ul class="pagination pagination-sm">
+        <li class="page-item"><a class="page-link" href="#">Previous</a></li>
+        <li class="page-item"><a class="page-link" href="#">1</a></li>
+        <li class="page-item"><a class="page-link" href="#">2</a></li>
+        <li class="page-item"><a class="page-link" href="#">3</a></li>
+        <li class="page-item"><a class="page-link" href="#">Next</a></li>
+      </ul>
+    </div>
+  </div>
 </section>
 <footer-component></footer-component>
