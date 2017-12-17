@@ -430,12 +430,13 @@ ul > li:hover {
 
 .col-1 {
     padding: 4em 3em !important;
+	margin-top: -3em;
 }
 
 .col-2 {
     left: 26.5em;
     padding: 5em 0em;
-    margin-top: -5em;
+   	margin-top: -3em;
 }
 
 button.btn.btn-primary.dist-search {
@@ -445,7 +446,8 @@ button.btn.btn-primary.dist-search {
 
 .font-width {
     width: 10em;
-}
+	margin-top:20px
+	}
 
 .pagin {
     position: relative;
