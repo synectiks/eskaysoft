@@ -1,79 +1,83 @@
 <header-component></header-component>
 <section class="registrationsection">
-<div class="section-inner">
-<h1> Registration</h1>
+	<div id="container" class="container">
+		<div class="row offset-2 justify-content-center">
+	<div class="section-inner">
+<h1 class="offset-3"> Registration</h1>
 <div ng-if="vm.message" class="edit-delete-message">{{vm.message}}</div>
 <div class="section-inner-wrp">
-	<form>
-	<div class="form-group row">
-		<div class="col-2 formLable"><label for="userName">User Name:</label></div>
-		<div class="col-4">
-		<input type="text" class="form-control formInput formWidthClass" id="userName" placeholder="user name" ng-model="vm.userName">
+	<form class="">
+	<div class="form-group">
+		<div class="col-3 formLable"><label for="userName">User Name:</label></div>
+		<div class="col-9">
+		<input type="text" class="form-control" id="userName" placeholder="user name" ng-model="vm.userName">
 		</div>
 	</div>
 
-	<div class="form-group row">
-		<div class="col-2 formLable"><label for="password">Password:</label></div>
-		<div class="col-4">
-		<input type="password" class="form-control formInput formWidthClass" id="password" placeholder="Password" ng-model="vm.password">
+	<div class="form-group">
+		<div class="col-3 formLable"><label for="password">Password:</label></div>
+		<div class="col-9">
+		<input type="password" class="form-control" id="password" placeholder="Password" ng-model="vm.password">
 		</div>
 	</div>
 
 	<!-- <div class="form-group row">
 		<div class="col-2 formLable"><label for="confirmPassword">Confirm Password:</label></div>
 		<div class="col-4">
-		<input type="password" class="form-control formInput formWidthClass" id="confirmPassword" placeholder="user name" ng-model="vm.confirmPassword">
+		<input type="password" class="form-control" id="confirmPassword" placeholder="user name" ng-model="vm.confirmPassword">
 		</div>
 	</div> -->
 
-	<div class="form-group row">
-		<div class="col-2 formLable"><label for="address">Address:</label></div>
-		<div class="col-4">
-		<input type="text" class="form-control formInput formWidthClass" id="address" placeholder="Address" ng-model="vm.address">
+	<div class="form-group">
+		<div class="col-3 formLable"><label for="address">Address:</label></div>
+		<div class="col-9">
+		<input type="text" class="form-control" id="address" placeholder="Address" ng-model="vm.address">
 		</div>
 	</div>
 
-	<div class="form-group row">
-		<div class="col-2 formLable"><label for="town">Town:</label></div>
-		<div class="col-4">
-		<input type="text" class="form-control formInput formWidthClass" id="town" placeholder="Town" ng-model="vm.town">
+	<div class="form-group">
+		<div class="col-3 formLable"><label for="town">Town:</label></div>
+		<div class="col-9">
+		<input type="text" class="form-control" id="town" placeholder="Town" ng-model="vm.town">
 		</div>
 	</div>
 
-	<div class="form-group row">
-		<div class="col-2 formLable"><label for="mobile">Mobile:</label></div>
-		<div class="col-4">
-		<input type="text" class="form-control formInput formWidthClass" id="mobile" placeholder="mobile" ng-model="vm.mobile">
+	<div class="form-group">
+		<div class="col-3 formLable"><label for="mobile">Mobile:</label></div>
+		<div class="col-9">
+		<input type="text" class="form-control" id="mobile" placeholder="mobile" ng-model="vm.mobile">
 		</div>
 	</div>
 
-	<div class="form-group row">
-		<div class="col-2 formLable"><label for="userName">Email:</label></div>
-		<div class="col-4">
-		<input type="email" class="form-control formInput formWidthClass" id="email" placeholder="Email" ng-model="vm.email">
+	<div class="form-group">
+		<div class="col-3 formLable"><label for="userName">Email:</label></div>
+		<div class="col-9">
+		<input type="email" class="form-control" id="email" placeholder="Email" ng-model="vm.email">
 		</div>
 	</div>
 
-	<div class="form-group row">
-		<div class="col-2 formLable"><label for="designation">Designation:</label></div>
-		<div class="col-4">
-		<input type="text" class="form-control formInput formWidthClass" id="designation" placeholder="Designation" ng-model="vm.designation"/>
+	<div class="form-group">
+		<div class="col-3 formLable"><label for="designation">Designation:</label></div>
+		<div class="col-9">
+		<input type="text" class="form-control" id="designation" placeholder="Designation" ng-model="vm.designation"/>
 		</div>
 	</div>
 
-	<div class="form-group row">
-		<div class="col-2 formLable"><label for="userLevel">User Level:</label></div>
-		<div class="col-4">
-		<input type="text" class="form-control formInput formWidthClass" id="userLevel" placeholder="UserLevel" ng-model="vm.userLevel"/>
-		</div>
+	<div class="form-group">
+		<div class="col-3 formLable"><label for="userLevel">User Level:</label></div>
+		<div class="col-9">
+		<input type="text" class="form-control" id="userLevel" placeholder="UserLevel" ng-model="vm.userLevel"/>
+		</div>                             
 	</div>
 
-	<div class="form-group row">
+	<div class="form-group offset-3 ">
 		<div class="col-1"><button type="submit" class="btn btn-primary" ng-click="vm.create()">Register</button></div>
 	</div>
 </form>
 </div>
 </div>
+</div>
+			</div>
 </section>
 
  <footer-component></footer-component>
