@@ -15,6 +15,23 @@
        "name": "cipla",
        "no": 4,
        "type": "Profit and Loss"
+ 	  },
+	  {
+      "name": "Sundry Debtorts new",
+      "no": 5,
+      "type": "Assets"
+	  },{
+       "name": "eskaysoft new",
+       "no": 6,
+       "type": "Liabilities"
+ 	  },{
+       "name": "synectiks new",
+       "no": 7,
+       "type": "Trading"
+ 	  },{
+       "name": "cipla new",
+       "no": 8,
+       "type": "Profit and Loss"
  	  }
   ]
 }
