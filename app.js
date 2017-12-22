@@ -6,6 +6,7 @@ angular
   'ngResource',
   'ui.router',
   'main',
+   'pascalprecht.translate',
   //'ngMap',
   'broadcast'
   ]);

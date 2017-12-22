@@ -1,61 +1,53 @@
 <!DOCTYPE html>
 <html lang="en" ng-app="com.synectiks.eskaySoft">
+	<head>
+		<base href="/">
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Eskaysoft</title>
+		<link rel="icon" type="image/png" href="public/ico/favicon.ico" />
+		<link href="build/style.css" rel="stylesheet">
+		<!-- bower:css -->
+		<link href="bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
 
-<head>
-  <base href="/">
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Eskaysoft</title>
-  <link rel="icon" type="image/png" href="public/ico/favicon.ico" />
-  <link href="build/style.css" rel="stylesheet">
-  <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-<link rel="stylesheet" href="css/main.scss">
--->
-<link href="bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
-<!-- bower:js -->
+		<!-- bower:js -->
+		<script src="bower_components/angular/angular.min.js"></script>
+		<script src="bower_components/jquery/dist/jquery.min.js"></script>
+		<script src="bower_components/angular-ui-router/release/angular-ui-router.min.js"></script>
+		<script src="bower_components/angular-resource/angular-resource.js"></script>
+		<script src="bower_components/angular-translate/angular-translate.js"></script>
+		<script src="bower_components/angular-translate-loader-static-files/angular-translate-loader-static-files.js"></script>
+		<script src="bower_components/tether/dist/js/tether.min.js"></script>
+		<script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+		<script src="bower_components/downloadjs/download.js"></script>
+		
+		<script src="app.js"></script>
+		<script src="src/_config/config.js"></script>
+		<script src="src/controller/registrationFormController.js"></script>
+		<script src="src/controller/contactController.js"></script>
+		<script src="src/controller/mainController.js"></script>
+		<script src="src/controller/scheduleController.js"></script>
+		<script src="src/controller/loginInfoController.js"></script>
+		<script src="src/controller/registrationInfoController.js"></script>
+		<script src="src/controller/areasInfoController.js"></script>
+		<script src="src/controller/bankInfoController.js"></script>
+		<script src="src/controller/businessExeInfoController.js"></script>
+		<script src="src/controller/contactController.js"></script>
+		<script src="src/controller/districtsInfoController.js"></script>
+		<script src="src/components/header/header.js"></script>
+		<script src="src/components/footer/footer.js"></script>
+		<script src="src/components/headerMenuBar/headerMenuBar.js"></script>
+		<script src="src/modules/broadcast/broadcast.js"></script>
+		<script src="src/modules/main/main.js"></script>
+		<script src="src/providers/mainProvider.js"></script>
+		<script src="src/services/mainService.js"></script>
 
-  <script src="bower_components/angular/angular.min.js"></script>
-  <script src="bower_components/jquery/dist/jquery.min.js"></script>
+	</head>
 
-  <script src="bower_components/angular-ui-router/release/angular-ui-router.min.js"></script>
-  <script src="bower_components/angular-resource/angular-resource.js"></script>
+	<body>
 
-  <script src="bower_components/tether/dist/js/tether.min.js"></script>
-  <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
-  <script src="bower_components/downloadjs/download.js"></script>
-  <script src="app.js"></script>
-  <script src="src/_config/config.js"></script>
-  <script src="src/controller/registrationFormController.js"></script>
-  <script src="src/controller/contactController.js"></script>
-  <script src="src/controller/mainController.js"></script>
-  <script src="src/controller/scheduleController.js"></script>
-  <script src="src/controller/loginInfoController.js"></script>
-	<script src="src/controller/registrationInfoController.js"></script>
+	  <ui-view></ui-view>
 
-
-  <script src="src/controller/areasInfoController.js"></script>
-  <script src="src/controller/bankInfoController.js"></script>
-  <script src="src/controller/businessExeInfoController.js"></script>
-  <script src="src/controller/contactController.js"></script>
-  <script src="src/controller/districtsInfoController.js"></script>
-<script src="src/components/header/header.js"></script>
-<script src="src/components/footer/footer.js"></script>
-<script src="src/components/headerMenuBar/headerMenuBar.js"></script>
-  <script src="src/modules/broadcast/broadcast.js"></script>
-  <script src="src/modules/main/main.js"></script>
-  <script src="src/providers/mainProvider.js"></script>
-  <script src="src/services/mainService.js"></script>
-
-<!-- footer -->
-
-</head>
-
-<body>
-
-  <ui-view></ui-view>
-
-
-
-</body>
+	</body>
 
 </html>

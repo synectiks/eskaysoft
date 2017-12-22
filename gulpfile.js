@@ -19,11 +19,9 @@ gulp.task('sass', function() {
 
 gulp.task('compress-dev', function() {
     gulp.src([
-        'node_modules/angular/angular.js',
-        'node_modules/angular-ui-router/release/angular-ui-router.js',
-        'node_modules/angular-animate/angular-animate.js',
         'app.js',
         'src/**/*.js',
+		'src/messages/*.*'
     ])
         .pipe(concat('app.min.js'))
         .pipe(gulp.dest('build'));
@@ -31,9 +29,6 @@ gulp.task('compress-dev', function() {
 
 gulp.task('compress-prod', function() {
     gulp.src([
-        'node_modules/angular/angular.js',
-        'node_modules/angular-ui-router/release/angular-ui-router.js',
-        'node_modules/angular-animate/angular-animate.js',
         'app.js',
         'src/**/*.js',
     ])

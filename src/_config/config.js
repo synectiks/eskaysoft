@@ -6,9 +6,15 @@
   'use strict';
 
 angular.module('com.synectiks.eskaySoft')
-    .config(['$locationProvider','$stateProvider', function($locationProvider,$stateProvider) {
+    .config(['$locationProvider','$stateProvider', '$translateProvider', function($locationProvider,$stateProvider, $translateProvider) {
         $locationProvider.html5Mode(true);
 
+$translateProvider.useStaticFilesLoader({
+    prefix: 'messages/eskaysoftConstants_',
+    suffix: '.json'
+});
+$translateProvider.preferredLanguage('en');
+$translateProvider.useSanitizeValueStrategy('escape');
         $stateProvider
 		 .state('home', {
             url: '/',

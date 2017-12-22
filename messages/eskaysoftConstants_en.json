@@ -1,0 +1,36 @@
+{  
+	"main.header.title":"Eskay Soft",
+	
+	"button.reset": "Reset",
+	"button.save": "Save",
+	"button.edit": "Edit",
+	"button.search": "Search",
+	"button.delete": "Delete",
+	"button.login": "Login",
+	
+	"link.logout":"LogOut",
+	"link.forgotpassword":"Forgot Password",
+	"link.register":"Register",
+	
+	"header.navmenu.home":"Home",
+	"header.navmenu.masters":"Masters",
+	"header.navmenu.purchaces":"Purchases",
+	"header.navmenu.sales":"Sales",
+	"header.navmenu.inventoryreports":"Inventory Reports",
+	"header.navmenu.finance":"Finance",
+	"header.navmenu.financereports":"Finance Reports",
+	"header.navmenu.gstreports":"GST Reports",
+	"header.navmenu.miscellaneous":"Miscellaneous",
+	
+	"subheader.navmenu.home.schedules":"Home",
+	"subheader.navmenu.home.masters":"Masters",
+	"subheader.navmenu.home.areas":"Areas",
+	"subheader.navmenu.home.businessexecutives":"Business Executives",
+	"subheader.navmenu.home.bankinformation":"Bank Information",
+	"subheader.navmenu.home.states":"States",
+		
+	"scheduleform.label.name": "Name",
+	"scheduleform.label.index": "Index",
+	"scheduleform.label.type": "Type",
+	"scheduleform.header.name":" Schedule Form"
+}

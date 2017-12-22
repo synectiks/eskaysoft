@@ -5,9 +5,9 @@
   "author": "Vijay Kesanupalli",
   "license": "MIT",
   "dependencies": {
-    "angular": "^1.6.5",
-    "angular-animate": "^1.5.8",
-    "angular-ui-router": "^0.3.2",
+    "@uirouter/angularjs": "^1.0.12",
+    "angular": "^1.6.7",
+    "angular-animate": "^1.6.7",
     "body-parser": "^1.17.2",
     "chalk": "*",
     "cross-spawn": "*",
