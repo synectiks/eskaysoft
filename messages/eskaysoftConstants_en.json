@@ -32,5 +32,28 @@
 	"scheduleform.label.name": "Name",
 	"scheduleform.label.index": "Index",
 	"scheduleform.label.type": "Type",
-	"scheduleform.header.name":" Schedule Form"
+	"scheduleform.header.name":" Schedule Form",
+	
+	"districtsform.header.name":"Districts Information",
+	"districtsform.label.dist.name":"District Name",
+	"districtsform.label.state.name":"State Name",
+	
+	"areaform.header.name":"Area Information",
+	"areaform.label.area.name":"Area Name",
+	"areaform.label.executive.name":"Executive Name",
+	
+	"businessexecutivesform.header.name":"Business Executives",
+	"businessexecutivesform.label.name":"Name",
+	"businessexecutivesform.label.address":"Address",
+	"businessexecutivesform.label.town":"Town",
+	"businessexecutivesform.label.mobile":"Mobile",
+	
+	"bankinformationform.header.name":"Bank Information",
+	"bankinformationform.label.name":"Name",
+	"bankinformationform.label.address":"Address",
+	
+	"stateinformation.header.name":"State Information",
+	"stateinformation.label.name":"Name",
+	"stateinformation.label.zone":"Zone",
+		
 }
