@@ -1,15 +1,16 @@
 <header-component></header-component>
 <header-menu-bar></header-menu-bar>
 
-<div class='text-center pt7'>
-        <h2>{{'scheduleform.header.name' | translate}} </h2>
-</div>
-	<div class="container">
+
+<div class="container">
 
     <div class='row'>
 
         <div class='col-xs-12 col-sm-4'>
             <form>
+                <div class='text-left pt7'>
+                    <h2>{{'scheduleform.header.name' | translate}} </h2>
+                </div>
                 <div class="form-group">
                     <label class="col-form-label" for="scheduleName">{{'scheduleform.label.name' | translate}}:*</label>
                     <input type="text" class="form-control form-control-lg" name="Name" id="scheduleName" ng-model="vm.scheduleName" required>
@@ -27,70 +28,60 @@
                     </option>
                     </select>
                 </div>
-
-            </form>
-            <div class="text-left btn-bottom col-xs-12">
-              <button type="submit" class="btn btn-primary mb5" ng-click="vm.reset()">{{'button.reset' | translate}}</button>
-                <button ng-if="!vm.editScreen" type="submit" class="btn btn-primary  mb5" ng-click="vm.create()">{{'button.save' | translate}}
+                <div class="form-group">
+                    <!--<div class="text-left col-xs-12 text-left">-->
+                    <button type="submit" class="btn btn-primary mb5" ng-click="vm.reset()">{{'button.reset' | translate}}</button>
+                    <button ng-if="!vm.editScreen" type="submit" class="btn btn-primary  mb5" ng-click="vm.create()">{{'button.save' | translate}}
                 </button>
-                <button ng-if="vm.editScreen" type="submit" class="btn btn-primary  mb5" ng-click="vm.save()">{{'button.save' | translate}}</button>
-                <label ng-if="vm.messageContainer" class="edit-delete-message">{{vm.errorMessage}}</label>
-            </div>
+                    <button ng-if="vm.editScreen" type="submit" class="btn btn-primary  mb5" ng-click="vm.save()">{{'button.save' | translate}}</button>
+                    <label ng-if="vm.messageContainer" class="edit-delete-message">{{vm.errorMessage}}</label>
+                </div>
+            </form>
         </div>
 
-		        <div class='col-xs-12 col-sm-8'>
-            <form class="form-horizontal">
-                <div class="form-group row">
-                    <label for="scheduleName" class="col-sm-4 col-form-label">{{'scheduleform.label.name' | translate}}:</label>
-                    <div class="col-md-5">
-                        <input type="text" class="form-control form-control-lg" name="Name" value="Edit Schedule" id="scheduleName" ng-model="vm.searchScheduleName" required>
 
-                    </div>
-                    <div class="col-md-3 text-right">
-                        <button type="submit" class="btn btn-primary mt10" ng-click="vm.search()">{{'button.search' | translate}}</button>
-                    </div>
 
+        <div class='col-xs-12 col-sm-8'>
+
+
+
+            <form class="form-inline text-center mt25">
+
+                <div class="form-group mx-sm-3">
+                    <label for="ScheduleName" class="sr-only mt10">{{'scheduleform.label.name' | translate}}</label>
+                    <input type="password" class="form-control" id="ScheduleName" placeholder="Schedule Name" ng-model="vm.searchScheduleName" required>
                 </div>
-				
-      <!--  <div class="col-xs-12 col-sm-8 p0">
-			<div class="col-sm-12 p0">
-                    <div class="form-group">
-						<label for="scheduleName" class="col-sm-4 mt10 control-label">Schedule Name:</label>
-						<div class="col-sm-6">
-                        <input type="text" class="form-control" name="Name" value="Edit Schedule" id="scheduleName" ng-model="vm.searchScheduleName" required>
-						</div>
-						<div class="col-sm-2 btn-align xsmt5">
-                        <button type="submit" class="btn btn-primary text-right" ng-click="vm.search()">Search</button>
-						</div>
+                <button type="submit" class="btn btn-primary" ng-click="vm.search()">{{'button.search' | translate}}</button>
+            </form>
 
-					</div>
-			 </div>   -->
-			
-  <div class="col-sm-12">
-				    <table id="example" class="table table-fixedheader table-responsive table-lg">
-                        <thead>
-                            <tr>
-                                <th>{{'scheduleform.label.name' | translate}}</th>
-                                <th>{{'scheduleform.label.index' | translate}}</th>
-                                <th>{{'scheduleform.label.type' | translate}}</th>
-                            </tr> 
-                        </thead>
-                        <tbody>
-                            <tr ng-repeat="schemes in vm.data" ng-if="vm.data.length>0" 
-							ng-click="vm.setSelected(schemes.name, schemes.no, schemes.type, $index)" 
-							ng-class="{selected: schemes.name === vm.selectedName}">
-                                <td>{{schemes.name}}</td>
-                                <td>{{schemes.no}}</td>
-                                <td>{{schemes.type}}</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                 <div class="btn-align">
-                    <button type="submit" class="btn btn-primary searchEdit btn-position" ng-click="vm.edit()">{{'button.edit' | translate}}</button>
-                    <button type="submit" class="btn btn-primary btn-position" ng-click="vm.delete()">{{'button.delete' | translate}}</button>
-                </div>
+            <table id="example" class="table table-fixedheader table-lg mt10 table-bordered scrollbar" ng-if="vm.data.length>0">
+                <thead>
+
+                    <tr>
+                        <th>{{'scheduleform.label.name' | translate}}</th>
+                        <th>{{'scheduleform.label.index' | translate}}</th>
+                        <th>{{'scheduleform.label.type' | translate}}</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr ng-repeat="schemes in vm.data" ng-click="vm.setSelected(schemes.name, schemes.no, schemes.type, $index)" ng-class="{selected: schemes.name === vm.selectedName}">
+                        <td>{{schemes.name}}</td>
+                        <td>{{schemes.no}}</td>
+                        <td>{{schemes.type}}</td>
+                    </tr>
+                </tbody>
+            </table>
+            <div class="btn-align p0" ng-if="vm.data.length>0">
+                <button type="submit" class="btn btn-primary searchEdit btn-position" ng-click="vm.edit()">{{'button.edit' | translate}}</button>
+                <button type="submit" class="btn btn-primary btn-position" ng-click="vm.delete()">{{'button.delete' | translate}}</button>
             </div>
+
+
         </div>
-	</div>
-	</div>
+    </div>
+
+</div>
+<div class="col-xs-12 fmt30">
+    <!--Footer margin top below 768px-->
+</div>
 <footer-component></footer-component>

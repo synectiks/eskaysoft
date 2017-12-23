@@ -1,37 +1,37 @@
 {
-   "SearchSchemeCodes":[{
-      "name": "Sundry Debtorts",
-      "no": 1,
-      "type": "Assets"
-	  },{
-       "name": "eskaysoft",
-       "no": 2,
-       "type": "Liabilities"
- 	  },{
-       "name": "synectiks",
-       "no": 3,
-       "type": "Trading"
- 	  },{
-       "name": "cipla",
-       "no": 4,
-       "type": "Profit and Loss"
+    "SearchSchemeCodes": [{
+            "name": "Sundry Debtorts",
+            "no": 1,
+            "type": "Assets"
+	  }, {
+            "name": "eskaysoft",
+            "no": 2,
+            "type": "Liabilities"
+ 	  }, {
+            "name": "synectiks",
+            "no": 3,
+            "type": "Trading"
+ 	  }, {
+            "name": "cipla",
+            "no": 4,
+            "type": "Profit"
  	  },
-	  {
-      "name": "Sundry Debtorts new",
-      "no": 5,
-      "type": "Assets"
-	  },{
-       "name": "eskaysoft new",
-       "no": 6,
-       "type": "Liabilities"
- 	  },{
-       "name": "synectiks new",
-       "no": 7,
-       "type": "Trading"
- 	  },{
-       "name": "cipla new",
-       "no": 8,
-       "type": "Profit and Loss"
+        {
+            "name": "Sundry Debtorts new",
+            "no": 5,
+            "type": "Assets"
+	  }, {
+            "name": "eskaysoft new",
+            "no": 6,
+            "type": "Liabilities"
+ 	  }, {
+            "name": "synectiks new",
+            "no": 7,
+            "type": "Trading"
+ 	  }, {
+            "name": "cipla new",
+            "no": 8,
+            "type": "Profit"
  	  }
   ]
 }

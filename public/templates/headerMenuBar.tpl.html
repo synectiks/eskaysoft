@@ -1,94 +1,117 @@
- <nav class="navbar navbar-inverse">
-        <div class="container-fluid">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>                        
-      </button>
-                <a class="navbar-brand" href="#"><strong>{{'main.header.title' | translate}}</strong></a>
-            </div>
-            <div class="collapse navbar-collapse" id="myNavbar">
-                <ul class="nav navbar-nav">
-                    <li class="dropdown">
-                        <a class="dropdown-toggle" data-toggle="dropdown" href="#">{{'header.navmenu.masters' | translate}}</a>
-                        <ul class="dropdown-menu">
-                            <li><a href="/schedule">{{'subheader.navmenu.home.schedules' | translate}}</a></li>
-                            <li><a href="/districtsInfo">{{'subheader.navmenu.home.districts' | translate}}</a></li>
-                            <li><a href="/areasInfo">{{'subheader.navmenu.home.areas' | translate}}</a></li>
-                            <li><a href="/businessExeInfo">{{'subheader.navmenu.home.businessexecutives' | translate}}</a></li>
-                            <li><a href="/bankInfo">{{'subheader.navmenu.home.bankinformation' | translate}}</a></li>
-                            <li><a href="/statesInfo">{{'subheader.navmenu.home.states' | translate}}</a></li>
-                        </ul>
-                    </li>
-                    <li class="dropdown">
-                        <a class="dropdown-toggle" data-toggle="dropdown" href="#">{{'header.navmenu.purchaces' | translate}}</a>
-
-                        <ul class="dropdown-menu">
-                            <li><a href="#">link1</a></li>
-                            <li><a href="#">link2</a></li>
-                            <li><a href="#">link3</a></li>
-                        </ul>
-                    </li>
-                    <li class="dropdown">
-                        <a class="dropdown-toggle" data-toggle="dropdown" href="#">{{'header.navmenu.sales' | translate}}</a>
-
-                        <ul class="dropdown-menu">
-                            <li><a href="#">link1</a></li>
-                            <li><a href="#">link2</a></li>
-                            <li><a href="#">link3</a></li>
-                        </ul>
-                    </li>
-                    <li class="dropdown">
-                        <a class="dropdown-toggle" data-toggle="dropdown" href="#">{{'header.navmenu.inventoryreports' | translate}}</a>
-
-                        <ul class="dropdown-menu">
-                            <li><a href="#">link1</a></li>
-                            <li><a href="#">link2</a></li>
-                            <li><a href="#">link3</a></li>
-                        </ul>
-                    </li>
-                    <li class="dropdown">
-                        <a class="dropdown-toggle" data-toggle="dropdown" href="#">{{'header.navmenu.finance' | translate}}</a>
-
-                        <ul class="dropdown-menu">
-                            <li><a href="#">link1</a></li>
-                            <li><a href="#">link2</a></li>
-                            <li><a href="#">link3</a></li>
-                        </ul>
-                    </li>
-                    <li class="dropdown">
-                        <a class="dropdown-toggle" data-toggle="dropdown" href="#">{{'header.navmenu.financereports' | translate}}</a>
-
-                        <ul class="dropdown-menu">
-                            <li><a href="#">link1</a></li>
-                            <li><a href="#">link2</a></li>
-                            <li><a href="#">link3</a></li>
-                        </ul>
-                    </li>
-                    <li class="dropdown">
-                        <a class="dropdown-toggle" data-toggle="dropdown" href="#">{{'header.navmenu.gstreports' | translate}}</a>
-
-                        <ul class="dropdown-menu">
-                            <li><a href="#">link1</a></li>
-                            <li><a href="#">link2</a></li>
-                            <li><a href="#">link3</a></li>
-                        </ul>
-                    </li>
-                    <li class="dropdown">
-                        <a class="dropdown-toggle" data-toggle="dropdown" href="#">{{'header.navmenu.miscellaneous' | translate}}</a>
-
-                        <ul class="dropdown-menu">
-                            <li><a href="#">link1</a></li>
-                            <li><a href="#">link2</a></li>
-                            <li><a href="#">link3</a></li>
-                        </ul>
-                    </li>
-
-                </ul>
-                <ul class="nav navbar-nav navbar-right">
-                    <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> LogOut</a></li>
-                </ul>
-            </div>
+<nav class="navbartop navbar-default">
+    <div class="container-fluid">
+        <div class="navbar-header col-xs-7">
+            <a class="navbar-brand" href="#"><strong class="navbartop">{{'main.header.title' | translate}}</strong></a>
         </div>
-    </nav>
+        <div class="text-right col-xs-5 mt15">
+            <a class="text-right" href="#"><span class="glyphicon glyphicon-log-in"></span> {{'link.logout'|translate}}</a>
+
+        </div>
+    </div>
+</nav>
+<nav class="navbar navbar-inverse navmenu p0">
+    <div class="container-fluid">
+        <div class="navbar-header">
+
+            <button type="button" class="navbar-toggle floatleft" data-toggle="collapse" data-target="#myNavbar">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>    
+                        <span class="icon-bar"></span>  
+               </button>
+            <div class="smenu">
+                <a class="navbar-brand smenu text-center" href="#"><strong>{{'main.header.title' | translate}}</strong></a>
+
+                <button type="button" class="btn btn-default btn-sm mt15 floatright smenu">
+                        <span class="glyphicon glyphicon-log-out smenu"></span>
+                </button>
+
+            </div>
+
+
+            <!--<a class="navbar-brand" href="#"><strong>{{'main.header.title' | translate}}</strong></a>-->
+        </div>
+        <div class="collapse navbar-collapse" id="myNavbar">
+            <ul class="nav navbar-nav col-sm-12">
+                <li class="dropdown mr60">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">{{'header.navmenu.masters' | translate}}</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="/schedule">{{'subheader.navmenu.home.schedules' | translate}}</a></li>
+                        <li><a href="/districtsInfo">{{'subheader.navmenu.home.districts' | translate}}</a></li>
+                        <li><a href="/areasInfo">{{'subheader.navmenu.home.areas' | translate}}</a></li>
+                        <li><a href="/businessExeInfo">{{'subheader.navmenu.home.businessexecutives' | translate}}</a></li>
+                        <li><a href="/bankInfo">{{'subheader.navmenu.home.bankinformation' | translate}}</a></li>
+                        <li><a href="/statesInfo">{{'subheader.navmenu.home.states' | translate}}</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown mr60">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">{{'header.navmenu.purchaces' | translate}}</a>
+
+                    <ul class="dropdown-menu">
+                        <li><a href="#">link1</a></li>
+                        <li><a href="#">link2</a></li>
+                        <li><a href="#">link3</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown mr60">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">{{'header.navmenu.sales' | translate}}</a>
+
+                    <ul class="dropdown-menu">
+                        <li><a href="#">link1</a></li>
+                        <li><a href="#">link2</a></li>
+                        <li><a href="#">link3</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown mr60">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">{{'header.navmenu.inventoryreports' | translate}}</a>
+
+                    <ul class="dropdown-menu">
+                        <li><a href="#">link1</a></li>
+                        <li><a href="#">link2</a></li>
+                        <li><a href="#">link3</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown mr60">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">{{'header.navmenu.finance' | translate}}</a>
+
+                    <ul class="dropdown-menu">
+                        <li><a href="#">link1</a></li>
+                        <li><a href="#">link2</a></li>
+                        <li><a href="#">link3</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown mr60">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">{{'header.navmenu.financereports' | translate}}</a>
+
+                    <ul class="dropdown-menu">
+                        <li><a href="#">link1</a></li>
+                        <li><a href="#">link2</a></li>
+                        <li><a href="#">link3</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown mr60">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">{{'header.navmenu.gstreports' | translate}}</a>
+
+                    <ul class="dropdown-menu">
+                        <li><a href="#">link1</a></li>
+                        <li><a href="#">link2</a></li>
+                        <li><a href="#">link3</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">{{'header.navmenu.miscellaneous' | translate}}</a>
+
+                    <ul class="dropdown-menu">
+                        <li><a href="#">link1</a></li>
+                        <li><a href="#">link2</a></li>
+                        <li><a href="#">link3</a></li>
+                    </ul>
+                </li>
+
+            </ul>
+            <!--<ul class="nav navbar-nav navbar-right">
+    <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> LogOut</a></li>
+</ul>-->
+        </div>
+    </div>
+</nav>
