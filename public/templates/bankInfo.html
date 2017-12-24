@@ -1,65 +1,68 @@
-<header-component></header-component>
 <header-menu-bar></header-menu-bar>
-<section class="section">
-    <div class="row">
-<div class="col-1 section-inner">
-<h2 class="font-width">Bank Information</h2>
-<div class="section-inner-wrp">
-  <form action="">
-    <h5>Bank name:*</h5>
-    <input class="form-control formWidthClass" type="text" name="bankname" value="" required>
-    <h5 class="form-padding">Bank Address:*</h5>
-    <input class="form-control formWidthClass" type="text" name="bankaddress" value="" required>
-    <br><br>
-	<button type="submit" class="btn btn-primary" ng-click="vm.reset()">Reset</button>
-    <button type="submit" class="btn btn-primary" ng-click="vm.save()"> Save </button>
-  </form>
-</div>
-</div>
-  <!--Added by Mustafa Starts here-->
-        <div class="col-2">
-  <div class="section-inner-wrp">
-    <div class="form-group formRow">
-      <h5 class="h5 formLable form-padding">Bank Name:*</h5>
-      <input class="form-control formLable searchInputs" type="text" name="Name" value="Bank Name" id="bankName" ng-model="vm.searchScheduleName" required>
-      <h5 class="h5 formLable form-padding">Bank Address:*</h5>
-      <input class="form-control formLable searchInputs" type="text" name="Name" value="Bank Address" id="bankAddress" ng-model="vm.searchScheduleNumber" required>
-      <button type="submit" class="btn btn-primary dist-search" ng-click="vm.search()">Search</button>
-    </div>
-    <div class="form-group formRow">
-      <table class="table table-bordered">
-        <thead>
-        <tr>
-          <th>Bank Name</th>
-          <th>Bank Address </th>
-          <!--<th>Schedule Type</th>-->
-        </tr>
-        </thead>
-        <tbody>
-        <tr ng-repeat="schemes in vm.data" ng-if="vm.data.length>0" ng-click="vm.setSelected(schemes.name, schemes.no, schemes.type, $index)" ng-class="{selected: schemes.name === vm.selectedName}">
-          <td>{{schemes.name}}</td>
-          <td>{{schemes.no}}</td>
-          <td>{{schemes.type}}</td>
-        </tr>
-        </tbody>
-      </table>
-    </div>
-    <div class="form-group formRow searchBtn">
-      <button type="submit" class="btn btn-primary searchEdit" ng-click="vm.edit()">Edit</button>
-      <button type="submit" class="btn btn-primary" ng-click="vm.delete()">Delete</button>
-    </div>
-  </div>
+<div class="container">
+
+    <div class='row'>
+
+        <div class='col-xs-12 col-sm-4'>
+            <form>
+                <div class='text-left pt7'>
+                    <h2>{{'bankinformationform.header.name' | translate}} </h2>
+                </div>
+                <div class="form-group">
+                    <label class="col-form-label" for="bankname">{{'bankinformationform.label.name' | translate}}:*</label>
+                    <input type="text" class="form-control form-control-lg" name="bankname" id="bankname" required>
+                </div>
+                <div class="form-group">
+                    <label class="col-form-label" for="bankaddress">{{'bankinformationform.label.address' | translate}}:</label>
+                    <input type="text" class="form-control form-control-lg" name="bankaddress" id="bankaddress" required>
+                </div>
+                <div class="form-group">
+                    <button type="submit" class="btn btn-primary" ng-click="vm.reset()">Reset</button>
+                    <button type="submit" class="btn btn-primary" ng-click="vm.save()"> Save </button>
+                    <label ng-if="vm.messageContainer" class="edit-delete-message">{{vm.errorMessage}}</label>
+                </div>
+            </form>
+        </div>
+        <div class='col-xs-12 col-sm-8'>
+            <form class="form-inline mt25">
+                <div class="form-group mx-sm-3">
+                    <label for="Bank Name" class="sr-only mt10">{{'bankinformationform.label.name' | translate}}</label>
+                    <input type="text" class="form-control" id="Bank Name" placeholder="{{'bankinformationform.label.name' | translate}}" ng-model="vm.searchScheduleName" required>
+                </div>
+                <div class="form-group mx-sm-3">
+                    <label for="Bank Address" class="sr-only mt10">{{'bankinformationform.label.address' | translate}}</label>
+                    <input type="text" class="form-control" id="Bank Address" placeholder="{{'bankinformationform.label.address' | translate}}" ng-model="vm.searchScheduleNumber" required>
+                </div>
+                <button type="submit" class="btn btn-primary" ng-click="vm.search()">{{'button.search' | translate}}</button>
+            </form>
+
+            <table id="example" class="table table-fixedheader table-lg mt10 table-bordered scrollbar" ng-if="vm.data.length>0">
+                <thead>
+
+                    <tr>
+                        <th>{{'bankinformationform.label.name' | translate}}</th>
+                        <th>{{'bankinformationform.label.address' | translate}} </th>
+                        <!--<th>Schedule Type</th>-->
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr ng-repeat="schemes in vm.data" ng-click="vm.setSelected(schemes.name, schemes.no, schemes.type, $index)" ng-class="{selected: schemes.name === vm.selectedName}">
+                        <td>{{schemes.name}}</td>
+                        <td>{{schemes.no}}</td>
+                        <!--<td>{{schemes.type}}</td>-->
+                    </tr>
+                </tbody>
+            </table>
+            <div class="btn-align p0" ng-if="vm.data.length>0">
+                <div class="form-group formRow searchBtn">
+                    <button type="submit" class="btn btn-primary searchEdit" ng-click="vm.edit()">Edit</button>
+                    <button type="submit" class="btn btn-primary" ng-click="vm.delete()">Delete</button>
+                </div>
+            </div>
         </div>
     </div>
-  <!--Added by Mustafa Ends here-->
-  <div class="pagin bottom">
-    <ul class="pagination pagination-sm">
-      <li class="page-item"><a class="page-link" href="#">Previous</a></li>
-      <li class="page-item"><a class="page-link" href="#">1</a></li>
-      <li class="page-item"><a class="page-link" href="#">2</a></li>
-      <li class="page-item"><a class="page-link" href="#">3</a></li>
-      <li class="page-item"><a class="page-link" href="#">Next</a></li>
-    </ul>
-  </div>
-</section>
+</div>
+<div class="col-xs-12 fmt30">
+    <!--Footer margin top below 768px-->
+</div>
 <footer-component></footer-component>

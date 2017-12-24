@@ -33,16 +33,16 @@
                 </div>
             </form>
         </div>
-		<div class='col-xs-12 col-sm-1'></div>
+        <div class='col-xs-12 col-sm-1'></div>
 
 
         <div class='col-xs-12 col-sm-6'>
 
-			<form class="form-inline text-center mt25">
+            <form class="form-inline text-center mt25">
 
                 <div class="form-group mx-sm-3">
                     <label for="ScheduleName" class="sr-only mt10">{{'scheduleform.label.name' | translate}}</label>
-                    <input type="password" class="form-control" id="ScheduleName" placeholder="Schedule Name" ng-model="vm.searchScheduleName" required>
+                    <input type="text" class="form-control" id="ScheduleName" placeholder="Schedule Name" ng-model="vm.searchScheduleName" required>
                 </div>
                 <button type="submit" class="btn btn-primary" ng-click="vm.search()">{{'button.search' | translate}}</button>
             </form>

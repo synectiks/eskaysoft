@@ -1,67 +1,80 @@
-<header-component></header-component>
 <header-menu-bar></header-menu-bar>
-<section class="section">
-  <div class="row">
-<div class="col-1 section-inner">
-<h2 class="font-width">Business Executives</h2>
-  <form class="section-inner-wrp">
-    <h5 class="h5">Executives Name:*</h5>
-    <input class="form-control formWidthClass" type="text" name="Name" value="">
-    <h5 class="h5 form-padding">Address:*</h5>
-    <input class="form-control formWidthClass formHeightClass" type="text" name="Name" value="">
-    <h5 class=" h5 form-padding">Town:*</h5>
-    <input class="form-control formWidthClass" type="text" name="town" value="">
-    <h5 class="h5 form-padding">Mobile:*</h5>
-    <input class="form-control formWidthClass" type="tel" name="tel" value="">
-    <br><br>
-	<button type="submit" class="btn btn-primary" ng-click="vm.reset()">Reset</button>
-    <button type="submit" class="btn btn-primary" ng-click="vm.save()"> Save </button>
-  </form>
+
+<div class="container">
+    <div class='row'>
+        <div class='col-xs-12 col-sm-4'>
+            <form>
+                <div class='text-left pt7'>
+                    <h2>{{'businessexecutivesform.header.name' | translate}} </h2>
+                </div>
+                <div class="form-group">
+                    <label class="col-form-label" for="Name">{{'businessexecutivesform.label.name' | translate}}:*</label>
+                    <input type="text" class="form-control form-control-lg" name="Name" id="Name" required>
+                </div>
+                <div class="form-group">
+                    <label class="col-form-label" for="address">{{'businessexecutivesform.label.address' | translate}}:*</label>
+                    <input type="text" class="form-control form-control-lg" name="address" id="address" required>
+                </div>
+                <div class="form-group">
+                    <label class="col-form-label" for="Town">{{'businessexecutivesform.label.town' | translate}}:*</label>
+                    <input type="text" class="form-control form-control-lg" name="Town" id="Town" required>
+                </div>
+                <div class="form-group">
+                    <label class="col-form-label" for="mobile">{{'businessexecutivesform.label.mobile' | translate}}:*</label>
+                    <input type="text" class="form-control form-control-lg" name="mobile" id="mobile" required>
+                </div>
+                <div class="form-group">
+                    <button type="submit" class="btn btn-primary mb5" ng-click="vm.reset()">{{'button.reset' | translate}}</button>
+                    <button ng-if="!vm.editScreen" type="submit" class="btn btn-primary  mb5" ng-click="vm.create()">{{'button.save' | translate}}
+                </button>
+                    <button ng-if="vm.editScreen" type="submit" class="btn btn-primary  mb5" ng-click="vm.save()">{{'button.save' | translate}}</button>
+                    <label ng-if="vm.messageContainer" class="edit-delete-message">{{vm.errorMessage}}</label>
+                </div>
+            </form>
+        </div>
+        <div class='col-xs-12 col-sm-1'></div>
+
+
+        <div class='col-xs-12 col-sm-6'>
+
+            <form class="form-inline text-center mt25">
+
+                <div class="form-group mx-sm-3">
+                    <label for="name" class="sr-only mt10">{{'businessexecutivesform.label.name' | translate}}</label>
+                    <input type="text" class="form-control" id="name" placeholder="{{'businessexecutivesform.label.name' | translate}}" ng-model="vm.searchScheduleName" required>
+                </div>
+                <div class="form-group mx-sm-3">
+                    <label for="mobile" class="sr-only mt10">{{'businessexecutivesform.label.mobile' | translate}}</label>
+                    <input type="text" class="form-control" id="mobile" placeholder="{{'businessexecutivesform.label.mobile' | translate}}" ng-model="vm.searchScheduleNumber" required>
+                </div>
+                <button type="submit" class="btn btn-primary" ng-click="vm.search()">{{'button.search' | translate}}</button>
+            </form>
+
+            <table id="example" class="table table-fixedheader table-lg mt10 table-bordered scrollbar" ng-if="vm.data.length>0">
+                <thead>
+                    <tr>
+                        <th>{{'businessexecutivesform.label.name' | translate}}</th>
+                        <th>{{'businessexecutivesform.label.mobile' | translate}}</th>
+                        <th>{{'businessexecutivesform.label.town' | translate}}</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr ng-repeat="schemes in vm.data" ng-click="vm.setSelected(schemes.name, schemes.no, schemes.type, $index)" ng-class="{selected: schemes.name === vm.selectedName}">
+                        <td>{{schemes.name}}</td>
+                        <td>{{schemes.no}}</td>
+                        <td>{{schemes.type}}</td>
+                    </tr>
+                </tbody>
+            </table>
+            <div class="btn-align p0" ng-if="vm.data.length>0">
+                <button type="submit" class="btn btn-primary searchEdit btn-position" ng-click="vm.edit()">{{'button.edit' | translate}}</button>
+                <button type="submit" class="btn btn-primary btn-position" ng-click="vm.delete()">{{'button.delete' | translate}}</button>
+            </div>
+        </div>
+    </div>
+
 </div>
-  <!--Added by Mustafa Starts here-->
-    <div class="col-2">
-  <div class="section-inner-wrp">
-    <div class="form-group formRow">
-      <h5 class="h5 formLable form-padding">Executive Name:</h5>
-      <input class="form-control formLable searchInputs" type="text" name="Name" value="Executive Name" id="executiveName" ng-model="vm.searchScheduleName">
-      <h5 class="h5 formLable form-padding">Mobile:</h5>
-      <input class="form-control formLable searchInputs" type="text" name="Name" value="Mobile" id="mobile" ng-model="vm.searchScheduleNumber">
-      <button type="submit" class="btn btn-primary dist-search" ng-click="vm.search()">Search</button>
-    </div>
-    <div class="form-group formRow">
-      <table class="table table-bordered">
-        <thead>
-        <tr>
-          <th>Executive Name</th>
-          <th>Mobile </th>
-          <!--<th>Schedule Type</th>-->
-        </tr>
-        </thead>
-        <tbody>
-        <tr ng-repeat="schemes in vm.data" ng-if="vm.data.length>0" ng-click="vm.setSelected(schemes.name, schemes.no, schemes.type, $index)" ng-class="{selected: schemes.name === vm.selectedName}">
-          <td>{{schemes.name}}</td>
-          <td>{{schemes.no}}</td>
-          <td>{{schemes.type}}</td>
-        </tr>
-        </tbody>
-      </table>
-    </div>
-    <div class="form-group formRow searchBtn">
-      <button type="submit" class="btn btn-primary searchEdit" ng-click="vm.edit()">Edit</button>
-      <button type="submit" class="btn btn-primary" ng-click="vm.delete()">Delete</button>
-    </div>
-  </div>
-    </div>
-  </div>
-  <div class="pagin bottom">
-    <ul class="pagination pagination-sm">
-      <li class="page-item"><a class="page-link" href="#">Previous</a></li>
-      <li class="page-item"><a class="page-link" href="#">1</a></li>
-      <li class="page-item"><a class="page-link" href="#">2</a></li>
-      <li class="page-item"><a class="page-link" href="#">3</a></li>
-      <li class="page-item"><a class="page-link" href="#">Next</a></li>
-    </ul>
-  </div>
-  <!--Added by Mustafa Ends here-->
-</section>
+<div class="col-xs-12 fmt30">
+    <!--Footer margin top below 768px-->
+</div>
 <footer-component></footer-component>
