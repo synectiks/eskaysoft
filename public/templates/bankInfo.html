@@ -1,8 +1,6 @@
 <header-menu-bar></header-menu-bar>
 <div class="container">
-
     <div class='row'>
-
         <div class='col-xs-12 col-sm-4'>
             <form>
                 <div class='text-left pt7'>
@@ -17,13 +15,18 @@
                     <input type="text" class="form-control form-control-lg" name="bankaddress" id="bankaddress" required>
                 </div>
                 <div class="form-group">
-                    <button type="submit" class="btn btn-primary" ng-click="vm.reset()">Reset</button>
-                    <button type="submit" class="btn btn-primary" ng-click="vm.save()"> Save </button>
+                    <button type="submit" class="btn btn-primary mb5" ng-click="vm.reset()">{{'button.reset' | translate}}</button>
+                    <button ng-if="!vm.editScreen" type="submit" class="btn btn-primary  mb5" ng-click="vm.create()">{{'button.save' | translate}}
+                </button>
+                    <button ng-if="vm.editScreen" type="submit" class="btn btn-primary  mb5" ng-click="vm.save()">{{'button.save' | translate}}</button>
                     <label ng-if="vm.messageContainer" class="edit-delete-message">{{vm.errorMessage}}</label>
                 </div>
             </form>
         </div>
-        <div class='col-xs-12 col-sm-8'>
+		
+		<div class='col-xs-12 col-sm-1'></div>
+				
+        <div class='col-xs-12 col-sm-6'>
             <form class="form-inline mt25">
                 <div class="form-group mx-sm-3">
                     <label for="Bank Name" class="sr-only mt10">{{'bankinformationform.label.name' | translate}}</label>
@@ -38,26 +41,21 @@
 
             <table id="example" class="table table-fixedheader table-lg mt10 table-bordered scrollbar" ng-if="vm.data.length>0">
                 <thead>
-
                     <tr>
                         <th>{{'bankinformationform.label.name' | translate}}</th>
                         <th>{{'bankinformationform.label.address' | translate}} </th>
-                        <!--<th>Schedule Type</th>-->
                     </tr>
                 </thead>
                 <tbody>
                     <tr ng-repeat="schemes in vm.data" ng-click="vm.setSelected(schemes.name, schemes.no, schemes.type, $index)" ng-class="{selected: schemes.name === vm.selectedName}">
                         <td>{{schemes.name}}</td>
                         <td>{{schemes.no}}</td>
-                        <!--<td>{{schemes.type}}</td>-->
                     </tr>
                 </tbody>
             </table>
-            <div class="btn-align p0" ng-if="vm.data.length>0">
-                <div class="form-group formRow searchBtn">
-                    <button type="submit" class="btn btn-primary searchEdit" ng-click="vm.edit()">Edit</button>
-                    <button type="submit" class="btn btn-primary" ng-click="vm.delete()">Delete</button>
-                </div>
+           <div class="btn-align p0" ng-if="vm.data.length>0">
+                <button type="submit" class="btn btn-primary searchEdit btn-position" ng-click="vm.edit()">{{'button.edit' | translate}}</button>
+                <button type="submit" class="btn btn-primary btn-position" ng-click="vm.delete()">{{'button.delete' | translate}}</button>
             </div>
         </div>
     </div>
