@@ -1,11 +1,6 @@
-<header-component></header-component>
 <header-menu-bar></header-menu-bar>
-
-
 <div class="container">
-
     <div class='row'>
-
         <div class='col-xs-12 col-sm-4'>
             <form>
                 <div class='text-left pt7'>
@@ -29,7 +24,6 @@
                     </select>
                 </div>
                 <div class="form-group">
-                    <!--<div class="text-left col-xs-12 text-left">-->
                     <button type="submit" class="btn btn-primary mb5" ng-click="vm.reset()">{{'button.reset' | translate}}</button>
                     <button ng-if="!vm.editScreen" type="submit" class="btn btn-primary  mb5" ng-click="vm.create()">{{'button.save' | translate}}
                 </button>
@@ -39,24 +33,16 @@
             </form>
         </div>
 
-
-
         <div class='col-xs-12 col-sm-8'>
-
-
-
             <form class="form-inline text-center mt25">
-
                 <div class="form-group mx-sm-3">
                     <label for="ScheduleName" class="sr-only mt10">{{'scheduleform.label.name' | translate}}</label>
                     <input type="password" class="form-control" id="ScheduleName" placeholder="Schedule Name" ng-model="vm.searchScheduleName" required>
                 </div>
                 <button type="submit" class="btn btn-primary" ng-click="vm.search()">{{'button.search' | translate}}</button>
             </form>
-
             <table id="example" class="table table-fixedheader table-lg mt10 table-bordered scrollbar" ng-if="vm.data.length>0">
                 <thead>
-
                     <tr>
                         <th>{{'scheduleform.label.name' | translate}}</th>
                         <th>{{'scheduleform.label.index' | translate}}</th>
@@ -75,13 +61,7 @@
                 <button type="submit" class="btn btn-primary searchEdit btn-position" ng-click="vm.edit()">{{'button.edit' | translate}}</button>
                 <button type="submit" class="btn btn-primary btn-position" ng-click="vm.delete()">{{'button.delete' | translate}}</button>
             </div>
-
-
         </div>
     </div>
-
-</div>
-<div class="col-xs-12 fmt30">
-    <!--Footer margin top below 768px-->
 </div>
 <footer-component></footer-component>
