@@ -1,6 +1,14 @@
+.tableDiv {
+    position: relative;
+    overflow-y: auto;
+    min-height: 0px;
+    max-height: 298px;
+}
+
 table.table-fixedheader {
     width: 100%;
     cursor: pointer;
+    overflow-y: auto;
 }
 
 table.table-fixedheader,
@@ -22,16 +30,17 @@ table.table-fixedheader > tbody > tr:after {
 }
 
 table.table-fixedheader > tbody {
-    overflow-y: auto;
-    min-height: 0px;
-    max-height: 250px;
+    overflow-y: hidden;
+    /*    min-height: 0px;
+    max-height: 250px;*/
     width: 100%;
     border-collapse: collapse;
+
 }
 
 table.table-fixedheader > thead {
     background-color: aliceblue;
-    overflow-y: auto;
+    overflow-y: hidden;
 }
 
 table.table-fixedheader > thead::-webkit-scrollbar {
@@ -51,6 +60,7 @@ table.table-fixedheader > tbody tr td {
     float: left;
     width: 33.33%;
     border-bottom-width: 0;
+
 }
 
 .mt25 {
@@ -73,6 +83,10 @@ table.table-fixedheader > tbody tr td {
     margin-top: 5px;
 }
 
+.mb10 {
+    margin-bottom: 20px;
+}
+
 .mb20 {
     margin-bottom: 20px;
 }
@@ -89,8 +103,6 @@ table.table-fixedheader > tbody tr td {
 .p0 {
     padding: 0px;
 }
-
-.mr10 {}
 
 .mr60 {
     margin-right: 60px !important;
@@ -134,7 +146,6 @@ body {
 .navbar-brand {
     font-size: 40px;
     height: 10px !important;
-
 }
 
 @media only screen and (min-width: 768px) {
@@ -153,7 +164,6 @@ body {
     .xsmt5 {
         margin-top: 5px;
     }
-
     table.table-fixedheader > thead tr th,
     table.table-fixedheader > tbody tr td {
         float: left;
@@ -161,12 +171,10 @@ body {
         height: 65px;
         border-bottom-width: 0;
     }
-
     body {
         margin-bottom: 15px;
         /* Margin bottom by footer height */
     }
-
     .footer {
         position: absolute;
         bottom: 0;
@@ -179,7 +187,6 @@ body {
     }
     .navbartop {
         height: 40px;
-
     }
     .floatleft {
         position: relative;
@@ -188,14 +195,10 @@ body {
     .floatright {
         float: right !important;
     }
-
     .navbartop {
         display: none;
     }
     .smenu {
         display: block;
     }
-
-
-
 }
