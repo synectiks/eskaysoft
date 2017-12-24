@@ -12,11 +12,18 @@
     <div class="container-fluid">
         <div class="navbar-header">
             <button type="button" class="navbar-toggle floatleft" data-toggle="collapse" data-target="#myNavbar">
-				<span class="icon-bar"></span>
-				<span class="icon-bar"></span>
-				<span class="icon-bar"></span>    
-				<span class="icon-bar"></span>  
-			</button>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>    
+                        <span class="icon-bar"></span>  
+            </button>
+            <div class="smenu">
+                <a class="navbar-brand smenu text-center" href="#"><strong>{{'main.header.title' | translate}}</strong></a>
+
+                <button type="button" class="btn btn-default btn-sm mt15 floatright smenu">
+                        <span class="glyphicon glyphicon-log-out smenu"></span>
+                </button>
+            </div>
         </div>
         <div class="collapse navbar-collapse" id="myNavbar">
             <ul class="nav navbar-nav col-sm-12">
@@ -88,6 +95,6 @@
                     </ul>
                 </li>
             </ul>
-		</div>
+        </div>
     </div>
 </nav>
