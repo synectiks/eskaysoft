@@ -44,7 +44,7 @@
                     <select ng-model="vm.schedule.type" class="form-control form-control-lg" id="ScheduleType">
                         <option value="">{{'scheduleform.label.type' | translate}}</option>
                        <option ng-repeat="scheduleType in vm.scheduleTypes" value="{{scheduleType.name}}"
-                        ng-selected="scheduleType.name === vm.scheduleType">{{scheduleType.name}}
+                       >{{scheduleType.name}}
                         </option>
                     </select>
                 </div>
