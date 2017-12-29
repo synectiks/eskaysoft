@@ -9,6 +9,7 @@
     "link.logout": "LogOut",
     "link.forgotpassword": "Forgot Password",
     "link.register": "Register",
+    "common.label.searchby":"Search By",
     "header.navmenu.home": "Home",
     "header.navmenu.masters": "Masters",
     "header.navmenu.purchaces": "Purchases",

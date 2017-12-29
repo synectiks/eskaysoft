@@ -5,27 +5,11 @@
 
     'use strict';
 
-
     angular.module('com.synectiks.eskaySoft')
         .controller('scheduleController', ['$scope', 'commonLoaderService', function ($scope, commonLoaderService) {
 
             var vm = this; // jshint ignore:line
-            var x = {
-                "scheduleTypes": [{
-                    "name": "Assets",
-                    "description": ""
-      	  }, {
-                    "name": "Liabilities",
-                    "description": ""
-      	  }, {
-                    "name": "Trading",
-                    "description": ""
-      	  }, {
-                    "name": "Profit",
-                    "description": ""
-      	  }]
-            };
-            vm.scheduleTypes = x.scheduleTypes;
+
             vm.scheduleType = "0";
             vm.selected = false;
             vm.scheduleName = "";
@@ -36,11 +20,22 @@
             vm.errorMessage = "";
             vm.messageContainer = false;
             var list = {};
+
+
+            vm.getDropDownValues = function () {
+                commonLoaderService.load_Data(null, 'messages/scheduleMockData.json', 'GET', null).then(function (dropDownContent) {
+                    vm.scheduleTypes = dropDownContent.scheduleTypes;
+
+                }, function (error) { // jshint ignore:line
+                    console.log("error", error);
+                });
+            };
+            vm.getDropDownValues();
             vm.search = function () {
 
                 vm.editScreen = false;
                 vm.normalScreen = true;
-                commonLoaderService.load_Data(null, 'src/_config/searchSchedule_content.json', 'GET', null).then(function (searchContent) {
+                commonLoaderService.load_Data(null, 'messages/scheduleMockData.json', 'GET', null).then(function (searchContent) {
                     vm.data = searchContent.SearchSchemeCodes;
                     vm.selectedName = "";
                     vm.messageContainer = false;
@@ -106,8 +101,15 @@
                 vm.selectedName = "";
                 vm.messageContainer = false;
                 vm.editScreen = false;
-                vm.data = [];
+                vm.schedule.name = "";
+                vm.schedule.type = "";
+                vm.search();
+
             };
+            vm.startsWith = function (actual, expected) {
+                var lowerStr = (actual + "").toLowerCase();
+                return lowerStr.indexOf(expected.toLowerCase()) === 0;
+            }
 
     }]);
 })();

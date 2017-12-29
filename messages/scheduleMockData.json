@@ -1,4 +1,32 @@
 {
+    "DropDownCodes": [{
+        "code": "Ass",
+        "description": "Asserts"
+	  }, {
+        "code": "Lia",
+        "description": "Liabilities"
+	  }, {
+        "code": "Trade",
+        "description": "Trading"
+	  }, {
+        "code": "Pnl",
+        "description": "Profit & Loss"
+	  }],
+
+    "scheduleTypes": [{
+        "name": "Assets",
+        "description": ""
+      	  }, {
+        "name": "Liabilities",
+        "description": ""
+      	  }, {
+        "name": "Trading",
+        "description": ""
+      	  }, {
+        "name": "Profit & Loss",
+        "description": ""
+      	  }],
+
     "SearchSchemeCodes": [{
             "name": "Sundry Debtorts",
             "no": 1,
@@ -14,7 +42,7 @@
  	  }, {
             "name": "cipla",
             "no": 4,
-            "type": "Profit"
+            "type": "Profit & Loss"
  	  },
         {
             "name": "Sundry Debtorts new",
@@ -31,7 +59,7 @@
  	  }, {
             "name": "cipla new",
             "no": 8,
-            "type": "Profit"
+            "type": "Profit & Loss"
  	  }
   ]
 }
