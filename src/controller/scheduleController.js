@@ -45,15 +45,22 @@
                 });
             };
 
+
             vm.setSelected = function (name, no, type, index) {
                 vm.selectedName = name;
-                vm.selected = true;
-                list.name = name;
-                list.no = no;
-                list.type = type;
-                list.index = index;
-                vm.messageContainer = false;
-                vm.errorMessage = "";
+                vm.selectedName = name;
+                if (vm.selected && vm.selectedName == list.name) {
+                    vm.selectedName = null;
+                    vm.selected = false;
+                } else {
+                    vm.selected = true;
+                    list.name = name;
+                    list.no = no;
+                    list.type = type;
+                    list.index = index;
+                    vm.messageContainer = false;
+                    vm.errorMessage = "";
+                }
             };
 
             vm.edit = function () {
