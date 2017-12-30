@@ -25,6 +25,8 @@
     "subheader.navmenu.home.businessexecutives": "Business Executives",
     "subheader.navmenu.home.bankinformation": "Bank Information",
     "subheader.navmenu.home.states": "States",
+    "subheader.navmenu.home.subschedules": "Sub Schedules",
+    "subheader.navmenu.home.manufacturer": "Manufacturer",
     "scheduleform.label.name": "Schedule Name",
     "scheduleform.label.index": "Schedule Index",
     "scheduleform.label.type": "Schedule Type",
@@ -46,5 +48,10 @@
     "bankinformationform.label.address": "Address",
     "stateinformation.header.name": "State Information",
     "stateinformation.label.name": "Name",
-    "stateinformation.label.zone": "Zone"
+    "stateinformation.label.zone": "Zone",
+    "stateinformation.lable.code": "Code",
+    "manufacturerForm.header.name": "Manufacturer Form",
+    "manufacturerForm.label.name": "Manufacturer Name",
+    "subscheduleform.label.name": "Sub Schedule Name",
+    "scheduleform.header.name": "Sub Schedule Form"
 }

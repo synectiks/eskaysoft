@@ -4,7 +4,7 @@
 
 
     angular.module('com.synectiks.eskaySoft')
-        .controller('statesInfoController', ['$scope', function ($scope) {
+        .controller('subScheduleController', ['$scope', function ($scope) {
             var vm = this; // jshint ignore:line
 
     }]);
