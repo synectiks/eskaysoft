@@ -53,5 +53,8 @@
     "manufacturerForm.header.name": "Manufacturer Form",
     "manufacturerForm.label.name": "Manufacturer Name",
     "subscheduleform.label.name": "Sub Schedule Name",
-    "scheduleform.header.name": "Sub Schedule Form"
+    "subscheduleform.label.index": "Sub Schedule Index",
+    "subscheduleform.label.scheduleName": "Schedule Name",
+    "subscheduleform.label.scheduleIndex": "Index",
+    "subscheduleform.header.name": "Sub Schedule Form"
 }

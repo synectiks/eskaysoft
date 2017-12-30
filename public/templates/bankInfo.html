@@ -32,10 +32,6 @@
                     <label for="Bank Name" class="sr-only mt10">{{'bankinformationform.label.name' | translate}}</label>
                     <input type="text" class="form-control" id="Bank Name" placeholder="{{'bankinformationform.label.name' | translate}}" ng-model="vm.searchScheduleName" required>
                 </div>
-                <div class="form-group mx-sm-3">
-                    <label for="Bank Address" class="sr-only mt10">{{'bankinformationform.label.address' | translate}}</label>
-                    <input type="text" class="form-control" id="Bank Address" placeholder="{{'bankinformationform.label.address' | translate}}" ng-model="vm.searchScheduleNumber" required>
-                </div>
                 <button type="submit" class="btn btn-primary" ng-click="vm.search()">{{'button.search' | translate}}</button>
             </form>
             <div class="tableDiv mt10 mb10 p0">
@@ -55,7 +51,6 @@
                 </table>
             </div>
             <div class="btn-align p0" ng-if="vm.data.length>0">
-                <button type="submit" class="btn btn-primary searchEdit btn-position" ng-click="vm.edit()">{{'button.edit' | translate}}</button>
                 <button type="submit" class="btn btn-primary btn-position" ng-click="vm.delete()">{{'button.delete' | translate}}</button>
             </div>
         </div>
