@@ -1,0 +1,18 @@
+{
+    "stateurls": [{
+        "stateName": "schedule",
+        "templateUrl": "public/templates/schedule.html",
+		"controller":"scheduleController",
+	  }, {
+       "stateName": "Ass",
+        "templateUrl": "Asserts",
+		"controller":"xyc",
+	  }, {
+        "stateName": "Ass",
+        "templateUrl": "Asserts",
+		"controller":"xyc",
+	  }, {
+        "stateName": "Ass",
+        "templateUrl": "Asserts",
+		"controller":"xyc",
+	  }],
