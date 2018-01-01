@@ -1,18 +1,79 @@
 {
     "stateurls": [{
+        "stateName": "home",
+        "templateUrl": "public/templates/login.html",
+        "controller": "loginInfoController",
+	  }, {
         "stateName": "schedule",
         "templateUrl": "public/templates/schedule.html",
-		"controller":"scheduleController",
+        "controller": "scheduleController",
 	  }, {
-       "stateName": "Ass",
-        "templateUrl": "Asserts",
-		"controller":"xyc",
+        "stateName": "bankInfo",
+        "templateUrl": "public/templates/bankInfo.html",
+        "controller": "bankInfoController",
 	  }, {
-        "stateName": "Ass",
-        "templateUrl": "Asserts",
-		"controller":"xyc",
+        "stateName": "statesInfo",
+        "templateUrl": "public/templates/statesInfo.html",
+        "controller": "statesInfoController",
 	  }, {
-        "stateName": "Ass",
-        "templateUrl": "Asserts",
-		"controller":"xyc",
-	  }],
+        "stateName": "districtsInfo",
+        "templateUrl": "public/templates/districtsInfo.html",
+        "controller": "districtsInfoController",
+	  }, {
+        "stateName": "businessExeInfo",
+        "templateUrl": "public/templates/businessExeInfo.html",
+        "controller": "businessExeInfoController",
+	  }, {
+        "stateName": "areasInfo",
+        "templateUrl": "public/templates/areasInfo.html",
+        "controller": "areasInfoController",
+	  }, {
+        "stateName": "login",
+        "templateUrl": "public/templates/login.html",
+        "controller": "loginInfoController",
+	  }, {
+        "stateName": "registration",
+        "templateUrl": "public/templates/registration.html",
+        "controller": "registrationInfoController",
+	  }, {
+        "stateName": "contact",
+        "templateUrl": "public/templates/contact.html",
+        "controller": "contactController",
+	  }, {
+        "stateName": "registrationForm",
+        "templateUrl": "public/templates/registration.html",
+        "controller": "registrationInfoController",
+	  }, {
+        "stateName": "component",
+        "templateUrl": "public/templates/component.html",
+        "controller": "componentController",
+	  }, {
+        "stateName": "module",
+        "templateUrl": "public/templates/newmodule.html",
+        "controller": "moduleController",
+	  }, {
+        "stateName": "provider",
+        "templateUrl": "public/templates/provider.html",
+        "controller": "mainController",
+	  }, {
+        "stateName": "subschedule",
+        "templateUrl": "public/templates/subSchedules.html",
+        "controller": "subScheduleController",
+	  }, {
+        "stateName": "manufacturer",
+        "templateUrl": "public/templates/manufacturer.html",
+        "controller": "manufacturerController",
+	  }]
+
+
+    /******
+
+        .state('component', {
+            url: '/component',
+            templateUrl: 'public/templates/component.html'
+        })
+        .state('module', {
+            url: '/module',
+            templateUrl: 'public/templates/newmodule.html'
+        })
+    *******/

@@ -40,10 +40,9 @@
                     <label for="name" class="sr-only mt10">{{'businessexecutivesform.label.name' | translate}}</label>
                     <input type="text" class="form-control" id="name" placeholder="{{'businessexecutivesform.label.name' | translate}}" ng-model="vm.searchScheduleName" required>
                 </div>
-                <button type="submit" class="btn btn-primary" ng-click="vm.search()">{{'button.search' | translate}}</button>
             </form>
             <div class="tableDiv mt10 mb10 p0">
-                <table id="example" class="table table-fixedheader table-lg mt10 table-bordered scrollbar" ng-if="vm.data.length>0">
+                <table id="businessexecutivesTable" class="table table-fixedheader table-lg table-bordered scrollbar" ng-init="vm.search()">
                     <thead>
                         <tr>
                             <th>{{'businessexecutivesform.label.name' | translate}}</th>
@@ -60,7 +59,7 @@
                     </tbody>
                 </table>
             </div>
-            <div class="btn-align p0" ng-if="vm.data.length>0">
+            <div class="btn-align p0" ng-if="vm.selected">
                 <button type="submit" class="btn btn-primary searchEdit btn-position" ng-click="vm.edit()">{{'button.edit' | translate}}</button>
                 <button type="submit" class="btn btn-primary btn-position" ng-click="vm.delete()">{{'button.delete' | translate}}</button>
             </div>

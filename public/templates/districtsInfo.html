@@ -41,10 +41,9 @@
                     <label for="stateName" class="sr-only mt10">{{'districtsform.label.state.name' | translate}}</label>
                     <input type="text" class="form-control" id="stateName" placeholder="{{'districtsform.label.state.name' | translate}}" ng-model="vm.searchScheduleNumber" required>
                 </div>
-                <button type="submit" class="btn btn-primary" ng-click="vm.search()">{{'button.search' | translate}}</button>
             </form>
             <div class="tableDiv mt10 mb10 p0">
-                <table id="example" class="table table-fixedheader table-lg mt10 table-bordered scrollbar" ng-if="vm.data.length>0">
+                <table id="distInfoTable" class="table table-fixedheader table-lg table-bordered scrollbar doubleHeadTable" ng-init="vm.search()">
                     <thead>
                         <tr>
                             <th>{{'districtsform.label.dist.name' | translate}}</th>
@@ -59,7 +58,7 @@
                     </tbody>
                 </table>
             </div>
-            <div class="btn-align p0" ng-if="vm.data.length>0">
+            <div class="btn-align p0" ng-if="selected">
                 <button type="submit" class="btn btn-primary searchEdit btn-position" ng-click="vm.edit()">{{'button.edit' | translate}}</button>
                 <button type="submit" class="btn btn-primary btn-position" ng-click="vm.delete()">{{'button.delete' | translate}}</button>
             </div>

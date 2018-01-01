@@ -36,11 +36,10 @@
                     <label for="executiveName" class="sr-only mt10">{{'areaform.label.executive.name' | translate}}</label>
                     <input type="text" class="form-control" id="executiveName" placeholder="{{'areaform.label.executive.name' | translate}}" ng-model="vm.searchScheduleNumber" required>
                 </div>
-                <button type="submit" class="btn btn-primary" ng-click="vm.search()">{{'button.search' | translate}}</button>
             </form>
 
             <div class="tableDiv mt10 mb10 p0">
-                <table id="example" class="table table-fixedheader table-lg mt10 table-bordered scrollbar" ng-if="vm.data.length>0">
+                <table id="areasTable" class="table table-fixedheader table-lg table-bordered scrollbar doubleHeadTable" ng-init="vm.search()">
                     <thead>
                         <tr>
                             <th>{{'areaform.label.area.name' | translate}}</th>
@@ -57,7 +56,7 @@
                     </tbody>
                 </table>
             </div>
-            <div class="btn-align p0" ng-if="vm.data.length>0">
+            <div class="btn-align p0" ng-if="vm.selected">
                 <button type="submit" class="btn btn-primary searchEdit btn-position" ng-click="vm.edit()">{{'button.edit' | translate}}</button>
                 <button type="submit" class="btn btn-primary btn-position" ng-click="vm.delete()">{{'button.delete' | translate}}</button>
             </div>

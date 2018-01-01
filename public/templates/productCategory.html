@@ -1,15 +1,14 @@
 <header-menu-bar></header-menu-bar>
-
 <div class="container">
     <div class='row'>
         <div class='col-xs-12 col-sm-4'>
             <form>
                 <div class='text-left pt7'>
-                    <h2>{{'manufacturerForm.header.name' | translate}} </h2>
+                    <h2>{{'productcategoryform.header.name' | translate}} </h2>
                 </div>
                 <div class="form-group">
-                    <label class="col-form-label" for="manufacturerName">{{'manufacturerForm.label.name' | translate}}:*</label>
-                    <input type="text" class="form-control form-control-lg" name="Name" id="manufacturerName" readonly>
+                    <label class="col-form-label" for="productCategory">{{'productcategoryform.label.productCategory' | translate}}:*</label>
+                    <input type="text" class="form-control form-control-lg" name="productCategory" id="productCategory" readonly>
                 </div>
                 <div class="form-group">
                     <button type="submit" class="btn btn-primary  mb10" ng-click="vm.create()">{{'button.save' | translate}}
@@ -24,16 +23,16 @@
             <form class="form-inline text-left mt25">
 
                 <div class="form-group mx-sm-3">
-                    <label for="manufacturerName" class="sr-only mt10">{{'manufacturerForm.label.name' | translate}}</label>
-                    <input type="text" class="form-control" id="manufacturerName" placeholder=" Manufacturer Name" ng-model="vm.schedule.name" required>
+                    <label for="productCategory" class="sr-only mt10">{{'productcategoryform.label.productCategory' | translate}}</label>
+                    <input type="text" class="form-control" id="productCategorySrch" placeholder="product Category" ng-model="vm.schedule.name" required>
                 </div>
 
             </form>
             <div class="tableDiv mt10 mb10 p0">
-                <table id="manufacturerTable" class="table table-fixedheader table-lg table-bordered scrollbar singleHeadTable" ng-init="vm.search()">
+                <table id="productCategoryTable" class="table table-fixedheader table-lg table-bordered scrollbar singleHeadTable" ng-init="vm.search()">
                     <thead>
                         <tr>
-                            <th>{{'manufacturerForm.label.name' | translate}}</th>
+                            <th>{{'productcategoryform.label.productCategory' | translate}}</th>
                         </tr>
                     </thead>
                     <tbody>

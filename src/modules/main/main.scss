@@ -9,6 +9,7 @@ table.table-fixedheader {
     width: 100%;
     cursor: pointer;
     overflow-y: auto;
+    border-color: darkgray;
 }
 
 table.table-fixedheader,
@@ -31,11 +32,8 @@ table.table-fixedheader > tbody > tr:after {
 
 table.table-fixedheader > tbody {
     overflow-y: hidden;
-    /*    min-height: 0px;
-    max-height: 250px;*/
     width: 100%;
     border-collapse: collapse;
-
 }
 
 table.table-fixedheader > thead {
@@ -60,8 +58,36 @@ table.table-fixedheader > tbody tr td {
     float: left;
     width: 33.33%;
     border-bottom-width: 0;
-
+    border-color: darkgray;
 }
+
+/**** Single Headed Table Styles***/
+
+table.singleHeadTable > thead tr th,
+table.singleHeadTable > tbody tr td {
+    float: left;
+    width: 100%;
+    border-bottom-width: 0;
+}
+
+table.singleHeadTable {
+    width: 60%;
+    cursor: pointer;
+    overflow-y: auto;
+}
+
+/*********************************/
+
+/******* Double Headed Table *********/
+
+table.doubleHeadTable > thead tr th,
+table.doubleHeadTable > tbody tr td {
+    float: left;
+    width: 50%;
+    border-bottom-width: 0;
+}
+
+/**********************************/
 
 .mt25 {
     margin-top: 25px;
@@ -116,7 +142,25 @@ html {
     min-height: 100%;
 }
 
+.navbartop {
+    /* al color: #337ab7;*/
+    font-weight: 900;
+    height: 40px;
+}
+
+.navbar-light {
+    background-color: #cedbcf;
+}
+
+.headerbg {
+    background-image: url("/public/Images/HeaderBackdrop.jpg");
+    background-repeat: repeat;
+}
+
 body {
+    background-image: url("/public/Images/Body-background.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
     margin-bottom: 60px;
     overflow-y: auto;
     /* Margin bottom by footer height */
@@ -135,17 +179,6 @@ body {
 
 .btn-bottom {
     margin-top: 29%;
-}
-
-.navbartop {
-    color: #337ab7;
-    font-weight: 900;
-    height: 40px;
-}
-
-.navbar-brand {
-    font-size: 40px;
-    height: 10px !important;
 }
 
 @media only screen and (min-width: 768px) {
@@ -172,6 +205,9 @@ body {
         border-bottom-width: 0;
     }
     body {
+        background-image: url("/public/Images/Body-background - 768.jpg");
+        background-repeat: repeat;
+        background-size: cover;
         margin-bottom: 15px;
         /* Margin bottom by footer height */
     }

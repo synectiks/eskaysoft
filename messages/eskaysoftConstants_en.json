@@ -27,6 +27,11 @@
     "subheader.navmenu.home.states": "States",
     "subheader.navmenu.home.subschedules": "Sub Schedules",
     "subheader.navmenu.home.manufacturer": "Manufacturer",
+    "subheader.navmenu.home.companyGroup": "Company Group",
+    "subheader.navmenu.home.companies": "Companies",
+    "subheader.navmenu.home.productGroup": "Product Group",
+    "subheader.navmenu.home.productCategory": "Product Category",
+    "subheader.navmenu.home.product": "Product",
     "scheduleform.label.name": "Schedule Name",
     "scheduleform.label.index": "Schedule Index",
     "scheduleform.label.type": "Schedule Type",
@@ -56,5 +61,11 @@
     "subscheduleform.label.index": "Sub Schedule Index",
     "subscheduleform.label.scheduleName": "Schedule Name",
     "subscheduleform.label.scheduleIndex": "Index",
-    "subscheduleform.header.name": "Sub Schedule Form"
+    "subscheduleform.header.name": "Sub Schedule Form",
+    "companygroupform.header.name": "Company Group Form",
+    "companygroupform.label.companyGroup": "Company Group",
+    "productgroupform.header.name": "Product Group Form",
+    "productgroupform.label.productGroup": "Name",
+    "productcategoryform.header.name": "Product Category Form",
+    "productcategoryform.label.productCategory": "Name"
 }

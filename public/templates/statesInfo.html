@@ -39,14 +39,13 @@
                     <label for="zone" class="sr-only mt10">{{'stateinformation.label.zone' | translate}}</label>
                     <input type="text" class="form-control" id="zone" placeholder="{{'stateinformation.label.zone' | translate}}" ng-model="vm.searchScheduleNumber" required>
                 </div>
-                <button type="submit" class="btn btn-primary" ng-click="vm.search()">{{'button.search' | translate}}</button>
             </form>
-
             <div class="tableDiv mt10 mb10 p0">
-                <table id="example" class="table table-fixedheader table-lg mt10 table-bordered scrollbar" ng-if="vm.data.length>0">
+                <table id="statesTable" class="table table-fixedheader table-lg table-bordered scrollbar" ng-init="vm.search()">
                     <thead>
                         <tr>
                             <th>{{'stateinformation.label.name' | translate}}</th>
+                            <th>{{'stateinformation.lable.code' | translate}}</th>
                             <th>{{'stateinformation.label.zone' | translate}} </th>
                         </tr>
                     </thead>
@@ -54,11 +53,12 @@
                         <tr ng-repeat="schemes in vm.data" ng-click="vm.setSelected(schemes.name, schemes.no, schemes.type, $index)" ng-class="{selected: schemes.name === vm.selectedName}">
                             <td>{{schemes.name}}</td>
                             <td>{{schemes.no}}</td>
+                            <td>{{schemes.type}}</td>
                         </tr>
                     </tbody>
                 </table>
             </div>
-            <div class="btn-align p0" ng-if="vm.data.length>0">
+            <div class="btn-align p0" ng-if="vm.selected">
                 <button type="submit" class="btn btn-primary searchEdit btn-position" ng-click="vm.edit()">{{'button.edit' | translate}}</button>
                 <button type="submit" class="btn btn-primary btn-position" ng-click="vm.delete()">{{'button.delete' | translate}}</button>
             </div>

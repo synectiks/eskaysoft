@@ -1,26 +1,30 @@
-<nav class="navbartop navbar-default">
+<nav class="navbartop navbar-light">
+
     <div class="container-fluid">
-        <div class="navbar-header col-xs-7">
-            <a class="navbar-brand" href="#"><strong class="navbartop">{{'main.header.title' | translate}}</strong></a>
+        <div class="navbar-header col-sm-2">
+            <a href="#"> <img src="/public/Images/logo.png" class="navbartop" alt="logo"></a>
         </div>
-        <div class="text-right col-xs-5 mt15">
+        <div class="col-sm-7">
+        </div>
+        <div class="text-right col-sm-3 mt15">
             <a class="text-right" href="#"><span class="glyphicon glyphicon-log-in"></span> {{'link.logout'|translate}}</a>
         </div>
     </div>
 </nav>
-<nav class="navbar navbar-inverse navmenu p0">
+<nav class="navbar navbar-default navmenu p0">
     <div class="container-fluid">
         <div class="navbar-header">
-            <button type="button" class="navbar-toggle floatleft" data-toggle="collapse" data-target="#myNavbar">
+            <button type="button" class="navbar-toggle floatleft mt5 col-xs-2 col-sm-2" data-toggle="collapse" data-target="#myNavbar">
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>    
-                        <span class="icon-bar"></span>  
+                       <span class="icon-bar"></span>         
             </button>
             <div class="smenu">
-                <a class="navbar-brand smenu text-center mt5" href="#"><strong>{{'main.header.title' | translate}}</strong></a>
+                <!--<a class="navbar-brand smenu mt15 text-center mt5" href="#"><strong>{{'main.header.title' | translate}}</strong></a>-->
+                <a class="smenu col-xs-8 col-sm-8 mt5 text-center" href="#"><img src="/public/Images/logo.png" alt="logo"></a>
 
-                <button type="button" class="btn btn-default btn-sm mt15 floatright smenu">
+                <button type="button" class="btn btn-default btn-md mt10 floatright smenu col-xs-1 col-sm-1">
                         <span class="glyphicon glyphicon-log-out smenu"></span>
                 </button>
             </div>
@@ -38,6 +42,11 @@
                         <li><a href="/areasInfo">{{'subheader.navmenu.home.areas' | translate}}</a></li>
                         <li><a href="/bankInfo">{{'subheader.navmenu.home.bankinformation' | translate}}</a></li>
                         <li><a href="/manufacturer">{{'subheader.navmenu.home.manufacturer' | translate}}</a></li>
+                        <li><a href="/companyGroup">{{'subheader.navmenu.home.companyGroup' | translate}}</a></li>
+                        <li><a href="/companies">{{'subheader.navmenu.home.companies' | translate}}</a></li>
+                        <li><a href="/productGroup">{{'subheader.navmenu.home.productGroup' | translate}}</a></li>
+                        <li><a href="/productCategory">{{'subheader.navmenu.home.productCategory' | translate}}</a></li>
+                        <li><a href="/product">{{'subheader.navmenu.home.product' | translate}}</a></li>
                     </ul>
                 </li>
                 <li class="dropdown mr60">

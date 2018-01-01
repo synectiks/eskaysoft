@@ -15,6 +15,7 @@
             });
             $translateProvider.preferredLanguage('en');
             $translateProvider.useSanitizeValueStrategy('escape');
+
             $stateProvider
                 .state('home', {
                     url: '/',
@@ -108,5 +109,35 @@
                     controller: 'manufacturerController',
                     controllerAs: 'vm'
                 })
-    }]);
+                .state('companyGroup', {
+                    url: '/companyGroup',
+                    templateUrl: 'public/templates/companyGroup.html',
+                    controller: 'companyGroupController',
+                    controllerAs: 'vm'
+                })
+                .state('productGroup', {
+                    url: '/productGroup',
+                    templateUrl: 'public/templates/productGroup.html',
+                    controller: 'productGroupController',
+                    controllerAs: 'vm'
+                })
+                .state('companies', {
+                    url: '/companies',
+                    templateUrl: 'public/templates/companies.html',
+                    controller: 'companiesController',
+                    controllerAs: 'vm'
+                })
+                .state('productCategory', {
+                    url: '/productCategory',
+                    templateUrl: 'public/templates/productCategory.html',
+                    controller: 'productCategoryController',
+                    controllerAs: 'vm'
+                })
+                .state('product', {
+                    url: '/product',
+                    templateUrl: 'public/templates/product.html',
+                    controller: 'productController',
+                    controllerAs: 'vm'
+                })
+        }]);
 })();
