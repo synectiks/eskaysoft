@@ -1,45 +1,109 @@
 <header-menu-bar></header-menu-bar>
-<!--
+
 <div class="container">
     <div class='row'>
         <div class='col-xs-12 col-sm-4'>
             <form>
                 <div class='text-left pt7'>
-                    <h2>{{'manufacturerForm.header.name' | translate}} </h2>
+                    <h2>{{'productform.header.name' | translate}} </h2>
                 </div>
                 <div class="form-group">
-                    <label class="col-form-label" for="manufacturerName">{{'manufacturerForm.label.name' | translate}}:*</label>
-                    <input type="text" class="form-control form-control-lg" name="Name" id="manufacturerName" readonly>
+                    <label class="col-form-label" for="scheduleName">{{'productform.label.code' | translate}}:*</label>
+                    <input type="text" class="form-control form-control-lg" name="Name" id="scheduleName" ng-model="vm.scheduleName" required>
+                </div>
+
+                <div class="form-group">
+                    <label class="col-form-label" for="scheduleNumber">{{'productform.label.name' | translate}}:*</label>
+                    <input type="text" class="form-control form-control-lg" name="Name" id="scheduleNumber" ng-model="vm.scheduleNo" required>
                 </div>
                 <div class="form-group">
-                    <button type="submit" class="btn btn-primary  mb10" ng-click="vm.create()">{{'button.save' | translate}}
+                    <label class="col-form-label" for="scheduleNumber">{{'productform.label.group' | translate}}:*</label>
+                    <input type="text" class="form-control form-control-lg" name="Name" id="scheduleNumber" ng-model="vm.scheduleNo" required>
+                </div>
+                <div class="form-group">
+                    <label class="col-form-label" for="scheduleNumber">{{'productform.label.category' | translate}}:*</label>
+                    <input type="text" class="form-control form-control-lg" name="Name" id="scheduleNumber" ng-model="vm.scheduleNo" required>
+                </div>
+                <div class="form-group">
+                    <label class="col-form-label" for="scheduleNumber">{{'productform.label.contents' | translate}}:*</label>
+                    <input type="text" class="form-control form-control-lg" name="Name" id="scheduleNumber" ng-model="vm.scheduleNo" required>
+                </div>
+ <div class="form-group">
+                    <label class="col-form-label" for="scheduleNumber">{{'productform.label.netrate' | translate}}:*</label>
+                    <input type="text" class="form-control form-control-lg" name="Name" id="scheduleNumber" ng-model="vm.scheduleNo" required>
+                </div>
+<div class="form-group">
+                    <label class="col-form-label" for="scheduleNumber">{{'productform.label.scheme' | translate}}:*</label>
+                    <input type="text" class="form-control form-control-lg" name="Name" id="scheduleNumber" ng-model="vm.scheduleNo" required>
+                </div>
+<div class="form-group">
+                    <label class="col-form-label" for="scheduleNumber">{{'productform.label.tax' | translate}}:*</label>
+                    <input type="text" class="form-control form-control-lg" name="Name" id="scheduleNumber" ng-model="vm.scheduleNo" required>
+                </div>
+
+                <!--<div class="form-group">-->
+                <!--<label class="col-form-label" for="ScheduleType">{{'companygroupform.label.companyGroup' | translate}}:</label>-->
+                <!--<select ng-model="vm.scheduleType" class="form-control form-control-lg" id="ScheduleType">-->
+                <!--<option value="0">Select</option>-->
+                <!--<option ng-repeat="scheduleType in vm.scheduleTypes" value="{{scheduleType.name}}"-->
+                <!--ng-selected="scheduleType.name === vm.scheduleType">{{scheduleType.name}}-->
+                <!--</option>-->
+                <!--</select>-->
+                <!--</div>-->
+                <div class="form-group">
+                    <button type="submit" class="btn btn-primary mb5" ng-click="vm.reset()">{{'button.reset' | translate}}</button>
+                    <button ng-if="!vm.editScreen" type="submit" class="btn btn-primary  mb5" ng-click="vm.create()">{{'button.save' | translate}}
                     </button>
+                    <button ng-if="vm.editScreen" type="submit" class="btn btn-primary  mb5" ng-click="vm.save()">{{'button.save' | translate}}</button>
+                    <label ng-if="vm.messageContainer" class="edit-delete-message">{{vm.errorMessage}}</label>
                 </div>
             </form>
         </div>
+
         <div class='col-xs-12 col-sm-1'></div>
 
         <div class='col-xs-12 col-sm-6'>
-
-            <form class="form-inline text-left mt25">
-
-                <div class="form-group mx-sm-3">
-                    <label for="manufacturerName" class="sr-only mt10">{{'manufacturerForm.label.name' | translate}}</label>
-                    <input type="text" class="form-control" id="manufacturerName" placeholder=" Manufacturer Name" ng-model="vm.schedule.name" required>
+            <form action="">
+                <div class="form-group">
+                    <label class="col-form-label" for="scheduleNumber">{{'productform.label.box' | translate}}:*</label>
+                    <input type="text" class="form-control form-control-lg" name="Name" id="scheduleNumber" ng-model="vm.scheduleNo" required>
                 </div>
-
+                <div class="form-group">
+                    <label class="col-form-label" for="scheduleNumber">{{'productform.label.case' | translate}}:*</label>
+                    <input type="text" class="form-control form-control-lg" name="Name" id="scheduleNumber" ng-model="vm.scheduleNo" required>
+                </div>
+                <div class="form-group">
+                    <label class="col-form-label" for="scheduleNumber">{{'productform.label.rate' | translate}}:*</label>
+                    <input type="text" class="form-control form-control-lg" name="Name" id="scheduleNumber" ng-model="vm.scheduleNo" required>
+                </div>
+                <div class="form-group">
+                    <label class="col-form-label" for="scheduleNumber">{{'productform.label.free' | translate}}:*</label>
+                    <input type="text" class="form-control form-control-lg" name="Name" id="scheduleNumber" ng-model="vm.scheduleNo" required>
+                </div>
+            </form>
+            <form class="form-inline text-left mt25">
+                <div class="form-group">
+                    <label class="col-form-label" for="ScheduleType">{{'common.label.searchby' | translate}}:</label>
+                    <select ng-model="vm.schedule.type" class="form-control form-control-lg" id="ScheduleType">
+                        <option value="">{{'productform.label.search' | translate}}</option>
+                    </select>
+                </div>
             </form>
             <div class="tableDiv mt10 mb10 p0">
-                <table id="manufacturerTable" class="table table-fixedheader table-lg table-bordered scrollbar manufacturerTable" ng-init="vm.search()">
+                <table id="scheduleTable" class="table table-fixedheader table-lg table-bordered scrollbar" ng-init="vm.search()">
                     <thead>
-                        <tr>
-                            <th>{{'manufacturerForm.label.name' | translate}}</th>
-                        </tr>
+                    <tr>
+                        <th>{{'scheduleform.label.name' | translate}}</th>
+                        <th>{{'scheduleform.label.index' | translate}}</th>
+                        <th>{{'scheduleform.label.type' | translate}}</th>
+                    </tr>
                     </thead>
                     <tbody>
-                        <tr ng-repeat="schemes in vm.data |filter:vm.schedule:vm.startsWith" ng-click="vm.setSelected(schemes.name, schemes.no, schemes.type, $index)" ng-class="{selected: schemes.name === vm.selectedName}">
-                            <td>{{schemes.name}}</td>
-                        </tr>
+                    <tr ng-repeat="schemes in vm.data |filter:vm.schedule:vm.startsWith" ng-click="vm.setSelected(schemes.name, schemes.no, schemes.type, $index)" ng-class="{selected: schemes.name === vm.selectedName}">
+                        <td>{{schemes.name}}</td>
+                        <td>{{schemes.no}}</td>
+                        <td>{{schemes.type}}</td>
+                    </tr>
                     </tbody>
                 </table>
             </div>
@@ -52,6 +116,7 @@
 
 </div>
 <div class="col-xs-12 fmt30">
-    Footer margin top below 768px
-</div>-->
+    <!--Footer margin top below 768px-->
+</div>
 <footer-component></footer-component>
+
