@@ -91,5 +91,7 @@
     "productform.label.case": "Product Case Qty",
     "productform.label.rateItem": "Product IS N.Rate Item",
     "productform.label.free": "Product Free",
-    "productform.label.search": "Search Product"
+    "productform.label.search": "Search Product",
+    "productform.label.index": "Product Index",
+    "productform.label.type": "Product Type"
 }
