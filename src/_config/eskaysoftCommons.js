@@ -1,5 +1,76 @@
-{
-     [
+/**
+ * Created by vijay kesanupalli on 08.10.16.
+ * eskaysoftCommons
+ */
+
+/**
+ * @ngdoc overview
+ * @name statesListProvider
+ *
+ * @description
+ * Documentation for statesListProvider provider, to configure eskaysoft states
+ */
+/**
+ * @ngdoc overview
+ * @name MyInsuranceTranslate
+ *
+ * @description
+ * Documentation for MyInsuranceTranslate provider, to configure my insurance resource bundles
+ */
+(function () {
+    "use strict";
+    angular.module('com.synectiks.eskaySoft')
+	.provider("eskaySoftTranslate", ["$translateProvider",
+		function ($translateProvider) {
+			var translateConfig = {
+				resourceUrl: '',
+				language: 'en',
+				fallBackLanguage: 'en',
+				features: ['']
+			};
+
+			this.setTranslateConfig = function (aTranslateConfig) {
+				translateConfig = aTranslateConfig;
+				var staticFiles = [];
+				var language = aTranslateConfig.language || 'en';
+				var fallBackLanguage = aTranslateConfig.fallBackLanguage || 'en';
+				if (aTranslateConfig.features) {
+					for (var i = 0; i < aTranslateConfig.features.length; i++) {
+						var featureFile = aTranslateConfig.resourceUrl + "/" + aTranslateConfig.features[i] + "_";
+						staticFiles.push({
+							prefix: featureFile,
+							suffix: '.json'
+						});
+					}
+				}
+				$translateProvider.useStaticFilesLoader({
+					files: staticFiles
+				});
+
+				$translateProvider
+						.useSanitizeValueStrategy('sanitizeParameters')
+						.preferredLanguage(language)
+						.fallbackLanguage(fallBackLanguage);
+				$translateProvider.forceAsyncReload(true);
+			};
+
+			this.$get = [function () {
+					return $translateProvider;
+				}];
+		}]);
+}());
+
+
+(function () {
+	"use strict";
+	angular.module('com.synectiks.eskaySoft')
+	.provider("eskaySoftRouter", ["$stateProvider",
+	
+		function ($stateProvider) {
+			
+			this.setStateConfig = function () {
+				
+				var statesList=[
 					{
 						name:'home',
 						url: '/',
@@ -107,8 +178,21 @@
 						templateUrl: 'public/templates/product.html',
 						controller: 'productController'
 					}
-			]
-			}
+			];
+			angular.forEach(statesList, function(state) {
+			   $stateProvider
+                .state(state.name, {
+                    url: state.url,
+                    templateUrl: state.templateUrl,
+                    controller: state.controller,
+                    controllerAs: 'vm'
+                });
+			});
+				
+			};
 
-
- 
+			this.$get = [function () {
+					return $stateProvider;
+				}];
+		}]);
+	}());
