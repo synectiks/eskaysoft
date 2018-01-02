@@ -66,6 +66,7 @@
     "companyform.header.name": "Company Form",
     "companyform.label.companyCode": "Company Code",
     "companygroupform.label.companyName": "Company Name",
+    "companygroupform.label.companyIndex": "Company Index",
     "companyform.label.companyGroup": "Company Group",
     "companyform.label.companyStatus": "Company Target",
     "companyform.label.companyInv.Gen.Type": "Company",
