@@ -11,5 +11,9 @@
         $state.go('schedule');
       };
 
+	  vm.signup = function(){
+        $state.go('registration');
+      };
+
     }]);
 })();

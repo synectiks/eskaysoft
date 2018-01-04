@@ -1,15 +1,38 @@
-<header-component></header-component>
+<nav class="navbartop navbar-light">
+    <div class="container-fluid">
+        <div class="navbar-header col-sm-2">
+            <a href="#"> <img src="/public/Images/logo.png" class="navbartop" alt="logo"></a>
+        </div>
+   
+    </div>
+</nav>
 
-<section class="section">
-<div class="section-inner">
-<div class="formContainer">
-<div class="form-group row">
-		 <input class="login-user-name" type="text" placeholder="username"/>
-      <input class="login-pw" type="password" placeholder="password"/>
-      <button class="login-btn" ng-click="vm.login()">login</button>
-      <p class="login-p message">Not registered? <a href="/registration">Create an account</a></p>
-	</div>
+ <div class="container">
+        <div class="card card-container">
+            
+            <img id="profile-img" class="profile-img-card" src="//ssl.gstatic.com/accounts/ui/avatar_2x.png" />
+            <p id="profile-name" class="profile-name-card"></p>
+            <form class="form-signin">
+                <span id="reauth-email" class="reauth-email"></span>
+                <!--<input type="email" id="inputEmail" class="form-control" placeholder="Email address" required autofocus>
+                <input type="password" id="inputPassword" class="form-control" placeholder="Password" required>-->
+				<input type="email" id="inputEmail" class="form-control" placeholder="Email address">
+                <input type="password" id="inputPassword" class="form-control" placeholder="Password" >
+                <div id="remember" class="checkbox">
+                    <label>
+                        <input type="checkbox" value="remember-me"> {{'common.label.rememberme' | translate}}
+                    </label>
+                </div>
+                <button class="btn btn-lg btn-primary btn-block btn-signin"  ng-click="vm.login()">{{'button.signin' | translate}}</button>
+				<button class="btn btn-lg btn-primary btn-block btn-signin"  ng-click="vm.signup()">{{'button.signup' | translate}}</button>
+            </form><!-- /form -->
+            <a href="#" class="forgot-password">
+                {{'link.forgot.password' | translate}}
+            </a>
+	
+        </div><!-- /card-container -->
+    </div><!-- /container -->
+<div class="col-xs-12 ">
+    <!--Footer margin top below 768px-->
 </div>
-</div>
-</section>
 <footer-component></footer-component>
