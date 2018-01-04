@@ -137,6 +137,14 @@ table.doubleHeadTable > tbody tr td {
 /* Sticky footer
 -------------------------------------------------- */
 
+label {
+    font-weight: 100!important;
+}
+
+.header {
+    margin-top: -30px;
+}
+
 html {
     position: relative;
     min-height: 100%;
