@@ -94,5 +94,17 @@
     "productform.label.box": "Box.Qty",
     "productform.label.case": "Case Qty",
     "productform.label.rateItem": "IS N.Rate Item",
-    "productform.label.free": "Free"
+    "productform.label.free": "Free",
+	
+	"registrationForm.header.register": "Registration",
+	"registrationForm.label.username": "User Name",
+	"registrationForm.label.password": "Password",
+	"registrationForm.label.address": "Address",
+	"registrationForm.label.town": "Town",
+	"registrationForm.label.designation": "Designation",
+	"registrationForm.label.mobile": "Mobile",
+	"registrationForm.label.email": "Email",
+	"registrationForm.label.userlevel": "User Level",
+	"registrationForm.button.register": "Register"
+	   
 }
