@@ -1,38 +1,151 @@
-<nav class="navbartop navbar-light">
+<nav class="navbartop navbar-light lgoinNav">
+
     <div class="container-fluid">
         <div class="navbar-header col-sm-2">
             <a href="#"> <img src="/public/Images/logo.png" class="navbartop" alt="logo"></a>
         </div>
-   
     </div>
 </nav>
+<div class="container">
+    <div id="loginbox" style="margin-top:20px;" class="mainbox col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
+        <div class="panel panel-info">
+            <div class="panel-heading">
+                <div class="panel-title">Sign In</div>
+                <div style="float:right; font-size: 80%; position: relative; top:-10px"><a href="#">{{'registrationForm.header.forgotpassword' | translate}}</a></div>
+            </div>
 
- <div class="container">
-        <div class="card card-container">
-            
-            <img id="profile-img" class="profile-img-card" src="//ssl.gstatic.com/accounts/ui/avatar_2x.png" />
-            <p id="profile-name" class="profile-name-card"></p>
-            <form class="form-signin">
-                <span id="reauth-email" class="reauth-email"></span>
-                <!--<input type="email" id="inputEmail" class="form-control" placeholder="Email address" required autofocus>
-                <input type="password" id="inputPassword" class="form-control" placeholder="Password" required>-->
-				<input type="email" id="inputEmail" class="form-control" placeholder="Email address">
-                <input type="password" id="inputPassword" class="form-control" placeholder="Password" >
-                <div id="remember" class="checkbox">
-                    <label>
-                        <input type="checkbox" value="remember-me"> {{'common.label.rememberme' | translate}}
-                    </label>
-                </div>
-                <button class="btn btn-lg btn-primary btn-block btn-signin"  ng-click="vm.login()">{{'button.signin' | translate}}</button>
-				<button class="btn btn-lg btn-primary btn-block btn-signin"  ng-click="vm.signup()">{{'button.signup' | translate}}</button>
-            </form><!-- /form -->
-            <a href="#" class="forgot-password">
-                {{'link.forgot.password' | translate}}
-            </a>
-	
-        </div><!-- /card-container -->
-    </div><!-- /container -->
-<div class="col-xs-12 ">
-    <!--Footer margin top below 768px-->
+            <div style="padding-top:30px" class="panel-body">
+
+                <div style="display:none" id="login-alert" class="alert alert-danger col-sm-12"></div>
+
+                <form id="loginform" class="form-horizontal" role="form">
+
+                    <div style="margin-bottom: 25px" class="input-group">
+                        <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+                        <input id="login-username" type="text" class="form-control" name="username" value="" placeholder="{{'registrationForm.label.username' | translate}}">
+                    </div>
+
+                    <div style="margin-bottom: 25px" class="input-group">
+                        <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
+                        <input id="login-password" type="password" class="form-control" name="password" placeholder="{{'registrationForm.label.password' | translate}}">
+                    </div>
+                    <div class="input-group">
+                        <div class="checkbox">
+                            <label>
+                                          <input id="login-remember" type="checkbox" name="remember" value="1">{{'common.label.rememberme' | translate}}
+                                        </label>
+                        </div>
+                    </div>
+                    <div style="margin-top:10px" class="form-group">
+                        <div class="col-sm-12 controls">
+                            <a id="btn-login" href="#" class="btn btn-success" ng-click="vm.login()">{{'button.login' | translate}}</a>
+
+                        </div>
+                    </div>
+
+                    <div class=" form-group ">
+                        <div class="col-md-12 control ">
+                            <div style="border-top: 1px solid#888; padding-top:15px; font-size:85% ">
+                                {{'registrationForm.header.noaccount' | translate}}
+                                <a href="#" onClick="$( '#loginbox').hide(); $( '#signupbox').show() ">
+                                            {{'registrationForm.header.signuphere' | translate}}
+                                        </a>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <div id="signupbox" style="display:none; margin-top:20px" class="mainbox col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
+        <div class="panel panel-info">
+            <div class="panel-heading">
+                <div class="panel-title">Sign Up</div>
+                <div style="float:right; font-size: 85%; position: relative; top:-10px"><a id="signinlink" href="#" onclick="$('#signupbox').hide(); $('#loginbox').show()">Sign In</a></div>
+            </div>
+            <div class="panel-body">
+                <form id="signupform " class="form-horizontal " role="form ">
+
+                    <div id="signupalert " style="display:none" class="alert alert-danger ">
+                        <p>Error:</p>
+                        <span></span>
+                    </div>
+
+                    <div id="registrationSuccess " style="display:none" class="alert alert-success ">
+                        <p>User registration successful</p>
+                        <span></span>
+                    </div>
+
+                    <div class="form-group ">
+                        <label for="email " class="col-md-3 control-label ">{{'registrationForm.label.username' | translate}}</label>
+                        <div class="col-md-9 ">
+                            <input type="text " class="form-control " name="email " placeholder="{{ 'registrationForm.label.username' | translate}} ">
+                        </div>
+                    </div>
+
+                    <div class="form-group ">
+                        <label for="firstname " class="col-md-3 control-label ">{{'registrationForm.label.password' | translate}}</label>
+                        <div class="col-md-9 ">
+                            <input type="text " class="form-control " name="firstname " placeholder="{{ 'registrationForm.label.password' | translate}} ">
+                        </div>
+                    </div>
+                    <div class="form-group ">
+                        <label for="lastname " class="col-md-3 control-label ">{{'registrationForm.label.address' | translate}}</label>
+                        <div class="col-md-9 ">
+                            <input type="text " class="form-control " name="lastname " placeholder="{{ 'registrationForm.label.address' | translate}} ">
+                        </div>
+                    </div>
+                    <div class="form-group ">
+                        <label for="password " class="col-md-3 control-label ">{{'registrationForm.label.town' | translate}}</label>
+                        <div class="col-md-9 ">
+                            <input type="password " class="form-control " name="passwd " placeholder="{{ 'registrationForm.label.town' | translate}} ">
+                        </div>
+                    </div>
+
+                    <div class="form-group ">
+                        <label for="icode " class="col-md-3 control-label ">{{'registrationForm.label.designation' | translate}}</label>
+                        <div class="col-md-9 ">
+                            <input type="text " class="form-control " name="icode " placeholder="{{ 'registrationForm.label.designation' | translate}} ">
+                        </div>
+                    </div>
+
+                    <div class="form-group ">
+                        <label for="icode " class="col-md-3 control-label ">{{'registrationForm.label.mobile' | translate}}</label>
+                        <div class="col-md-9 ">
+                            <input type="text " class="form-control " name="icode " placeholder="{{ 'registrationForm.label.mobile' | translate}} ">
+                        </div>
+                    </div>
+
+                    <div class="form-group ">
+                        <label for="icode " class="col-md-3 control-label ">{{'registrationForm.label.email' | translate}}</label>
+                        <div class="col-md-9 ">
+                            <input type="text " class="form-control " name="icode " placeholder="{{ 'registrationForm.label.email' | translate}} ">
+                        </div>
+                    </div>
+                    <div class="form-group ">
+                        <label for="icode " class="col-md-3 control-label ">{{'registrationForm.label.userlevel' | translate}}</label>
+                        <div class="col-md-9 ">
+                            <input type="text " class="form-control " name="icode " placeholder="{{ 'registrationForm.label.userlevel' | translate}} ">
+                        </div>
+                    </div>
+                    <div class="form-group ">
+                        <div class="col-md-offset-3 col-md-9 ">
+                            <button id="btn-signup " type="button " class="btn btn-info "><i class="icon-hand-right "></i> &nbsp Sign Up</button>
+                        </div>
+                    </div>
+
+                </form>
+            </div>
+        </div>
+
+
+
+
+    </div>
 </div>
+
+<!--<div class="col-xs-12 fmt30 ">
+    Footer margin top below 768px
+</div>-->
 <footer-component></footer-component>
