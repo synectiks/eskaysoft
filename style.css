@@ -866,3 +866,7 @@ ul > li:hover {
 .dropdown-menu {
   left: -1.8px !important;
   min-width: 10.1rem !important; }
+
+  .input-search-sm{
+    width: 10em !important;
+}
