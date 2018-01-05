@@ -68,20 +68,20 @@
         <div class='col-xs-12 col-sm-6'>
 
             <form class="form-inline text-left mt25">
-                <div class="form-group col-sm-12 text-left mx-sm-3">
-                    <label for="SearchBy" class="mt10"> {{'common.label.searchby' | translate}}:</label>
-                </div>
+                <!-- <div class="form-group col-sm-12 text-left mx-sm-3">
+                </div> -->
                 <div class="form-group mx-sm-3">
+                        <label for="SearchBy" class="mt10"> {{'common.label.searchby' | translate}}:</label>
                     <label for="companyNameSrch" class="sr-only mt10">{{'companyform.label.companyName' | translate}}</label>
-                    <input type="text" class="form-control form-control-lg" name="companyNameSrch" placeholder="Company Name" id="companyNameSrch">
+                    <input type="text" class="form-control input-search-sm" name="companyNameSrch" placeholder="Company Name" id="companyNameSrch">
                 </div>
                 <div class="form-group">
                     <label class="sr-only mt10" for="companyGroup">{{'companyform.label.companyGroup' | translate}}:*</label>
-                    <input type="text" class="form-control form-control-lg" name="companyGroup" placeholder="Company Group" id="companyGroup" required>
+                    <input type="text" class="form-control input-search-sm" name="companyGroup" placeholder="Company Group" id="companyGroup" required>
                 </div>
                 <div class="form-group">
                     <label class="sr-only mt10" for="companyType">{{'companyform.label.companyType' | translate}}:*</label>
-                    <select class="form-control form-control-lg" id="companyType">
+                    <select class="form-control input-search-sm" id="companyType">
                          <option value="">{{'companyform.label.companyType' | translate}}</option>
                          <option value="1">Ethical</option>
                          <option value="2">Generics</option>
