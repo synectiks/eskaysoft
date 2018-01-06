@@ -5,3 +5,32 @@
 /*
  * General styles
  */
+/********************************** Login Styles *********************/
+.login-mt{
+  margin-top:20px;
+}
+.login-header-label{
+  float:right; font-size: 80%; position: relative; top:-10px
+}
+.panel-class-body{
+  padding-top: 30px;
+}
+.d-none{
+  display: none;
+}
+.input-grp-margin{
+  margin-bottom: 25px;
+}
+.form-grp-margint{
+  margin-top: 10px;
+}
+.sign-up{
+  border-top: 1px solid#888; padding-top:15px; font-size:85%;
+}
+.sign-up-box{
+  display:none; margin-top:20px;
+}
+.signup-panel{
+  float:right; font-size: 85%; position: relative; top:-10px;
+}
+/**********************************************************************/
