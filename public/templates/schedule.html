@@ -38,10 +38,10 @@
 
         <div class='col-xs-12 col-sm-6'>
 
-            <form class="form-inline text-left mt25">
+            <form id="searchScheduleForm" class="form-inline text-left mt25">
                 <div class="form-group">
                     <label class="col-form-label" for="ScheduleType">{{'common.label.searchby' | translate}}:</label>
-                    <select ng-model="vm.schedule.type" class="form-control form-control-lg" id="ScheduleType">
+                    <select ng-model="vm.schedule.type" class="form-control form-control-lg" id="ScheduleType" name="searchScheduleType">
                         <option value="">{{'scheduleform.label.type' | translate}}</option>
                        <option ng-repeat="scheduleType in vm.scheduleTypes" value="{{scheduleType.name}}"
                        >{{scheduleType.name}}

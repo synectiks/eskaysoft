@@ -1,3 +1,8 @@
+#productForm .selectContainer .form-control-feedback,
+#productForm .inputGroupContainer .form-control-feedback {
+    right: -15px;
+}
+
 .tableDiv {
     position: relative;
     overflow-y: auto;
