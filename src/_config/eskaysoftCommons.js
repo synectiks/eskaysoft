@@ -75,7 +75,7 @@
                             name: 'accountsInformation',
                             url: '/accountsInformation',
                             templateUrl: 'public/templates/accountsInformation.tbl.html',
-                            controller: 'loginInfoController'
+                            controller: 'accountsInformationController'
 					}, {
                             name: 'home',
                             url: '/',
