@@ -18,48 +18,48 @@ table.table-fixedheader {
 }
 
 table.table-fixedheader,
-table.table-fixedheader>thead,
-table.table-fixedheader>tbody,
-table.table-fixedheader>thead>tr,
-table.table-fixedheader>tbody>tr,
-table.table-fixedheader>thead>tr>th,
-table.table-fixedheader>tbody>td {
+table.table-fixedheader > thead,
+table.table-fixedheader > tbody,
+table.table-fixedheader > thead > tr,
+table.table-fixedheader > tbody > tr,
+table.table-fixedheader > thead > tr > th,
+table.table-fixedheader > tbody > td {
     display: block;
 }
 
-table.table-fixedheader>thead>tr:after,
-table.table-fixedheader>tbody>tr:after {
+table.table-fixedheader > thead > tr:after,
+table.table-fixedheader > tbody > tr:after {
     content: ' ';
     display: block;
     visibility: hidden;
     clear: both;
 }
 
-table.table-fixedheader>tbody {
+table.table-fixedheader > tbody {
     overflow-y: hidden;
     width: 100%;
     border-collapse: collapse;
 }
 
-table.table-fixedheader>thead {
+table.table-fixedheader > thead {
     background-color: aliceblue;
     overflow-y: hidden;
 }
 
-table.table-fixedheader>thead::-webkit-scrollbar {
+table.table-fixedheader > thead::-webkit-scrollbar {
     background-color: inherit;
 }
 
-table.table-fixedheader>thead>tr>th:after,
-table.table-fixedheader>tbody>tr>td:after {
+table.table-fixedheader > thead > tr > th:after,
+table.table-fixedheader > tbody > tr > td:after {
     content: ' ';
     display: table-cell;
     visibility: hidden;
     clear: both;
 }
 
-table.table-fixedheader>thead tr th,
-table.table-fixedheader>tbody tr td {
+table.table-fixedheader > thead tr th,
+table.table-fixedheader > tbody tr td {
     float: left;
     width: 33.33%;
     border-bottom-width: 0;
@@ -69,8 +69,8 @@ table.table-fixedheader>tbody tr td {
 
 /**** Single Headed Table Styles***/
 
-table.singleHeadTable>thead tr th,
-table.singleHeadTable>tbody tr td {
+table.singleHeadTable > thead tr th,
+table.singleHeadTable > tbody tr td {
     float: left;
     width: 100%;
     border-bottom-width: 0;
@@ -85,11 +85,10 @@ table.singleHeadTable {
 
 /*********************************/
 
-
 /******* Double Headed Table *********/
 
-table.doubleHeadTable>thead tr th,
-table.doubleHeadTable>tbody tr td {
+table.doubleHeadTable > thead tr th,
+table.doubleHeadTable > tbody tr td {
     float: left;
     width: 50%;
     border-bottom-width: 0;
@@ -216,8 +215,8 @@ body {
     .xsmt5 {
         margin-top: 5px;
     }
-    table.table-fixedheader>thead tr th,
-    table.table-fixedheader>tbody tr td {
+    table.table-fixedheader > thead tr th,
+    table.table-fixedheader > tbody tr td {
         float: left;
         width: 33.33%;
         height: 65px;
@@ -259,7 +258,35 @@ body {
 
 }
 
-
 .input-search-sm {
     width: 11em !important;
 }
+
+
+/********** Collapsible area styles ************/
+
+.panel-title > a,
+.panel-title > a:active {
+    display: block;
+    padding: 5px;
+    color: #555;
+    font-size: 14px;
+    font-weight: bold;
+
+    text-decoration: none;
+}
+
+.panel-heading a:before {
+    font-family: 'Glyphicons Halflings';
+    content: "\e114";
+    float: right;
+    transition: all 0.5s;
+}
+
+.panel-heading.active a:before {
+    -webkit-transform: rotate(180deg);
+    -moz-transform: rotate(180deg);
+    transform: rotate(180deg);
+}
+
+/************************************************/
