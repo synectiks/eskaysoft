@@ -11,9 +11,7 @@
             var vm = this; // jshint ignore:line
 
 $(document).ready(function() {
-    $('#searchScheduleForm') .find('[name="searchScheduleType"]')
-            .combobox()
-            .end()
+    $('.selectpicker').selectpicker();
 });
   
 			

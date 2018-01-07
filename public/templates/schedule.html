@@ -17,11 +17,11 @@
                 </div>
                 <div class="form-group">
                     <label class="col-form-label" for="ScheduleType">{{'scheduleform.label.type' | translate}}:</label>
-                    <select ng-model="vm.scheduleType" class="form-control form-control-lg" id="ScheduleType">
-                         <option value="0">Select</option>
-                    <option ng-repeat="scheduleType in vm.scheduleTypes" value="{{scheduleType.name}}"
-                            ng-selected="scheduleType.name === vm.scheduleType">{{scheduleType.name}}
-                    </option>
+                    <select ng-model="vm.scheduleType" class="selectpicker" id="ScheduleType">
+						<option value="0">Select</option>
+						<option ng-repeat="scheduleType in vm.scheduleTypes" value="{{scheduleType.name}}"
+								ng-selected="scheduleType.name === vm.scheduleType">fgfgf
+						</option>
                     </select>
                 </div>
                 <div class="form-group">
