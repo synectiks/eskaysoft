@@ -16,11 +16,11 @@
                     <input type="text" class="form-control form-control-lg" name="Name" id="scheduleNumber" ng-model="vm.scheduleNo" required>
                 </div>
                 <div class="form-group">
-                    <label class="col-form-label" for="ScheduleType">{{'scheduleform.label.type' | translate}}:</label>
-                    <select ng-model="vm.scheduleType" class="selectpicker" id="ScheduleType">
+                    <label class="col-form-label" for="ScheduleType ">{{'scheduleform.label.type' | translate}}:</label>
+                    <select ng-model="vm.scheduleType" class="selectpicker form-control form-control-lg form-control form-control-lg" id="ScheduleType" data-live-search="true">
 						<option value="0">Select</option>
 						<option ng-repeat="scheduleType in vm.scheduleTypes" value="{{scheduleType.name}}"
-								ng-selected="scheduleType.name === vm.scheduleType">fgfgf
+								ng-selected="scheduleType.name === vm.scheduleType" data-content="{{scheduleType.name}}">{{scheduleType.name}}
 						</option>
                     </select>
                 </div>

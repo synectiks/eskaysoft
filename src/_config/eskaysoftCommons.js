@@ -60,6 +60,18 @@
 		}]);
 }());
 
+/*
+{
+    name: 'accountsOpenings',
+    url: '/accountsOpenings',
+    templateUrl: 'public/templates/accountsOpenings.html',
+    controller: 'accountsOpeningsController'
+}, {
+    name: 'customerwiseDiscount',
+    url: '/customerwiseDiscount',
+    templateUrl: 'public/templates/customerwiseDiscount.html',
+    controller: 'customerwiseDiscountController'
+},*/
 
 (function () {
     "use strict";
@@ -72,6 +84,16 @@
 
                     var statesList = [
                         {
+                            name: 'accountsOpenings',
+                                        url: '/accountsOpenings',
+                                        templateUrl: 'public/templates/accountsOpenings.html',
+                                        controller: 'accountsOpeningsController'
+					}, {
+                           name: 'customerwiseDiscount',
+                                        url: '/customerwiseDiscount',
+                                        templateUrl: 'public/templates/customerwiseDiscount.html',
+                                        controller: 'customerwiseDiscountController'
+					}, {
                             name: 'accountsInformation',
                             url: '/accountsInformation',
                             templateUrl: 'public/templates/accountsInformation.tbl.html',
