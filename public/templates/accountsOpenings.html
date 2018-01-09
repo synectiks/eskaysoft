@@ -1,283 +1,53 @@
 <header-menu-bar></header-menu-bar>
+
 <div class="container">
     <div class='row'>
-        <div class='col-xs-12 col-sm-6 mt25'>
-            <div class="panel-group" id="accordion">
-                <div class="panel panel-default">
-                    <div class="panel-heading ph">
-                        <h4 class="panel-title">
-                            <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#generalInformation">
-                                General Information
-                            </a>
-                        </h4>
-                    </div>
-                    <div id="generalInformation" class="panel-collapse collapse in">
-                        <div class="panel-body">
-
-                            <form>
-
-                                <div class="form-group col-sm-12">
-                                    <label class="col-form-label" for="accountname">{{'accountinformationForm.label.accountname' | translate}}:*</label>
-                                    <input type="text" class="form-control form-control-lg" name="Name" id="accountName" required>
-                                </div>
-
-                                <div class="form-group col-sm-6">
-                                    <label class="col-form-label" for="subschedule">{{'accountinformationForm.label.subschedule' | translate}}:*</label>
-                                    <input type="text" class="form-control form-control-lg" name="Name" id="subschedule" required>
-                                </div>
-                                <div class="form-group col-sm-6">
-                                    <label class="col-form-label" for="schedule">{{'accountinformationForm.label.schedule' | translate}}:*</label>
-                                    <input type="text" class="form-control form-control-lg" name="Name" id="schedule" required>
-                                </div>
-                                <div class="form-group col-sm-6">
-                                    <label class="col-form-label" for="hsncode">{{'accountinformationForm.label.hsncode' | translate}}:*</label>
-                                    <input type="text" class="form-control form-control-lg" name="Name" id="hsncode" required>
-                                </div>
-                                <div class="form-group col-sm-6">
-                                    <label class="col-form-label" for="saccode">{{'accountinformationForm.label.saccode' | translate}}:*</label>
-                                    <input type="text" class="form-control form-control-lg" name="Name" id="saccode" required>
-                                </div>
-                                <div class="form-group col-sm-6">
-                                    <label class="col-form-label" for="OpeningBalance">{{'accountinformationForm.label.openingBalance' | translate}}:*</label>
-                                    <input type="text" class="form-control form-control-lg" name="Name" id="OpeningBalance" required>
-                                </div>
-                                <div class="form-group col-sm-6">
-                                    <label class="col-form-label" for="openingtype">{{'accountinformationForm.label.openingtype' | translate}}:*</label>
-                                    <select class="form-control form-control-lg" id="openingtype">
-                                        <option value="0">Credit</option>
-                                        <option value="1">Debit</option>
-                                    </select>
-                                </div>
-                                <div class="form-group  col-sm-12">
-                                    <label class="col-form-label" for="code">{{'accountinformationForm.label.code' | translate}}:*</label>
-                                    <input type="text" class="form-control form-control-lg" name="Name" id="code" required>
-                                </div>
-
-                            </form>
-                        </div>
-                    </div>
-                </div>
-                <div class="panel panel-default">
-                    <div class="panel-heading ph">
-                        <h4 class="panel-title">
-                            <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#personalInformation">
-                                Personal Information
-                            </a>
-                        </h4>
-                    </div>
-                    <div id="personalInformation" class="panel-collapse collapse">
-                        <div class="panel-body">
-                            <form>
-
-                                <div class="form-group col-sm-12">
-                                    <label class="col-form-label" for="personalcontact">{{'accountinformationForm.personalcontact' | translate}}:*</label>
-                                    <input type="text" class="form-control form-control-lg" name="Name" id="personalcontact" required>
-                                </div>
-                                <div class="form-group col-sm-12">
-                                    <label class="col-form-label" for="personaladdress1">{{'accountinformationForm.personaladdress1' | translate}}:*</label>
-                                    <input type="text" class="form-control form-control-lg" name="Name" id="personaladdress1" required>
-                                </div>
-                                <div class="form-group col-sm-12">
-                                    <label class="col-form-label" for="personaladdress2">{{'accountinformationForm.personaladdress2' | translate}}:*</label>
-                                    <input type="text" class="form-control form-control-lg" name="Name" id="personaladdress2" required>
-                                </div>
-                                <div class="form-group col-sm-6">
-                                    <label class="col-form-label" for="personaltown">{{'accountinformationForm.personaltown' | translate}}:*</label>
-                                    <input type="text" class="form-control form-control-lg" name="Name" id="personaltown" required>
-                                </div>
-                                <div class="form-group col-sm-6">
-                                    <label class="col-form-label" for="personalpin">{{'accountinformationForm.personalpin' | translate}}:*</label>
-                                    <input type="text" class="form-control form-control-lg" name="Name" id="personalpin" required>
-                                </div>
-                                <div class="form-group col-sm-6">
-                                    <label class="col-form-label" for="personaldistrict">{{'accountinformationForm.personaldistrict' | translate}}:*</label>
-                                    <input type="text" class="form-control form-control-lg" name="Name" id="personaldistrict" required>
-                                </div>
-                                <div class="form-group col-sm-6">
-                                    <label class="col-form-label" for="personalstate">{{'accountinformationForm.personalstate' | translate}}:*</label>
-                                    <input type="text" class="form-control form-control-lg" name="Name" id="personalstate" required>
-                                </div>
-
-                                <div class="form-group col-sm-12">
-                                    <label class="col-form-label" for="personalspecialRemarks">{{'accountinformationForm.personalspecialRemarks' | translate}}:*</label>
-                                    <input type="text" class="form-control form-control-lg" name="Name" id="personalspecialRemarks" required>
-                                </div>
-                                <div class="form-group col-sm-6">
-                                    <label class="col-form-label" for="personalphone">{{'accountinformationForm.personalphone' | translate}}:*</label>
-                                    <input type="text" class="form-control form-control-lg" name="Name" id="personalphone" required>
-                                </div>
-                                <div class="form-group col-sm-6">
-                                    <label class="col-form-label" for="personalMobile">{{'accountinformationForm.personalMobile' | translate}}:*</label>
-                                    <input type="text" class="form-control form-control-lg" name="Name" id="personalMobile" required>
-                                </div>
-                                <div class="form-group col-sm-12">
-                                    <label class="col-form-label" for="personalMobile">{{'accountinformationForm.personalMobile' | translate}}:*</label>
-                                    <input type="text" class="form-control form-control-lg" name="Name" id="personalMobile" required>
-                                </div>
-
-                            </form>
-                        </div>
-                    </div>
-                </div>
-                <div class="panel panel-default">
-                    <div class="panel-heading ph">
-                        <h4 class="panel-title">
-                            <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#RegistrationInformation">
-                                Registration Information
-                            </a>
-                        </h4>
-                    </div>
-                    <div id="RegistrationInformation" class="panel-collapse collapse">
-                        <div class="panel-body">
-                            <form>
-
-                                <div class="form-group col-sm-6">
-                                    <label class="col-form-label" for="registrationlicno1">{{'accountinformationForm.registrationlicno1' | translate}}:*</label>
-                                    <input type="text" class="form-control form-control-lg" name="Name" id=registrationlicno1 required>
-                                </div>
-                                <div class="form-group col-sm-6">
-                                    <label class="col-form-label" for="registrationlicno2">{{'accountinformationForm.registrationlicno2' | translate}}:*</label>
-                                    <input type="text" class="form-control form-control-lg" name="Name" id=registrationlicno2 required>
-                                </div>
-                                <div class="form-group col-sm-12">
-                                    <label class="col-form-label" for="registrationlicno2">{{'accountinformationForm.registrationlicexpiry' | translate}}:*</label>
-                                    <input type="text" class="form-control form-control-lg" name="Name" id=registrationlicexpiry required>
-                                </div>
-                                <div class="form-group col-sm-6">
-                                    <label class="col-form-label" for="registrationretlic1">{{'accountinformationForm.registrationretlic1' | translate}}:*</label>
-                                    <input type="text" class="form-control form-control-lg" name="Name" id="registrationretlic1" required>
-                                </div>
-                                <div class="form-group col-sm-6">
-                                    <label class="col-form-label" for="registrationretlic2">{{'accountinformationForm.registrationretlic2' | translate}}:*</label>
-                                    <input type="text" class="form-control form-control-lg" name="Name" id="registrationretlic2" required>
-                                </div>
-                                <div class="form-group col-sm-6">
-                                    <label class="col-form-label" for="registrationretexpiry">{{'accountinformationForm.registrationretexpiry' | translate}}:*</label>
-                                    <input type="text" class="form-control form-control-lg" name="Name" id="registrationretexpiry" required>
-                                </div>
-                                <div class="form-group col-sm-6">
-                                    <label class="col-form-label" for="registrationfoodlicno">{{'accountinformationForm.registrationfoodlicno' | translate}}:*</label>
-                                    <input type="text" class="form-control form-control-lg" name="Name" id="registrationfoodlicno" required>
-                                </div>
-                                <div class="form-group col-sm-6">
-                                    <label class="col-form-label" for="registrationotherlicense">{{'accountinformationForm.registrationotherlicense' | translate}}:*</label>
-                                    <input type="text" class="form-control form-control-lg" name="Name" id="registrationotherlicense" required>
-                                </div>
-                                <div class="form-group col-sm-6">
-                                    <label class="col-form-label" for="registrationotherlicenseexp">{{'accountinformationForm.registrationotherlicenseexp' | translate}}:*</label>
-                                    <input type="text" class="form-control form-control-lg" name="Name" id="registrationotherlicenseexp" required>
-                                </div>
-                                <div class="form-group col-sm-12">
-                                    <label class="col-form-label" for="registrationgst">{{'accountinformationForm.registrationgst' | translate}}:*</label>
-                                    <select class="form-control form-control-lg" id="registrationgst">
-                                        <option value="0">RGST</option>
-                                        <option value="1">UGST</option>
-                                        <option value="2">IGST</option>
-                                        <option value="3">IUGST</option>
-                                    </select>
-                                </div>
-                                <div class="form-group col-sm-6">
-                                    <label class="col-form-label" for="registrationgstin">{{'accountinformationForm.registrationgstin' | translate}}:*</label>
-                                    <input type="text" class="form-control form-control-lg" name="Name" id="registrationgstin" required>
-                                </div>
-                                <div class="form-group col-sm-6">
-                                    <label class="col-form-label" for="registrationnaturegst">{{'accountinformationForm.registrationnaturegst' | translate}}:*</label>
-                                    <select class="form-control form-control-lg" id="registrationnaturegst">
-                                        <option value="0">Regular</option>
-                                        <option value="1">Composite</option>
-                                    </select>
-                                </div>
-                                <div class="form-group col-sm-12">
-                                    <label class="col-form-label" for="registrationuin">{{'accountinformationForm.registrationuin' | translate}}:*</label>
-                                    <input type="text" class="form-control form-control-lg" name="Name" id="registrationuin" required>
-                                </div>
-
-                            </form>
-                        </div>
-                    </div>
-                </div>
-                <div class="panel panel-default">
-                    <div class="panel-heading ph">
-                        <h4 class="panel-title">
-                            <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#Credentials">
-                                Credentials
-                            </a>
-                        </h4>
-                    </div>
-                    <div id="Credentials" class="panel-collapse collapse">
-                        <div class="panel-body">
-                            <form>
-                                <div class="form-group col-sm-6">
-                                    <label class="col-form-label" for="credentialscash">{{'accountinformationForm.credentialscash' | translate}}:*</label>
-                                    <select class="form-control form-control-lg" id="credentialscash">
-                                        <option value="0">Cash</option>
-                                        <option value="1">Credit</option>
-                                    </select>
-                                </div>
-                                <div class="form-group col-sm-6">
-                                    <label class="col-form-label" for="credentialscustomer">{{'accountinformationForm.credentialscustomer' | translate}}:*</label>
-                                    <select class="form-control form-control-lg" id="credentialscash">
-                                        <option value="0">Whole Sale</option>
-                                        <option value="1">Retail</option>
-                                    </select>
-                                </div>
-                                <div class="form-group col-sm-6">
-                                    <label class="col-form-label" for="credentialscredit">{{'accountinformationForm.credentialscredit' | translate}}:*</label>
-                                    <input type="text" class="form-control form-control-lg" name="Name" id="credentialscredit" required>
-                                </div>
-                                <div class="form-group col-sm-6">
-                                    <label class="col-form-label" for="credentialsdue">{{'accountinformationForm.credentialsdue' | translate}}:*</label>
-                                    <input type="text" class="form-control form-control-lg" name="Name" id="credentialsdue" required>
-                                </div>
-
-                            </form>
-                        </div>
-                    </div>
-                </div>
+        <form id="searchAccountsForm" class="form-inline text-left mt25 text-center">
+            <label class="col-form-label" for="ScheduleType">{{'common.label.search' | translate}}:</label>
+            <div class="form-group mx-sm-3">
+                <label for="searchAccount" class="sr-only mt10">{{'accountsOpenings.lable.searchAccount' | translate}}</label>
+                <input type="text" class="form-control" id="searchAccount" placeholder="{{'accountsOpenings.lable.searchAccount' | translate}}" ng-model="vm.account" required>
             </div>
+        </form>
+        <div class="tableDiv mt10 mb10 p0">
+            <table id="scheduleTable" class="table table-fixedheader table-lg table-bordered scrollbar fiveHeadTable" ng-init="vm.search()">
+                <thead>
+                    <tr>
+                        <th>{{'accountsOpenings.lable.code' | translate}}</th>
+                        <th>{{'accountsOpenings.lable.accountName' | translate}}</th>
+                        <th>{{'accountsOpenings.lable.town' | translate}}</th>
+                        <th>{{'accountsOpenings.lable.opening' | translate}}</th>
+                        <th>{{'accountsOpenings.lable.type' | translate}}</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr ng-repeat="schemes in vm.data |filter:vm.account:vm.startsWith" ng-click="vm.setSelected(schemes.name, schemes.no, schemes.type, $index)" ng-class="{selected: schemes.name === vm.selectedName}">
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td>
+                            <div class="form-group mx-sm-3">
+                                <label for="opening" class="sr-only mt10">{{'accountsOpenings.lable.opening' | translate}}</label>
+                                <input type="text" class="form-control" id="openingtbl" ng-model="vm.account" required>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="form-group mx-sm-3">
+                                <label for="type" class="sr-only mt10">{{'accountsOpenings.lable.type' | translate}}</label>
+                                <input type="text" class="form-control" id="Typetbl" ng-model="vm.account" required>
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
         </div>
-        <div class='col-xs-12 col-sm-6'>
-            <form id="searchScheduleForm" class="form-inline text-left mt25">
-                <div class="form-group">
-                    <label class="col-form-label" for="ScheduleType">{{'common.label.searchby' | translate}}:</label>
-                    <select ng-model="vm.schedule.type" class="form-control form-control-lg" id="ScheduleType" name="searchScheduleType">
-                        <option value="">{{'scheduleform.label.type' | translate}}</option>
-                        <option ng-repeat="scheduleType in vm.scheduleTypes" value="{{scheduleType.name}}"
-                        >{{scheduleType.name}}
-                        </option>
-                    </select>
-                </div>
-                <div class="form-group mx-sm-3">
-                    <label for="ScheduleName" class="sr-only mt10">{{'scheduleform.label.name' | translate}}</label>
-                    <input type="text" class="form-control" id="ScheduleName" placeholder="Schedule Name" ng-model="vm.schedule.name" required>
-                </div>
-            </form>
-            <div class="tableDiv mt10 mb10 p0">
-                <table id="scheduleTable" class="table table-fixedheader table-lg table-bordered scrollbar" ng-init="vm.search()">
-                    <thead>
-                        <tr>
-                            <th>Not ready</th>
-                            <th>Not ready</th>
-                            <th>Not ready</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr ng-repeat="schemes in vm.data |filter:vm.schedule:vm.startsWith" ng-click="vm.setSelected(schemes.name, schemes.no, schemes.type, $index)" ng-class="{selected: schemes.name === vm.selectedName}">
-                            <td>{{schemes.name}}</td>
-                            <td>{{schemes.no}}</td>
-                            <td>{{schemes.type}}</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-            <div class="btn-align p0" ng-if="vm.selected">
-                <button type="submit" class="btn btn-primary searchEdit btn-position" ng-click="vm.edit()">{{'button.edit' | translate}}</button>
-                <button type="submit" class="btn btn-primary btn-position" ng-click="vm.delete()">{{'button.delete' | translate}}</button>
-            </div>
+        <div class="btn-align p0" ng-if="vm.selected">
+            <button type="submit" class="btn btn-primary searchEdit btn-position" ng-click="vm.edit()">{{'button.edit' | translate}}</button>
+            <button type="submit" class="btn btn-primary btn-position" ng-click="vm.delete()">{{'button.delete' | translate}}</button>
         </div>
     </div>
+
 </div>
-<!-- end container -->
 <div class="col-xs-12 fmt30">
     <!--Footer margin top below 768px-->
 </div>

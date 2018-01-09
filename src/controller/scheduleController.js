@@ -10,10 +10,13 @@
 
             var vm = this; // jshint ignore:line
 
-            angular.element(document).ready(function () {
-                $('.selectpicker').selectpicker('refresh');
-            });
+            /* $timeout(function () {
+                 $('.selectpicker').selectpicker('refresh');
+             }, 0);*/
 
+            /*angular.element(document).ready(function () {
+                $('.selectpicker').selectpicker('refresh');
+            });*/
 
             vm.scheduleType = "0";
             vm.selected = false;

@@ -153,5 +153,21 @@
     "accountinformationForm.credentialscash": "Sale Type",
     "accountinformationForm.credentialscustomer": "Customer Type",
     "accountinformationForm.credentialscredit": "Credit Limit",
-    "accountinformationForm.credentialsdue": "Due Days"
+    "accountinformationForm.credentialsdue": "Due Days",
+
+    "accountsOpenings.lable.searchAccount": "Search Account",
+    "accountsOpenings.lable.code": "Code",
+    "accountsOpenings.lable.accountName": "Account Name",
+    "accountsOpenings.lable.town": "Town",
+    "accountsOpenings.lable.opening": "Opening",
+    "accountsOpenings.lable.type": "Type",
+
+    "customerwiseDiscount.lable.customer": "Customer",
+    "customerwiseDiscount.lable.selectOption": "Company Option",
+    "customerwiseDiscount.lable.discount": "Discount(%)",
+    "customerwiseDiscount.lable.companyDesc": "Company Description",
+    "customerwiseDiscount.lable.all": "All",
+    "customerwiseDiscount.lable.select": "Select",
+    "customerwiseDiscount.lable.disc": "Disc",
+    "customerwiseDiscount.lable.cdisc": "C.Disc"
 }
