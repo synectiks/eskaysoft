@@ -82,7 +82,7 @@
                                 </div>
                                 <div class="form-group col-sm-6">
                                     <label class="col-form-label" for="OpeningBalance">{{'accountinformationForm.label.openingBalance' | translate}}:*</label>
-                                    <input type="number" class="form-control form-control-lg" name="Name" id="OpeningBalance" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" maxlength="4" required>
+                                    <input type="number" class="form-control form-control-lg" name="Name" id="OpeningBalance" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" step="0.01" maxlength="4" required>
                                 </div>
                                 <div class="form-group col-sm-6">
                                     <label class="col-form-label" for="openingtype">{{'accountinformationForm.label.openingtype' | translate}}:*</label>
@@ -210,11 +210,11 @@
                                 </div>
                                 <div class="form-group col-sm-6">
                                     <label class="col-form-label" for="credentialscredit">{{'accountinformationForm.label.credentialscredit' | translate}}:*</label>
-                                    <input type="number" class="form-control form-control-lg" name="Name" id="credentialscredit" maxlength="12,2" required>
+                                    <input type="number" class="form-control form-control-lg" name="Name" id="credentialscredit" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" step="0.01" maxlength="4" required>
                                 </div>
                                 <div class="name form-group col-sm-6">
                                     <label class="col-form-label" for="credentialsdue">{{'accountinformationForm.label.credentialsdue' | translate}}:*</label>
-                                    <input type="number" class="form-control form-control-lg" name="Name" id="credentialsdue" maxlength="3" required>
+                                    <input type="date" class="form-control form-control-lg" name="Name" id="credentialsdue" maxlength="3" required>
                                 </div>
 
                             </form>
