@@ -7,13 +7,13 @@
                 <div class='text-left pt7'>
                     <h2>{{'scheduleform.header.name' | translate}} </h2>
                 </div>
-                <div class="form-group">
+                <div class="form-group ">
                     <label class="col-form-label" for="scheduleName">{{'scheduleform.label.name' | translate}}:*</label>
                     <input type="text" class="form-control form-control-lg" name="Name" id="scheduleName" ng-model="vm.scheduleName" required>
                 </div>
                 <div class="form-group">
                     <label class="col-form-label" for="scheduleNumber">{{'scheduleform.label.index' | translate}}:*</label>
-                    <input type="text" class="form-control form-control-lg" name="Name" id="scheduleNumber" ng-model="vm.scheduleNo" required>
+                    <input type="number" min="0" max="3" class="form-control form-control-lg" name="Name" id="scheduleNumber" ng-model="vm.scheduleNo" required>
                 </div>
                 <div class="form-group">
                     <label class="col-form-label" for="ScheduleType ">{{'scheduleform.label.type' | translate}}:</label>

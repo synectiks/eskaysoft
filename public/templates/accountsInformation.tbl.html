@@ -18,107 +18,94 @@
 
                                 <div class="form-group col-sm-12">
                                     <label class="col-form-label" for="accountname">{{'accountinformationForm.label.accountname' | translate}}:*</label>
-                                    <input type="text" class="form-control form-control-lg" name="Name" id="accountName" required>
+                                    <input type="text" class="form-control form-control-lg" name="Name" id="accountName" maxlength="50" required>
                                 </div>
 
                                 <div class="form-group col-sm-6">
                                     <label class="col-form-label" for="subschedule">{{'accountinformationForm.label.subschedule' | translate}}:*</label>
-                                    <input type="text" class="form-control form-control-lg" name="Name" id="subschedule" required>
+                                    <input type="text" class="form-control form-control-lg" name="Name" id="subschedule" maxlength="40" required>
                                 </div>
                                 <div class="form-group col-sm-6">
                                     <label class="col-form-label" for="schedule">{{'accountinformationForm.label.schedule' | translate}}:*</label>
-                                    <input type="text" class="form-control form-control-lg" name="Name" id="schedule" required>
+                                    <input type="text" class="form-control form-control-lg" name="Name" id="schedule" maxlength="40"required>
+                                </div>
+                                <div class="form-group col-sm-12">
+                                    <label class="col-form-label" for="personaladdress1">{{'accountinformationForm.label.personaladdress1' | translate}}:*</label>
+                                    <input type="text" class="form-control form-control-lg" name="Name" id="personaladdress1" maxlength="50" required>
+                                </div>
+                                <div class="form-group col-sm-12">
+                                    <label class="col-form-label" for="personaladdress2">{{'accountinformationForm.label.personaladdress2' | translate}}:*</label>
+                                    <input type="text" class="form-control form-control-lg" name="Name" id="personaladdress2" maxlength="50" required>
                                 </div>
                                 <div class="form-group col-sm-6">
+                                    <label class="col-form-label" for="personaltown">{{'accountinformationForm.label.personaltown' | translate}}:*</label>
+                                    <input type="text" class="form-control form-control-lg" name="Name" id="personaltown" maxlength="20" required>
+                                </div>
+                                <div class="form-group col-sm-6">
+                                    <label class="col-form-label" for="personalpin">{{'accountinformationForm.label.personalpin' | translate}}:*</label>
+                                    <input type="number" class="form-control form-control-lg" name="Name" id="personalpin"  oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
+                                    maxlength = "6" required>
+                                </div>
+                                <div class="form-group col-sm-6">
+                                    <label class="col-form-label" for="personaldistrict">{{'accountinformationForm.label.personaldistrict' | translate}}:*</label>
+                                    <input type="text" class="form-control form-control-lg" name="Name" id="personaldistrict" maxlength="20" required>
+                                </div>
+                                <div class="form-group col-sm-6">
+                                    <label class="col-form-label" for="personalstate">{{'accountinformationForm.label.personalstate' | translate}}:*</label>
+                                    <input type="text" class="form-control form-control-lg" name="Name" id="personalstate" maxlength="20" required>
+                                </div>
+                                
+                                <div class="form-group col-sm-12">
+                                    <label class="col-form-label" for="personalspecialRemarks">{{'accountinformationForm.label.personalspecialRemarks' | translate}}:*</label>
+                                    <input type="text" class="form-control form-control-lg" name="Name" id="personalspecialRemarks" maxlength="60" required>
+                                </div>
+                                <div class="form-group col-sm-6">
+                                    <label class="col-form-label" for="personalphone">{{'accountinformationForm.label.personalphone' | translate}}:*</label>
+                                    <input type="number" class="form-control form-control-lg" name="Name" id="personalphone" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" maxlength="10" required>
+                                </div>
+                                <div class="form-group col-sm-6">
+                                    <label class="col-form-label" for="personalMobile">{{'accountinformationForm.label.personalMobile' | translate}}:*</label>
+                                    <input type="number" class="form-control form-control-lg" name="Name" id="personalMobile" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" maxlength="10" required>
+                                </div>
+                                <div class="form-group col-sm-12">
+                                    <label class="col-form-label" for="personalemail">{{'accountinformationForm.label.personalemail' | translate}}:*</label>
+                                    <input type="text" class="form-control form-control-lg" name="Name" id="personalemail" required>
+                                </div>
+
+                                <div class="form-group col-sm-6">
                                     <label class="col-form-label" for="hsncode">{{'accountinformationForm.label.hsncode' | translate}}:*</label>
-                                    <input type="text" class="form-control form-control-lg" name="Name" id="hsncode" required>
+                                    <input type="number" class="form-control form-control-lg" name="Name" id="hsncode" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" maxlength="8" required>
                                 </div>
                                 <div class="form-group col-sm-6">
                                     <label class="col-form-label" for="saccode">{{'accountinformationForm.label.saccode' | translate}}:*</label>
-                                    <input type="text" class="form-control form-control-lg" name="Name" id="saccode" required>
+                                    <input type="number" class="form-control form-control-lg" name="Name" id="saccode" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" maxlength="8" required>
                                 </div>
                                 <div class="form-group col-sm-6">
                                     <label class="col-form-label" for="OpeningBalance">{{'accountinformationForm.label.openingBalance' | translate}}:*</label>
-                                    <input type="text" class="form-control form-control-lg" name="Name" id="OpeningBalance" required>
+                                    <input type="number" class="form-control form-control-lg" name="Name" id="OpeningBalance" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" maxlength="4" required>
                                 </div>
                                 <div class="form-group col-sm-6">
                                     <label class="col-form-label" for="openingtype">{{'accountinformationForm.label.openingtype' | translate}}:*</label>
-                                    <select class="form-control form-control-lg" id="openingtype">
+                                    <select class="form-control form-control-lg" id="openingtype" maxlength="6">
                                         <option value="0">Credit</option>
                                         <option value="1">Debit</option>
                                     </select>
                                 </div>
                                 <div class="form-group  col-sm-12">
                                     <label class="col-form-label" for="code">{{'accountinformationForm.label.code' | translate}}:*</label>
-                                    <input type="text" class="form-control form-control-lg" name="Name" id="code" required>
+                                    <input type="text" class="form-control form-control-lg" name="Name" id="code" maxlength="6"required>
                                 </div>
-
-                            </form>
-                        </div>
-                    </div>
-                </div>
-                <div class="panel panel-default">
-                    <div class="panel-heading ph">
-                        <h4 class="panel-title">
-                            <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#personalInformation">
-                                Personal Information
-                            </a>
-                        </h4>
-                    </div>
-                    <div id="personalInformation" class="panel-collapse collapse">
-                        <div class="panel-body">
-                            <form>
-
+                                    
                                 <div class="form-group col-sm-12">
                                     <label class="col-form-label" for="personalcontact">{{'accountinformationForm.label.personalcontact' | translate}}:*</label>
-                                    <input type="text" class="form-control form-control-lg" name="Name" id="personalcontact" required>
+                                    <input type="number" class="form-control form-control-lg" name="Name" id="personalcontact" maxlength="30" required>
                                 </div>
-                                <div class="form-group col-sm-12">
-                                    <label class="col-form-label" for="personaladdress1">{{'accountinformationForm.label.personaladdress1' | translate}}:*</label>
-                                    <input type="text" class="form-control form-control-lg" name="Name" id="personaladdress1" required>
-                                </div>
-                                <div class="form-group col-sm-12">
-                                    <label class="col-form-label" for="personaladdress2">{{'accountinformationForm.label.personaladdress2' | translate}}:*</label>
-                                    <input type="text" class="form-control form-control-lg" name="Name" id="personaladdress2" required>
-                                </div>
-                                <div class="form-group col-sm-6">
-                                    <label class="col-form-label" for="personaltown">{{'accountinformationForm.label.personaltown' | translate}}:*</label>
-                                    <input type="text" class="form-control form-control-lg" name="Name" id="personaltown" required>
-                                </div>
-                                <div class="form-group col-sm-6">
-                                    <label class="col-form-label" for="personalpin">{{'accountinformationForm.label.personalpin' | translate}}:*</label>
-                                    <input type="text" class="form-control form-control-lg" name="Name" id="personalpin" required>
-                                </div>
-                                <div class="form-group col-sm-6">
-                                    <label class="col-form-label" for="personaldistrict">{{'accountinformationForm.label.personaldistrict' | translate}}:*</label>
-                                    <input type="text" class="form-control form-control-lg" name="Name" id="personaldistrict" required>
-                                </div>
-                                <div class="form-group col-sm-6">
-                                    <label class="col-form-label" for="personalstate">{{'accountinformationForm.label.personalstate' | translate}}:*</label>
-                                    <input type="text" class="form-control form-control-lg" name="Name" id="personalstate" required>
-                                </div>
-
-                                <div class="form-group col-sm-12">
-                                    <label class="col-form-label" for="personalspecialRemarks">{{'accountinformationForm.label.personalspecialRemarks' | translate}}:*</label>
-                                    <input type="text" class="form-control form-control-lg" name="Name" id="personalspecialRemarks" required>
-                                </div>
-                                <div class="form-group col-sm-6">
-                                    <label class="col-form-label" for="personalphone">{{'accountinformationForm.label.personalphone' | translate}}:*</label>
-                                    <input type="text" class="form-control form-control-lg" name="Name" id="personalphone" required>
-                                </div>
-                                <div class="form-group col-sm-6">
-                                    <label class="col-form-label" for="personalMobile">{{'accountinformationForm.label.personalMobile' | translate}}:*</label>
-                                    <input type="text" class="form-control form-control-lg" name="Name" id="personalMobile" required>
-                                </div>
-                                <div class="form-group col-sm-12">
-                                    <label class="col-form-label" for="personalMobile">{{'accountinformationForm.label.personalMobile' | translate}}:*</label>
-                                    <input type="text" class="form-control form-control-lg" name="Name" id="personalMobile" required>
-                                </div>
-
+                                    
                             </form>
                         </div>
                     </div>
                 </div>
+             
                 <div class="panel panel-default">
                     <div class="panel-heading ph">
                         <h4 class="panel-title">
@@ -133,43 +120,43 @@
 
                                 <div class="form-group col-sm-6">
                                     <label class="col-form-label" for="registrationlicno1">{{'accountinformationForm.label.registrationlicno1' | translate}}:*</label>
-                                    <input type="text" class="form-control form-control-lg" name="Name" id=registrationlicno1 required>
+                                    <input type="text" class="form-control form-control-lg" name="Name" id="registrationlicno1" maxlength="25" required>
                                 </div>
                                 <div class="form-group col-sm-6">
                                     <label class="col-form-label" for="registrationlicno2">{{'accountinformationForm.label.registrationlicno2' | translate}}:*</label>
-                                    <input type="text" class="form-control form-control-lg" name="Name" id=registrationlicno2 required>
+                                    <input type="text" class="form-control form-control-lg" name="Name" id="registrationlicno2" maxlength="25" required>
                                 </div>
                                 <div class="form-group col-sm-12">
                                     <label class="col-form-label" for="registrationlicno2">{{'accountinformationForm.label.registrationlicexpiry' | translate}}:*</label>
-                                    <input type="text" class="form-control form-control-lg" name="Name" id=registrationlicexpiry required>
+                                    <input type="date" class="form-control form-control-lg" name="Name" id="registrationlicexpiry" required>
                                 </div>
                                 <div class="form-group col-sm-6">
                                     <label class="col-form-label" for="registrationretlic1">{{'accountinformationForm.label.registrationretlic1' | translate}}:*</label>
-                                    <input type="text" class="form-control form-control-lg" name="Name" id="registrationretlic1" required>
+                                    <input type="text" class="form-control form-control-lg" name="Name" id="registrationretlic1" maxlength="25" required>
                                 </div>
                                 <div class="form-group col-sm-6">
                                     <label class="col-form-label" for="registrationretlic2">{{'accountinformationForm.label.registrationretlic2' | translate}}:*</label>
-                                    <input type="text" class="form-control form-control-lg" name="Name" id="registrationretlic2" required>
+                                    <input type="text" class="form-control form-control-lg" name="Name" id="registrationretlic2" maxlength="25" required>
                                 </div>
                                 <div class="form-group col-sm-6">
                                     <label class="col-form-label" for="registrationretexpiry">{{'accountinformationForm.label.registrationretexpiry' | translate}}:*</label>
-                                    <input type="text" class="form-control form-control-lg" name="Name" id="registrationretexpiry" required>
+                                    <input type="date" class="form-control form-control-lg" name="Name" id="registrationretexpiry" required>
                                 </div>
                                 <div class="form-group col-sm-6">
                                     <label class="col-form-label" for="registrationfoodlicno">{{'accountinformationForm.label.registrationfoodlicno' | translate}}:*</label>
-                                    <input type="text" class="form-control form-control-lg" name="Name" id="registrationfoodlicno" required>
+                                    <input type="text" class="form-control form-control-lg" name="Name" id="registrationfoodlicno" maxlength="25" required>
                                 </div>
                                 <div class="form-group col-sm-6">
                                     <label class="col-form-label" for="registrationotherlicense">{{'accountinformationForm.label.registrationotherlicense' | translate}}:*</label>
-                                    <input type="text" class="form-control form-control-lg" name="Name" id="registrationotherlicense" required>
+                                    <input type="text" class="form-control form-control-lg" name="Name" id="registrationotherlicense" maxlength="25" required>
                                 </div>
                                 <div class="form-group col-sm-6">
                                     <label class="col-form-label" for="registrationotherlicenseexp">{{'accountinformationForm.label.registrationotherlicenseexp' | translate}}:*</label>
-                                    <input type="text" class="form-control form-control-lg" name="Name" id="registrationotherlicenseexp" required>
+                                    <input type="date" class="form-control form-control-lg" name="Name" id="registrationotherlicenseexp" required>
                                 </div>
                                 <div class="form-group col-sm-12">
                                     <label class="col-form-label" for="registrationgst">{{'accountinformationForm.label.registrationgst' | translate}}:*</label>
-                                    <select class="form-control form-control-lg" id="registrationgst">
+                                    <select class="form-control form-control-lg" id="registrationgst" maxlength="6">
                                         <option value="0">RGST</option>
                                         <option value="1">UGST</option>
                                         <option value="2">IGST</option>
@@ -178,18 +165,18 @@
                                 </div>
                                 <div class="form-group col-sm-6">
                                     <label class="col-form-label" for="registrationgstin">{{'accountinformationForm.label.registrationgstin' | translate}}:*</label>
-                                    <input type="text" class="form-control form-control-lg" name="Name" id="registrationgstin" required>
+                                    <input type="text" class="form-control form-control-lg" name="Name" id="registrationgstin" maxlength="5" required>
                                 </div>
                                 <div class="form-group col-sm-6">
                                     <label class="col-form-label" for="registrationnaturegst">{{'accountinformationForm.label.registrationnaturegst' | translate}}:*</label>
-                                    <select class="form-control form-control-lg" id="registrationnaturegst">
+                                    <select class="form-control form-control-lg" id="registrationnaturegst" maxlength="9">
                                         <option value="0">Regular</option>
                                         <option value="1">Composite</option>
                                     </select>
                                 </div>
                                 <div class="form-group col-sm-12">
                                     <label class="col-form-label" for="registrationuin">{{'accountinformationForm.label.registrationuin' | translate}}:*</label>
-                                    <input type="text" class="form-control form-control-lg" name="Name" id="registrationuin" required>
+                                    <input type="text" class="form-control form-control-lg" name="Name" id="registrationuin" maxlength="25" required>
                                 </div>
 
                             </form>
@@ -209,25 +196,25 @@
                             <form>
                                 <div class="form-group col-sm-6">
                                     <label class="col-form-label" for="credentialscash">{{'accountinformationForm.label.credentialscash' | translate}}:*</label>
-                                    <select class="form-control form-control-lg" id="credentialscash">
+                                    <select class="form-control form-control-lg" id="credentialscash" maxlength="6">
                                         <option value="0">Cash</option>
                                         <option value="1">Credit</option>
                                     </select>
                                 </div>
                                 <div class="form-group col-sm-6">
                                     <label class="col-form-label" for="credentialscustomer">{{'accountinformationForm.label.credentialscustomer' | translate}}:*</label>
-                                    <select class="form-control form-control-lg" id="credentialscash">
+                                    <select class="form-control form-control-lg" id="credentialscash" maxlength="10">
                                         <option value="0">Whole Sale</option>
                                         <option value="1">Retail</option>
                                     </select>
                                 </div>
                                 <div class="form-group col-sm-6">
                                     <label class="col-form-label" for="credentialscredit">{{'accountinformationForm.label.credentialscredit' | translate}}:*</label>
-                                    <input type="text" class="form-control form-control-lg" name="Name" id="credentialscredit" required>
+                                    <input type="number" class="form-control form-control-lg" name="Name" id="credentialscredit" maxlength="12,2" required>
                                 </div>
                                 <div class="name form-group col-sm-6">
                                     <label class="col-form-label" for="credentialsdue">{{'accountinformationForm.label.credentialsdue' | translate}}:*</label>
-                                    <input type="text" class="form-control form-control-lg" name="Name" id="credentialsdue" required>
+                                    <input type="number" class="form-control form-control-lg" name="Name" id="credentialsdue" maxlength="3" required>
                                 </div>
 
                             </form>
