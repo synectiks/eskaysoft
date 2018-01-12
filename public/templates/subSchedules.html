@@ -10,22 +10,22 @@
                 </div>
                 <div class="form-group col-sm-12 mt10">
                     <label class="col-form-label" for="subScheduleName">{{'subscheduleform.label.name' | translate}}:*</label>
-                    <input type="text" class="form-control form-control-lg" name="Name" id="subScheduleName" required>
+                    <input type="text" class="form-control form-control-lg" name="Name" id="subScheduleName" maxlength="40" required>
                 </div>
 
-                <div class=" form-group col-sm-8">
+                <div class=" form-group col-sm-12">
                     <label class="col-form-label " for="scheduleName ">{{'subscheduleform.label.scheduleName' | translate}}:*</label>
-                    <input type="text " class="form-control form-control-lg " name="scheduleName" id="scheduleName " required>
+                    <input type="text " class="form-control form-control-lg " name="scheduleName" id="scheduleName" maxlength="40" required>
                 </div>
 
-                <div class="form-group col-sm-4">
-                    <label class="col-form-label " for="scheduleIndex ">{{'subscheduleform.label.scheduleIndex' | translate}}:</label>
-                    <input type="text " class="form-control form-control-lg " name="scheduleIndex" id="scheduleIndex " required>
-                </div>
+                <!--<div class="form-group col-sm-4">-->
+                    <!--<label class="col-form-label " for="scheduleIndex ">{{'subscheduleform.label.scheduleIndex' | translate}}:</label>-->
+                    <!--<input type="text " class="form-control form-control-lg " name="scheduleIndex" id="scheduleIndex" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" min="0" maxlength="2" required>-->
+                <!--</div>-->
 
                 <div class="form-group col-sm-12">
                     <label class="col-form-label " for="index ">{{'subscheduleform.label.index' | translate}}:*</label>
-                    <input type="number" class="form-control form-control-lg" name="index" id="index" min="1" max="5" required>
+                    <input type="number" class="form-control form-control-lg" name="index" id="index" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" min="0" maxlength="2" required>
                 </div>
 
                 <div class="form-group  col-sm-12">
