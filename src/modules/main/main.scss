@@ -96,6 +96,14 @@ table.doubleHeadTable > tbody tr td {
 
 
 /**********************************/
+/******* Five Headed Table *********/
+table.fiveHeadTable > thead tr th,
+table.fiveHeadTable > tbody tr td {
+    float: left;
+    width: 20%;
+    border-bottom-width: 0; }
+
+/**********************************/
 
 .mt25 {
     margin-top: 25px;

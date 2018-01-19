@@ -66,7 +66,7 @@
     "stateinformation.lable.code": "Code",
     "manufacturerForm.header.name": "Manufacturer Form",
     "manufacturerForm.label.name": "Manufacturer Name",
-    "scheduleform.label.id": "Sub Schedule Id",
+    "scheduleform.label.id": "Schedule Id",
     "subscheduleform.label.name": "Sub Schedule Name",
     "subscheduleform.label.index": "Sub Schedule Index",
     "subscheduleform.label.scheduleName": "Schedule Name",
