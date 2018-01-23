@@ -123,7 +123,7 @@
     "accountinformationForm.label.saccode": "SAC Code",
     "accountinformationForm.label.openingBalance": "Opening Balance",
     "accountinformationForm.label.openingtype": "Opening Type",
-    "accountinformationForm.label.code": "Code",
+    "accountinformationForm.label.code": "Special Remarks",
 
     "accountinformationForm.label.personalcontact": "Contact Person",
     "accountinformationForm.label.personaladdress1": "Address1",
@@ -155,7 +155,7 @@
     "accountinformationForm.label.credentialscustomer": "Customer Type",
     "accountinformationForm.label.credentialscredit": "Credit Limit",
     "accountinformationForm.label.credentialsdue": "Due Days",
-
+    "accountinformationForm.label.rateoftax" : "Rate Of Tax",
     "accountsOpenings.lable.searchAccount": "Search Account",
     "accountsOpenings.lable.code": "Code",
     "accountsOpenings.lable.accountName": "Account Name",
