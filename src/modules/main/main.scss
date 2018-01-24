@@ -1,3 +1,117 @@
+/*
+ * Specific styles of signin component
+ */
+
+/*
+ * General styles
+ */
+
+/********************************** Login Styles *********************/
+
+.login-mt {
+    margin-top: 20px;
+}
+
+.login-header-label {
+    float: right;
+    font-size: 80%;
+    position: relative;
+    top: -10px;
+}
+
+.panel-class-body {
+    padding-top: 30px;
+}
+
+.d-none {
+    display: none;
+}
+
+.input-grp-margin {
+    margin-bottom: 25px;
+}
+
+.form-grp-margint {
+    margin-top: 10px;
+}
+
+.sign-up {
+    border-top: 1px solid #888;
+    padding-top: 15px;
+    font-size: 85%;
+}
+
+.sign-up-box {
+    display: none;
+    margin-top: 20px;
+}
+
+.signup-panel {
+    float: right;
+    font-size: 85%;
+    position: relative;
+    top: -10px;
+}
+
+/**********************************************************************/
+
+/*
+ * Specific styles of signin component
+ */
+
+/*
+ * General styles
+ */
+
+/********************************** Login Styles *********************/
+
+.login-mt {
+    margin-top: 20px;
+}
+
+.login-header-label {
+    float: right;
+    font-size: 80%;
+    position: relative;
+    top: -10px;
+}
+
+.panel-class-body {
+    padding-top: 30px;
+}
+
+.d-none {
+    display: none;
+}
+
+.input-grp-margin {
+    margin-bottom: 25px;
+}
+
+.form-grp-margint {
+    margin-top: 10px;
+}
+
+.sign-up {
+    border-top: 1px solid #888;
+    padding-top: 15px;
+    font-size: 85%;
+}
+
+.sign-up-box {
+    display: none;
+    margin-top: 20px;
+}
+
+.signup-panel {
+    float: right;
+    font-size: 85%;
+    position: relative;
+    top: -10px;
+}
+
+/**********************************************************************/
+
 #productForm .selectContainer .form-control-feedback,
 #productForm .inputGroupContainer .form-control-feedback {
     right: -15px;
@@ -66,7 +180,6 @@ table.table-fixedheader > tbody tr td {
     border-color: darkgray;
 }
 
-
 /**** Single Headed Table Styles***/
 
 table.singleHeadTable > thead tr th,
@@ -82,7 +195,6 @@ table.singleHeadTable {
     overflow-y: auto;
 }
 
-
 /*********************************/
 
 /******* Double Headed Table *********/
@@ -94,14 +206,16 @@ table.doubleHeadTable > tbody tr td {
     border-bottom-width: 0;
 }
 
-
 /**********************************/
+
 /******* Five Headed Table *********/
+
 table.fiveHeadTable > thead tr th,
 table.fiveHeadTable > tbody tr td {
     float: left;
     width: 20%;
-    border-bottom-width: 0; }
+    border-bottom-width: 0;
+}
 
 /**********************************/
 
@@ -125,6 +239,26 @@ table.fiveHeadTable > tbody tr td {
     margin-top: 5px;
 }
 
+.mt-5 {
+    margin-top: -5px;
+}
+
+.mt-10 {
+    margin-top: -10px;
+}
+
+.mt-15 {
+    margin-top: -15px;
+}
+
+.mt-20 {
+    margin-top: -20px;
+}
+
+.mt-25 {
+    margin-top: -25px;
+}
+
 .mb10 {
     margin-bottom: 20px;
 }
@@ -136,6 +270,11 @@ table.fiveHeadTable > tbody tr td {
 .fmt30 {
     margin-top: 65px;
 }
+
+.fmt15 {
+    margin-top: 15px;
+}
+
 
 .selected {
     background-color: #818d89;
@@ -150,12 +289,11 @@ table.fiveHeadTable > tbody tr td {
     margin-right: 60px !important;
 }
 
-
 /* Sticky footer
 -------------------------------------------------- */
 
 label {
-    font-weight: 100!important;
+    font-weight: 100 !important;
 }
 
 .header {
@@ -195,11 +333,10 @@ body {
     position: absolute;
     bottom: 0;
     width: 100%;
-    height: 60px;
+    height: 40px;
     line-height: 60px;
     background-color: #e2d4d4;
 }
-
 
 /*------------------------------------------------*/
 
@@ -263,13 +400,11 @@ body {
     .smenu {
         display: block;
     }
-
 }
 
 .input-search-sm {
     width: 11em !important;
 }
-
 
 /********** Collapsible area styles ************/
 
@@ -280,7 +415,6 @@ body {
     color: #555;
     font-size: 14px;
     font-weight: bold;
-
     text-decoration: none;
 }
 
@@ -298,3 +432,78 @@ body {
 }
 
 /************************************************/
+
+/*********** Tabbed Panel************************/
+
+.ml10 {
+    margin-left: 20px !important;
+    margin-right: 52px !important;
+}
+
+#tab1 .tab-content {
+    color: #211f1f;
+    background-color: #eaf2fa;
+    padding: 5px 15px;
+}
+
+.tab {
+    background-color: #ebe7e7 !important;
+}
+
+/************************************************/
+
+/************** Accounts Info Search Area ******/
+
+.dropdown.dropdown-lg .dropdown-menu {
+    margin-top: -1px;
+    padding: 6px 20px;
+}
+
+.input-group-btn .btn-group {
+    display: flex !important;
+}
+
+.btn-group .btn {
+    border-radius: 0;
+    margin-left: -1px;
+}
+
+.btn-group .btn:last-child {
+    border-top-right-radius: 4px;
+    border-bottom-right-radius: 4px;
+}
+
+.btn-group .form-horizontal .btn[type="submit"] {
+    border-top-left-radius: 4px;
+    border-bottom-left-radius: 4px;
+}
+
+.form-horizontal .form-group {
+    margin-left: 0;
+    margin-right: 0;
+}
+
+.form-group .form-control:last-child {
+    border-top-left-radius: 4px;
+    border-bottom-left-radius: 4px;
+}
+
+@media screen and (min-width: 768px) {
+    #adv-search {
+        width: 500px;
+        margin: 0 auto;
+    }
+    .dropdown.dropdown-lg {
+        position: static !important;
+    }
+    .dropdown.dropdown-lg .dropdown-menu {
+        min-width: 500px;
+    }
+}
+
+/***********************************************/
+
+.form {
+    line-height: 0.5;
+    margin-top: 10px;
+}
