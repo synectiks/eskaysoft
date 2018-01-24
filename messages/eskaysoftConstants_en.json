@@ -107,6 +107,7 @@
     "registrationForm.header.forgotpassword": "Forgot password?",
     "registrationForm.label.username": "User Name",
     "registrationForm.label.password": "Password",
+    "registrationForm.label.confPassword": "Confirm Pwd",
     "registrationForm.label.address": "Address",
     "registrationForm.label.town": "Town",
     "registrationForm.label.designation": "Designation",

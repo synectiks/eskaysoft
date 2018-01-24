@@ -22,12 +22,12 @@
 
                     <div class="input-group input-grp-margin">
                         <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-                        <input id="login-username" type="text" class="form-control" name="username" value="" placeholder="{{'registrationForm.label.username' | translate}}">
+                        <input id="login-username" type="text" class="form-control form-control-sm" name="username" value="" placeholder="{{'registrationForm.label.username' | translate}}">
                     </div>
 
                     <div class="input-group input-grp-margin">
                         <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
-                        <input id="login-password" type="password" class="form-control" name="password" placeholder="{{'registrationForm.label.password' | translate}}">
+                        <input id="login-password" type="password" class="form-control form-control-sm" name="password" placeholder="{{'registrationForm.label.password' | translate}}">
                     </div>
                     <div class="input-group">
                         <div class="checkbox">
@@ -65,7 +65,7 @@
                 <div class="signup-panel"><a id="signinlink" href="#" onclick="$('#signupbox').hide(); $('#loginbox').show()">Sign In</a></div>
             </div>
             <div class="panel-body">
-                <form id="signupform " class="form-horizontal " role="form ">
+                <form id="signupform " class="form-horizontal form" role="form ">
 
                     <div id="signupalert" class="alert alert-danger  d-none">
                         <p>Error:</p>
@@ -77,56 +77,82 @@
                         <span></span>
                     </div>
 
-                    <div class="form-group ">
+                    <div class="form-group">
                         <label for="email " class="col-md-3 control-label ">{{'registrationForm.label.username' | translate}}</label>
                         <div class="col-md-9 ">
-                            <input type="text " class="form-control " name="email " placeholder="{{ 'registrationForm.label.username' | translate}} ">
+                            <input type="text " class="form-control form-control-sm " name="email " placeholder="{{ 'registrationForm.label.username' | translate}} ">
                         </div>
                     </div>
 
                     <div class="form-group ">
                         <label for="firstname " class="col-md-3 control-label ">{{'registrationForm.label.password' | translate}}</label>
                         <div class="col-md-9 ">
-                            <input type="text " class="form-control " name="firstname " placeholder="{{ 'registrationForm.label.password' | translate}} ">
+                            <input type="text " class="form-control form-control-sm " name="firstname " placeholder="{{ 'registrationForm.label.password' | translate}} ">
+                        </div>
+                    </div>
+                    <div class="form-group ">
+                        <label for="confPwd " class="col-md-3 control-label ">{{'registrationForm.label.confPassword' | translate}}</label>
+                        <div class="col-md-9 ">
+                            <input type="text " class="form-control form-control-sm " name="confPwd" placeholder="{{ 'registrationForm.label.confPassword' | translate}} ">
                         </div>
                     </div>
                     <div class="form-group ">
                         <label for="lastname " class="col-md-3 control-label ">{{'registrationForm.label.address' | translate}}</label>
                         <div class="col-md-9 ">
-                            <input type="text " class="form-control " name="lastname " placeholder="{{ 'registrationForm.label.address' | translate}} ">
+                            <input type="text " class="form-control form-control-sm " name="lastname " placeholder="{{ 'registrationForm.label.address' | translate}} ">
                         </div>
                     </div>
                     <div class="form-group ">
                         <label for="password " class="col-md-3 control-label ">{{'registrationForm.label.town' | translate}}</label>
                         <div class="col-md-9 ">
-                            <input type="password " class="form-control " name="passwd " placeholder="{{ 'registrationForm.label.town' | translate}} ">
+                            <input type="password " class="form-control form-control-sm " name="passwd " placeholder="{{ 'registrationForm.label.town' | translate}} ">
                         </div>
                     </div>
 
                     <div class="form-group ">
                         <label for="icode " class="col-md-3 control-label ">{{'registrationForm.label.designation' | translate}}</label>
                         <div class="col-md-9 ">
-                            <input type="text " class="form-control " name="icode " placeholder="{{ 'registrationForm.label.designation' | translate}} ">
+                            <input type="text " class="form-control form-control-sm " name="icode " placeholder="{{ 'registrationForm.label.designation' | translate}} ">
                         </div>
                     </div>
 
                     <div class="form-group ">
                         <label for="icode " class="col-md-3 control-label ">{{'registrationForm.label.mobile' | translate}}</label>
                         <div class="col-md-9 ">
-                            <input type="text " class="form-control " name="icode " placeholder="{{ 'registrationForm.label.mobile' | translate}} ">
+                            <input type="text " class="form-control form-control-sm " name="icode " placeholder="{{ 'registrationForm.label.mobile' | translate}} ">
                         </div>
                     </div>
 
                     <div class="form-group ">
                         <label for="icode " class="col-md-3 control-label ">{{'registrationForm.label.email' | translate}}</label>
                         <div class="col-md-9 ">
-                            <input type="text " class="form-control " name="icode " placeholder="{{ 'registrationForm.label.email' | translate}} ">
+                            <input type="text " class="form-control form-control-sm " name="icode " placeholder="{{ 'registrationForm.label.email' | translate}} ">
                         </div>
                     </div>
                     <div class="form-group ">
                         <label for="icode " class="col-md-3 control-label ">{{'registrationForm.label.userlevel' | translate}}</label>
                         <div class="col-md-9 ">
-                            <input type="text " class="form-control " name="icode " placeholder="{{ 'registrationForm.label.userlevel' | translate}} ">
+                            <input type="text " class="form-control form-control-sm " name="icode " placeholder="{{ 'registrationForm.label.userlevel' | translate}} ">
+                        </div>
+                    </div>
+
+                    <div class="form-group ">
+                        <label for="sel2" class="col-md-3 control-label">Permissions:</label>
+                        <!-- (hold shift to select more than one)-->
+                        <div class="col-md-9 ">
+                            <select multiple class="form-control form-control-sm" id="sel2">
+                            <option>Allow Masters</option>
+                            <option>Allow Purchase</option>
+                            <option>Allow Sales</option>
+                            <option>Allow Inventory Reports</option>
+                            <option>Allow Finance</option>
+                            <option>Allow Finance Reports</option>
+                            <option>Allow GST Report</option>
+                            <option>Allow Miscellaneous</option>
+                            <option>Allow Invoice Date Change</option>
+                            <option>Allow Modification or Deletion</option>
+                                
+                        </select>
                         </div>
                     </div>
                     <div class="form-group ">
@@ -138,14 +164,10 @@
                 </form>
             </div>
         </div>
-
-
-
-
     </div>
 </div>
 
-<!--<div class="col-xs-12 fmt30 ">
-    Footer margin top below 768px
-</div>-->
+<div class="col-xs-12 fmt30 ">
+    <!--   Footer margin top below 768px-->
+</div>
 <footer-component></footer-component>
