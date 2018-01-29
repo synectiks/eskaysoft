@@ -1,13 +1,13 @@
 <header-menu-bar></header-menu-bar>
 
-<div class="container">
+<div class="container-fluid">
     <div class='row'>
         <div class='col-xs-12 col-sm-4'>
             <form>
                 <div class='text-left pt7'>
                     <h2>{{'scheduleform.header.name' | translate}} </h2>
                 </div>
-                <div class="form-group ">
+                <div class="form-group">
                     <label class="col-form-label" for="scheduleName">{{'scheduleform.label.name' | translate}}:*</label>
                     <input type="text" class="form-control form-control-lg" name="Name" id="scheduleName" maxlength="40" ng-model="vm.scheduleName" required>
                 </div>
@@ -34,7 +34,7 @@
                 </div>
             </form>
         </div>
-
+        
         <div class='col-xs-12 col-sm-1'></div>
 
         <div class='col-xs-12 col-sm-6'>
@@ -72,7 +72,7 @@
                     </tbody>
                 </table>
             </div>
-            <div class="btn-align p0" ng-if="vm.selected">
+            <div class="btn-align mr-12 p0" ng-if="vm.selected">
                 <button type="submit" class="btn btn-primary searchEdit btn-position" ng-click="vm.edit()">{{'button.edit' | translate}}</button>
                 <button type="submit" class="btn btn-primary btn-position" ng-click="vm.delete()">{{'button.delete' | translate}}</button>
             </div>
