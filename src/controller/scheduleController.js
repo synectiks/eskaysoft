@@ -27,17 +27,21 @@
             vm.normalScreen = true;
             vm.errorMessage = "";
             vm.messageContainer = false;
+			
             var list = {};
 
-
+			vm.onSelectRow= function (rowData){
+				console.log("onSelectRowonSelectRowonSelectRow", rowData);
+			};
             vm.getDropDownValues = function () {
                 commonLoaderService.load_Data(null, 'messages/scheduleMockData.json', 'GET', null).then(function (dropDownContent) {
                     vm.scheduleTypes = dropDownContent.scheduleTypes;
-
+					vm.scheduleTableHeaders=dropDownContent.tableHeaders;
                 }, function (error) { // jshint ignore:line
                     console.log("error", error);
                 });
             };
+			
             vm.getDropDownValues();
             vm.search = function () {
 
