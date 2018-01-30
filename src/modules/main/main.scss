@@ -342,7 +342,12 @@ table.fiveHeadTable > tbody tr td {
 }
 
 .mr60 {
-    margin-right: 60px !important;
+    margin-right: 80px !important;
+}
+
+.navbar-nav>li:last-child > a{
+    position: absolute;
+    right: -57px;
 }
 
 /* Sticky footer
@@ -562,4 +567,18 @@ body {
 .form {
     line-height: 0.5;
     margin-top: 10px;
+}
+.py-y{
+  padding-left: 32px;
+  padding-right: 13px;
+}
+.pyl-10{
+    padding-left: 10px !important;
+}
+.pyr-10{
+    padding-right: 13px !important;
+}
+.pos-l{
+  position: relative;
+  left:8em;
 }
