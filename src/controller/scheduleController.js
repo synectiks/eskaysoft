@@ -57,7 +57,6 @@
 			
             vm.getDropDownValues();
             vm.search = function () {
-
                 vm.editScreen = false;
                 vm.normalScreen = true;
                 commonLoaderService.load_Data(null, 'messages/scheduleMockData.json', 'GET', null).then(function (searchContent) {
@@ -69,25 +68,7 @@
                     console.log("error", error);
                 });
             };
-
-vm.search();
-            vm.setSelected = function (name, no, type, index) {
-                vm.selectedName = name;
-                vm.selectedName = name;
-                if (vm.selected && vm.selectedName == list.name) {
-                    vm.selectedName = null;
-                    vm.selected = false;
-                } else {
-                    vm.selected = true;
-                    list.name = name;
-                    list.no = no;
-                    list.type = type;
-                    list.index = index;
-                    vm.messageContainer = false;
-                    vm.errorMessage = "";
-                }
-            };
-
+			vm.search();
             vm.edit = function () {
                 vm.scheduleName = list.name;
                 vm.scheduleNo = list.no;
