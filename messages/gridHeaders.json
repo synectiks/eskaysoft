@@ -1,0 +1,113 @@
+{
+	"scheduleTable": [{
+		"name": "scheduleform.label.name"
+		}, {
+		"name": "scheduleform.label.index"
+		}, {
+		"name": "scheduleform.label.type"
+	}],
+
+	"subScheduleTable": [{
+		"name": "subscheduleform.label.name"
+		}, {
+		"name": "subscheduleform.label.index"
+		}, {
+		"name": "subscheduleform.label.scheduleName"
+	}],
+
+	"stateTable": [{
+		"name": "stateinformation.label.name"
+		}, {
+		"name": "stateinformation.label.zone"
+		}, {
+		"name": "stateinformation.label.code"
+	}],
+
+	"districtTable": [{
+		"name": "districtsform.label.dist.name"
+		}, {
+		"name": "districtsform.label.state.name"
+	}],
+
+	"areaTable": [{
+		"name": "areaform.label.area.name"
+		}, {
+		"name": "areaform.label.executive.name"
+	}],
+
+	"businessExecutivesTable": [{
+		"name": "businessexecutivesform.label.name"
+		}, {
+		"name": "businessexecutivesform.label.address"
+		}, {
+		"name": "businessexecutivesform.label.town"
+		}, {
+		"name": "businessexecutivesform.label.mobile"
+	}],
+
+	"bankInformationformTable": [{
+		"name": "bankinformationform.label.name"
+		}, {
+		"name": "bankinformationform.label.address"
+	}],
+
+	"manufacturerTable": [{
+		"name": "manufacturerForm.label.name"
+	}],
+
+	"companyGroupTable": [{
+		"name": "companygroupform.label.companyGroup"
+	}],
+
+	"productGroupTable": [{
+		"name": "productgroupform.label.productGroup"
+	}],
+
+	"productCategoryTable": [{
+		"name": "productcategoryform.label.productCategory"
+	}],
+	
+	"companyTable": [{
+		"name": "companyform.label.companyName"
+		}, {
+		"name": "companyform.label.companyType"
+		}, {
+		"name": "companyform.label.companyStatus"
+	}],
+
+	"productTable": [{
+		"name": "sproductform.label.name"
+		}, {
+		"name": "productform.label.group"
+		}, {
+		"name": "productform.label.category"
+	}],
+
+	"accountsOpeningsTable": [{
+		"name": "accountsOpenings.lable.code"
+		}, {
+		"name": "accountsOpenings.lable.accountName"
+		}, {
+		"name": "accountsOpenings.lable.town"
+		}, {
+		"name": "accountsOpenings.lable.opening"
+		}, {
+		"name": "accountsOpenings.lable.type"
+	}],
+
+	"customerwiseDiscountTable": [{
+		"name": "customerwiseDiscount.lable.companyDesc"
+		}, {
+		"name": "customerwiseDiscount.lable.disc"
+		}, {
+		"name": "customerwiseDiscount.lable.cdisc"
+	}],
+	
+	"accountInformationTable": [{
+		"name": "scheduleform.label.name"
+		}, {
+		"name": "scheduleform.label.index"
+		}, {
+		"name": "scheduleform.label.type"
+	}]
+}

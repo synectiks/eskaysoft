@@ -11,7 +11,7 @@
     <!-- <link href="style.css" rel="stylesheet"> -->
     <!-- bower:css -->
     <link href="bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="bower_components/bootstrap-select/dist/css/bootstrap-select.min.css">
+   
     <!-- bower:js -->
     <script src="bower_components/angular/angular.min.js"></script>
     <script src="bower_components/jquery/dist/jquery.min.js"></script>
@@ -23,17 +23,16 @@
     <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
     <script src="bower_components/downloadjs/download.js"></script>
 
-    <script src="bower_components/bootstrap-select/dist/js/bootstrap-select.min.js"></script>
+ 
     <script src="app.js"></script>
     <script src="src/_config/config.js"></script>
     <script src="src/_config/eskaysoftCommons.js"></script>
-    <script src="src/controller/registrationFormController.js"></script>
+
     <script src="src/controller/statesInfoController.js"></script>
     <script src="src/controller/contactController.js"></script>
     <script src="src/controller/mainController.js"></script>
     <script src="src/controller/scheduleController.js"></script>
     <script src="src/controller/loginInfoController.js"></script>
-    <script src="src/controller/registrationInfoController.js"></script>
     <script src="src/controller/areasInfoController.js"></script>
     <script src="src/controller/bankInfoController.js"></script>
     <script src="src/controller/businessExeInfoController.js"></script>
@@ -63,7 +62,9 @@
 </head>
 
 <body>
-<header-menu-bar></header-menu-bar>
+<div ng-if="$state.current.name !== 'home' && $state.current.name !== 'login' && $state.current.name !== ''"><header-menu-bar></header-menu-bar></div>
+
+
     <ui-view></ui-view>
 	<div class="col-xs-12 fmt30 ">
     <!--Footer margin top below 768px-->

@@ -9,5 +9,9 @@ angular
    'pascalprecht.translate',
   //'ngMap',
   'broadcast'
-  ]);
+  ]).run(['$rootScope', '$state',
+    function ($rootScope, $state) {
+        $rootScope.$state = $state;
+    }
+]);
 }());

@@ -1,0 +1,67 @@
+{
+	"header.navmenu.home": [{
+		"name": "subheader.navmenu.home.schedules"
+		}, {
+		"name": "subheader.navmenu.home.districts"
+		},  {
+		"name": "subheader.navmenu.home.areas"
+		}, {
+		"name": "subheader.navmenu.home.businessexecutives"
+		}, {
+		"name": "subheader.navmenu.home.bankinformation"
+		}, {
+		"name": "subheader.navmenu.home.states"
+		}, {
+		"name": "subheader.navmenu.home.subschedules"
+		}, {
+		"name": "subheader.navmenu.home.manufacturer"
+		}, {
+		"name": "subheader.navmenu.home.companyGroup"
+		}, {
+		"name": "subheader.navmenu.home.companies"
+		}, {
+		"name": "subheader.navmenu.home.productGroup"
+		}, {
+		"name": "subheader.navmenu.home.productCategory"
+		}, {
+		"name": "subheader.navmenu.home.customerwiseDiscount"
+		},{
+		"name": "subheader.navmenu.home.accountsOpenings"
+		},{
+		"name": "subheader.navmenu.home.product"
+		},{
+		"name": "subheader.navmenu.home.accountsInfo"
+	}],
+
+	"header.navmenu.masters": [{
+		"name": "subscheduleform.label.name"
+	}],
+
+	"header.navmenu.purchaces": [{
+		"name": "stateinformation.label.name"
+	}],
+
+	"header.navmenu.sales": [{
+		"name": "districtsform.label.dist.name"
+	}],
+
+	"header.navmenu.inventoryreports": [{
+		"name": "areaform.label.area.name"
+	}],
+
+	"header.navmenu.finance": [{
+		"name": "businessexecutivesform.label.name"
+	}],
+
+	"header.navmenu.financereports": [{
+		"name": "bankinformationform.label.name"
+	}],
+
+	"header.navmenu.gstreports": [{
+		"name": "manufacturerForm.label.name"
+	}],
+
+	"header.navmenu.miscellaneous": [{
+		"name": "companygroupform.label.companyGroup"
+	}]
+}

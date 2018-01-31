@@ -12,7 +12,8 @@
         "code": "Pnl",
         "description": "Profit & Loss"
 	  }],
-"tableHeaders": [{
+	  
+	"tableHeaders": [{
         "name": "scheduleform.label.name"
 	  }, {
         "name": "scheduleform.label.index"

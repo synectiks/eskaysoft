@@ -140,20 +140,10 @@
                             templateUrl: 'public/templates/login.html',
                             controller: 'loginInfoController'
 					}, {
-                            name: 'registration',
-                            url: '/registration',
-                            templateUrl: 'public/templates/registration.html',
-                            controller: 'registrationInfoController'
-					}, {
                             name: 'contact',
                             url: '/contact',
                             templateUrl: 'public/templates/contact.html',
                             controller: 'contactController'
-					}, {
-                            name: 'registrationForm',
-                            url: '/registrationForm',
-                            templateUrl: 'public/templates/registrationForm.html',
-                            controller: 'registrationFormController'
 					}, {
                             name: 'component',
                             url: '/component',
