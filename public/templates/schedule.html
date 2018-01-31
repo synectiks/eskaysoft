@@ -56,24 +56,7 @@
                     <input type="text" class="form-control" id="scheduleform" placeholder="Schedule Name" ng-model="vm.schedule.name" required>
                 </div>
             </form>
-            <div class="tableDiv mt10 mb10 p0">
-                <table id="scheduleTable" class="table table-fixedheader table-lg table-bordered scrollbar" ng-init="vm.search()">
-                    <thead>
-                        <tr>
-                            <th>{{'scheduleform.label.name' | translate}}</th>
-                            <th>{{'scheduleform.label.index' | translate}}</th>
-                            <th>{{'scheduleform.label.type' | translate}}</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr ng-repeat="schemes in vm.data |filter:vm.schedule:vm.startsWith" ng-click="vm.setSelected(schemes.name, schemes.no, schemes.type, $index)" ng-class="{selected: schemes.name === vm.selectedName}">
-                            <td>{{schemes.name}}</td>
-                            <td>{{schemes.no}}</td>
-                            <td>{{schemes.type}}</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
+             <common-grid-component filter-options="vm.schedule" headers-list="vm.scheduleTableHeaders", grid-data="vm.data" grid-call-back="vm.onSelectRow(value)"></common-grid-component>
             <div class="btn-align p0" ng-if="vm.selected">
                 <button type="submit" class="btn btn-primary searchEdit btn-position" ng-click="vm.edit()">{{'button.edit' | translate}}</button>
                 <button type="submit" class="btn btn-primary btn-position" ng-click="vm.delete()">{{'button.delete' | translate}}</button>
@@ -82,10 +65,8 @@
     </div>
 
 </div>
-<common-grid-component options="vm.scheduleTypes" headers-list="vm.scheduleTableHeaders", grid-data="vm.data" grid-call-back="vm.onSelectRow(value)"></common-grid-component>
 <div class="col-xs-12 fmt30">
     <!--Footer margin top below 768px-->
 </div>
-<footer-component></footer-component>
 
 

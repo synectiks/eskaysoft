@@ -32,6 +32,19 @@
 
 			vm.onSelectRow= function (rowData){
 				console.log("onSelectRowonSelectRowonSelectRow", rowData);
+				vm.selectedName = rowData.name;
+				 if (vm.selected && vm.selectedName == list.name) {
+                    vm.selectedName = null;
+                    vm.selected = false;
+                } else {
+                    vm.selected = true;
+                    list.name = rowData.name;
+                    list.no = rowData.no;
+                    list.type = rowData.type;
+                    list.index = rowData.index;
+                    vm.messageContainer = false;
+                    vm.errorMessage = "";
+                }
 			};
             vm.getDropDownValues = function () {
                 commonLoaderService.load_Data(null, 'messages/scheduleMockData.json', 'GET', null).then(function (dropDownContent) {
@@ -57,7 +70,7 @@
                 });
             };
 
-
+vm.search();
             vm.setSelected = function (name, no, type, index) {
                 vm.selectedName = name;
                 vm.selectedName = name;
@@ -123,12 +136,8 @@
                 vm.schedule.name = "";
                 vm.schedule.type = "";
                 vm.search();
-
             };
-            vm.startsWith = function (actual, expected) {
-                var lowerStr = (actual + "").toLowerCase();
-                return lowerStr.indexOf(expected.toLowerCase()) === 0;
-            }
+  
 
     }]);
 })();

@@ -1,13 +1,13 @@
 <div class="tableDiv mt10 mb10 p0">
 	<table id="commonGrid" class="table table-fixedheader table-lg table-bordered scrollbar">
-		<thead ng-repeat="header in vm.headersList">
+		<thead>
 			<tr>
-			 <th>{{header.name | translate}}</th>
-			 </tr>
+				<th ng-repeat="header in vm.headersList">{{header.name | translate}}</th>
+			</tr>
 		</thead>
 		<tbody>
-			<tr ng-repeat="rowData in vm.gridData">
-				<td  ng-repeat="(key, value) in rowData"  ng-click="vm.gridCallBack({value:rowData})">{{value}}</td>
+			<tr ng-repeat="rowData in vm.gridData | filter:vm.filterOptions:vm.startsWith" >
+				<td ng-repeat="(key, value) in rowData"  ng-click="vm.gridCallBack({value:rowData})">{{value}}</td>
 			</tr>
 		</tbody>
 	</table>

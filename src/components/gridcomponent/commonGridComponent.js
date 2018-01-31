@@ -5,9 +5,9 @@ angular.module('com.synectiks.eskaySoft')
    .component('commonGridComponent', {
        templateUrl: 'public/templates/commonGridComponent.tpl.html',
 	   bindings: {
-			options: '=', // twoway binding
+			filterOptions: '=', 
 			headersList: '<', // oneway binding
-			gridData: '=',
+			gridData: '=',// twoway binding
 			gridCallBack: '&'
 		  },
 		   controller: 'commonGridController',
