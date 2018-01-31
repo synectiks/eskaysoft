@@ -7,7 +7,7 @@
 		</thead>
 		<tbody>
 			<tr ng-repeat="rowData in vm.gridData">
-				<td  ng-repeat="(key, value) in rowData"  ng-click="vm.gridCallBack(rowData)">{{value}}</td>
+				<td  ng-repeat="(key, value) in rowData"  ng-click="vm.gridCallBack({value:rowData})">{{value}}</td>
 			</tr>
 		</tbody>
 	</table>

@@ -10,8 +10,6 @@
 
             var vm = this; // jshint ignore:line
 
-        console.log("sampleController***",vm);
-
-		 
+      
     }]);
 })();
