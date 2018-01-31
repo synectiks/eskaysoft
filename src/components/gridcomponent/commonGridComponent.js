@@ -8,7 +8,8 @@ angular.module('com.synectiks.eskaySoft')
 			filterOptions: '=', 
 			headersList: '<', // oneway binding
 			gridData: '=',// twoway binding
-			gridCallBack: '&'
+			gridCallBack: '&',
+			rowNumber: '='
 		  },
 		   controller: 'commonGridController',
 			controllerAs:'vm'

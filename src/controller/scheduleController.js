@@ -30,9 +30,9 @@
 			
             var list = {};
 
-			vm.onSelectRow= function (rowData){
-				console.log("onSelectRowonSelectRowonSelectRow", rowData);
+			vm.onSelectRow= function (rowData, rowNum){
 				vm.selectedName = rowData.name;
+				vm.selectedRow = rowNum;
 				 if (vm.selected && vm.selectedName == list.name) {
                     vm.selectedName = null;
                     vm.selected = false;
@@ -44,6 +44,7 @@
                     list.index = rowData.index;
                     vm.messageContainer = false;
                     vm.errorMessage = "";
+					
                 }
 			};
             vm.getDropDownValues = function () {
