@@ -41,6 +41,7 @@
     "subheader.navmenu.home.accountsInfo": "Accounts Information",
     "subheader.navmenu.home.customerwiseDiscount": "Customerwise Discount",
     "subheader.navmenu.home.accountsOpenings": "Accounts Openings",
+    "subheader.navmenu.home.purchaseForm": "Purchase Entry Form",
     "scheduleform.label.name": "Schedule Name",
     "scheduleform.label.index": "Schedule Index",
     "scheduleform.label.type": "Schedule Type",
@@ -179,7 +180,7 @@
     "scheduleform.label.type": "Schedule Type",
     "scheduleform.header.name": "Schedule Form",
 
-    "purchaseform.header.name": "Purchase Form",
+    "purchaseform.header.name": "Purchase Entry Form",
     "purchaseform.label.purchaseNumber": "Purchase Number",
     "purchaseform.label.invoiceNumber": "Invoice Number",
     "purchaseform.label.supplier": "Supplier",
