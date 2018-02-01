@@ -1,12 +1,12 @@
-
 (function() {
-
-  'use strict';
-
-
-  angular.module('com.synectiks.eskaySoft')
-    .controller('bankInfoController', ['$scope', function($scope) {
-      var vm = this; // jshint ignore:line
-
-    }]);
+	'use strict';
+	angular.module('com.synectiks.eskaySoft')
+	.controller('bankInfoController', ['commonLoaderService', function(commonLoaderService) {
+		var vm = this; // jshint ignore:line
+		commonLoaderService.load_Data(null, 'messages/gridHeaders.json', 'GET', null).then(function (headers) {
+			vm.bankTableHeaders=headers.bankTable;
+		}, function (error) { // jshint ignore:line
+			console.log("error", error);
+		});
+	}]);
 })();

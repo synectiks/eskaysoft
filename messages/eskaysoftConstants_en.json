@@ -63,7 +63,7 @@
     "stateinformation.header.name": "State Information",
     "stateinformation.label.name": "State",
     "stateinformation.label.zone": "Zone",
-    "stateinformation.lable.code": "Code",
+    "stateinformation.label.code": "Code",
     "manufacturerForm.header.name": "Manufacturer Form",
     "manufacturerForm.label.name": "Manufacturer Name",
     "scheduleform.label.id": "Schedule Id",

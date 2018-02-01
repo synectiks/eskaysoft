@@ -45,7 +45,7 @@
 		"name": "businessexecutivesform.label.mobile"
 	}],
 
-	"bankInformationformTable": [{
+	"bankTable": [{
 		"name": "bankinformationform.label.name"
 		}, {
 		"name": "bankinformationform.label.address"
@@ -76,7 +76,7 @@
 	}],
 
 	"productTable": [{
-		"name": "sproductform.label.name"
+		"name": "productform.label.name"
 		}, {
 		"name": "productform.label.group"
 		}, {

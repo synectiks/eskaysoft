@@ -9,15 +9,6 @@
         .controller('scheduleController', ['$scope', 'commonLoaderService', function ($scope, commonLoaderService) {
 
             var vm = this; // jshint ignore:line
-
-            /* $timeout(function () {
-                 $('.selectpicker').selectpicker('refresh');
-             }, 0);*/
-
-            /*angular.element(document).ready(function () {
-                $('.selectpicker').selectpicker('refresh');
-            });*/
-
             vm.scheduleType = "0";
             vm.selected = false;
             vm.scheduleName = "";
@@ -27,8 +18,7 @@
             vm.normalScreen = true;
             vm.errorMessage = "";
             vm.messageContainer = false;
-			
-            var list = {};
+			var list = {};
 
 			vm.onSelectRow= function (rowData, rowNum){
 				vm.selectedName = rowData.name;
@@ -44,19 +34,26 @@
                     list.index = rowData.index;
                     vm.messageContainer = false;
                     vm.errorMessage = "";
-					
-                }
+			    }
 			};
+			
             vm.getDropDownValues = function () {
                 commonLoaderService.load_Data(null, 'messages/scheduleMockData.json', 'GET', null).then(function (dropDownContent) {
                     vm.scheduleTypes = dropDownContent.scheduleTypes;
-					vm.scheduleTableHeaders=dropDownContent.tableHeaders;
+					
                 }, function (error) { // jshint ignore:line
                     console.log("error", error);
                 });
             };
 			
-            vm.getDropDownValues();
+			vm.getScheduleTableHeaders = function () {
+                commonLoaderService.load_Data(null, 'messages/gridHeaders.json', 'GET', null).then(function (headers) {
+                 	vm.scheduleTableHeaders=headers.scheduleTable;
+                }, function (error) { // jshint ignore:line
+                    console.log("error", error);
+                });
+            };
+			
             vm.search = function () {
                 vm.editScreen = false;
                 vm.normalScreen = true;
@@ -69,7 +66,7 @@
                     console.log("error", error);
                 });
             };
-			vm.search();
+			
             vm.edit = function () {
                 vm.scheduleName = list.name;
                 vm.scheduleNo = list.no;
@@ -88,7 +85,6 @@
             };
 
             vm.save = function () {
-
                 vm.data.splice(list.index, 1);
                 var obj = {
                     "name": vm.scheduleName,
@@ -119,7 +115,9 @@
                 vm.schedule.type = "";
                 vm.search();
             };
-  
+			vm.getDropDownValues();
+			vm.getScheduleTableHeaders();
+			vm.search();
 
     }]);
 })();

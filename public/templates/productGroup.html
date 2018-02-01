@@ -26,20 +26,7 @@
                 </div>
 
             </form>
-            <div class="tableDiv mt10 mb10 p0">
-                <table id="productGroupTable" class="table table-fixedheader table-lg table-bordered scrollbar singleHeadTable" ng-init="vm.search()">
-                    <thead>
-                        <tr>
-                            <th>{{'productgroupform.label.productGroup' | translate}}</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr ng-repeat="schemes in vm.data |filter:vm.schedule:vm.startsWith" ng-click="vm.setSelected(schemes.name, schemes.no, schemes.type, $index)" ng-class="{selected: schemes.name === vm.selectedName}">
-                            <td>{{schemes.name}}</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
+            <common-grid-component filter-options="vm.schedule" headers-list="vm.productGroupTableHeaders" grid-data="vm.data" grid-call-back="vm.onSelectRow(value, index)" row-number="vm.selectedRow"></common-grid-component>
             <div class="btn-align p0" ng-if="vm.selected">
                 <button type="submit" class="btn btn-primary searchEdit btn-position" ng-click="vm.edit()">{{'button.edit' | translate}}</button>
                 <button type="submit" class="btn btn-primary btn-position" ng-click="vm.delete()">{{'button.delete' | translate}}</button>

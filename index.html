@@ -22,12 +22,10 @@
     <script src="bower_components/tether/dist/js/tether.min.js"></script>
     <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
     <script src="bower_components/downloadjs/download.js"></script>
-
  
     <script src="app.js"></script>
     <script src="src/_config/config.js"></script>
     <script src="src/_config/eskaysoftCommons.js"></script>
-
     <script src="src/controller/statesInfoController.js"></script>
     <script src="src/controller/contactController.js"></script>
     <script src="src/controller/mainController.js"></script>
@@ -53,23 +51,21 @@
 	<script src="src/components/gridComponent/commonGridComponent.js"></script>
 	<script src="src/components/header/header.js"></script>
     <script src="src/components/footer/footer.js"></script>
-	
-    <script src="src/modules/broadcast/broadcast.js"></script>
+	<script src="src/modules/broadcast/broadcast.js"></script>
     <script src="src/modules/main/main.js"></script>
     <script src="src/providers/mainProvider.js"></script>
     <script src="src/services/mainService.js"></script>
-
 </head>
 
 <body>
-<div ng-if="$state.current.name !== 'home' && $state.current.name !== 'login' && $state.current.name !== ''"><header-menu-bar></header-menu-bar></div>
-
-
-    <ui-view></ui-view>
+	<div ng-if="$state.current.name !== 'home' && $state.current.name !== 'login' && $state.current.name !== ''">
+		<header-menu-bar></header-menu-bar>
+	</div>
+	<ui-view></ui-view>
 	<div class="col-xs-12 fmt30 ">
-    <!--Footer margin top below 768px-->
-</div>
-<footer-component></footer-component>
+		<!--Footer margin top below 768px-->
+	</div>
+	<footer-component></footer-component>
 </body>
 
 </html>
