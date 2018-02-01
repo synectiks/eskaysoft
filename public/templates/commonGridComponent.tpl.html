@@ -6,7 +6,7 @@
 			</tr>
 		</thead>
 		<tbody>
-			<tr ng-repeat=" (parentIndex, rowData) in vm.gridData | filter:vm.filterOptions:vm.startsWith"ng-class="{'selected':parentIndex == vm.rowNumber}">
+			<tr ng-repeat="(parentIndex, rowData) in vm.gridData | filter:vm.filterOptions:vm.startsWith"ng-class="{'selected':parentIndex == vm.rowNumber}">
 				<td ng-repeat="(key, value) in rowData" ng-click="vm.gridCallBack({value:rowData, index: parentIndex})">{{value}}</td>
 			</tr>
 		</tbody>
