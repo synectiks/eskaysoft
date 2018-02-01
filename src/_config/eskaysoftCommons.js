@@ -84,15 +84,20 @@
 
                     var statesList = [
                         {
-                            name: 'accountsOpenings',
-                                        url: '/accountsOpenings',
-                                        templateUrl: 'public/templates/accountsOpenings.html',
-                                        controller: 'accountsOpeningsController'
+                            name: 'purchase',
+                            url: '/purchaseForm',
+                            templateUrl: 'public/templates/purchaseForm.html',
+                            controller: 'purchaseFormController'
 					}, {
-                           name: 'customerwiseDiscount',
-                                        url: '/customerwiseDiscount',
-                                        templateUrl: 'public/templates/customerwiseDiscount.html',
-                                        controller: 'customerwiseDiscountController'
+                            name: 'accountsOpenings',
+                            url: '/accountsOpenings',
+                            templateUrl: 'public/templates/accountsOpenings.html',
+                            controller: 'accountsOpeningsController'
+					}, {
+                            name: 'customerwiseDiscount',
+                            url: '/customerwiseDiscount',
+                            templateUrl: 'public/templates/customerwiseDiscount.html',
+                            controller: 'customerwiseDiscountController'
 					}, {
                             name: 'accountsInformation',
                             url: '/accountsInformation',

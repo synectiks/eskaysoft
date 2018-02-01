@@ -169,6 +169,63 @@
 
 /**********************************************************************/
 
+/*
+ * Specific styles of signin component
+ */
+
+/*
+ * General styles
+ */
+
+/********************************** Login Styles *********************/
+
+.login-mt {
+    margin-top: 20px;
+}
+
+.login-header-label {
+    float: right;
+    font-size: 80%;
+    position: relative;
+    top: -10px;
+}
+
+.panel-class-body {
+    padding-top: 30px;
+}
+
+.d-none {
+    display: none;
+}
+
+.input-grp-margin {
+    margin-bottom: 25px;
+}
+
+.form-grp-margint {
+    margin-top: 10px;
+}
+
+.sign-up {
+    border-top: 1px solid #888;
+    padding-top: 15px;
+    font-size: 85%;
+}
+
+.sign-up-box {
+    display: none;
+    margin-top: 20px;
+}
+
+.signup-panel {
+    float: right;
+    font-size: 85%;
+    position: relative;
+    top: -10px;
+}
+
+/**********************************************************************/
+
 #productForm .selectContainer .form-control-feedback,
 #productForm .inputGroupContainer .form-control-feedback {
     right: -15px;
@@ -345,7 +402,7 @@ table.fiveHeadTable > tbody tr td {
     margin-right: 80px !important;
 }
 
-.navbar-nav>li:last-child > a{
+.navbar-nav > li:last-child > a {
     position: absolute;
     right: -57px;
 }
@@ -568,17 +625,98 @@ body {
     line-height: 0.5;
     margin-top: 10px;
 }
-.py-y{
-  padding-left: 32px;
-  padding-right: 13px;
+
+.py-y {
+    padding-left: 32px;
+    padding-right: 13px;
 }
-.pyl-10{
+
+.pyl-10 {
     padding-left: 10px !important;
 }
-.pyr-10{
+
+.pyr-10 {
     padding-right: 13px !important;
 }
-.pos-l{
-  position: relative;
-  left:8em;
+
+.pos-l {
+    position: relative;
+    left: 8em;
+}
+
+/**************************Purchase Form Styles*************/
+
+@media only screen and (min-width: 768px) {
+    .btn-align {
+        text-align: right;
+    }
+    .navbartop {
+        display: block;
+    }
+    .smenu {
+        display: none;
+    }
+
+    .col-xs-12.col-sm-4 {
+        margin-left: 30px;
+    }
+    /******************* Menu Styles **************/
+    .pl15 {
+        padding-left: 15px;
+    }
+    .pl30 {
+        padding-left: 30px;
+    }
+    .pl60 {
+        padding-left: 60px;
+    }
+    .pr50 {
+        padding-right: 50px !important;
+    }
+    .pr30 {
+        padding-right: 30px !important;
+    }
+    .ml5 {
+        margin-left: 5px !important;
+    }
+    .ml15 {
+        margin-left: 15px !important;
+    }
+    .ml18 {
+        margin-left: 18px !important;
+    }
+    .ml11 {
+        margin-left: 11px !important;
+    }
+    .ml30 {
+        margin-left: 30px !important;
+    }
+    .ml35 {
+        margin-left: 35px !important;
+    }
+    .ml25 {
+        margin-left: 25px !important;
+    }
+    .ml60 {
+        margin-left: 60px !important;
+    }
+    .ml45 {
+        margin-left: 45px !important;
+    }
+    .ml90 {
+        margin-left: 90px !important;
+    }
+    .mr30 {
+        margin-right: 30px !important;
+    }
+    .mr0 {
+        margin-right: 0px !important;
+    }
+    /***********************************************/
+}
+
+#purchaseDetailTable,
+#purchaseInvoiceTable,
+#purchaseSoftwareTable {
+    background-color: aliceblue;
 }
