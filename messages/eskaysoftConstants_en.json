@@ -159,6 +159,7 @@
     "accountinformationForm.label.credentialscredit": "Credit Limit",
     "accountinformationForm.label.credentialsdue": "Due Days",
     "accountinformationForm.label.rateoftax": "Rate Of Tax",
+    "accountsOpenings.header.name": "Accounts Openings",
     "accountsOpenings.lable.searchAccount": "Search Account",
     "accountsOpenings.lable.code": "Code",
     "accountsOpenings.lable.accountName": "Account Name",
@@ -166,6 +167,8 @@
     "accountsOpenings.lable.opening": "Opening",
     "accountsOpenings.lable.type": "Type",
 
+    "customerwiseDiscount.header.name": "Customerwise Discounts",
+    "customerwiseDiscount.lable.cdisc": "C.Disc",
     "customerwiseDiscount.lable.customer": "Customer",
     "customerwiseDiscount.lable.selectOption": "Company Option",
     "customerwiseDiscount.lable.discount": "Discount(%)",
@@ -173,7 +176,7 @@
     "customerwiseDiscount.lable.all": "All",
     "customerwiseDiscount.lable.select": "Select",
     "customerwiseDiscount.lable.disc": "Disc",
-    "customerwiseDiscount.lable.cdisc": "C.Disc",
+
 
     "scheduleform.label.name": "Schedule Name",
     "scheduleform.label.index": "Schedule Index",

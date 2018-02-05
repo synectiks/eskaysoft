@@ -174,6 +174,10 @@ table.fiveHeadTable > tbody tr td {
     margin-right: 80px !important;
 }
 
+.mr0 {
+    margin-right: 0px !important;
+}
+
 .navbar-nav > li:last-child > a {
     position: absolute;
     right: -57px;
@@ -329,6 +333,10 @@ body {
 .ml10 {
     margin-left: 20px !important;
     margin-right: 52px !important;
+}
+
+.ml20 {
+    margin-left: 20px !important;
 }
 
 #tab1 .tab-content {

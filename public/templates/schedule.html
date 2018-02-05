@@ -1,18 +1,17 @@
 <div class="container-fluid">
     <div class='row py-y'>
-        <div class='col-xs-12 col-sm-4 left-align'>
+        <div class='col-xs-12 col-sm-5 left-align'>
             <form>
                 <div class='text-left pt7'>
                     <h2>{{'scheduleform.header.name' | translate}} </h2>
                 </div>
-                <div class="form-group ">
+                <div class="form-group">
                     <label class="col-form-label" for="scheduleName">{{'scheduleform.label.name' | translate}}:*</label>
                     <input type="text" class="form-control form-control-lg" name="Name" id="scheduleName" maxlength="40" ng-model="vm.scheduleName" required>
                 </div>
                 <div class="form-group">
                     <label class="col-form-label" for="scheduleNumber">{{'scheduleform.label.index' | translate}}:*</label>
-                    <input type="number" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" min="0" maxlength="2"
-                           class="form-control form-control-lg" name="Name" id="scheduleNumber" ng-model="vm.scheduleNo" required>
+                    <input type="number" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" min="0" maxlength="2" class="form-control form-control-lg" name="Name" id="scheduleNumber" ng-model="vm.scheduleNo" required>
                 </div>
                 <div class="form-group">
                     <label class="col-form-label" for="ScheduleType ">{{'scheduleform.label.type' | translate}}:</label>
@@ -32,8 +31,8 @@
                 </div>
             </form>
         </div>
-        <div class='col-xs-12 col-sm-2'></div>
-        <div class='col-xs-12 col-sm-6 right-align'>
+
+        <div class='col-xs-12 col-sm-7 right-align'>
             <form id="searchScheduleForm" class="form-inline text-left mt25">
                 <div class="form-group">
                     <label class="col-form-label" for="ScheduleType">{{'common.label.searchby' | translate}}:</label>
@@ -49,7 +48,7 @@
                     <input type="text" class="form-control" id="scheduleform" placeholder="Schedule Name" ng-model="vm.schedule.name" required>
                 </div>
             </form>
-             <common-grid-component filter-options="vm.schedule" headers-list="vm.scheduleTableHeaders" grid-data="vm.data" grid-call-back="vm.onSelectRow(value, index)" row-number="vm.selectedRow"></common-grid-component>
+            <common-grid-component filter-options="vm.schedule" headers-list="vm.scheduleTableHeaders" grid-data="vm.data" grid-call-back="vm.onSelectRow(value, index)" row-number="vm.selectedRow"></common-grid-component>
             <div class="btn-align p0" ng-if="vm.selected">
                 <button type="submit" class="btn btn-primary searchEdit btn-position" ng-click="vm.edit()">{{'button.edit' | translate}}</button>
                 <button type="submit" class="btn btn-primary btn-position" ng-click="vm.delete()">{{'button.delete' | translate}}</button>
@@ -57,6 +56,3 @@
         </div>
     </div>
 </div>
-
-
-

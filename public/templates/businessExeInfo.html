@@ -1,6 +1,6 @@
 <div class="container-fluid">
     <div class='row py-y'>
-        <div class='col-xs-12 col-sm-4'>
+        <div class='col-xs-12 col-sm-5'>
             <form>
                 <div class='text-left pt7'>
                     <h2>{{'businessexecutivesform.header.name' | translate}} </h2>
@@ -31,11 +31,9 @@
             </form>
         </div>
 
-        <div class='col-xs-12 col-sm-1'></div>
-
-        <div class='col-xs-12 col-sm-6 pos-l'>
+        <div class='col-xs-12 col-sm-7'>
             <form class="form-inline text-center mt25">
-			<label class="col-form-label" for="ScheduleType">{{'common.label.search' | translate}}:</label>
+                <label class="col-form-label" for="ScheduleType">{{'common.label.search' | translate}}:</label>
                 <div class="form-group mx-sm-3">
                     <label for="name" class="sr-only mt10">{{'businessexecutivesform.label.name' | translate}}</label>
                     <input type="text" class="form-control" id="name" placeholder="{{'businessexecutivesform.label.name' | translate}}" ng-model="vm.searchScheduleName" required>

@@ -27,8 +27,8 @@
                 </div>
             </form>
         </div>
-        <div class='col-xs-12 col-sm-1'></div>
-        <div class='col-xs-12 col-sm-6'>
+
+        <div class='col-xs-12 col-sm-7'>
             <form class="form-inline text-left mt25">
                 <label class="col-form-label" for="ScheduleType">{{'common.label.searchby' | translate}}:</label>
                 <div class="form-group mx-sm-3">
@@ -40,7 +40,7 @@
                     <input type="text" class="form-control" id="scheduleName" placeholder="Schedule Name" ng-model="vm.schedule.name" required>
                 </div>
             </form>
-             <common-grid-component filter-options="vm.schedule" headers-list="vm.subScheduleTableHeaders" grid-data="vm.data" grid-call-back="vm.onSelectRow(value, index)" row-number="vm.selectedRow"></common-grid-component>
+            <common-grid-component filter-options="vm.schedule" headers-list="vm.subScheduleTableHeaders" grid-data="vm.data" grid-call-back="vm.onSelectRow(value, index)" row-number="vm.selectedRow"></common-grid-component>
             <div class="btn-align p0" ng-if="vm.selected">
                 <button type="submit" class="btn btn-primary searchEdit btn-position" ng-click="vm.edit()">{{'button.edit' | translate}}</button>
                 <button type="submit" class="btn btn-primary btn-position" ng-click="vm.delete()">{{'button.delete' | translate}}</button>
@@ -48,5 +48,3 @@
         </div>
     </div>
 </div>
-
-
