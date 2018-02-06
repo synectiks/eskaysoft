@@ -1,5 +1,3 @@
-
-<!--<header-menu-bar></header-menu-bar>-->
 <div class="container-fluid">
     <div class='py-y'>
         <div class='text-left mt-25'>
@@ -76,53 +74,7 @@
             </div>
         </div>
         <div class='row'>
-            <div class="col-sm-12">
-                <form class="form">
-                    <table id="purchaseDetailTable" class="table table-bordered table-responsive scrollbar">
-                        <thead>
-                            <tr>
-                                <th>{{'purchaseform.label.code' | translate}}</th>
-                                <th>{{'purchaseform.label.productName' | translate}}</th>
-                                <th>{{'purchaseform.label.batch' | translate}}</th>
-                                <th>{{'purchaseform.label.expiry' | translate}}</th>
-                                <th>{{'purchaseform.label.quantity' | translate}}</th>
-                                <th>{{'purchaseform.label.free' | translate}}</th>
-                                <th>{{'purchaseform.label.purRate' | translate}}</th>
-                                <th>{{'purchaseform.label.otherCharges' | translate}}</th>
-                                <th>{{'purchaseform.label.grsValue' | translate}}</th>
-                                <th>{{'purchaseform.label.discount' | translate}}</th>
-                                <th>{{'purchaseform.label.ptd' | translate}}</th>
-                                <th>{{'purchaseform.label.saleRate' | translate}}</th>
-                                <th>{{'purchaseform.label.tax' | translate}}</th>
-                                <th>{{'purchaseform.label.hsn' | translate}}</th>
-                                <th>{{'purchaseform.label.mrp' | translate}}</th>
-                                <th>{{'purchaseform.label.mfgName' | translate}}</th>
-
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </form>
-            </div>
+            <common-grid-component filter-options="vm.schedule" headers-list="vm.purchaseDetailsTableHeaders" grid-data="vm.data" grid-call-back="vm.onSelectRow(value, index)" row-number="vm.selectedRow"></common-grid-component>
         </div>
         <div class="row">
             <div class="col-sm-12">
@@ -151,26 +103,7 @@
             <div class="col-sm-6">
 
                 <h3>{{'purchaseform.label.asPerSoftware' | translate}} </h3>
-                <div class="table-responsive">
-                    <table class="table table-bordered scrollbar" id="purchaseSoftwareTable">
-                        <thead>
-                            <tr>
-                                <th>{{'purchaseform.label.gst' | translate}} </th>
-                                <th>{{'purchaseform.label.taxable' | translate}} </th>
-                                <th>{{'purchaseform.label.cgstAmount' | translate}} </th>
-                                <th>{{'purchaseform.label.sgstAmount' | translate}} </th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
+                  <common-grid-component filter-options="vm.schedule" headers-list="vm.purchaseSoftwareTableHeaders" grid-data="vm.data" grid-call-back="vm.onSelectRow(value, index)" row-number="vm.selectedRow"></common-grid-component>
 
             </div>
 
@@ -178,24 +111,7 @@
 
                 <h3>{{'purchaseform.label.asPerInvoice' | translate}} </h3>
 
-                <table class="table table-bordered table-responsive scrollbar" id="purchaseInvoiceTable">
-                    <thead>
-                        <tr>
-                            <th>{{'purchaseform.label.gst' | translate}} </th>
-                            <th>{{'purchaseform.label.taxable' | translate}} </th>
-                            <th>{{'purchaseform.label.cgstAmount' | translate}} </th>
-                            <th>{{'purchaseform.label.sgstAmount' | translate}} </th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                        </tr>
-                    </tbody>
-                </table>
+                <common-grid-component filter-options="vm.schedule" headers-list="vm.purchaseSoftwareTableHeaders" grid-data="vm.data" grid-call-back="vm.onSelectRow(value, index)" row-number="vm.selectedRow"></common-grid-component>
 
 
             </div>
@@ -243,9 +159,3 @@
         </div>
     </div>
 </div>
-
-<!-- end container -->
-<div class="col-xs-12 fmt30">
-    <!--Footer margin top below 768px-->
-</div>
-<footer-component></footer-component>

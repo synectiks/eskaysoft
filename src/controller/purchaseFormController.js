@@ -7,9 +7,9 @@
             var vm = this; // jshint ignore:line
 
 		commonLoaderService.load_Data(null, 'messages/gridHeaders.json', 'GET', null).then(function (headers) {
-			vm.productTableHeaders=headers.productTable;
-		}, function (error) { // jshint ignore:line
-			console.log("error", error);
+			vm.purchaseDetailsTableHeaders=headers.purchaseDetailsTable;
+			vm.purchaseSoftwareTableHeaders=headers.purchaseSoftwareTable;
+			
 		});
     }])
 

@@ -109,5 +109,50 @@
 		"name": "scheduleform.label.index"
 		}, {
 		"name": "scheduleform.label.type"
+	}],
+	
+	"purchaseDetailsTable": [{
+		"name": "purchaseform.label.code"
+		}, {
+		"name": "purchaseform.label.productName"
+		}, {
+		"name": "purchaseform.label.batch"
+		}, {
+		"name": "purchaseform.label.expiry"
+		}, {
+		"name": "purchaseform.label.quantity"
+		}, {
+		"name": "purchaseform.label.free"
+		}, {
+		"name": "purchaseform.label.purRate"
+		}, {
+		"name": "purchaseform.label.otherCharges"
+		}, {
+		"name": "purchaseform.label.grsValue"
+		}, {
+		"name": "purchaseform.label.discount"
+		}, {
+		"name": "purchaseform.label.ptd"
+		}, {
+		"name": "purchaseform.label.saleRate"
+		}, {
+		"name": "purchaseform.label.tax"
+		}, {
+		"name": "purchaseform.label.hsn"
+		}, {
+		"name": "purchaseform.label.mrp"
+		}, {
+		"name": "purchaseform.label.mfgName"
+	}],
+	
+	"purchaseSoftwareTable": [{
+		"name": "purchaseform.label.gst"
+		}, {
+		"name": "purchaseform.label.taxable"
+		}, {
+		"name": "purchaseform.label.cgstAmount"
+		}, {
+		"name": "purchaseform.label.sgstAmount"
 	}]
+	
 }
