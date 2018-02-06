@@ -10,101 +10,6 @@
     max-height: 298px;
 }
 
-table.table-fixedheader {
-    width: 100%;
-    cursor: pointer;
-    overflow-y: auto;
-    border-color: darkgray;
-}
-
-table.table-fixedheader,
-table.table-fixedheader > thead,
-table.table-fixedheader > tbody,
-table.table-fixedheader > thead > tr,
-table.table-fixedheader > tbody > tr,
-table.table-fixedheader > thead > tr > th,
-table.table-fixedheader > tbody > td {
-    display: block;
-}
-
-table.table-fixedheader > thead > tr:after,
-table.table-fixedheader > tbody > tr:after {
-    content: ' ';
-    display: block;
-    visibility: hidden;
-    clear: both;
-}
-
-table.table-fixedheader > tbody {
-    overflow-y: hidden;
-    width: 100%;
-    border-collapse: collapse;
-}
-
-table.table-fixedheader > thead {
-    background-color: aliceblue;
-    overflow-y: hidden;
-}
-
-table.table-fixedheader > thead::-webkit-scrollbar {
-    background-color: inherit;
-}
-
-table.table-fixedheader > thead > tr > th:after,
-table.table-fixedheader > tbody > tr > td:after {
-    content: ' ';
-    display: table-cell;
-    visibility: hidden;
-    clear: both;
-}
-
-table.table-fixedheader > thead tr th,
-table.table-fixedheader > tbody tr td {
-    float: left;
-    width: 33.33%;
-    border-bottom-width: 0;
-    border-color: darkgray;
-}
-
-/**** Single Headed Table Styles***/
-
-table.singleHeadTable > thead tr th,
-table.singleHeadTable > tbody tr td {
-    float: left;
-    width: 100%;
-    border-bottom-width: 0;
-}
-
-table.singleHeadTable {
-    width: 60%;
-    cursor: pointer;
-    overflow-y: auto;
-}
-
-/*********************************/
-
-/******* Double Headed Table *********/
-
-table.doubleHeadTable > thead tr th,
-table.doubleHeadTable > tbody tr td {
-    float: left;
-    width: 50%;
-    border-bottom-width: 0;
-}
-
-/**********************************/
-
-/******* Five Headed Table *********/
-
-table.fiveHeadTable > thead tr th,
-table.fiveHeadTable > tbody tr td {
-    float: left;
-    width: 20%;
-    border-bottom-width: 0;
-}
-
-/**********************************/
-
 .mt25 {
     margin-top: 25px;
 }
@@ -172,10 +77,6 @@ table.fiveHeadTable > tbody tr td {
 
 .mr60 {
     margin-right: 80px !important;
-}
-
-.mr0 {
-    margin-right: 0px !important;
 }
 
 .navbar-nav > li:last-child > a {
@@ -250,18 +151,11 @@ body {
     }
 }
 
-
 @media only screen and (max-width: 768px) {
     .xsmt5 {
         margin-top: 5px;
     }
-    table.table-fixedheader > thead tr th,
-    table.table-fixedheader > tbody tr td {
-        float: left;
-        width: 33.33%;
-        height: 65px;
-        border-bottom-width: 0;
-    }
+
     body {
         background-image: url("/public/Images/Body-background - 768.jpg");
         background-repeat: repeat;
@@ -335,10 +229,6 @@ body {
     margin-right: 52px !important;
 }
 
-.ml20 {
-    margin-left: 20px !important;
-}
-
 #tab1 .tab-content {
     color: #211f1f;
     background-color: #eaf2fa;
@@ -398,7 +288,6 @@ body {
     .dropdown.dropdown-lg .dropdown-menu {
         min-width: 500px;
     }
-
 }
 
 /***********************************************/
