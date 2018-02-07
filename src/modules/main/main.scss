@@ -27,6 +27,7 @@ table.table-fixedheader > tbody > td {
     display: block;
 }
 
+
 table.table-fixedheader > thead > tr:after,
 table.table-fixedheader > tbody > tr:after {
     content: ' ';
@@ -35,18 +36,16 @@ table.table-fixedheader > tbody > tr:after {
     clear: both;
 }
 
+
+
+/*
 table.table-fixedheader > tbody {
     overflow-y: hidden;
     width: 100%;
     border-collapse: collapse;
-}
+}*/
 
-table.table-fixedheader > thead {
-    background-color: aliceblue;
-    overflow-y: hidden;
-  //position: fixed;
-  //width: 43.7em;
-}
+/*
 
 table.table-fixedheader > thead::-webkit-scrollbar {
     background-color: inherit;
@@ -59,53 +58,16 @@ table.table-fixedheader > tbody > tr > td:after {
     visibility: hidden;
     clear: both;
 }
+*/
 
 table.table-fixedheader > thead tr th,
 table.table-fixedheader > tbody tr td {
     float: left;
     width: 33.33%;
     border-bottom-width: 0;
-    border-color: darkgray;
+    /* border-color: darkgray;*/
+    border-left: 1px solid #888;
 }
-
-/**** Single Headed Table Styles***/
-
-table.singleHeadTable > thead tr th,
-table.singleHeadTable > tbody tr td {
-    float: left;
-    width: 100%;
-    border-bottom-width: 0;
-}
-
-table.singleHeadTable {
-    width: 60%;
-    cursor: pointer;
-    overflow-y: auto;
-}
-
-/*********************************/
-
-/******* Double Headed Table *********/
-
-table.doubleHeadTable > thead tr th,
-table.doubleHeadTable > tbody tr td {
-    float: left;
-    width: 50%;
-    border-bottom-width: 0;
-}
-
-/**********************************/
-
-/******* Five Headed Table *********/
-
-table.fiveHeadTable > thead tr th,
-table.fiveHeadTable > tbody tr td {
-    float: left;
-    width: 20%;
-    border-bottom-width: 0;
-}
-
-/**********************************/
 
 .mt25 {
     margin-top: 25px;
@@ -252,18 +214,17 @@ body {
     }
 }
 
-
 @media only screen and (max-width: 768px) {
     .xsmt5 {
         margin-top: 5px;
     }
-    table.table-fixedheader > thead tr th,
-    table.table-fixedheader > tbody tr td {
-        float: left;
-        width: 33.33%;
-        height: 65px;
-        border-bottom-width: 0;
-    }
+    /*table.table-fixedheader > thead tr th,
+table.table-fixedheader > tbody tr td {
+    float: left;
+    width: 33.33%;
+    height: 65px;
+    border-bottom-width: 0;
+}*/
     body {
         background-image: url("/public/Images/Body-background - 768.jpg");
         background-repeat: repeat;
@@ -400,7 +361,6 @@ body {
     .dropdown.dropdown-lg .dropdown-menu {
         min-width: 500px;
     }
-
 }
 
 /***********************************************/
@@ -424,17 +384,19 @@ body {
 }
 
 .pyl-15 {
-  padding-left: 15px !important;
+    padding-left: 15px !important;
 }
 
 .pyr-10 {
     padding-right: 13px !important;
 }
-.pr-25{
-  padding-right: 25px !important;
+
+.pr-25 {
+    padding-right: 25px !important;
 }
-.pl-45{
-  padding-left: 45px !important;
+
+.pl-45 {
+    padding-left: 45px !important;
 }
 
 .pos-l {
@@ -442,24 +404,88 @@ body {
     left: 8em;
 }
 
-.grid-l{
+.grid-l {
     display: grid;
 }
-.py-x{
+
+.py-x {
     padding-left: 15px !important;
     padding-right: 0px !important;
 }
-.plr-15{
+
+.plr-15 {
     padding-left: 15px !important;
     padding-right: 15px !important;
 }
-.plr-30{
+
+.plr-30 {
     padding-left: 30px !important;
     padding-right: 30px !important;
 }
-//mobile screen styles
-@media only screen
-and (min-device-width: 414px)
-and (max-device-width: 736px)
-and (-webkit-min-device-pixel-ratio: 3) {
+
+.table-container {
+    /*  border: 1px solid #963;*/
+    /*display: inline-block;*/
+    /* min-height: padding-top: 1.875em;*/
+    position: relative;
+    /*    position: relative;
+    overflow-y: auto;
+    min-height: 0px;
+    max-height: 278px;*/
+}
+
+.table-container > div {
+
+    /* border-color: #888;
+    border-style: solid;
+    border-width: 1px 1px 2px 1px;
+    height: 1.7em;
+    left: 0;*/
+    position: absolute;
+    /* right: 0;
+ top: 0;*/
+}
+
+table {
+    display: block;
+    min-height: 0px;
+    max-height: 278px;
+    overflow-y: auto;
+}
+
+th {
+    padding: 0px 5px;
+    text-align: center;
+    margin-bottom: 10px;
+
+}
+
+th:first-child > div {
+    /* border-left: none;*/
+    /* padding-left: 7px;*/
+    width: 97%;
+    background-color: aliceblue;
+}
+
+table.table-fixedheader > thead {
+    background-color: aliceblue;
+    overflow-y: hidden;
+    width: 100%;
+}
+
+th > div {
+    border-left: 1px solid #888;
+    line-height: 1.875em;
+    margin-left: -9px;
+    overflow-y: hidden;
+    padding-left: 5px;
+    position: absolute;
+    top: 0;
+}
+
+td {
+    border-color: #888;
+    border-style: solid;
+    border-width: 0 1px 2px 1px;
+    padding: 5px;
 }
