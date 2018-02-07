@@ -1,6 +1,6 @@
 <div class="container-fluid">
-    <div class='py-y'>
-        <div class='text-left mt-25'>
+    <div class='py-x'>
+        <div class='text-left mt-25 pyl-15'>
             <h2>{{'purchaseform.header.name' | translate}} </h2>
         </div>
         <div class="row">
@@ -8,34 +8,34 @@
                 <form class="form">
                     <div class="form-group fgroup col-sm-6">
                         <label class="col-form-label" for="purchaseNumber">{{'purchaseform.label.purchaseNumber'|translate}}:</label>
-                        <input type="text" class="form-control mb10" id="purchaseNumber">
+                        <input type="number" class="form-control mb10" id="purchaseNumber">
                     </div>
                     <div class="form-group fgroup col-sm-6">
                         <label class="col-form-label" for="invoiceNumber">{{'purchaseform.label.invoiceNumber'|translate}}:</label>
-                        <input type="text" class="form-control mb10 ml5" id="invoiceNumber">
+                        <input type="number" class="form-control mb10 ml5" id="invoiceNumber">
                     </div>
                     <div class="form-group fgroup col-sm-6">
                         <label class="col-form-label" for="supplier">{{'purchaseform.label.supplier'|translate}}:</label>
-                        <input type="text" class="form-control mb10 ml60" id="supplier">
+                        <input type="number" class="form-control mb10 ml60" id="supplier">
                     </div>
                     <div class="form-group fgroup col-sm-6">
                         <label class="col-form-label" for="GSTIN">{{'purchaseform.label.gstin'|translate}}:</label>
-                        <input type="text" class="form-control mb10 ml60" id="GSTIN">
+                        <input type="number" class="form-control mb10 ml60" id="GSTIN">
                     </div>
 
                     <div class="form-group fgroup col-sm-4">
                         <label class="col-form-label" for="waybillNumber">{{'purchaseform.label.waybillNumber'|translate}}:</label>
-                        <input type="text" class="form-control mb10 ml11" id="waybillNumber">
+                        <input type="number" class="form-control mb10 ml11" id="waybillNumber">
                     </div>
 
                     <div class="form-group fgroup col-sm-4">
                         <label class="col-form-label" for="transport">{{'purchaseform.label.transport'|translate}}:</label>
-                        <input type="text" class="form-control mb10 ml45" id="transport">
+                        <input type="number" class="form-control mb10 ml45" id="transport">
                     </div>
 
                     <div class="form-group fgroup col-sm-4">
                         <label class="col-form-label" for="cs">{{'purchaseform.label.cs'|translate}}:</label>
-                        <input type="text" class="form-control mb10 ml90" id="cs">
+                        <input type="number" class="form-control mb10 ml90" id="cs">
                     </div>
                 </form>
             </div>
@@ -44,36 +44,36 @@
                 <form class="form">
                     <div class="form-group fgroup col-sm-6">
                         <label class="col-form-label" for="date">{{'purchaseform.label.date'|translate}}:</label>
-                        <input type="text" class="form-control mb10 ml15" id="date">
+                        <input type="date" class="form-control mb10 ml15" id="date">
                     </div>
 
                     <div class="form-group fgroup col-sm-6">
                         <label class="col-form-label" for="invoiceDate">{{'purchaseform.label.invoiceDate'|translate}}:</label>
-                        <input type="text" class="form-control mb10 ml18" id="invoiceDate">
+                        <input type="date" class="form-control mb10 ml18" id="invoiceDate">
                     </div>
                     <div class="form-group fgroup col-sm-6">
                         <label class="col-form-label" for="mode">{{'purchaseform.label.mode'|translate}}:</label>
-                        <input type="text" class="form-control mb10 ml11" id="mode">
+                        <input type="number" class="form-control mb10 ml11" id="mode">
                     </div>
                     <div class="form-group fgroup col-sm-6">
                         <label class="col-form-label" for="lrNumber">{{'purchaseform.label.lrNumber'|translate}}:</label>
-                        <input type="text" class="form-control mb10 ml30" id="lrNumber">
+                        <input type="number" class="form-control mb10 ml30" id="lrNumber">
                     </div>
 
                     <div class="form-group fgroup col-sm-6">
                         <label class="col-form-label" for="lrDate">{{'purchaseform.label.lrDate'|translate}}:</label>
-                        <input type="text" class="form-control mb10" id="lrDate">
+                        <input type="number" class="form-control mb10" id="lrDate">
                     </div>
 
                     <div class="form-group fgroup col-sm-6">
                         <label class="col-form-label" for="deliveredFrom">{{'purchaseform.label.deliveredFrom'|translate}}:</label>
-                        <input type="text" class="form-control mb10" id="deliveredFrom">
+                        <input type="number" class="form-control mb10" id="deliveredFrom">
                     </div>
 
                 </form>
             </div>
         </div>
-        <div class='row'>
+        <div class='row plr-30'>
             <common-grid-component filter-options="vm.schedule" headers-list="vm.purchaseDetailsTableHeaders" grid-data="vm.data" grid-call-back="vm.onSelectRow(value, index)" row-number="vm.selectedRow"></common-grid-component>
         </div>
         <div class="row">
@@ -81,25 +81,24 @@
                 <form class='form'>
                     <div class="form-group col-sm-3">
                         <label class="col-form-label" for="grossValue">{{'purchaseform.label.grossValue'|translate}}:</label>
-                        <input type="text" class="form-control ml35" id="grossValue">
+                        <input type="number" class="form-control ml35" id="grossValue">
                     </div>
                     <div class="form-group col-sm-3">
                         <label class="col-form-label" for="discountValue">{{'purchaseform.label.discountValue'|translate}}:</label>
-                        <input type="text" class="form-control" id="discountValue">
+                        <input type="number" class="form-control" id="discountValue">
                     </div>
                     <div class="form-group col-sm-3">
                         <label class="col-form-label" for="taxValue">{{'purchaseform.label.taxValue'|translate}}:</label>
-                        <input type="text" class="form-control" id="taxValue">
+                        <input type="number" class="form-control" id="taxValue">
                     </div>
                     <div class="form-group col-sm-3">
                         <label class="col-form-label" for="netValue">{{'purchaseform.label.netValue'|translate}}:</label>
-                        <input type="text" class="form-control" id="creditAdjValue">
+                        <input type="number" class="form-control" id="creditAdjValue">
                     </div>
                 </form>
             </div>
         </div>
-
-        <div class="row">
+        <div class="row plr-15">
             <div class="col-sm-6">
 
                 <h3>{{'purchaseform.label.asPerSoftware' | translate}} </h3>
@@ -122,19 +121,19 @@
                 <form class="form">
                     <div class="form-group col-sm-12">
                         <label class="col-form-label" for="debitAdjLedger">{{'purchaseform.label.debitAdjLedger'|translate}}:</label>
-                        <input type="text" class="form-control ml15" id="debitAdjLedger">
+                        <input type="number" class="form-control ml15" id="debitAdjLedger">
                     </div>
                     <div class="form-group col-sm-12">
                         <label class="col-form-label" for="creditAdjLedger">{{'purchaseform.label.creditAdjLedger'|translate}}:</label>
-                        <input type="text" class="form-control ml11" id="creditAdjLedger">
+                        <input type="number" class="form-control ml11" id="creditAdjLedger">
                     </div>
                     <div class="form-group col-sm-6">
                         <label class="col-form-label" for="netValue">{{'purchaseform.label.netValue'|translate}}:</label>
-                        <input type="text" class="form-control" id="netValue">
+                        <input type="number" class="form-control" id="netValue">
                     </div>
                     <div class="form-group col-sm-6">
                         <label class="col-form-label" for="remarks">{{'purchaseform.label.remarks'|translate}}:</label>
-                        <input type="text" class="form-control" id="remarks">
+                        <input type="number" class="form-control" id="remarks">
                     </div>
                 </form>
 
@@ -144,15 +143,15 @@
                 <form class="form">
                     <div class="form-group col-sm-12">
                         <label class="col-form-label pl30" for="debitAdjValue">{{'purchaseform.label.debitAdjValue'|translate}}:</label>
-                        <input type="text" class="form-control" id="debitAdjValue">
+                        <input type="number" class="form-control" id="debitAdjValue">
                     </div>
                     <div class="form-group col-sm-12">
                         <label class="col-form-label pl30" for="creditAdjValue">{{'purchaseform.label.creditAdjValue'|translate}}:</label>
-                        <input type="text" class="form-control" id="creditAdjValue">
+                        <input type="number" class="form-control" id="creditAdjValue">
                     </div>
                     <div class="form-group col-sm-12">
                         <label class="col-form-label" for="invoiceValue">{{'purchaseform.label.invoiceValue'|translate}}:</label>
-                        <input type="text" class="form-control " id="invoiceValue">
+                        <input type="number" class="form-control " id="invoiceValue">
                     </div>
                 </form>
             </div>
