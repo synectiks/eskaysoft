@@ -18,42 +18,43 @@
             vm.normalScreen = true;
             vm.errorMessage = "";
             vm.messageContainer = false;
-			var list = {};
+            var list = {};
 
-			vm.onSelectRow= function (rowData, rowNum){
-				vm.selectedName = rowData.name;
-				vm.selectedRow = rowNum;
-				 if (vm.selected && vm.selectedName == list.name) {
+            vm.onSelectRow = function (rowData, rowNum) {
+                /*vm.selectedName = rowData.name;*/
+
+                if (vm.selected && list.name == rowData.name) {
                     vm.selectedName = null;
                     vm.selected = false;
+                    vm.selectedRow = -1;
                 } else {
                     vm.selected = true;
+                    vm.selectedRow = rowNum;
                     list.name = rowData.name;
                     list.no = rowData.no;
                     list.type = rowData.type;
                     list.index = rowData.index;
                     vm.messageContainer = false;
                     vm.errorMessage = "";
-			    }
-			};
-			
+                }
+            };
             vm.getDropDownValues = function () {
                 commonLoaderService.load_Data(null, 'messages/scheduleMockData.json', 'GET', null).then(function (dropDownContent) {
                     vm.scheduleTypes = dropDownContent.scheduleTypes;
-					
+
                 }, function (error) { // jshint ignore:line
                     console.log("error", error);
                 });
             };
-			
-			vm.getScheduleTableHeaders = function () {
+
+            vm.getScheduleTableHeaders = function () {
                 commonLoaderService.load_Data(null, 'messages/gridHeaders.json', 'GET', null).then(function (headers) {
-                 	vm.scheduleTableHeaders=headers.scheduleTable;
+                    vm.scheduleTableHeaders = headers.scheduleTable;
                 }, function (error) { // jshint ignore:line
                     console.log("error", error);
                 });
             };
-			
+
             vm.search = function () {
                 vm.editScreen = false;
                 vm.normalScreen = true;
@@ -66,7 +67,7 @@
                     console.log("error", error);
                 });
             };
-			
+
             vm.edit = function () {
                 vm.scheduleName = list.name;
                 vm.scheduleNo = list.no;
@@ -109,15 +110,16 @@
                 vm.scheduleNo = "";
                 vm.scheduleType = "0";
                 vm.selectedName = "";
+                vm.selectedRow = -1;
                 vm.messageContainer = false;
                 vm.editScreen = false;
                 vm.schedule.name = "";
                 vm.schedule.type = "";
                 vm.search();
             };
-			vm.getDropDownValues();
-			vm.getScheduleTableHeaders();
-			vm.search();
+            vm.getDropDownValues();
+            vm.getScheduleTableHeaders();
+            vm.search();
 
     }]);
 })();
