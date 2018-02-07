@@ -74,7 +74,92 @@
             </div>
         </div>
         <div class='row plr-30'>
-            <common-grid-component filter-options="vm.schedule" headers-list="vm.purchaseDetailsTableHeaders" grid-data="vm.data" grid-call-back="vm.onSelectRow(value, index)" row-number="vm.selectedRow"></common-grid-component>
+            <div class="table-responsive">
+                <div class="ml30 mt10 mb10 p0">
+                    <table id="purchaseDetailTable" class="table table-bordered scrollbar">
+                        <thead>
+                            <tr>
+                                <th>{{'purchaseform.label.code' | translate}}</th>
+                                <th>{{'purchaseform.label.productName' | translate}}</th>
+                                <th>{{'purchaseform.label.batch' | translate}}</th>
+                                <th>{{'purchaseform.label.expiry' | translate}}</th>
+                                <th>{{'purchaseform.label.quantity' | translate}}</th>
+                                <th>{{'purchaseform.label.free' | translate}}</th>
+                                <th>{{'purchaseform.label.purRate' | translate}}</th>
+                                <th>{{'purchaseform.label.otherCharges' | translate}}</th>
+                                <th>{{'purchaseform.label.grsValue' | translate}}</th>
+                                <th>{{'purchaseform.label.discount' | translate}}</th>
+                                <th>{{'purchaseform.label.ptd' | translate}}</th>
+                                <th>{{'purchaseform.label.saleRate' | translate}}</th>
+                                <th>{{'purchaseform.label.tax' | translate}}</th>
+                                <th>{{'purchaseform.label.hsn' | translate}}</th>
+                                <th>{{'purchaseform.label.mrp' | translate}}</th>
+                                <th>{{'purchaseform.label.mfgName' | translate}}</th>
+
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <div>
+                                        <label for="code" class="sr-only">{{'purchaseform.label.code' | translate}}</label>
+                                        <input class="form-control" id="code" type="text">
+                                    </div>
+                                </td>
+                                <td>
+                                    <div>
+                                        <label for="productName" class="sr-only">{{'purchaseform.label.productName' | translate}}</label>
+                                        <input class="form-control" id="productName" type="text">
+                                    </div>
+                                </td>
+                                <td>
+                                    <div><label for="batch" class="sr-only">{{'purchaseform.label.batch' | translate}}</label><input class="form-control" id="batch" type="text"></div>
+                                </td>
+                                <td>
+                                    <div><label for="expiry" class="sr-only">{{'purchaseform.label.expiry' | translate}}</label><input class="form-control" id="expiry" type="text"></div>
+                                </td>
+                                <td>
+                                    <div><label for="quantity" class="sr-only">{{'purchaseform.label.quantity' | translate}}</label><input class="form-control" id="quantity" type="text"></div>
+                                </td>
+                                <td>
+                                    <div><label for="free" class="sr-only">{{'purchaseform.label.free' | translate}}</label><input class="form-control" id="free" type="text"></div>
+                                </td>
+                                <td>
+                                    <div><label for="purRate" class="sr-only">{{'purchaseform.label.purRate' | translate}}</label><input class="form-control" id="purRate" type="text"></div>
+                                </td>
+                                <td>
+                                    <div><label for="otherCharges" class="sr-only">{{'purchaseform.label.otherCharges' | translate}}</label><input class="form-control" id="otherCharges" type="text"></div>
+                                </td>
+                                <td>
+                                    <div><label for="grsValue" class="sr-only">{{'purchaseform.label.grsValue' | translate}}</label><input class="form-control" id="grsValue" type="text"></div>
+                                </td>
+                                <td>
+                                    <div><label for="discount" class="sr-only">{{'purchaseform.label.discount' | translate}}</label><input class="form-control" id="discount" type="text"></div>
+                                </td>
+                                <td>
+                                    <div><label for="ptd" class="sr-only">{{'purchaseform.label.ptd' | translate}}</label><input class="form-control" id="ptd" type="text"></div>
+                                </td>
+                                <td>
+                                    <div><label for="saleRate" class="sr-only">{{'purchaseform.label.saleRate' | translate}}</label><input class="form-control" id="saleRate" type="text"></div>
+                                </td>
+                                <td>
+                                    <div><label for="tax" class="sr-only">{{'purchaseform.label.tax' | translate}}</label><input class="form-control" id="tax" type="text"></div>
+                                </td>
+                                <td>
+                                    <div><label for="hsn" class="sr-only">{{'purchaseform.label.hsn' | translate}}</label><input class="form-control" id="hsn" type="text"></div>
+                                </td>
+                                <td>
+                                    <div><label for="mrp" class="sr-only">{{'purchaseform.label.mrp' | translate}}</label><input class="form-control" id="mrp" type="text"></div>
+                                </td>
+                                <td>
+                                    <div><label for="mfgName" class="sr-only">{{'purchaseform.label.mfgName' | translate}}</label><input class="form-control" id="mfgName" type="text"></div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
         </div>
         <div class="row">
             <div class="col-sm-12">
@@ -102,7 +187,34 @@
             <div class="col-sm-6">
 
                 <h3>{{'purchaseform.label.asPerSoftware' | translate}} </h3>
-                  <common-grid-component filter-options="vm.schedule" headers-list="vm.purchaseSoftwareTableHeaders" grid-data="vm.data" grid-call-back="vm.onSelectRow(value, index)" row-number="vm.selectedRow"></common-grid-component>
+                <div class="table-responsive">
+                    <table class="table table-bordered scrollbar" id="purchaseSoftwareTable">
+                        <thead>
+                            <tr>
+                                <th>{{'purchaseform.label.gst' | translate}} </th>
+                                <th>{{'purchaseform.label.taxable' | translate}} </th>
+                                <th>{{'purchaseform.label.cgstAmount' | translate}} </th>
+                                <th>{{'purchaseform.label.sgstAmount' | translate}} </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <div><label for="stgst" class="sr-only">{{'purchaseform.label.gst' | translate}}</label><input class="form-control" id="stgst" type="text"></div>
+                                </td>
+                                <td>
+                                    <div><label for="sttaxable" class="sr-only">{{'purchaseform.label.taxable' | translate}}</label><input class="form-control" id="sttaxable" type="text"></div>
+                                </td>
+                                <td>
+                                    <div><label for="stcgstAmount" class="sr-only">{{'purchaseform.label.cgstAmount' | translate}}</label><input class="form-control" id="stcgstAmount" type="text"></div>
+                                </td>
+                                <td>
+                                    <div><label for="stsgstAmount" class="sr-only">{{'purchaseform.label.sgstAmount' | translate}}</label><input class="form-control" id="stsgstAmount" type="text"></div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
 
             </div>
 
@@ -110,7 +222,34 @@
 
                 <h3>{{'purchaseform.label.asPerInvoice' | translate}} </h3>
 
-                <common-grid-component filter-options="vm.schedule" headers-list="vm.purchaseSoftwareTableHeaders" grid-data="vm.data" grid-call-back="vm.onSelectRow(value, index)" row-number="vm.selectedRow"></common-grid-component>
+                <div class="table-responsive">
+                    <table class="table table-bordered scrollbar" id="purchaseInvoiceTable">
+                        <thead>
+                            <tr>
+                                <th>{{'purchaseform.label.gst' | translate}} </th>
+                                <th>{{'purchaseform.label.taxable' | translate}} </th>
+                                <th>{{'purchaseform.label.cgstAmount' | translate}} </th>
+                                <th>{{'purchaseform.label.sgstAmount' | translate}} </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <div><label for="itgst" class="sr-only">{{'purchaseform.label.gst' | translate}}</label><input class="form-control" id="itgst" type="text"></div>
+                                </td>
+                                <td>
+                                    <div><label for="ittaxable" class="sr-only">{{'purchaseform.label.taxable' | translate}}</label><input class="form-control" id="ittaxable" type="text"></div>
+                                </td>
+                                <td>
+                                    <div><label for="itcgstAmount" class="sr-only">{{'purchaseform.label.cgstAmount' | translate}}</label><input class="form-control" id="itcgstAmount" type="text"></div>
+                                </td>
+                                <td>
+                                    <div><label for="itsgstAmount" class="sr-only">{{'purchaseform.label.sgstAmount' | translate}}</label><input class="form-control" id="itsgstAmount" type="text"></div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
 
 
             </div>
