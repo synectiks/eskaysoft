@@ -8,19 +8,19 @@
                 <form class="form">
                     <div class="form-group fgroup col-sm-6">
                         <label class="col-form-label" for="purchaseNumber">{{'purchaseform.label.purchaseNumber'|translate}}:</label>
-                        <input type="number" class="form-control mb10" id="purchaseNumber">
+                        <input type="number" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" min="0" maxlength="3" class="form-control mb10" id="purchaseNumber">
                     </div>
                     <div class="form-group fgroup col-sm-6">
                         <label class="col-form-label" for="invoiceNumber">{{'purchaseform.label.invoiceNumber'|translate}}:</label>
-                        <input type="number" class="form-control mb10 ml5" id="invoiceNumber">
+                        <input type="text" class="form-control mb10 ml5" id="invoiceNumber">
                     </div>
                     <div class="form-group fgroup col-sm-6">
                         <label class="col-form-label" for="supplier">{{'purchaseform.label.supplier'|translate}}:</label>
-                        <input type="number" class="form-control mb10 ml60" id="supplier">
+                        <input type="text" class="form-control mb10 ml60" id="supplier">
                     </div>
                     <div class="form-group fgroup col-sm-6">
                         <label class="col-form-label" for="GSTIN">{{'purchaseform.label.gstin'|translate}}:</label>
-                        <input type="number" class="form-control mb10 ml60" id="GSTIN">
+                        <input type="text" class="form-control mb10 ml60" id="GSTIN">
                     </div>
 
                     <div class="form-group fgroup col-sm-4">
@@ -30,12 +30,12 @@
 
                     <div class="form-group fgroup col-sm-4">
                         <label class="col-form-label" for="transport">{{'purchaseform.label.transport'|translate}}:</label>
-                        <input type="number" class="form-control mb10 ml45" id="transport">
+                        <input type="text" class="form-control mb10 ml45" id="transport">
                     </div>
 
                     <div class="form-group fgroup col-sm-4">
                         <label class="col-form-label" for="cs">{{'purchaseform.label.cs'|translate}}:</label>
-                        <input type="number" class="form-control mb10 ml90" id="cs">
+                        <input type="number" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" min="0" maxlength="2" class="form-control mb10 ml90" id="cs">
                     </div>
                 </form>
             </div>
@@ -53,7 +53,7 @@
                     </div>
                     <div class="form-group fgroup col-sm-6">
                         <label class="col-form-label" for="mode">{{'purchaseform.label.mode'|translate}}:</label>
-                        <input type="number" class="form-control mb10 ml11" id="mode">
+                        <input type="text" class="form-control mb10 ml11" id="mode">
                     </div>
                     <div class="form-group fgroup col-sm-6">
                         <label class="col-form-label" for="lrNumber">{{'purchaseform.label.lrNumber'|translate}}:</label>
@@ -62,7 +62,7 @@
 
                     <div class="form-group fgroup col-sm-6">
                         <label class="col-form-label" for="lrDate">{{'purchaseform.label.lrDate'|translate}}:</label>
-                        <input type="number" class="form-control mb10" id="lrDate">
+                        <input type="date" class="form-control mb10" id="lrDate">
                     </div>
 
                     <div class="form-group fgroup col-sm-6">
@@ -81,19 +81,19 @@
                 <form class='form'>
                     <div class="form-group col-sm-3">
                         <label class="col-form-label" for="grossValue">{{'purchaseform.label.grossValue'|translate}}:</label>
-                        <input type="number" class="form-control ml35" id="grossValue">
+                        <input type="number" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" min="0" maxlength="3" step="0.01" class="form-control ml35" id="grossValue">
                     </div>
                     <div class="form-group col-sm-3">
                         <label class="col-form-label" for="discountValue">{{'purchaseform.label.discountValue'|translate}}:</label>
-                        <input type="number" class="form-control" id="discountValue">
+                        <input type="number" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" min="0" maxlength="3" step="0.01" class="form-control" id="discountValue">
                     </div>
                     <div class="form-group col-sm-3">
                         <label class="col-form-label" for="taxValue">{{'purchaseform.label.taxValue'|translate}}:</label>
-                        <input type="number" class="form-control" id="taxValue">
+                        <input type="number" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" min="0" maxlength="3" step="0.01" class="form-control" id="taxValue">
                     </div>
                     <div class="form-group col-sm-3">
                         <label class="col-form-label" for="netValue">{{'purchaseform.label.netValue'|translate}}:</label>
-                        <input type="number" class="form-control" id="creditAdjValue">
+                        <input type="number" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" min="0" maxlength="3" step="0.01" class="form-control" id="creditAdjValue">
                     </div>
                 </form>
             </div>
@@ -125,15 +125,15 @@
                     </div>
                     <div class="form-group col-sm-12">
                         <label class="col-form-label" for="creditAdjLedger">{{'purchaseform.label.creditAdjLedger'|translate}}:</label>
-                        <input type="number" class="form-control ml11" id="creditAdjLedger">
+                        <input type="number" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" min="0" maxlength="3" class="form-control ml11" id="creditAdjLedger">
                     </div>
                     <div class="form-group col-sm-6">
                         <label class="col-form-label" for="netValue">{{'purchaseform.label.netValue'|translate}}:</label>
-                        <input type="number" class="form-control" id="netValue">
+                        <input type="number" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" min="0" maxlength="2" step="0.01" class="form-control" id="netValue">
                     </div>
                     <div class="form-group col-sm-6">
                         <label class="col-form-label" for="remarks">{{'purchaseform.label.remarks'|translate}}:</label>
-                        <input type="number" class="form-control" id="remarks">
+                        <input type="text" class="form-control" id="remarks">
                     </div>
                 </form>
 
@@ -143,15 +143,15 @@
                 <form class="form">
                     <div class="form-group col-sm-12">
                         <label class="col-form-label pl30" for="debitAdjValue">{{'purchaseform.label.debitAdjValue'|translate}}:</label>
-                        <input type="number" class="form-control" id="debitAdjValue">
+                        <input type="number" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" min="0" maxlength="3" step="0.01" class="form-control" id="debitAdjValue">
                     </div>
                     <div class="form-group col-sm-12">
                         <label class="col-form-label pl30" for="creditAdjValue">{{'purchaseform.label.creditAdjValue'|translate}}:</label>
-                        <input type="number" class="form-control" id="creditAdjValue">
+                        <input type="number" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" min="0" maxlength="3" step="0.01" class="form-control" id="creditAdjValue">
                     </div>
                     <div class="form-group col-sm-12">
                         <label class="col-form-label" for="invoiceValue">{{'purchaseform.label.invoiceValue'|translate}}:</label>
-                        <input type="number" class="form-control " id="invoiceValue">
+                        <input type="number" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" min="0" maxlength="3" step="0.01" class="form-control " id="invoiceValue">
                     </div>
                 </form>
             </div>
