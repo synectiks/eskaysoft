@@ -121,5 +121,6 @@
             vm.getScheduleTableHeaders();
             vm.search();
 
+
     }]);
 })();
