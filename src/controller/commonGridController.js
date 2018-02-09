@@ -25,7 +25,6 @@
                 $('th').css('width', 100 / colCount + '%');
                 $('td').css('width', 100 / colCount + '%');
 
-
                 if ($("th:first-child").width() > $("td:first-child").width()) {
                     $('thead').css('overflow-y', 'scroll');
                 } else {

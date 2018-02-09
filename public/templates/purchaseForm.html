@@ -74,7 +74,7 @@
             </div>
         </div>
         <div class='row plr-30'>
-            <div class="ml30 mt10 mb10 p0">
+            <div class="table-responsive mt10 mb10 p0">
                 <table id="purchaseDetailTable1" class="table table-header table-lg table-bordered">
                     <thead>
                         <tr>
@@ -101,56 +101,56 @@
                             <td>
                                 <div>
                                     <label for="code" class="sr-only">{{'purchaseform.label.code' | translate}}</label>
-                                    <input class="form-control" id="code" type="text">
+                                    <input class="form-control" id="code" type="text" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" min="0" maxlength="5">
                                 </div>
                             </td>
                             <td>
                                 <div>
                                     <label for="productName" class="sr-only">{{'purchaseform.label.productName' | translate}}</label>
-                                    <input class="form-control" id="productName" type="text">
+                                    <input class="form-control" id="productName" type="text" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" min="0" maxlength="30">
                                 </div>
                             </td>
                             <td>
-                                <div><label for="batch" class="sr-only">{{'purchaseform.label.batch' | translate}}</label><input class="form-control" id="batch" type="text"></div>
+                                <div><label for="batch" class="sr-only">{{'purchaseform.label.batch' | translate}}</label><input class="form-control" id="batch" type="text" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" min="0" maxlength="12"></div>
                             </td>
                             <td>
-                                <div><label for="expiry" class="sr-only">{{'purchaseform.label.expiry' | translate}}</label><input class="form-control" id="expiry" type="text"></div>
+                                <div><label for="expiry" class="sr-only">{{'purchaseform.label.expiry' | translate}}</label><input class="form-control" id="expiry" type="date"></div>
                             </td>
                             <td>
-                                <div><label for="quantity" class="sr-only">{{'purchaseform.label.quantity' | translate}}</label><input class="form-control" id="quantity" type="text"></div>
+                                <div><label for="quantity" class="sr-only">{{'purchaseform.label.quantity' | translate}}</label><input class="form-control two-decimals" id="quantity" id='float' type="number" min="0" maxlength="11" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" step="0.01"></div>
                             </td>
                             <td>
-                                <div><label for="free" class="sr-only">{{'purchaseform.label.free' | translate}}</label><input class="form-control" id="free" type="text"></div>
+                                <div><label for="free" class="sr-only">{{'purchaseform.label.free' | translate}}</label><input class="form-control two-decimals" id="free" id='float' type="number" min="0" maxlength="11" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" step="0.01"></div>
                             </td>
                             <td>
-                                <div><label for="purRate" class="sr-only">{{'purchaseform.label.purRate' | translate}}</label><input class="form-control" id="purRate" type="text"></div>
+                                <div><label for="purRate" class="sr-only">{{'purchaseform.label.purRate' | translate}}</label><input class="form-control two-decimals" id="purRate" id='float' type="number" min="0" maxlength="11" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" step="0.25"></div>
                             </td>
                             <td>
-                                <div><label for="otherCharges" class="sr-only">{{'purchaseform.label.otherCharges' | translate}}</label><input class="form-control" id="otherCharges" type="text"></div>
+                                <div><label for="otherCharges" class="sr-only">{{'purchaseform.label.otherCharges' | translate}}</label><input class="form-control two-decimals" id="otherCharges" id='float' type="number" min="0" maxlength="11" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" step="0.01"></div>
                             </td>
                             <td>
-                                <div><label for="grsValue" class="sr-only">{{'purchaseform.label.grsValue' | translate}}</label><input class="form-control" id="grsValue" type="text"></div>
+                                <div><label for="grsValue" class="sr-only">{{'purchaseform.label.grsValue' | translate}}</label><input class="form-control two-decimals" id="grsValue" id='float' type="number" min="0" maxlength="12" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" step="0.01" class="form-control" id="grsValue"></div>
                             </td>
                             <td>
-                                <div><label for="discount" class="sr-only">{{'purchaseform.label.discount' | translate}}</label><input class="form-control" id="discount" type="text"></div>
+                                <div><label for="discount" class="sr-only">{{'purchaseform.label.discount' | translate}}</label><input class="form-control two-decimals" id="discount" id='float' type="number" min="0" maxlength="7" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" step="0.01"></div>
                             </td>
                             <td>
-                                <div><label for="ptd" class="sr-only">{{'purchaseform.label.ptd' | translate}}</label><input class="form-control" id="ptd" type="text"></div>
+                                <div><label for="ptd" class="sr-only">{{'purchaseform.label.ptd' | translate}}</label><input class="form-control two-decimals" id="ptd" id='float' type="number" min="0" maxlength="11" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" step="0.01"></div>
                             </td>
                             <td>
-                                <div><label for="saleRate" class="sr-only">{{'purchaseform.label.saleRate' | translate}}</label><input class="form-control" id="saleRate" type="text"></div>
+                                <div><label for="saleRate" class="sr-only">{{'purchaseform.label.saleRate' | translate}}</label><input class="form-control two-decimals" id="saleRate" id='float' type="number" min="0" maxlength="11" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" step="0.01"></div>
                             </td>
                             <td>
-                                <div><label for="tax" class="sr-only">{{'purchaseform.label.tax' | translate}}</label><input class="form-control" id="tax" type="text"></div>
+                                <div><label for="tax" class="sr-only">{{'purchaseform.label.tax' | translate}}</label><input class="form-control two-decimals" id="tax" id='float' type="number" min="0" maxlength="7" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" step="0.01"></div>
                             </td>
                             <td>
                                 <div><label for="hsn" class="sr-only">{{'purchaseform.label.hsn' | translate}}</label><input class="form-control" id="hsn" type="text"></div>
                             </td>
                             <td>
-                                <div><label for="mrp" class="sr-only">{{'purchaseform.label.mrp' | translate}}</label><input class="form-control" id="mrp" type="text"></div>
+                                <div><label for="mrp" class="sr-only">{{'purchaseform.label.mrp' | translate}}</label><input class="form-control two-decimals" id="mrp" id='float' type="number" min="0" maxlength="11" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" step="0.01"></div>
                             </td>
                             <td>
-                                <div><label for="mfgName" class="sr-only">{{'purchaseform.label.mfgName' | translate}}</label><input class="form-control" id="mfgName" type="text"></div>
+                                <div><label for="mfgName" class="sr-only">{{'purchaseform.label.mfgName' | translate}}</label><input class="form-control" id="mfgName" type="text" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" min="0" maxlength="20"></div>
                             </td>
                         </tr>
                     </tbody>
@@ -163,19 +163,19 @@
                 <form class='form'>
                     <div class="form-group col-sm-3">
                         <label class="col-form-label" for="grossValue">{{'purchaseform.label.grossValue'|translate}}:</label>
-                        <input type="number" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" min="0" maxlength="3" step="0.01" class="form-control ml35" id="grossValue">
+                        <input type="number" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" min="0" maxlength="14" step="0.01" class="form-control two-decimals ml35" id="grossValue">
                     </div>
                     <div class="form-group col-sm-3">
                         <label class="col-form-label" for="discountValue">{{'purchaseform.label.discountValue'|translate}}:</label>
-                        <input type="number" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" min="0" maxlength="3" step="0.01" class="form-control" id="discountValue">
+                        <input type="number" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" min="0" maxlength="12" step="0.01" class="form-control two-decimals" id="discountValue">
                     </div>
                     <div class="form-group col-sm-3">
                         <label class="col-form-label" for="taxValue">{{'purchaseform.label.taxValue'|translate}}:</label>
-                        <input type="number" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" min="0" maxlength="3" step="0.01" class="form-control" id="taxValue">
+                        <input type="number" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" min="0" maxlength="12" step="0.01" class="form-control two-decimals" id="taxValue">
                     </div>
                     <div class="form-group col-sm-3">
                         <label class="col-form-label" for="netValue">{{'purchaseform.label.netValue'|translate}}:</label>
-                        <input type="number" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" min="0" maxlength="3" step="0.01" class="form-control" id="creditAdjValue">
+                        <input type="number" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" min="0" maxlength="14" step="0.01" class="form-control two-decimals" id="creditAdjValue">
                     </div>
                 </form>
             </div>
@@ -281,15 +281,15 @@
                 <form class="form">
                     <div class="form-group col-sm-12">
                         <label class="col-form-label pl30" for="debitAdjValue">{{'purchaseform.label.debitAdjValue'|translate}}:</label>
-                        <input type="number" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" min="0" maxlength="3" step="0.01" class="form-control" id="debitAdjValue">
+                        <input type="number" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" min="0" maxlength="12" step="0.01" class="form-control two-decimals" id="debitAdjValue">
                     </div>
                     <div class="form-group col-sm-12">
                         <label class="col-form-label pl30" for="creditAdjValue">{{'purchaseform.label.creditAdjValue'|translate}}:</label>
-                        <input type="number" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" min="0" maxlength="3" step="0.01" class="form-control" id="creditAdjValue">
+                        <input type="number" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" min="0" maxlength="12" step="0.01" class="form-control two-decimals" id="creditAdjValue">
                     </div>
                     <div class="form-group col-sm-12">
                         <label class="col-form-label" for="invoiceValue">{{'purchaseform.label.invoiceValue'|translate}}:</label>
-                        <input type="number" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" min="0" maxlength="3" step="0.01" class="form-control " id="invoiceValue">
+                        <input type="number" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" min="0" maxlength="14" step="0.01" class="form-control two-decimals" id="invoiceValue">
                     </div>
                 </form>
             </div>
