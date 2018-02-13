@@ -9,6 +9,11 @@
         .controller('scheduleController', ['$scope', 'commonLoaderService', function ($scope, commonLoaderService) {
 
             var vm = this; // jshint ignore:line
+
+            vm.searchSelect = function () {
+                $('.selectpicker1').selectpicker('refresh');
+            };
+
             vm.scheduleType = "0";
             vm.selected = false;
             vm.scheduleName = "";
@@ -123,4 +128,5 @@
 
 
     }]);
+
 })();
