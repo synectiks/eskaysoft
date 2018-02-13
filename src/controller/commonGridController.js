@@ -11,9 +11,11 @@
             var vm = this; // jshint ignore:line
             vm.startsWith = function (actual, expected) {
                 var lowerStr = (actual + "").toLowerCase();
+                vm.gridAlign();
                 return lowerStr.indexOf(expected.toLowerCase()) === 0;
             }
-            $(document).ready(function () {
+
+            vm.gridAlign = function () {
                 var colCount = 0;
                 $('tr:nth-child(1) th').each(function () {
                     if ($(this).attr('colspan')) {
@@ -31,7 +33,6 @@
                     $('thead').css('overflow-y', 'hidden');
                 }
 
-            });
-
-    }]);
+            };
+            }]);
 })();

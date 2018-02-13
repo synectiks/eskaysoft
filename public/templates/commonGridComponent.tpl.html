@@ -2,14 +2,14 @@
     <table id="commonGrid" class="table table-fixedheader table-lg table-bordered scrollbar">
         <thead>
             <tr>
-                <th ng-repeat="header in vm.headersList">
+                <th ng-repeat="header in vm.headersList" ng-init="vm.gridAlign()">
                     {{header.name | translate}}
                 </th>
             </tr>
         </thead>
         <tbody>
             <tr ng-repeat="(parentIndex, rowData) in vm.gridData | filter:vm.filterOptions:vm.startsWith" ng-class="{'selected':parentIndex == vm.rowNumber}">
-                <td ng-repeat="(key, value) in rowData" ng-click="vm.gridCallBack({value:rowData, index: parentIndex})">{{value}}</td>
+                <td ng-repeat="(key, value) in rowData" ng-init="vm.gridAlign()" ng-click="vm.gridCallBack({value:rowData, index: parentIndex})">{{value}}</td>
             </tr>
         </tbody>
     </table>
