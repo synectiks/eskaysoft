@@ -17,12 +17,12 @@
     "gulp-concat": "^2.6.1",
     "gulp-csso": "^2.0.0",
     "gulp-plumber": "^1.1.0",
-    "gulp-sass": "^2.3.2",
-    "gulp-uglify": "^2.1.2",
+    "gulp-sass": "^3.0.0",
+    "gulp-uglify": "^3.0.0",
     "path": "*",
     "path-exists": "*"
   },
   "devDependencies": {
-    "gulp-sass": "^2.3.2"
+    "gulp-sass": "^3.0.0"
   }
 }
