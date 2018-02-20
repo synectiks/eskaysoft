@@ -29,8 +29,13 @@
 
                 if ($("th:first-child").width() > $("td:first-child").width()) {
                     $('thead').css('overflow-y', 'scroll');
+
+                    if (screen.width > 1366) {
+                        $('th').css('margin-right', '-1px');
+                    }
                 } else {
                     $('thead').css('overflow-y', 'hidden');
+                    $('th').css('margin-right', '-0px');
                 }
 
             };

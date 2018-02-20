@@ -10,38 +10,9 @@
                 <input type="text" class="form-control" id="searchAccount" placeholder="{{'accountsOpenings.lable.searchAccount' | translate}}" ng-model="vm.account" required>
             </div>
         </form>
-        <div class="tableDiv mt10 mb10 p0">
-            <table id="scheduleTable" class="table table-fixedheader table-lg table-bordered scrollbar fiveHeadTable" ng-init="vm.search()">
-                <thead>
-                    <tr>
-                        <th>{{'accountsOpenings.lable.code' | translate}}</th>
-                        <th>{{'accountsOpenings.lable.accountName' | translate}}</th>
-                        <th>{{'accountsOpenings.lable.town' | translate}}</th>
-                        <th>{{'accountsOpenings.lable.opening' | translate}}</th>
-                        <th>{{'accountsOpenings.lable.type' | translate}}</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr ng-repeat="schemes in vm.data |filter:vm.account:vm.startsWith" ng-click="vm.setSelected(schemes.name, schemes.no, schemes.type, $index)" ng-class="{selected: schemes.name === vm.selectedName}">
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td>
-                            <div class="form-group mx-sm-3">
-                                <label for="opening" class="sr-only mt10">{{'accountsOpenings.lable.opening' | translate}}</label>
-                                <input type="text" class="form-control" id="openingtbl" ng-model="vm.account" required>
-                            </div>
-                        </td>
-                        <td>
-                            <div class="form-group mx-sm-3">
-                                <label for="type" class="sr-only mt10">{{'accountsOpenings.lable.type' | translate}}</label>
-                                <input type="text" class="form-control" id="Typetbl" ng-model="vm.account" required>
-                            </div>
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
+
+        <common-grid-component filter-options="vm.schedule" headers-list="vm.accountOpeningsTableHeaders" grid-data="vm.data" grid-call-back="vm.onSelectRow(value, index)" row-number="vm.selectedRow"></common-grid-component>
+
         <div class="btn-align p0" ng-if="vm.selected">
             <button type="submit" class="btn btn-primary searchEdit btn-position" ng-click="vm.edit()">{{'button.edit' | translate}}</button>
             <button type="submit" class="btn btn-primary btn-position" ng-click="vm.delete()">{{'button.delete' | translate}}</button>
