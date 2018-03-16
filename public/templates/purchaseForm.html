@@ -14,11 +14,74 @@
                         <label class="col-form-label" for="invoiceNumber">{{'purchaseform.label.invoiceNumber'|translate}}:</label>
                         <input type="text" class="form-control mb10 ml5" id="invoiceNumber">
                     </div>
-                    <div class="form-group fgroup col-sm-6">
+                    <!-- <div class="input-group form-group  col-sm-4" style="box-sizing: border-box; padding:0px; ">-->
+                    <div class="input-group form-group  col-sm-12" style="box-sizing: border-box; margin-left: 12px;padding-right: 25px; ">
                         <label class="col-form-label" for="supplier">{{'purchaseform.label.supplier'|translate}}:</label>
                         <input type="text" class="form-control mb10 ml60" id="supplier">
+                        <div class="input-group-btn">
+                            <button class="btn btn-default" style="margin-top: 11px;" data-toggle="modal" data-target="#myModal" type="submit"><i class="glyphicon glyphicon-search"></i></button>
+                        </div>
+                        <div class="modal fade" id="myModal" role="dialog">
+                            <div class="modal-dialog">
+
+                                <!-- Modal content-->
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                        <h4 class="modal-title">Suppliers</h4>
+                                    </div>
+                                    <div class="modal-body">
+
+                                        <div class="row">
+
+                                            <div class="row">
+                                                <div class="col-md-12 ml-auto">
+                                                    <table class="table table-bordered table-responsive">
+                                                        <thead>
+                                                            <tr>
+                                                                <th scope="col">#</th>
+                                                                <th scope="col">Acc Name</th>
+                                                                <th scope="col">Town</th>
+                                                                <th scope="col">Code</th>
+                                                            </tr>
+                                                        </thead>
+                                                        <tbody>
+                                                            <tr>
+                                                                <th scope="row">1</th>
+                                                                <td>Kamakhya Enterprise(Cheques Acc)</td>
+                                                                <td>Hyd</td>
+                                                                <td>KKEP</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <th scope="row">2</th>
+                                                                <td>Kamakhya Enterprise(Sales)</td>
+                                                                <td>Hyd</td>
+                                                                <td>AA01</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <th scope="row">3</th>
+                                                                <td>Kamakhya Enterprise(Purchase)</td>
+                                                                <td>Hyd</td>
+                                                                <td>AA04</td>
+                                                            </tr>
+                                                        </tbody>
+                                                    </table>
+
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+
                     </div>
-                    <div class="form-group fgroup col-sm-6">
+                    <div class="form-group fgroup col-sm-12">
                         <label class="col-form-label" for="GSTIN">{{'purchaseform.label.gstin'|translate}}:</label>
                         <input type="text" class="form-control mb10 ml60" id="GSTIN">
                     </div>
