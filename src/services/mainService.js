@@ -6,10 +6,16 @@ angular.module('com.synectiks.eskaySoft')
             var rs;
             var defer = $q.defer();
             rs = defer.promise;
+			var headers = {
+				'Access-Control-Allow-Origin': "*",
+				'Access-Control-Allow-Methods': 'GET,PUT,POST,DELETE',
+				'Access-Control-Allow-Headers': 'Content-Type'
+			};
             var serviceAPI = $resource(endPointUrl, {}, {
               query: {
                 method: methodType,
-                requestObject: requestObject
+                requestObject: requestObject,
+				isArray:true
               }
             });
             var node = "";

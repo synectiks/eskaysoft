@@ -23,29 +23,29 @@
             vm.normalScreen = true;
             vm.errorMessage = "";
             vm.messageContainer = false;
-            var list = {};
+            vm.scheduleList = {};
 
             vm.onSelectRow = function (rowData, rowNum) {
-                /*vm.selectedName = rowData.name;*/
-
-                if (vm.selected && list.name == rowData.name) {
-                    vm.selectedName = null;
+           
+                if (vm.selected && vm.scheduleList.name == rowData.scheduleName) {
+				    vm.selectedName = null;
                     vm.selected = false;
                     vm.selectedRow = -1;
                 } else {
+					
                     vm.selected = true;
                     vm.selectedRow = rowNum;
-                    list.name = rowData.name;
-                    list.no = rowData.no;
-                    list.type = rowData.type;
-                    list.index = rowData.index;
+                    vm.scheduleList.name = rowData.scheduleName;
+                   //vm.scheduleList.no = rowData.id;
+                    vm.scheduleList.type = rowData.scheduleType;
+                    vm.scheduleList.index = rowData.scheduleIndex;
                     vm.messageContainer = false;
                     vm.errorMessage = "";
                 }
             };
             vm.getDropDownValues = function () {
                 commonLoaderService.load_Data(null, 'messages/scheduleMockData.json', 'GET', null).then(function (dropDownContent) {
-                    vm.scheduleTypes = dropDownContent.scheduleTypes;
+                    vm.scheduleTypes = dropDownContent[0].scheduleTypes;
 
                 }, function (error) { // jshint ignore:line
                     console.log("error", error);
@@ -54,7 +54,7 @@
 
             vm.getScheduleTableHeaders = function () {
                 commonLoaderService.load_Data(null, 'messages/gridHeaders.json', 'GET', null).then(function (headers) {
-                    vm.scheduleTableHeaders = headers.scheduleTable;
+                    vm.scheduleTableHeaders = headers[0].scheduleTable;
                 }, function (error) { // jshint ignore:line
                     console.log("error", error);
                 });
@@ -63,9 +63,19 @@
             vm.search = function () {
                 vm.editScreen = false;
                 vm.normalScreen = true;
-                commonLoaderService.load_Data(null, 'messages/scheduleMockData.json', 'GET', null).then(function (searchContent) {
-                    vm.data = searchContent.SearchSchemeCodes;
-                    vm.selectedName = "";
+                commonLoaderService.load_Data(null, 'https://eskaysoft.synectiks.com/api/v1/schedules/', 'GET', null).then(function (searchContent) {
+					
+					var gridDataArr =[];
+					angular.forEach(searchContent, function(item){
+						var gridDataObj={};
+						gridDataObj.scheduleName= item.scheduleName;
+						gridDataObj.scheduleIndex= item.scheduleIndex;
+						gridDataObj.scheduleType= item.scheduleType;
+						gridDataArr.push(gridDataObj);
+                
+					});
+                    vm.data = gridDataArr;
+					vm.selectedName = "";
                     vm.messageContainer = false;
                     vm.errorMessage = "";
                 }, function (error) { // jshint ignore:line
@@ -74,9 +84,9 @@
             };
 
             vm.edit = function () {
-                vm.scheduleName = list.name;
-                vm.scheduleNo = list.no;
-                vm.scheduleType = list.type;
+				vm.scheduleName = vm.scheduleList.name;
+                vm.scheduleNo = vm.scheduleList.index;
+                vm.scheduleType = vm.scheduleList.type;
                 vm.editScreen = true;
                 vm.normalScreen = false;
                 vm.messageContainer = false;
@@ -84,26 +94,32 @@
             };
 
             vm.delete = function () {
-                vm.data.splice(list.index, 1);
+                vm.data.splice(vm.scheduleList.index, 1);
                 vm.selected = false;
                 vm.messageContainer = true;
                 vm.errorMessage = "Schedule deleted.";
             };
 
-            vm.save = function () {
-                vm.data.splice(list.index, 1);
-                var obj = {
-                    "name": vm.scheduleName,
-                    "no": vm.scheduleNo,
-                    "type": vm.scheduleType
+            vm.create = function () {
+                //vm.data.splice(vm.scheduleList.index, 1);
+				
+                var reqobj = {
+                    "scheduleName": vm.scheduleName,
+                    "scheduleIndex": vm.scheduleNo,
+                    "scheduleType": vm.scheduleType
                 };
-                vm.data.push(obj);
-                vm.reset();
+				commonLoaderService.load_Data(null, "https://eskaysoft.synectiks.com/api/v1/schedules/", "POST", reqobj).then(function(data) {
+					 vm.search();
+					 }, function (error) { // jshint ignore:line
+                    console.log("error", error);
+                });
+               // vm.data.push(obj);
+               // vm.reset();
                 vm.messageContainer = true;
                 vm.errorMessage = "Schedule saved.";
             };
 
-            vm.create = function () {
+            vm.save = function () {
                 vm.reset();
                 vm.messageContainer = true;
                 vm.errorMessage = "Schedule Created.";
@@ -118,8 +134,6 @@
                 vm.selectedRow = -1;
                 vm.messageContainer = false;
                 vm.editScreen = false;
-                vm.schedule.name = "";
-                vm.schedule.type = "";
                 vm.search();
             };
             vm.getDropDownValues();
