@@ -71,7 +71,7 @@
 						gridDataArr.push(gridDataObj);
                 
 					});
-                    vm.data = gridDataArr;
+                    vm.data = searchContent;
 					vm.selectedName = "";
                     vm.messageContainer = false;
                     vm.errorMessage = "";
@@ -95,7 +95,7 @@
 				var reqobj = {
 					"id": 2
 				};
-				commonLoaderService.load_Data(null, "https://eskaysoft.synectiks.com/api/v1/schedules/", "DELETE", null).then(function(data){
+				commonLoaderService.load_Data(null, "https://eskaysoft.synectiks.com/api/v1/schedules/"+vm.scheduleList.index, "DELETE", null).then(function(data){
 					vm.search();
 				}, function (error) { // jshint ignore:line
 					console.log("error", error);
