@@ -49,6 +49,15 @@
                 });
             };
 
+			 vm.retrieveAllScheduleIndexs = function () {
+               commonLoaderService.load_Data(null, 'https://eskaysoft.synectiks.com/api/v1/schedulesIndexs', 'GET', null).then(function (searchContent) {
+					vm.scheduleIndexList = searchContent;
+					
+                }, function (error) { // jshint ignore:line
+                    console.log("error", error);
+                });
+            };
+			
             vm.search = function () {
                 vm.editScreen = false;
                 vm.normalScreen = true;
@@ -65,6 +74,7 @@
 					vm.selectedName = "";
                     vm.messageContainer = false;
                     vm.errorMessage = "";
+					//vm.retrieveAllScheduleIndexs();
                 }, function (error) { // jshint ignore:line
                     console.log("error", error);
                 });

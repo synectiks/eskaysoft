@@ -39,7 +39,7 @@
                 $('th').css('width', 100 / vm.noOfViewColumns + '%');
                 $('td').css('width', 100 / vm.noOfViewColumns + '%');
 
-                if ($("th:first-child").width() > $("td:first-child").width()) {
+                /*if ($("th:first-child").width() > $("td:first-child").width()) {
                     $('thead').css('overflow-y', 'scroll');
 
                     if (screen.width > 1366) {
@@ -48,7 +48,7 @@
                 } else {
                     $('thead').css('overflow-y', 'hidden');
                     $('th').css('margin-right', '-0px');
-                }
+                }*/
 
             };
 			
