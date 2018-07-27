@@ -9,7 +9,8 @@ angular.module('com.synectiks.eskaySoft')
 			gridData: '=',// twoway binding
 			gridCallBack: '&',
 			rowNumber: '=',
-			hiddenColumnKeys: '='
+			hiddenColumnKeys: '=',
+			noOfViewColumns:'='
 		  },
 		controller: 'commonGridController',
 		controllerAs:'vm'

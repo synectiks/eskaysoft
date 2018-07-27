@@ -48,7 +48,7 @@
                     <input type="text" class="form-control" id="scheduleform" placeholder="Schedule Name" ng-model="vm.schedule.name" required>
                 </div>
             </form>
-            <common-grid-component filter-options="vm.schedule" grid-data="vm.data" grid-call-back="vm.onSelectRow(value, index)" row-number="vm.selectedRow" hidden-column-keys="vm.hiddenColArr"></common-grid-component>
+            <common-grid-component filter-options="vm.schedule" grid-data="vm.data" grid-call-back="vm.onSelectRow(value, index)" row-number="vm.selectedRow" hidden-column-keys="vm.hiddenColArr" no-of-view-columns="vm.noOfViewColumns"></common-grid-component>
             <div class="btn-align p0" ng-if="vm.selected">
                 <button type="submit" class="btn btn-primary searchEdit btn-position" ng-click="vm.edit()">{{'button.edit' | translate}}</button>
                 <button type="submit" class="btn btn-primary btn-position" ng-click="vm.delete()">{{'button.delete' | translate}}</button>

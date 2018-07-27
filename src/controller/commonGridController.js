@@ -17,6 +17,7 @@
             }
 				
 			vm.containsColumnHiddenKey = function(hiddenKey){
+				
 				var tempArr = vm.hiddenColumnKeys;
 				var isTrue= false;
 				angular.forEach(tempArr, function(item){
@@ -29,10 +30,14 @@
 				return isTrue;
 			};
 
+			var toalColLen = -1;
 			vm.gridAlign = function () {
 		      
-                $('th').css('width', 100 / vm.totalNoOfColumns + '%');
-                $('td').css('width', 100 / vm.totalNoOfColumns + '%');
+			  if(toalColLen == -1){
+				  toalColLen = vm.noOfViewColumns;
+			  }
+                $('th').css('width', 100 / vm.noOfViewColumns + '%');
+                $('td').css('width', 100 / vm.noOfViewColumns + '%');
 
                 if ($("th:first-child").width() > $("td:first-child").width()) {
                     $('thead').css('overflow-y', 'scroll');
@@ -47,13 +52,7 @@
 
             };
 			
-			vm.isGridDataEmpty=function(){
-				console.log("vm.gridData----",vm.gridData);
-				vm.totalNoOfColumns= (Object.keys(vm.gridData[0]).length-1)-vm.hiddenColumnKeys.length;
-				console.log("???", vm.totalNoOfColumns > 0);
-				return vm.totalNoOfColumns > 0;
-			};
-			vm.isGridDataEmpty();
+	
 			
             }]);
 })();

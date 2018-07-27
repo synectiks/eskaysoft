@@ -20,8 +20,6 @@
             vm.normalScreen = true;
             vm.messageContainer = false;
             vm.scheduleList={};
-			vm.hiddenColArr=[];
-			vm.noOfColumns =0;
 			
             vm.onSelectRow = function (rowData, rowNum) {
            
@@ -61,7 +59,8 @@
                 });*/
 				vm.hiddenColArr=['id'];
 		        commonLoaderService.load_Data(null, 'https://eskaysoft.synectiks.com/api/v1/schedules/', 'GET', null).then(function (searchContent) {
-		
+					var jsonKeys = Object.keys(searchContent[0])
+					vm.noOfViewColumns = jsonKeys.length-vm.hiddenColArr.length;
 					vm.data = searchContent;
 					vm.selectedName = "";
                     vm.messageContainer = false;
@@ -75,6 +74,7 @@
 				vm.scheduleName = vm.scheduleList.name;
                 vm.scheduleNo = vm.scheduleList.index;
                 vm.scheduleType = vm.scheduleList.type;
+				vm.scheduleId= vm.scheduleList.no;
                 vm.editScreen = true;
                 vm.normalScreen = false;
                 vm.messageContainer = false;
@@ -86,7 +86,7 @@
 				var reqobj = {
 					"id": 2
 				};
-				commonLoaderService.load_Data(null, "https://eskaysoft.synectiks.com/api/v1/schedules/"+vm.scheduleList.index, "DELETE", null).then(function(data){
+				commonLoaderService.load_Data(null, "https://eskaysoft.synectiks.com/api/v1/schedules/"+vm.scheduleList.no, "DELETE", null).then(function(data){
 					vm.search();
 				}, function (error) { // jshint ignore:line
 					console.log("error", error);
