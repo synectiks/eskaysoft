@@ -4,7 +4,7 @@
         <thead>
             <tr>
 				 <th ng-repeat="(key, value) in vm.gridData[0]" ng-init="vm.gridAlign()" ng-show="!vm.containsColumnHiddenKey(key)">
-				  {{key}}
+				  {{key | translate}}
 				</th>
 				<th ng-if="vm.noOfViewColumns <= 0 "> No data available.</th>
             </tr>

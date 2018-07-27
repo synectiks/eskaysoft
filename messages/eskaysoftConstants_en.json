@@ -178,9 +178,9 @@
     "customerwiseDiscount.lable.disc": "Disc",
 
 
-    "scheduleform.label.name": "Schedule name",
-    "scheduleform.label.index": "Schedule index",
-    "scheduleform.label.type": "Schedule type",
+    "scheduleName": "Schedule name",
+    "scheduleIndex": "Schedule index",
+    "scheduleType": "Schedule type",
     "scheduleform.header.name": "Schedule",
 
     "purchaseform.header.name": "Purchase entry",
