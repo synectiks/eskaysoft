@@ -1,4 +1,4 @@
-{
+[{
 	"scheduleTable": [{
 		"name": "scheduleform.label.name"
 		}, {
@@ -155,4 +155,4 @@
 		"name": "purchaseform.label.sgstAmount"
 	}]
 	
-}
+}]
