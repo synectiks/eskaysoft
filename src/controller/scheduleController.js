@@ -20,6 +20,8 @@
             vm.normalScreen = true;
             vm.messageContainer = false;
             vm.scheduleList={};
+			vm.hiddenColArr=[];
+			vm.noOfColumns =0;
 			
             vm.onSelectRow = function (rowData, rowNum) {
            
@@ -49,29 +51,18 @@
                 });
             };
 
-            vm.getScheduleTableHeaders = function () {
-                commonLoaderService.load_Data(null, 'messages/gridHeaders.json', 'GET', null).then(function (headers) {
-                    vm.scheduleTableHeaders = headers[0].scheduleTable;
-                }, function (error) { // jshint ignore:line
-                    console.log("error", error);
-                });
-            };
-
             vm.search = function () {
                 vm.editScreen = false;
                 vm.normalScreen = true;
-                commonLoaderService.load_Data(null, 'https://eskaysoft.synectiks.com/api/v1/schedules/', 'GET', null).then(function (searchContent) {
-					
-					var gridDataArr =[];
-					angular.forEach(searchContent, function(item){
-						var gridDataObj={};
-						gridDataObj.scheduleName= item.scheduleName;
-						gridDataObj.scheduleIndex= item.scheduleIndex;
-						gridDataObj.scheduleType= item.scheduleType;
-						gridDataArr.push(gridDataObj);
-                
-					});
-                    vm.data = searchContent;
+				/* commonLoaderService.load_Data(null, 'messages/scheduleMockData.json', 'GET', null).then(function (headers) {
+                    vm.data = headers[0].SearchSchemeCodes;
+                }, function (error) { // jshint ignore:line
+                    console.log("error", error);
+                });*/
+				vm.hiddenColArr=['id'];
+		        commonLoaderService.load_Data(null, 'https://eskaysoft.synectiks.com/api/v1/schedules/', 'GET', null).then(function (searchContent) {
+		
+					vm.data = searchContent;
 					vm.selectedName = "";
                     vm.messageContainer = false;
                     vm.errorMessage = "";
@@ -150,7 +141,6 @@
                 vm.search();
             };
             vm.getDropDownValues();
-            vm.getScheduleTableHeaders();
             vm.search();
 
 

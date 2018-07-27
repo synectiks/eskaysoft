@@ -6,12 +6,12 @@ angular.module('com.synectiks.eskaySoft')
        templateUrl: 'public/templates/commonGridComponent.tpl.html',
 	   bindings: {
 			filterOptions: '=', 
-			headersList: '<', // oneway binding
 			gridData: '=',// twoway binding
 			gridCallBack: '&',
-			rowNumber: '='
+			rowNumber: '=',
+			hiddenColumnKeys: '='
 		  },
-		   controller: 'commonGridController',
-			controllerAs:'vm'
+		controller: 'commonGridController',
+		controllerAs:'vm'
    });
 })();

@@ -15,7 +15,7 @@ angular.module('com.synectiks.eskaySoft')
               query: {
                 method: methodType,
                 requestObject: requestObject,
-				isArray:methodType !== "DELETE" ? true : false,
+				isArray:methodType !== "DELETE" ? true : false
               }
             });
             var node = "";
