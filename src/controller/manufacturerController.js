@@ -18,11 +18,13 @@
                     vm.selectedRow = -1;
                     vm.manufacInfoList = {};
                     vm.manufacName= "";
+                    vm.manufacId= "";
 
                 } else {
                     vm.selected = true;
                     vm.selectedRow = rowNum;
                     vm.manufacInfoList.name = rowData.manfacturerName;
+                    vm.manufacInfoList.id= rowData.id;
                     vm.messageContainer = false;
                     vm.errorMessage = "";
                 }
@@ -85,7 +87,7 @@
                 var reqobj = {
                     "id": 2
                 };
-                commonLoaderService.load_Data(null, "https://eskaysoft.synectiks.com/api/v1/manfacturer/1/" + vm.manufacInfoList.id, "DELETE", null).then(function (data) {
+                commonLoaderService.load_Data(null, "https://eskaysoft.synectiks.com/api/v1/manfacturer/" + vm.manufacInfoList.id, "DELETE", null).then(function (data) {
                     vm.search();
                 }, function (error) { // jshint ignore:line
                     console.log("error", error);

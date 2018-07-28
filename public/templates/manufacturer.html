@@ -22,11 +22,11 @@
                 <label class="col-form-label" for="ScheduleType">{{'common.label.search' | translate}}:</label>
                 <div class="form-group mx-sm-3">
                     <label for="manufacturerName" class="sr-only mt10">{{'manufacturerForm.label.name' | translate}}</label>
-                    <input type="text" class="form-control" id="manufacturerName" placeholder=" Manufacturer Name" ng-model="vm.schedule.name" required>
+                    <input type="text" class="form-control" id="manufacturerName" placeholder=" Manufacturer Name" ng-model="vm.searchByManufacName" required>
                 </div>
 
             </form>
-            <common-grid-component filter-options="vm.manufacName" grid-data="vm.data" grid-call-back="vm.onSelectRow(value, index)" row-number="vm.selectedRow" hidden-column-keys="vm.hiddenColArr" no-of-view-columns="vm.noOfViewColumns"></common-grid-component>
+            <common-grid-component filter-options="searchByManufacName" grid-data="vm.data" grid-call-back="vm.onSelectRow(value, index)" row-number="vm.selectedRow" hidden-column-keys="vm.hiddenColArr" no-of-view-columns="vm.noOfViewColumns"></common-grid-component>
             <div class="btn-align p0" ng-if="vm.selected">
                 <button type="submit" class="btn btn-primary searchEdit btn-position" ng-click="vm.edit()">{{'button.edit' | translate}}</button>
                 <button type="submit" class="btn btn-primary btn-position" ng-click="vm.delete()">{{'button.delete' | translate}}</button>
