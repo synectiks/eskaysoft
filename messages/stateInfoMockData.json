@@ -1,0 +1,15 @@
+[{
+    "stateZones": [{
+        "code": "EAST",
+        "description": "East"
+	  }, {
+        "code": "WEST",
+        "description": "West"
+	  }, {
+        "code": "NORTH",
+        "description": "North"
+	  }, {
+        "code": "SOUTH",
+        "description": "South"
+	  }]
+}]
