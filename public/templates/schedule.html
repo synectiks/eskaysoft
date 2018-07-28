@@ -17,8 +17,8 @@
                     <label class="col-form-label" for="ScheduleType ">{{'scheduleform.label.type' | translate}}:</label>
                     <select ng-model="vm.scheduleType" ng-click="vm.searchSelect()" class="selectpicker1 form-control form-control-lg form-control form-control-lg" id="ScheduleType" data-live-search="true">
 						<option value="0">Select</option>
-						<option ng-repeat="scheduleType in vm.scheduleTypes" value="{{scheduleType.name}}"
-								ng-selected="scheduleType.name === vm.scheduleType" data-content="{{scheduleType.name}}">{{scheduleType.name}}
+						<option ng-repeat="scheduleType in vm.scheduleTypes" value="{{scheduleType.code}}"
+								 data-content="{{scheduleType.description}}">{{scheduleType.description}}
 						</option>
                     </select>
                 </div>
@@ -38,8 +38,8 @@
                     <label class="col-form-label" for="ScheduleType">{{'common.label.searchby' | translate}}:</label>
                     <select ng-model="vm.schedule.type" class="form-control form-control-lg" id="searchby" name="searchScheduleType">
                         <option value="">{{'scheduleform.label.type' | translate}}</option>
-                       <option ng-repeat="scheduleType in vm.scheduleTypes" value="{{scheduleType.name}}"
-                       >{{scheduleType.name}}
+                       <option ng-repeat="scheduleType in vm.scheduleTypes" value="{{scheduleType.code}}"
+                       >{{scheduleType.description}}
                         </option>
                     </select>
                 </div>

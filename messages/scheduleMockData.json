@@ -1,15 +1,15 @@
 [{
     "DropDownCodes": [{
-        "code": "Ass",
-        "description": "Asserts"
+        "code": "ASS",
+        "description": "Assets"
 	  }, {
-        "code": "Lia",
+        "code": "LIA",
         "description": "Liabilities"
 	  }, {
-        "code": "Trade",
+        "code": "TRADE",
         "description": "Trading"
 	  }, {
-        "code": "Pnl",
+        "code": "PNL",
         "description": "Profit & Loss"
 	  }],
 	  
@@ -22,18 +22,18 @@
 	  }],
 	  
     "scheduleTypes": [{
-        "name": "Assets",
-        "description": ""
-      	  }, {
-        "name": "Liabilities",
-        "description": ""
-      	  }, {
-        "name": "Trading",
-        "description": ""
-      	  }, {
-        "name": "Profit & Loss",
-        "description": ""
-      	  }],
+        "code": "ASS",
+        "description": "Assets"
+	  }, {
+        "code": "LIA",
+        "description": "Liabilities"
+	  }, {
+        "code": "TRADE",
+        "description": "Trading"
+	  }, {
+        "code": "PNL",
+        "description": "Profit & Loss"
+	  }],
 
     "SearchSchemeCodes": [{
             "name": "Sundry Debtorts",

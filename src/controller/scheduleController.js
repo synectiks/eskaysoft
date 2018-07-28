@@ -16,7 +16,7 @@
 
             vm.scheduleType = "0";
             vm.selected = false;
-            vm.editScreen = false;
+           // vm.editScreen = false;
             vm.normalScreen = true;
             vm.messageContainer = false;
             vm.scheduleList={};
@@ -27,14 +27,19 @@
 				    vm.selectedName = null;
                     vm.selected = false;
                     vm.selectedRow = -1;
+					vm.scheduleList={};
+						vm.scheduleName = "";
+                vm.scheduleNo = "";
+				vm.scheduleType = "0";
+				vm.scheduleId= "";
 					
                 } else {
 				    vm.selected = true;
                     vm.selectedRow = rowNum;
                     vm.scheduleList.name = rowData.scheduleName;
 					vm.scheduleList.no = rowData.id;
-                    vm.scheduleList.type = rowData.scheduleType;
-                    vm.scheduleList.index = rowData.scheduleIndex;
+					vm.scheduleList.type = rowData.scheduleType;
+					vm.scheduleList.index = rowData.scheduleIndex;
                     vm.messageContainer = false;
                     vm.errorMessage = "";
                 }
@@ -59,7 +64,7 @@
             };
 			
             vm.search = function () {
-                vm.editScreen = false;
+               // vm.editScreen = false;
                 vm.normalScreen = true;
 				/* commonLoaderService.load_Data(null, 'messages/scheduleMockData.json', 'GET', null).then(function (headers) {
                     vm.data = headers[0].SearchSchemeCodes;
@@ -68,13 +73,27 @@
                 });*/
 				vm.hiddenColArr=['id'];
 		        commonLoaderService.load_Data(null, 'https://eskaysoft.synectiks.com/api/v1/schedules/', 'GET', null).then(function (searchContent) {
-					var jsonKeys = Object.keys(searchContent[0])
+					if(searchContent.length>0){
+						var jsonKeys = Object.keys(searchContent[0])
 					vm.noOfViewColumns = jsonKeys.length-vm.hiddenColArr.length;
+					
+					angular.forEach(searchContent, function(item){
+						var hasScheduleType= false;
+						angular.forEach(vm.scheduleTypes, function(scheduleTypeObj){
+							if(!hasScheduleType && angular.equals(item.scheduleType, scheduleTypeObj.code) ){
+								item.scheduleType = scheduleTypeObj.description;
+								hasScheduleType=true
+							}
+						});
+					});
+					
 					vm.data = searchContent;
 					vm.selectedName = "";
                     vm.messageContainer = false;
                     vm.errorMessage = "";
 					//vm.retrieveAllScheduleIndexs();
+					}
+					
                 }, function (error) { // jshint ignore:line
                     console.log("error", error);
                 });
@@ -83,6 +102,18 @@
             vm.edit = function () {
 				vm.scheduleName = vm.scheduleList.name;
                 vm.scheduleNo = vm.scheduleList.index;
+			
+				var hasRecord= false;
+					angular.forEach(vm.scheduleTypes, function(scheduleTypeObj){
+						
+						
+						if(!hasRecord && angular.equals(vm.scheduleList.type, scheduleTypeObj.description) ){
+							vm.scheduleList.type=scheduleTypeObj.code;
+							hasRecord=true
+						}
+					});
+				
+				
                 vm.scheduleType = vm.scheduleList.type;
 				vm.scheduleId= vm.scheduleList.no;
                 vm.editScreen = true;
@@ -107,13 +138,14 @@
 			};
 
             vm.create = function () {
+				
                 var reqobj = {
                     "scheduleName": vm.scheduleName,
                     "scheduleIndex": vm.scheduleNo,
                     "scheduleType": vm.scheduleType
                 };
 				commonLoaderService.load_Data(reqobj, "https://eskaysoft.synectiks.com/api/v1/schedules/", "POST", null).then(function(data) {
-					 vm.search();
+					vm.reset();
 					 }, function (error) { // jshint ignore:line
                     console.log("error", error);
                 });
@@ -122,11 +154,13 @@
             };
 
             vm.save = function () {
-    		
-                var reqobj = {
+				console.log("vm.scheduleType----", vm.scheduleType);
+				vm.editScreen = true;
+    		    var reqobj = {
                     "scheduleName": vm.scheduleName,
                     "scheduleIndex": vm.scheduleNo,
-                    "scheduleType": vm.scheduleType
+                    "scheduleType": vm.scheduleType,
+					"id": vm.scheduleList.no
                 };
 
 				commonLoaderService.load_Data(reqobj, "https://eskaysoft.synectiks.com/api/v1/schedules/", "PUT", null).then(function(data) {
@@ -134,13 +168,16 @@
 				}, function (error) { // jshint ignore:line
 					console.log("error", error);
                 });
-            
+				
                 vm.messageContainer = true;
                 vm.errorMessage = "Schedule saved.";
             };
 
             vm.reset = function () {
+				vm.scheduleList={};
+			
                 vm.scheduleName = "";
+				vm.scheduleId="";
                 vm.selected = false;
                 vm.scheduleNo = "";
                 vm.scheduleType = "0";

@@ -11,13 +11,15 @@ angular.module('com.synectiks.eskaySoft')
 				'Access-Control-Allow-Methods': 'GET,PUT,POST,DELETE',
 				'Access-Control-Allow-Headers': 'Content-Type'
 			};
+			
             var serviceAPI = $resource(endPointUrl, {}, {
               query: {
                 method: methodType,
                 requestObject: requestObject,
-				isArray:methodType !== "DELETE" ? true : false
+				isArray: methodType == "GET" ? true : false
               }
             });
+			
             var node = "";
             node = serviceAPI.query(parameter);
             node.$promise.then(function(data) {
