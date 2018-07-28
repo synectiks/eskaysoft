@@ -3,7 +3,7 @@
     angular.module('com.synectiks.eskaySoft')
         .controller('businessExeInfoController', ['commonLoaderService', function (commonLoaderService) {
             var vm = this; // jshint ignore:line
-            
+
             vm.selected = false;
             vm.normalScreen = true;
             vm.messageContainer = false;
@@ -60,19 +60,22 @@
             };
             //Create
             vm.create = function () {
-                var reqobj = {
-                    "name": vm.busExeName,
-                    "address": vm.busExeAddress,
-                    "town": vm.busExeTown,
-                    "mobile": vm.busExeMobile
-                };
-                commonLoaderService.load_Data(reqobj, "https://eskaysoft.synectiks.com/api/v1/businessexecutive/", "POST", null).then(function (data) {
-                    vm.reset();
-                }, function (error) { // jshint ignore:line
-                    console.log("error", error);
-                });
-                vm.messageContainer = true;
-                vm.errorMessage = "Business Executive Information saved.";
+                console.log(vm.busExeName.length);
+                if (vm.busExeName.length >= 1 && vm.busExeName.length >= 1 && vm.busExeTown.length >= 1 && vm.busExeMobile.length >= 1) {
+                    var reqobj = {
+                        "name": vm.busExeName,
+                        "address": vm.busExeAddress,
+                        "town": vm.busExeTown,
+                        "mobile": vm.busExeMobile
+                    };
+                    commonLoaderService.load_Data(reqobj, "https://eskaysoft.synectiks.com/api/v1/businessexecutive/", "POST", null).then(function (data) {
+                        vm.reset();
+                    }, function (error) { // jshint ignore:line
+                        console.log("error", error);
+                    });
+                    vm.messageContainer = true;
+                    vm.errorMessage = "Business Executive Information saved.";
+                }
             };
 
             //Reset
@@ -111,15 +114,14 @@
                 vm.busExeName = vm.busExeInfoList.name;
                 vm.busExeAddress = vm.busExeInfoList.address;
                 vm.busExeTown = vm.busExeInfoList.town;
-                vm.busExeMobile =vm.busExeInfoList.mobile;
+                vm.busExeMobile = vm.busExeInfoList.mobile;
 
-                vm.stateZone = vm.stateList.zone;*/
-                vm.stateId = vm.stateList.id;
+
                 vm.editScreen = true;
                 vm.normalScreen = false;
                 vm.messageContainer = false;
                 vm.errorMessage = "";
             };
             vm.search();
-	}]);
+                    }]);
 })();
