@@ -10,6 +10,8 @@
                     <input type="text" class="form-control form-control-lg" name="Name" id="manufacturerName" maxlength="20" ng-model="vm.manufacName">
                 </div>
                 <div class="form-group">
+                    <button type="submit" class="btn btn-primary mb5" ng-click="vm.reset()">{{'button.reset' | translate}}</button>
+
                     <button type="submit" class="btn btn-primary  mb10" ng-click="vm.create()">{{'button.save' | translate}}
                     </button>
                 </div>
