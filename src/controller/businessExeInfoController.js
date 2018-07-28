@@ -113,8 +113,6 @@
                 vm.busExeTown = vm.busExeInfoList.town;
                 vm.busExeMobile =vm.busExeInfoList.mobile;
 
-                vm.stateZone = vm.stateList.zone;*/
-                vm.stateId = vm.stateList.id;
                 vm.editScreen = true;
                 vm.normalScreen = false;
                 vm.messageContainer = false;
