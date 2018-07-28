@@ -11,7 +11,7 @@
             var vm = this; // jshint ignore:line
 
             vm.searchSelect = function () {
-                $('.selectpicker1').selectpicker('refresh');
+              //  $('.selectpicker1').selectpicker('refresh');
             };
 
             vm.scheduleType = "0";
@@ -28,10 +28,10 @@
                     vm.selected = false;
                     vm.selectedRow = -1;
 					vm.scheduleList={};
-						vm.scheduleName = "";
-                vm.scheduleNo = "";
-				vm.scheduleType = "0";
-				vm.scheduleId= "";
+                    vm.scheduleName = "";
+                    vm.scheduleNo = "";
+                    vm.scheduleType = "0";
+                    vm.scheduleId= "";
 					
                 } else {
 				    vm.selected = true;
@@ -73,7 +73,7 @@
                 });*/
 				vm.hiddenColArr=['id'];
 		        commonLoaderService.load_Data(null, 'https://eskaysoft.synectiks.com/api/v1/schedules/', 'GET', null).then(function (searchContent) {
-					if(searchContent.length>0){
+		if(searchContent.length>0){
 						var jsonKeys = Object.keys(searchContent[0])
 					vm.noOfViewColumns = jsonKeys.length-vm.hiddenColArr.length;
 					
@@ -100,6 +100,7 @@
             };
 
             vm.edit = function () {
+            
 				vm.scheduleName = vm.scheduleList.name;
                 vm.scheduleNo = vm.scheduleList.index;
 			
@@ -112,8 +113,7 @@
 							hasRecord=true
 						}
 					});
-				
-				
+			
                 vm.scheduleType = vm.scheduleList.type;
 				vm.scheduleId= vm.scheduleList.no;
                 vm.editScreen = true;
@@ -174,21 +174,24 @@
             };
 
             vm.reset = function () {
+                
 				vm.scheduleList={};
 			
                 vm.scheduleName = "";
 				vm.scheduleId="";
                 vm.selected = false;
                 vm.scheduleNo = "";
-                vm.scheduleType = "0";
+                vm.scheduleType ="0";
                 vm.selectedName = "";
                 vm.selectedRow = -1;
                 vm.messageContainer = false;
                 vm.editScreen = false;
                 vm.search();
+               
             };
             vm.getDropDownValues();
             vm.search();
+           
 
 
     }]);

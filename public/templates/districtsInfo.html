@@ -40,7 +40,8 @@
                     <input type="text" class="form-control" id="stateName" placeholder="{{'districtsform.label.state.name' | translate}}" ng-model="vm.searchScheduleNumber" required>
                 </div>
             </form>
-            <common-grid-component filter-options="vm.schedule" headers-list="vm.districtTableHeaders" grid-data="vm.data" grid-call-back="vm.onSelectRow(value, index)" row-number="vm.selectedRow"></common-grid-component>
+                          <common-grid-component filter-options="vm.districts" grid-data="vm.data" grid-call-back="vm.onSelectRow(value, index)" row-number="vm.selectedRow" hidden-column-keys="vm.hiddenColArr" no-of-view-columns="vm.noOfViewColumns"></common-grid-component>
+
             <div class="btn-align p0" ng-if="selected">
                 <button type="submit" class="btn btn-primary searchEdit btn-position" ng-click="vm.edit()">{{'button.edit' | translate}}</button>
                 <button type="submit" class="btn btn-primary btn-position" ng-click="vm.delete()">{{'button.delete' | translate}}</button>

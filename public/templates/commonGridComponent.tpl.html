@@ -10,10 +10,13 @@
             </tr>
 			
         </thead>
+        
         <tbody>
+          
             <tr ng-repeat="(parentIndex, rowData) in vm.gridData | filter:vm.filterOptions:vm.startsWith" ng-class="{'selected':parentIndex == vm.rowNumber}">
                 <td ng-repeat="(key, value) in rowData" ng-init="vm.gridAlign()" ng-click="vm.gridCallBack({value:rowData, index: parentIndex})" ng-show="!vm.containsColumnHiddenKey(key)">{{value}}</td>
             </tr>
         </tbody>
     </table>
 </div>
+ 

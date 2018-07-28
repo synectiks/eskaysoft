@@ -31,7 +31,7 @@
                     <input type="text" class="form-control" id="Bank Name" placeholder="{{'bankinformationform.label.name' | translate}}" ng-model="vm.searchScheduleName" required>
                 </div>
             </form>
-            <common-grid-component filter-options="vm.schedule" headers-list="vm.bankTableHeaders" grid-data="vm.data" grid-call-back="vm.onSelectRow(value, index)" row-number="vm.selectedRow"></common-grid-component>
+            <common-grid-component filter-options="vm.bankinformation" grid-data="vm.data" grid-call-back="vm.onSelectRow(value, index)" row-number="vm.selectedRow" hidden-column-keys="vm.hiddenColArr" no-of-view-columns="vm.noOfViewColumns"></common-grid-component>
             <div class="btn-align p0" ng-if="vm.selected">
                 <button type="submit" class="btn btn-primary btn-position" ng-click="vm.delete()">{{'button.delete' | translate}}</button>
             </div>

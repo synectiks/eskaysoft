@@ -7,19 +7,24 @@
                 </div>
                 <div class="form-group">
                     <label class="col-form-label" for="stateName">{{'stateinformation.label.name' | translate}}:*</label>
-                    <input type="text" class="form-control form-control-lg" name="stateName" id="stateName" maxlength="40" required>
+                    <input type="text" class="form-control form-control-lg" name="stateName" id="stateName" maxlength="40" ng-model="vm.stateName" required>
                 </div>
                 <div class="form-group">
                     <label class="col-form-label" for="code">{{'stateinformation.label.code' | translate}}:*</label>
-                    <input type="number" class="form-control form-control-lg" name="code" id="code" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" maxlength="2" min="0" required>
+                    <input type="number" class="form-control form-control-lg" name="code" id="code" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" maxlength="2" min="0" ng-model="vm.stateCode" required>
                 </div>
                 <div class="form-group">
                     <label class="col-form-label" for="Zone">{{'stateinformation.label.zone' | translate}}:</label>
-                    <select class="form-control form-control-lg" id="Zone">
-                           <option value="East">East</option>
+                    <select class="form-control form-control-lg" id="Zone" ng-model="vm.stateZone">
+                         
+                        <option value="0">Select</option>
+						<option ng-repeat="stateZone in vm.stateZones" value="{{stateZone.code}}"
+								 data-content="{{stateZone.description}}">{{stateZone.description}}
+						</option>
+                        <!--<option value="East">East</option>
                             <option value="West">West</option>
                             <option value="South">South</option>
-                            <option value="North">North</option>
+                            <option value="North">North</option>-->
                     </select>
                 </div>
                 <div class="form-group">
@@ -45,11 +50,12 @@
                     <input type="text" class="form-control" id="zone" placeholder="{{'stateinformation.label.zone' | translate}}" ng-model="vm.searchScheduleNumber" required>
                 </div>
             </form>
-            <common-grid-component filter-options="vm.schedule" headers-list="vm.stateTableHeaders" grid-data="vm.data" grid-call-back="vm.onSelectRow(value, index)" row-number="vm.selectedRow"></common-grid-component>
+              <common-grid-component filter-options="vm.state" grid-data="vm.data" grid-call-back="vm.onSelectRow(value, index)" row-number="vm.selectedRow" hidden-column-keys="vm.hiddenColArr" no-of-view-columns="vm.noOfViewColumns"></common-grid-component>
+           
             <div class="btn-align p0" ng-if="vm.selected">
                 <button type="submit" class="btn btn-primary searchEdit btn-position" ng-click="vm.edit()">{{'button.edit' | translate}}</button>
                 <button type="submit" class="btn btn-primary btn-position" ng-click="vm.delete()">{{'button.delete' | translate}}</button>
-            </div>
-        </div>
+            </div> 
+        </div> 
     </div>
 </div>
