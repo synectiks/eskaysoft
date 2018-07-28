@@ -60,8 +60,7 @@
             };
             //Create
             vm.create = function () {
-                console.log(vm.busExeName.length);
-                if (vm.busExeName.length >= 1 && vm.busExeName.length >= 1 && vm.busExeTown.length >= 1 && vm.busExeMobile.length >= 1) {
+               
                     var reqobj = {
                         "name": vm.busExeName,
                         "address": vm.busExeAddress,
@@ -75,7 +74,27 @@
                     });
                     vm.messageContainer = true;
                     vm.errorMessage = "Business Executive Information saved.";
-                }
+           
+            };
+            
+            //Save
+            vm.save = function () {
+                vm.editScreen = true;
+                    var reqobj = {
+                        "name": vm.busExeName,
+                        "address": vm.busExeAddress,
+                        "town": vm.busExeTown,
+                        "mobile": vm.busExeMobile,
+                        "businessexecutiveid":vm.busExeId
+                    };
+                    commonLoaderService.load_Data(reqobj, "https://eskaysoft.synectiks.com/api/v1/businessexecutive/", "PUT", null).then(function (data) {
+                       vm.search();
+                    }, function (error) { // jshint ignore:line
+                        console.log("error", error);
+                    });
+                    vm.messageContainer = true;
+                    vm.errorMessage = "Business Executive Information saved.";
+            
             };
 
             //Reset

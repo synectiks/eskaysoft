@@ -3,71 +3,130 @@
     angular.module('com.synectiks.eskaySoft')
         .controller('bankInfoController', ['commonLoaderService', function (commonLoaderService) {
             var vm = this; // jshint ignore:line
-          /*  commonLoaderService.load_Data(null, 'messages/gridHeaders.json', 'GET', null).then(function (headers) {
-                vm.bankTableHeaders = headers.bankTable;
-            }, function (error) { // jshint ignore:line
-                console.log("error", error);
-            });*/
-            
-               vm.search = function () {
-               // vm.editScreen = false;
-                vm.normalScreen = true;
-				/* commonLoaderService.load_Data(null, 'messages/scheduleMockData.json', 'GET', null).then(function (headers) {
-                    vm.data = headers[0].SearchSchemeCodes;
-                }, function (error) { // jshint ignore:line
-                    console.log("error", error);
-                });*/
-				vm.hiddenColArr=['bankId'];
-		        commonLoaderService.load_Data(null, 'https://eskaysoft.synectiks.com/api/v1/bankinformation/', 'GET', null).then(function (searchContent) {
-                    console.log(searchContent);
-					if(searchContent.length>0){
-						var jsonKeys = Object.keys(searchContent[0])
-					vm.noOfViewColumns = jsonKeys.length-vm.hiddenColArr.length;
-					
-				/*	angular.forEach(searchContent, function(item){
-						var hasScheduleType= false;
-						angular.forEach(vm.scheduleTypes, function(scheduleTypeObj){
-							if(!hasScheduleType && angular.equals(item.scheduleType, scheduleTypeObj.code) ){
-								item.scheduleType = scheduleTypeObj.description;
-								hasScheduleType=true
-							}
-						});
-					});*/
-					
-					vm.data = searchContent;
-					vm.selectedName = "";
+
+            vm.selected = false;
+            vm.normalScreen = true;
+            vm.messageContainer = false;
+            vm.stateList = {};
+
+            //Select
+            vm.onSelectRow = function (rowData, rowNum) {
+                if (vm.selected && vm.bankInfoList.name == rowData.name) {
+                    vm.bankName = "";
+                    vm.bankAddress = "";
+                    vm.selectedRow = -1;
+                    vm.bankInfoList = {};
+                    vm.bankId = "";
+
+                } else {
+                    vm.selected = true;
+                    vm.selectedRow = rowNum;
+                    vm.bankInfoList.name = rowData.name;
+                    vm.bankInfoList.address = rowData.address;
+                    vm.bankInfoList.bankId = rowData.bankId;
                     vm.messageContainer = false;
                     vm.errorMessage = "";
-					//vm.retrieveAllScheduleIndexs();
-					}
-					
+                }
+            };
+
+            vm.search = function () {
+                // vm.editScreen = false;
+                vm.normalScreen = true;
+
+                vm.hiddenColArr = ['bankId'];
+                commonLoaderService.load_Data(null, 'https://eskaysoft.synectiks.com/api/v1/bankinformation/', 'GET', null).then(function (searchContent) {
+                    console.log(searchContent);
+                    if (searchContent.length > 0) {
+                        var jsonKeys = Object.keys(searchContent[0])
+                        vm.noOfViewColumns = jsonKeys.length - vm.hiddenColArr.length;
+
+                        vm.data = searchContent;
+                        vm.selectedName = "";
+                        vm.messageContainer = false;
+                        vm.errorMessage = "";
+                        //vm.retrieveAllScheduleIndexs();
+                    }
+
                 }, function (error) { // jshint ignore:line
                     console.log("error", error);
                 });
             };
-             vm.search();
-            
-            
-	}]);
-/*    $(document).ready(function () {
-        var colCount = 0;
-        $('tr:nth-child(1) th').each(function () {
-            if ($(this).attr('colspan')) {
-                colCount += +$(this).attr('colspan');
-            } else {
-                colCount++;
-            }
-        });
-        $('th').css('width', 100 / colCount + '%');
-        $('td').css('width', 100 / colCount + '%');
 
+            //Create
+            vm.create = function () {
+                var reqobj = {
+                    "name": vm.bankName,
+                    "address": vm.bankAddress
+                };
+                commonLoaderService.load_Data(reqobj, "https://eskaysoft.synectiks.com/api/v1/bankinformation/", "POST", null).then(function (data) {
+                    vm.reset();
+                }, function (error) { // jshint ignore:line
+                    console.log("error", error);
+                });
+                vm.messageContainer = true;
+                vm.errorMessage = "Bank Information saved.";
+            };
+            //Save
+            vm.save = function () {
+                vm.editScreen = true;
+                var reqobj = {
+                    "bankName": vm.bankName,
+                    "address": vm.bankAddress,
+                    "bankID": vm.bankIdss
+                };
+                commonLoaderService.load_Data(reqobj, "https://eskaysoft.synectiks.com/api/v1/bankinformation/", "PUT", null).then(function (data) {
+                    vm.search();
+                }, function (error) { // jshint ignore:line
+                    console.log("error", error);
+                });
+                vm.messageContainer = true;
+                vm.errorMessage = "Bank Information saved.";
+            };
+            //Reset
+            vm.reset = function () {
+                vm.bankInfoList = {};
+                vm.bankName = "";
+                vm.bankAddress = "";
+                vm.bankIdss = "";
 
-        if ($("th:first-child").width() > $("td:first-child").width()) {
-            $('thead').css('overflow-y', 'scroll');
-        } else {
-            $('thead').css('overflow-y', 'hidden');
-        }
+                vm.selected = false;
+                vm.selectedName = "";
+                vm.selectedRow = -1;
+                vm.messageContainer = false;
+                vm.editScreen = false;
+                vm.search();
+            };
 
-    });*/
+            //Delete
+            vm.delete = function () {
+
+                var reqobj = {
+                    "id": 2
+                };
+                commonLoaderService.load_Data(null, "https://eskaysoft.synectiks.com/api/v1/bankinformation/" + vm.bankInfoList.bankId, "DELETE", null).then(function (data) {
+                    vm.search();
+                }, function (error) { // jshint ignore:line
+                    console.log("error", error);
+                });
+                vm.selected = false;
+                vm.messageContainer = true;
+                vm.errorMessage = "Deleted.";
+            };
+
+            //Edit 
+            vm.edit = function () {
+
+                vm.bankName = vm.bankInfoList.name;
+                vm.bankAddress = vm.bankInfoList.address;
+
+                vm.bankId = vm.bankInfoList.bankId;
+                vm.editScreen = true;
+                vm.normalScreen = false;
+                vm.messageContainer = false;
+                vm.errorMessage = "";
+            };
+
+            vm.search();
+    }]);
 
 })();

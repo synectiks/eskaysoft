@@ -36,10 +36,10 @@
                 <label class="col-form-label" for="ScheduleType">{{'common.label.search' | translate}}:</label>
                 <div class="form-group mx-sm-3">
                     <label for="name" class="sr-only mt10">{{'businessexecutivesform.label.name' | translate}}</label>
-                    <input type="text" class="form-control" id="name" placeholder="{{'businessexecutivesform.label.name' | translate}}" ng-model="vm.searchBusExeName" required>
+                    <input type="text" class="form-control" id="name" placeholder="{{'businessexecutivesform.label.name' | translate}}" ng-model="vm.searchBusExeName.name" required>
                 </div>
             </form>
-            <common-grid-component filter-options="vm.searchBusExeName" grid-data="vm.data" grid-call-back="vm.onSelectRow(value, index)" row-number="vm.selectedRow" hidden-column-keys="vm.hiddenColArr" no-of-view-columns="vm.noOfViewColumns"></common-grid-component>
+            <common-grid-component filter-options="vm.searchBusExeName.name" grid-data="vm.data" grid-call-back="vm.onSelectRow(value, index)" row-number="vm.selectedRow" hidden-column-keys="vm.hiddenColArr" no-of-view-columns="vm.noOfViewColumns"></common-grid-component>
 
             <div class="btn-align p0" ng-if="vm.selected">
                 <button type="submit" class="btn btn-primary searchEdit btn-position" ng-click="vm.edit()">{{'button.edit' | translate}}</button>

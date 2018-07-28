@@ -154,7 +154,7 @@
             };
 
             vm.save = function () {
-				console.log("vm.scheduleType----", vm.scheduleType);
+				
 				vm.editScreen = true;
     		    var reqobj = {
                     "scheduleName": vm.scheduleName,

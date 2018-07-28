@@ -45,7 +45,7 @@
                 });
             };
 
-            //Search
+          //Search
             vm.search = function () {
                 vm.normalScreen = true;
 
@@ -93,7 +93,23 @@
                 vm.messageContainer = true;
                 vm.errorMessage = "States Information saved.";
             };
-
+            //Save
+            vm.save = function () {
+                vm.editScreen = true;
+                var reqobj = {
+                    "stateName": vm.stateName,
+                    "stateCode": vm.stateCode,
+                    "zone": vm.stateZone,
+                    "id":vm.stateId 
+                };
+                commonLoaderService.load_Data(reqobj, "https://eskaysoft.synectiks.com/api/v1/states/", "PUT", null).then(function (data) {
+                    vm.search();
+                }, function (error) { // jshint ignore:line
+                    console.log("error", error);
+                });
+                vm.messageContainer = true;
+                vm.errorMessage = "States Information saved.";
+            };
             //Reset
             vm.reset = function () {
                 vm.stateList = {};

@@ -3,68 +3,128 @@
     angular.module('com.synectiks.eskaySoft')
         .controller('areasInfoController', ['commonLoaderService', function (commonLoaderService) {
             var vm = this; // jshint ignore:line
-         /*   commonLoaderService.load_Data(null, 'messages/gridHeaders.json', 'GET', null).then(function (headers) {
-                vm.areaTableHeaders = headers.areaTable;
-            }, function (error) { // jshint ignore:line
-                console.log("error", error);
-            });*/
-            
-               vm.search = function () {
-               // vm.editScreen = false;
-                vm.normalScreen = true;
-				/* commonLoaderService.load_Data(null, 'messages/scheduleMockData.json', 'GET', null).then(function (headers) {
-                    vm.data = headers[0].SearchSchemeCodes;
-                }, function (error) { // jshint ignore:line
-                    console.log("error", error);
-                });*/
-				vm.hiddenColArr=['id'];
-		        commonLoaderService.load_Data(null, 'https://eskaysoft.synectiks.com/api/v1/area/', 'GET', null).then(function (searchContent) {
-                    console.log(searchContent);
-					if(searchContent.length>0){
-						var jsonKeys = Object.keys(searchContent[0])
-					vm.noOfViewColumns = jsonKeys.length-vm.hiddenColArr.length;
-					
-				/*	angular.forEach(searchContent, function(item){
-						var hasScheduleType= false;
-						angular.forEach(vm.scheduleTypes, function(scheduleTypeObj){
-							if(!hasScheduleType && angular.equals(item.scheduleType, scheduleTypeObj.code) ){
-								item.scheduleType = scheduleTypeObj.description;
-								hasScheduleType=true
-							}
-						});
-					});*/
-					
-					vm.data = searchContent;
-					vm.selectedName = "";
+
+            vm.selected = false;
+            vm.normalScreen = true;
+            vm.messageContainer = false;
+            vm.areaInfoList = {};
+
+            //Select
+            vm.onSelectRow = function (rowData, rowNum) {
+                if (vm.selected && vm.areaInfoList.name == rowData.areaName) {
+                    vm.selectedName = null;
+                    vm.selected = false;
+                    vm.selectedRow = -1;
+                    vm.areaInfoList = {};
+                    vm.areaName = "";
+                    vm.executiveName = "";
+                    vm.areaId = "";
+
+                } else {
+                    vm.selected = true;
+                    vm.selectedRow = rowNum;
+                    vm.areaInfoList.name = rowData.areaName;
+                    vm.areaInfoList.executive = rowData.executiveName;
+                    vm.areaInfoList.areaId = rowData.id;
                     vm.messageContainer = false;
                     vm.errorMessage = "";
-					//vm.retrieveAllScheduleIndexs();
-					}
-					
+                }
+            };
+
+            vm.search = function () {
+                // vm.editScreen = false;
+                vm.normalScreen = true;
+
+                vm.hiddenColArr = ['id'];
+                commonLoaderService.load_Data(null, 'https://eskaysoft.synectiks.com/api/v1/area/', 'GET', null).then(function (searchContent) {
+                    console.log(searchContent);
+                    if (searchContent.length > 0) {
+                        var jsonKeys = Object.keys(searchContent[0])
+                        vm.noOfViewColumns = jsonKeys.length - vm.hiddenColArr.length;
+
+                        vm.data = searchContent;
+                        vm.selectedName = "";
+                        vm.messageContainer = false;
+                        vm.errorMessage = "";
+                        //vm.retrieveAllScheduleIndexs();
+                    }
+
                 }, function (error) { // jshint ignore:line
                     console.log("error", error);
                 });
             };
-             vm.search();
+            //Create
+            vm.create = function () {
+                var reqobj = {
+                    "areaName": vm.areaName,
+                    "executiveName": vm.executiveName
+                };
+                commonLoaderService.load_Data(reqobj, "https://eskaysoft.synectiks.com/api/v1/area/", "POST", null).then(function (data) {
+                    vm.reset();
+                }, function (error) { // jshint ignore:line
+                    console.log("error", error);
+                });
+                vm.messageContainer = true;
+                vm.errorMessage = "Bank Information saved.";
+            };
+            //Save
+            vm.save = function () {
+                vm.editScreen = true;
+                var reqobj = {
+                    "areaName": vm.areaName,
+                    "executiveName": vm.executiveName,
+                    "id": vm.areaId
+                };
+                commonLoaderService.load_Data(reqobj, "https://eskaysoft.synectiks.com/api/v1/area/", "PUT", null).then(function (data) {
+                    vm.search();
+                }, function (error) { // jshint ignore:line
+                    console.log("error", error);
+                });
+                vm.messageContainer = true;
+                vm.errorMessage = "Bank Information saved.";
+            };
+            //Reset
+            vm.reset = function () {
+                vm.areaInfoList = {};
+                vm.areaName = "";
+                vm.executiveName = "";
+                vm.areaId = "";
+
+                vm.selected = false;
+                vm.selectedName = "";
+                vm.selectedRow = -1;
+                vm.messageContainer = false;
+                vm.editScreen = false;
+                vm.search();
+            };
+
+            //Delete
+            vm.delete = function () {
+
+                var reqobj = {
+                    "id": 2
+                };
+                commonLoaderService.load_Data(null, "https://eskaysoft.synectiks.com/api/v1/area/" + vm.areaInfoList.areaId, "DELETE", null).then(function (data) {
+                    vm.search();
+                }, function (error) { // jshint ignore:line
+                    console.log("error", error);
+                });
+                vm.selected = false;
+                vm.messageContainer = true;
+                vm.errorMessage = "Deleted.";
+            };
+
+            //Edit 
+            vm.edit = function () {
+                vm.areaName = vm.areaInfoList.name;
+                vm.executiveName = vm.areaInfoList.executive;
+                vm.areaId = vm.areaInfoList.areaId;
+                vm.editScreen = true;
+                vm.normalScreen = false;
+                vm.messageContainer = false;
+                vm.errorMessage = "";
+            };
+            vm.search();
 	}])
-/*    common methods
-    $(document).ready(function () {
-        var colCount = 0;
-        $('tr:nth-child(1) th').each(function () {
-            if ($(this).attr('colspan')) {
-                colCount += +$(this).attr('colspan');
-            } else {
-                colCount++;
-            }
-        });
-        $('th').css('width', 100 / colCount + '%');
-        $('td').css('width', 100 / colCount + '%');
 
-        if ($("th:first-child").width() > $("td:first-child").width()) {
-            $('thead').css('overflow-y', 'scroll');
-        } else {
-            $('thead').css('overflow-y', 'hidden');
-        }
-
-    });*/
 })();
