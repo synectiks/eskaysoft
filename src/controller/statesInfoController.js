@@ -80,7 +80,6 @@
 
             //Create
             vm.create = function () {
-
                 var reqobj = {
                     "stateName": vm.stateName,
                     "stateCode": vm.stateCode,
@@ -92,7 +91,7 @@
                     console.log("error", error);
                 });
                 vm.messageContainer = true;
-                vm.errorMessage = "Schedule saved.";
+                vm.errorMessage = "States Information saved.";
             };
 
             //Reset
@@ -123,7 +122,7 @@
                 });
                 vm.selected = false;
                 vm.messageContainer = true;
-                vm.errorMessage = "Schedule saved.";
+                vm.errorMessage = "Deleted.";
             };
 
             //Edit 
