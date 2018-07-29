@@ -72,6 +72,69 @@
                 vm.messageContainer = true;
                 vm.errorMessage = "Schedule saved.";
             };
+			vm.subScheduleList={};
+			
+			vm.onSelectRow = function (rowData, rowNum) {
+				
+                if (vm.selected && vm.subScheduleList.name == rowData.subScheduleName) {
+				    vm.selectedName = null;
+                    vm.selected = false;
+                    vm.selectedRow = -1;
+					vm.subScheduleList={};
+                    vm.subScheduleName = "";
+                    vm.scheduleNameValue = "0";
+                    vm.subScheduleIndex = "";
+                    vm.scheduleId= "";
+					
+                } else {
+				    vm.selected = true;
+                    vm.selectedRow = rowNum;
+                    vm.subScheduleList.subScheduleName = rowData.subScheduleName;
+					vm.subScheduleList.subScheduleIndex = rowData.subScheduleIndex;
+					vm.subScheduleList.scheduleId = rowData.scheduleId;
+					vm.subScheduleList.subScheduleId = rowData.subScheduleId;
+                    vm.messageContainer = false;
+                    vm.errorMessage = "";
+                }
+            };
+			
+			vm.edit = function () {
+				vm.subScheduleName = vm.subScheduleList.subScheduleName;
+                vm.subScheduleIndex = vm.subScheduleList.subScheduleIndex;
+				var hasRecord= false;
+				
+				angular.forEach(vm.scheduleNameArr, function(scheduleTypeObj){
+					if(!hasRecord && angular.equals(vm.subScheduleList.scheduleId, scheduleTypeObj.scheduleId) ){
+						vm.scheduleNameValue=scheduleTypeObj.scheduleId;
+						hasRecord=true
+					}
+				});
+             
+			   vm.scheduleNameValue=vm.subScheduleList.scheduleId;
+                vm.editScreen = true;
+                vm.normalScreen = false;
+                vm.messageContainer = false;
+                vm.errorMessage = "";
+            };
+			
+			vm.save = function () {
+				vm.editScreen = true;
+    		    var reqobj = {
+                    "subScheduleName": vm.subScheduleName,
+                    "subScheduleIndex": vm.subScheduleIndex,
+                    "scheduleId": vm.scheduleNameValue,
+					"subScheduleId": vm.subScheduleList.subScheduleId
+                };
+				commonLoaderService.load_Data(reqobj, "https://eskaysoft.synectiks.com/api/v1/subschedules/", "PUT", null).then(function(data) {
+					vm.getScheduleNameArr();
+					vm.search();
+				}, function (error) { // jshint ignore:line
+					console.log("error", error);
+                });
+				
+                vm.messageContainer = true;
+                vm.errorMessage = "Schedule saved.";
+            };
 			
 			vm.getScheduleNameArr();
             vm.search();
