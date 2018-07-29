@@ -65,7 +65,7 @@
                 };
 				commonLoaderService.load_Data(reqobj, "https://eskaysoft.synectiks.com/api/v1/subschedules/", "POST", null).then(function(data) {
 				vm.getScheduleNameArr();
-            vm.search();
+				vm.search();
 				 }, function (error) { // jshint ignore:line
 				console.log("error", error);
                 });

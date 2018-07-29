@@ -11,10 +11,10 @@
                 </div>
                 <div class="form-group">
                     <label class="col-form-label" for="StatName">{{'districtsform.label.state.name' | translate}}:</label>
-                    <select ng-model="vm.stateName" class="form-control form-control-lg" id="StatName" maxlength="40">{{vm.stateobj}}----
+                    <select ng-model="vm.stateName" class="form-control form-control-lg" id="StatName" maxlength="40">
                          <option value="0">Select</option>
-						 <option ng-repeat="states in vm.stateobj.states" value="{{states.name}}" 
-							ng-selected="states.name === vm.stateName" >{{states.name}}</option>
+						 <option ng-repeat="states in vm.statesDataArr" value="{{states.id}}" 
+							ng-selected="states.stateName === vm.stateName" >{{states.stateName}}</option>
                     </select>
                 </div>
                 <div class="form-group">
