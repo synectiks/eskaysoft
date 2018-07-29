@@ -71,9 +71,10 @@
             vm.save = function () {
                 vm.editScreen = true;
                 var reqobj = {
-                    "bankName": vm.bankName,
+                    "name": vm.bankName,
                     "address": vm.bankAddress,
-                    "bankID": vm.bankId
+                    "bankId": vm.bankId
+
                 };
                 commonLoaderService.load_Data(reqobj, "https://eskaysoft.synectiks.com/api/v1/bankinformation/", "PUT", null).then(function (data) {
                     vm.search();
