@@ -65,7 +65,8 @@
                         "name": vm.busExeName,
                         "address": vm.busExeAddress,
                         "town": vm.busExeTown,
-                        "mobile": vm.busExeMobile
+                        "mobile": vm.busExeMobile,
+						
                     };
                     commonLoaderService.load_Data(reqobj, "https://eskaysoft.synectiks.com/api/v1/businessexecutive/", "POST", null).then(function (data) {
                         vm.reset();
@@ -104,6 +105,7 @@
                 vm.busExeAddress = "";
                 vm.busExeTown = "";
                 vm.busExeMobile = "";
+				vm.busExeId ="";
                 vm.selected = false;
                 vm.selectedName = "";
                 vm.selectedRow = -1;
@@ -134,7 +136,7 @@
                 vm.busExeAddress = vm.busExeInfoList.address;
                 vm.busExeTown = vm.busExeInfoList.town;
                 vm.busExeMobile = vm.busExeInfoList.mobile;
-
+vm.busExeId = vm.busExeInfoList.id;
 
                 vm.editScreen = true;
                 vm.normalScreen = false;

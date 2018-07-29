@@ -76,11 +76,26 @@
                 vm.selected = false;
                 vm.selectedName = "";
                 vm.selectedRow = -1;
+				 vm.manufacId ="";
                 vm.messageContainer = false;
                 vm.editScreen = false;
                 vm.search();
             };
 
+			vm.save = function () {
+                vm.editScreen = true;
+                var reqobj = {
+                    "manfacturerName": vm.manufacName,
+                    "id":  vm.manufacId
+                };
+                commonLoaderService.load_Data(reqobj, "https://eskaysoft.synectiks.com/api/v1/manfacturer/", "PUT", null).then(function (data) {
+                    vm.search();
+                }, function (error) { // jshint ignore:line
+                    console.log("error", error);
+                });
+                vm.messageContainer = true;
+                vm.errorMessage = "Bank Information saved.";
+            };
             //Delete
             vm.delete = function () {
 
@@ -100,7 +115,7 @@
             //Edit 
             vm.edit = function () {
                 vm.manufacName = vm.manufacInfoList.name;
-
+ vm.manufacId =vm.manufacInfoList.id
                 vm.editScreen = true;
                 vm.normalScreen = false;
                 vm.messageContainer = false;

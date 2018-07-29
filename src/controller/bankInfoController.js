@@ -7,10 +7,11 @@
             vm.selected = false;
             vm.normalScreen = true;
             vm.messageContainer = false;
-            vm.stateList = {};
+            vm.bankInfoList = {};
 
             //Select
             vm.onSelectRow = function (rowData, rowNum) {
+				console.log("rowData--", rowData);
                 if (vm.selected && vm.bankInfoList.name == rowData.name) {
                     vm.bankName = "";
                     vm.bankAddress = "";
@@ -72,7 +73,7 @@
                 var reqobj = {
                     "bankName": vm.bankName,
                     "address": vm.bankAddress,
-                    "bankID": vm.bankIdss
+                    "bankID": vm.bankId
                 };
                 commonLoaderService.load_Data(reqobj, "https://eskaysoft.synectiks.com/api/v1/bankinformation/", "PUT", null).then(function (data) {
                     vm.search();
@@ -87,7 +88,7 @@
                 vm.bankInfoList = {};
                 vm.bankName = "";
                 vm.bankAddress = "";
-                vm.bankIdss = "";
+                vm.bankId = "";
 
                 vm.selected = false;
                 vm.selectedName = "";
