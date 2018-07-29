@@ -27,20 +27,19 @@
             </form>
         </div>
 
-
         <div class='col-xs-12 col-sm-7'>
             <form class="form-inline mt25">
                 <label class="col-form-label" for="ScheduleType">{{'common.label.searchby' | translate}}:</label>
                 <div class="form-group mx-sm-3">
                     <label for="district-Name" class="sr-only mt10">{{'districtsform.label.dist.name' | translate}}</label>
-                    <input type="text" class="form-control" id="district-Name" placeholder="{{'districtsform.label.dist.name' | translate}}" ng-model="vm.searchScheduleName" required>
+                    <input type="text" class="form-control" id="district-Name" placeholder="{{'districtsform.label.dist.name' | translate}}" ng-model="vm.searchByDistrictName" required>
                 </div>
                 <div class="form-group mx-sm-3">
                     <label for="stateName" class="sr-only mt10">{{'districtsform.label.state.name' | translate}}</label>
-                    <input type="text" class="form-control" id="stateName" placeholder="{{'districtsform.label.state.name' | translate}}" ng-model="vm.searchScheduleNumber" required>
+                    <input type="text" class="form-control" id="stateName" placeholder="{{'districtsform.label.state.name' | translate}}" ng-model="vm.searchByStateName" required>
                 </div>
             </form>
-                          <common-grid-component filter-options="vm.districts" grid-data="vm.data" grid-call-back="vm.onSelectRow(value, index)" row-number="vm.selectedRow" hidden-column-keys="vm.hiddenColArr" no-of-view-columns="vm.noOfViewColumns"></common-grid-component>
+		  <common-grid-component filter-options="{districtName: vm.searchByDistrictName, state: vm.searchByStateName}" grid-data="vm.data" grid-call-back="vm.onSelectRow(value, index)" row-number="vm.selectedRow" hidden-column-keys="vm.hiddenColArr" no-of-view-columns="vm.noOfViewColumns"></common-grid-component>
 
             <div class="btn-align p0" ng-if="selected">
                 <button type="submit" class="btn btn-primary searchEdit btn-position" ng-click="vm.edit()">{{'button.edit' | translate}}</button>

@@ -1,5 +1,4 @@
 <div class="table-container table-div mt10 mb10 p0">
-
     <table id="commonGrid" class="table table-fixedheader table-lg table-bordered scrollbar">
         <thead>
             <tr>
@@ -8,11 +7,8 @@
 				</th>
 				<th ng-if="vm.noOfViewColumns <= 0 "> No data available.</th>
             </tr>
-			
         </thead>
-        
         <tbody>
-          
             <tr ng-repeat="(parentIndex, rowData) in vm.gridData | filter:vm.filterOptions:vm.startsWith" ng-class="{'selected':parentIndex == vm.rowNumber}">
                 <td ng-repeat="(key, value) in rowData" ng-init="vm.gridAlign()" ng-click="vm.gridCallBack({value:rowData, index: parentIndex})" ng-show="!vm.containsColumnHiddenKey(key)">{{value}}</td>
             </tr>

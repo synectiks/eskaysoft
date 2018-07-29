@@ -17,7 +17,7 @@
 							tempSubScheduleData.subScheduleId= item.subScheduleId;
 							tempSubScheduleData.subScheduleName= item.subScheduleName;
 							tempSubScheduleData.subScheduleIndex=item.subScheduleIndex;
-							subScheduleIndexArr.push(item.subScheduleIndex);
+							vm.subScheduleIndexArr.push(item.subScheduleIndex);
 							tempSubScheduleData.scheduleId= item.schedule.id;
 							tempSubScheduleData.scheduleName= item.schedule.scheduleName;
 							vm.subScheduleDataArr.push(tempSubScheduleData);

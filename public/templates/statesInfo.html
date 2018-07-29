@@ -43,14 +43,14 @@
                 <label class="col-form-label" for="ScheduleType">{{'common.label.searchby' | translate}}:</label>
                 <div class="form-group mx-sm-3">
                     <label for="stateName" class="sr-only mt10">{{'stateinformation.label.name' | translate}}</label>
-                    <input type="text" class="form-control" id="stateName" placeholder="{{'stateinformation.label.name' | translate}}" ng-model="vm.searchScheduleName" required>
+                    <input type="text" class="form-control" id="stateName" placeholder="{{'stateinformation.label.name' | translate}}" ng-model="vm.searchByStateName" required>
                 </div>
                 <div class="form-group mx-sm-3">
                     <label for="zone" class="sr-only mt10">{{'stateinformation.label.zone' | translate}}</label>
-                    <input type="text" class="form-control" id="zone" placeholder="{{'stateinformation.label.zone' | translate}}" ng-model="vm.searchScheduleNumber" required>
+                    <input type="text" class="form-control" id="zone" placeholder="{{'stateinformation.label.zone' | translate}}" ng-model="vm.searchByZone" required>
                 </div>
             </form>
-              <common-grid-component filter-options="vm.state" grid-data="vm.data" grid-call-back="vm.onSelectRow(value, index)" row-number="vm.selectedRow" hidden-column-keys="vm.hiddenColArr" no-of-view-columns="vm.noOfViewColumns"></common-grid-component>
+              <common-grid-component filter-options="{stateName: vm.searchByStateName, zone: vm.searchByZone}" grid-data="vm.data" grid-call-back="vm.onSelectRow(value, index)" row-number="vm.selectedRow" hidden-column-keys="vm.hiddenColArr" no-of-view-columns="vm.noOfViewColumns"></common-grid-component>
            
             <div class="btn-align p0" ng-if="vm.selected">
                 <button type="submit" class="btn btn-primary searchEdit btn-position" ng-click="vm.edit()">{{'button.edit' | translate}}</button>
