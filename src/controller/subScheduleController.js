@@ -3,49 +3,44 @@
     angular.module('com.synectiks.eskaySoft')
         .controller('subScheduleController', ['$scope', 'commonLoaderService', function ($scope, commonLoaderService) {
             var vm = this; // jshint ignore:line
+			vm.scheduleNameArr=[];
+			vm.subScheduleIndexArr=[];
 			
-		/*	commonLoaderService.load_Data(null, 'messages/gridHeaders.json', 'GET', null).then(function (headers) {
-				vm.subScheduleTableHeaders=headers.subScheduleTable;
-			}, function (error) { // jshint ignore:line
-				console.log("error", error);
-			});*/
-            
-             vm.search = function () {
-               // vm.editScreen = false;
+	        vm.search = function () {
                 vm.normalScreen = true;
-				/* commonLoaderService.load_Data(null, 'messages/scheduleMockData.json', 'GET', null).then(function (headers) {
-                    vm.data = headers[0].SearchSchemeCodes;
-                }, function (error) { // jshint ignore:line
-                    console.log("error", error);
-                });*/
-				vm.hiddenColArr=['subScheduleId','credit','debit','subScheduleType'];
+				vm.hiddenColArr=['subScheduleId','scheduleId'];
 		        commonLoaderService.load_Data(null, 'https://eskaysoft.synectiks.com/api/v1/subschedules/', 'GET', null).then(function (searchContent) {
-                    console.log(searchContent);
-					if(searchContent.length>0){
-						var jsonKeys = Object.keys(searchContent[0])
-					vm.noOfViewColumns = jsonKeys.length-vm.hiddenColArr.length;
-					
-				/*	angular.forEach(searchContent, function(item){
-						var hasScheduleType= false;
-						angular.forEach(vm.scheduleTypes, function(scheduleTypeObj){
-							if(!hasScheduleType && angular.equals(item.scheduleType, scheduleTypeObj.code) ){
-								item.scheduleType = scheduleTypeObj.description;
-								hasScheduleType=true
-							}
+            		if(searchContent.length>0){
+						vm.subScheduleDataArr=[];
+						angular.forEach(searchContent, function(item){
+							var tempSubScheduleData={};
+							tempSubScheduleData.subScheduleId= item.subScheduleId;
+							tempSubScheduleData.subScheduleName= item.subScheduleName;
+							tempSubScheduleData.subScheduleIndex=item.subScheduleIndex;
+							subScheduleIndexArr.push(item.subScheduleIndex);
+							tempSubScheduleData.scheduleId= item.schedule.id;
+							tempSubScheduleData.scheduleName= item.schedule.scheduleName;
+							vm.subScheduleDataArr.push(tempSubScheduleData);
 						});
-					});*/
-					
-					vm.data = searchContent;
-					vm.selectedName = "";
-                    vm.messageContainer = false;
-                    vm.errorMessage = "";
-					//vm.retrieveAllScheduleIndexs();
+						
+						var jsonKeys = Object.keys(vm.subScheduleDataArr[0])
+						vm.noOfViewColumns = jsonKeys.length-vm.hiddenColArr.length;
+						vm.selectedName = "";
+						vm.messageContainer = false;
+						vm.errorMessage = "";
 					}
-					
-                }, function (error) { // jshint ignore:line
+				}, function (error) { // jshint ignore:line
                     console.log("error", error);
                 });
             };
+			
+			vm.validateSubSchIndex=function(){
+				angular.forEach(vm.subScheduleIndexArr, function(scheduleIndex){
+					if(angular.equals(vm.scheduleNo, scheduleIndex) ){
+						 vm.errorMessage = "duplicate";
+					}
+				});
+			};
              vm.search();
             
      }]);

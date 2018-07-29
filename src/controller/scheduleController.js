@@ -9,20 +9,18 @@
         .controller('scheduleController', ['$scope', 'commonLoaderService', function ($scope, commonLoaderService) {
 
             var vm = this; // jshint ignore:line
-
+			vm.scheduleType = "0";
+            vm.selected = false;
+            vm.normalScreen = true;
+            vm.messageContainer = false;
+            vm.scheduleList={};
+			vm.scheduleIndexArr=[];
+			
             vm.searchSelect = function () {
               //  $('.selectpicker1').selectpicker('refresh');
             };
 
-            vm.scheduleType = "0";
-            vm.selected = false;
-           // vm.editScreen = false;
-            vm.normalScreen = true;
-            vm.messageContainer = false;
-            vm.scheduleList={};
-			
             vm.onSelectRow = function (rowData, rowNum) {
-           
                 if (vm.selected && vm.scheduleList.name == rowData.scheduleName) {
 				    vm.selectedName = null;
                     vm.selected = false;
@@ -64,34 +62,27 @@
             };
 			
             vm.search = function () {
-               // vm.editScreen = false;
                 vm.normalScreen = true;
-				/* commonLoaderService.load_Data(null, 'messages/scheduleMockData.json', 'GET', null).then(function (headers) {
-                    vm.data = headers[0].SearchSchemeCodes;
-                }, function (error) { // jshint ignore:line
-                    console.log("error", error);
-                });*/
 				vm.hiddenColArr=['id'];
 		        commonLoaderService.load_Data(null, 'https://eskaysoft.synectiks.com/api/v1/schedules/', 'GET', null).then(function (searchContent) {
-		if(searchContent.length>0){
+					if(searchContent.length>0){
 						var jsonKeys = Object.keys(searchContent[0])
-					vm.noOfViewColumns = jsonKeys.length-vm.hiddenColArr.length;
-					
-					angular.forEach(searchContent, function(item){
+						vm.noOfViewColumns = jsonKeys.length-vm.hiddenColArr.length;
+
+						angular.forEach(searchContent, function(item){
 						var hasScheduleType= false;
-						angular.forEach(vm.scheduleTypes, function(scheduleTypeObj){
-							if(!hasScheduleType && angular.equals(item.scheduleType, scheduleTypeObj.code) ){
-								item.scheduleType = scheduleTypeObj.description;
-								hasScheduleType=true
-							}
+						vm.scheduleIndexArr.push(item.scheduleIndex);
+							angular.forEach(vm.scheduleTypes, function(scheduleTypeObj){
+								if(!hasScheduleType && angular.equals(item.scheduleType, scheduleTypeObj.code) ){
+									item.scheduleType = scheduleTypeObj.description;
+									hasScheduleType=true
+								}
+							});
 						});
-					});
-					
-					vm.data = searchContent;
-					vm.selectedName = "";
-                    vm.messageContainer = false;
-                    vm.errorMessage = "";
-					//vm.retrieveAllScheduleIndexs();
+						vm.data = searchContent;
+						vm.selectedName = "";
+						vm.messageContainer = false;
+						vm.errorMessage = "";
 					}
 					
                 }, function (error) { // jshint ignore:line
@@ -100,20 +91,15 @@
             };
 
             vm.edit = function () {
-            
 				vm.scheduleName = vm.scheduleList.name;
                 vm.scheduleNo = vm.scheduleList.index;
-			
 				var hasRecord= false;
 					angular.forEach(vm.scheduleTypes, function(scheduleTypeObj){
-						
-						
 						if(!hasRecord && angular.equals(vm.scheduleList.type, scheduleTypeObj.description) ){
 							vm.scheduleList.type=scheduleTypeObj.code;
 							hasRecord=true
 						}
 					});
-			
                 vm.scheduleType = vm.scheduleList.type;
 				vm.scheduleId= vm.scheduleList.no;
                 vm.editScreen = true;
@@ -123,7 +109,6 @@
             };
 
 			vm.delete = function () {
-
 				var reqobj = {
 					"id": 2
 				};
@@ -138,7 +123,6 @@
 			};
 
             vm.create = function () {
-				
                 var reqobj = {
                     "scheduleName": vm.scheduleName,
                     "scheduleIndex": vm.scheduleNo,
@@ -154,7 +138,6 @@
             };
 
             vm.save = function () {
-				
 				vm.editScreen = true;
     		    var reqobj = {
                     "scheduleName": vm.scheduleName,
@@ -162,7 +145,6 @@
                     "scheduleType": vm.scheduleType,
 					"id": vm.scheduleList.no
                 };
-
 				commonLoaderService.load_Data(reqobj, "https://eskaysoft.synectiks.com/api/v1/schedules/", "PUT", null).then(function(data) {
 					vm.search();
 				}, function (error) { // jshint ignore:line
@@ -173,10 +155,16 @@
                 vm.errorMessage = "Schedule saved.";
             };
 
+			vm.validateSchIndex=function(){
+				angular.forEach(vm.scheduleIndexArr, function(scheduleIndex){
+					if(angular.equals(vm.scheduleNo, scheduleIndex) ){
+						 vm.errorMessage = "duplicate";
+					}
+				});
+			};
+
             vm.reset = function () {
-                
 				vm.scheduleList={};
-			
                 vm.scheduleName = "";
 				vm.scheduleId="";
                 vm.selected = false;
@@ -187,13 +175,9 @@
                 vm.messageContainer = false;
                 vm.editScreen = false;
                 vm.search();
-               
             };
             vm.getDropDownValues();
             vm.search();
-           
-
-
     }]);
 
 })();
