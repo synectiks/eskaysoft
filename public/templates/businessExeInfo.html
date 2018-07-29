@@ -1,7 +1,7 @@
 <div class="container-fluid">
     <div class='row py-y'>
         <div class='col-xs-12 col-sm-5'>
-            <form>
+            <form name="form">
                 <div class='text-left pt7'>
                     <h2>{{'businessexecutivesform.header.name' | translate}} </h2>
                 </div>
@@ -23,9 +23,9 @@
                 </div>
                 <div class="form-group">
                     <button type="submit" class="btn btn-primary mb5" ng-click="vm.reset()">{{'button.reset' | translate}}</button>
-                    <button ng-if="!vm.editScreen" type="submit" class="btn btn-primary  mb5" ng-click="vm.create()">{{'button.save' | translate}}
+                    <button ng-if="!vm.editScreen" type="submit" class="btn btn-primary  mb5" ng-click="vm.create()" ng-disabled="form.$invalid">{{'button.save' | translate}}
                 </button>
-                    <button ng-if="vm.editScreen" type="submit" class="btn btn-primary  mb5" ng-click="vm.save()">{{'button.save' | translate}}</button>
+                    <button ng-if="vm.editScreen" type="submit" class="btn btn-primary  mb5" ng-click="vm.save()" ng-disabled="form.$invalid">{{'button.save' | translate}}</button>
                     <label ng-if="vm.messageContainer" class="edit-delete-message">{{vm.errorMessage}}</label>
                 </div>
             </form>

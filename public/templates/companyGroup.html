@@ -1,17 +1,17 @@
 <div class="container-fluid">
     <div class='row py-y'>
         <div class='col-xs-12 col-sm-5'>
-            <form>
+            <form name="form">
                 <div class='text-left pt7'>
                     <h2>{{'companygroupform.header.name' | translate}} </h2>
                 </div>
                 <div class="form-group">
                     <label class="col-form-label" for="companyGroup">{{'companygroupform.label.companyGroup ' | translate}}:*</label>
-                    <input type="text" class="form-control form-control-lg" name="companyGroup" id="companyGroup" ng-model="vm.companyGrp">
+                    <input type="text" class="form-control form-control-lg" name="companyGroup" id="companyGroup" ng-model="vm.companyGrp" required>
                 </div>
                 <div class="form-group">
-                    <button type="submit" class="btn btn-primary mb5" ng-click="vm.reset()">{{'button.reset' | translate}}</button>
-                    <button type="submit" class="btn btn-primary  mb10" ng-click="vm.create()">{{'button.save' | translate}}
+                    <button type="submit" class="btn btn-primary mb5" ng-click="vm.reset()" ng-disabled="form.$invalid">{{'button.reset' | translate}}</button>
+                    <button type="submit" class="btn btn-primary  mb10" ng-click="vm.create()" ng-disabled="form.$invalid">{{'button.save' | translate}}
                     </button>
                 </div>
             </form>
