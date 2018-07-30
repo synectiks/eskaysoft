@@ -33,8 +33,14 @@
 							tempSubScheduleData.subScheduleName= item.subScheduleName;
 							tempSubScheduleData.subScheduleIndex=item.subScheduleIndex;
 							vm.subScheduleIndexArr.push(item.subScheduleIndex);
-							tempSubScheduleData.scheduleId= item.schedule.id;
-							tempSubScheduleData.scheduleName= item.schedule.scheduleName;
+							
+							angular.forEach(vm.scheduleNameArr, function(schObj){
+								if(angular.equals(item.scheduleId, schObj.scheduleId) ){
+									tempSubScheduleData.scheduleId= item.scheduleId;
+									tempSubScheduleData.scheduleName= schObj.scheduleName;
+								}
+							});
+							
 							vm.subScheduleDataArr.push(tempSubScheduleData);
 						});
 						
@@ -101,16 +107,16 @@
 			vm.edit = function () {
 				vm.subScheduleName = vm.subScheduleList.subScheduleName;
                 vm.subScheduleIndex = vm.subScheduleList.subScheduleIndex;
-				var hasRecord= false;
 				
-				angular.forEach(vm.scheduleNameArr, function(scheduleTypeObj){
-					if(!hasRecord && angular.equals(vm.subScheduleList.scheduleId, scheduleTypeObj.scheduleId) ){
-						vm.scheduleNameValue=scheduleTypeObj.scheduleId;
-						hasRecord=true
+				var hasRecord= false;
+				angular.forEach(vm.scheduleNameArr, function(scheduleNameObj){
+					if(!hasRecord && angular.equals(vm.subScheduleList.scheduleId, scheduleNameObj.scheduleId) ){
+						vm.scheduleNameValue=scheduleNameObj.scheduleId;
+						hasRecord=true;
 					}
 				});
              
-			   vm.scheduleNameValue=vm.subScheduleList.scheduleId;
+			  // vm.scheduleNameValue=vm.subScheduleList.scheduleId;
                 vm.editScreen = true;
                 vm.normalScreen = false;
                 vm.messageContainer = false;
@@ -122,16 +128,16 @@
     		    var reqobj = {
                     "subScheduleName": vm.subScheduleName,
                     "subScheduleIndex": vm.subScheduleIndex,
-                    "scheduleId": vm.scheduleNameValue,
+                    "scheduleId": vm.subScheduleList.scheduleId,
 					"subScheduleId": vm.subScheduleList.subScheduleId
                 };
+				console.log(reqobj);
 				commonLoaderService.load_Data(reqobj, "https://eskaysoft.synectiks.com/api/v1/subschedules/", "PUT", null).then(function(data) {
 					vm.getScheduleNameArr();
 					vm.search();
 				}, function (error) { // jshint ignore:line
 					console.log("error", error);
                 });
-				
                 vm.messageContainer = true;
                 vm.errorMessage = "Schedule saved.";
             };
