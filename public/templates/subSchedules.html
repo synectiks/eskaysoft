@@ -12,7 +12,7 @@
 
                 <div class=" form-group col-sm-12">
 					<label class="col-form-label " for="scheduleName ">{{'subscheduleform.label.scheduleName' | translate}}:*</label>
-					<select ng-model="vm.scheduleNameValue" ng-click="vm.searchSelect()" class="selectpicker1 form-control form-control-lg form-control form-control-lg" id="scheduleNameValue" data-live-search="true">
+					<select ng-model="vm.scheduleNameValue" class="selectpicker1 form-control form-control-lg form-control form-control-lg" id="scheduleNameValue" data-live-search="true">
 						<option value="0" required>Select</option>
 						<option ng-repeat="scheduleNameObj in vm.scheduleNameArr" value="{{scheduleNameObj.scheduleId}}"
 								 data-content="{{scheduleNameObj.scheduleName}}">{{scheduleNameObj.scheduleName}}

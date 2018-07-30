@@ -11,7 +11,7 @@
 
             //Select
             vm.onSelectRow = function (rowData, rowNum) {
-				console.log("rowData--", rowData);
+
                 if (vm.selected && vm.bankInfoList.name == rowData.name) {
                     vm.bankName = "";
                     vm.bankAddress = "";
@@ -24,7 +24,7 @@
                     vm.selectedRow = rowNum;
                     vm.bankInfoList.name = rowData.name;
                     vm.bankInfoList.address = rowData.address;
-                    vm.bankInfoList.bankId = rowData.bankId;
+                    vm.bankInfoList.bankId = rowData.id;
                     vm.messageContainer = false;
                     vm.errorMessage = "";
                 }
@@ -34,7 +34,7 @@
                 // vm.editScreen = false;
                 vm.normalScreen = true;
 
-                vm.hiddenColArr = ['bankId'];
+                vm.hiddenColArr = ['id'];
                 commonLoaderService.load_Data(null, 'https://eskaysoft.synectiks.com/api/v1/bankinformation/', 'GET', null).then(function (searchContent) {
                     console.log(searchContent);
                     if (searchContent.length > 0) {
@@ -73,7 +73,7 @@
                 var reqobj = {
                     "name": vm.bankName,
                     "address": vm.bankAddress,
-                    "bankId": vm.bankId
+                    "id": vm.bankId
 
                 };
                 commonLoaderService.load_Data(reqobj, "https://eskaysoft.synectiks.com/api/v1/bankinformation/", "PUT", null).then(function (data) {

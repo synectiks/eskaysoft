@@ -41,7 +41,7 @@
             </form>
             <common-grid-component filter-options="{districtName: vm.searchByDistrictName, state: vm.searchByStateName}" grid-data="vm.data" grid-call-back="vm.onSelectRow(value, index)" row-number="vm.selectedRow" hidden-column-keys="vm.hiddenColArr" no-of-view-columns="vm.noOfViewColumns"></common-grid-component>
 
-            <div class="btn-align p0" ng-if="selected">
+            <div class="btn-align p0" ng-if="vm.selected">
                 <button type="submit" class="btn btn-primary searchEdit btn-position" ng-click="vm.edit()">{{'button.edit' | translate}}</button>
                 <button type="submit" class="btn btn-primary btn-position" ng-click="vm.delete()">{{'button.delete' | translate}}</button>
             </div>

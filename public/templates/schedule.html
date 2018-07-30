@@ -11,7 +11,7 @@
                 </div>
                 <div class="form-group">
                     <label class="col-form-label" for="scheduleNumber">{{'scheduleform.label.index' | translate}}:*</label>
-                    <input type="number" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" min="0" maxlength="2" class="form-control form-control-lg" name="Name" id="scheduleNumber" ng-change="vm.validateSchIndex()" ng-model="vm.scheduleNo" required>
+                    <input type="number" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" min="0" maxlength="2" class="form-control form-control-lg" name="Name" id="scheduleNumber" ng-blur="vm.validateSchIndex()" ng-model="vm.scheduleNo" required>
                 </div>
                 <div class="form-group">
                     <label class="col-form-label" for="ScheduleType ">{{'scheduleform.label.type' | translate}}:</label>
@@ -26,7 +26,7 @@
                     <button type="submit" class="btn btn-primary mb5" ng-click="vm.reset()">{{'button.reset' | translate}}</button>
                     <button ng-if="!vm.editScreen" type="submit" class="btn btn-primary  mb5" ng-click="vm.create()" ng-disabled="(form.$invalid || vm.hasDuplicateScheIndex)">{{'button.save' | translate}}
                 </button>
-                    <button ng-if="vm.editScreen" type="submit" class="btn btn-primary  mb5" ng-click="vm.save()" ng-disabled="form.$invalid">{{'button.save' | translate}}</button>
+                    <button ng-if="vm.editScreen" type="submit" class="btn btn-primary  mb5" ng-click="vm.save()" ng-disabled="(form.$invalid|| vm.hasDuplicateScheIndex)">{{'button.save' | translate}}</button>
                     <label ng-if="vm.messageContainer" class="edit-delete-message">{{vm.errorMessage}}</label>
                 </div>
 
@@ -41,7 +41,7 @@
                         <option value="">{{'scheduleform.label.type' | translate}}</option>
                        <option ng-repeat="scheduleType in vm.scheduleTypes" value="{{scheduleType.code}}"
                        >{{scheduleType.description}}
-                        </option>5
+                        </option>
                     </select>
                 </div>
                 <div class="form-group mx-sm-3">

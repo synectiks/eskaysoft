@@ -29,7 +29,7 @@
                     vm.busExeInfoList.address = rowData.address;
                     vm.busExeInfoList.town = rowData.town;
                     vm.busExeInfoList.mobile = rowData.mobile;
-                    vm.busExeInfoList.id = rowData.businessexecutiveid;
+                    vm.busExeInfoList.id = rowData.id;
                     vm.messageContainer = false;
                     vm.errorMessage = "";
                 }
@@ -40,9 +40,9 @@
                 // vm.editScreen = false;
                 vm.normalScreen = true;
 
-                vm.hiddenColArr = ['businessexecutiveid'];
+                vm.hiddenColArr = ['id'];
                 commonLoaderService.load_Data(null, 'https://eskaysoft.synectiks.com/api/v1/businessexecutive/', 'GET', null).then(function (searchContent) {
-                    console.log(searchContent);
+					
                     if (searchContent.length > 0) {
                         var jsonKeys = Object.keys(searchContent[0])
                         vm.noOfViewColumns = jsonKeys.length - vm.hiddenColArr.length;
@@ -51,7 +51,7 @@
                         vm.selectedName = "";
                         vm.messageContainer = false;
                         vm.errorMessage = "";
-                        //vm.retrieveAllScheduleIndexs();
+
                     }
 
                 }, function (error) { // jshint ignore:line
@@ -86,7 +86,7 @@
                         "address": vm.busExeAddress,
                         "town": vm.busExeTown,
                         "mobile": vm.busExeMobile,
-                        "businessexecutiveid":vm.busExeId
+                        "id":vm.busExeId
                     };
                     commonLoaderService.load_Data(reqobj, "https://eskaysoft.synectiks.com/api/v1/businessexecutive/", "PUT", null).then(function (data) {
                        vm.search();
