@@ -98,7 +98,7 @@
                     vm.errorMessage = "";
                 }
             };
-
+            //Edit
             vm.edit = function () {
                 vm.subScheduleName = vm.subScheduleList.subScheduleName;
                 vm.subScheduleIndex = vm.subScheduleList.subScheduleIndex;
@@ -116,7 +116,7 @@
                 vm.messageContainer = false;
                 vm.errorMessage = "";
             };
-
+            //Save
             vm.save = function () {
                 vm.editScreen = true;
                 var reqobj = {
@@ -135,6 +135,22 @@
                 vm.errorMessage = "Schedule saved.";
             };
 
+
+            //Reset
+            vm.reset = function () {
+                vm.subScheduleList = {};
+                vm.subScheduleName = "";
+                vm.subScheduleIndex = "";
+                vm.scheduleId = "";
+                vm.scheduleNameValue = "";
+                vm.selected = false;
+                vm.selectedName = "";
+                vm.selectedRow = -1;
+                vm.messageContainer = false;
+                vm.editScreen = false;
+                vm.search();
+            };
+            //Delete
             vm.delete = function () {
 
                 commonLoaderService.load_Data(null, "https://eskaysoft.synectiks.com/api/v1/subschedules/" + vm.subScheduleList.subScheduleId, "DELETE", null).then(function (data) {

@@ -4,133 +4,147 @@
     angular.module('com.synectiks.eskaySoft')
         .controller('districtsInfoController', ['commonLoaderService', function (commonLoaderService) {
             var vm = this; // jshint ignore:line
-           
-            vm.stateName = "0";
-			vm.statesDataArr=[];
-            
-            vm.getStates = function(){
-				commonLoaderService.load_Data(null, 'https://eskaysoft.synectiks.com/api/v1/states/', 'GET', null).then(function (statesData) {
-					angular.forEach(statesData, function(item){
-						var stateObj={};
-						stateObj.id =item.id;
-						stateObj.stateName =item.stateName;
-						vm.statesDataArr.push(stateObj);
-						
-					});
-					 vm.search();
-				}, function (error) { // jshint ignore:line
-				console.log("error", error);
-                });
-			};
-			
-             vm.search = function () {
-                vm.normalScreen = true;
-				vm.hiddenColArr=['districtId', 'statesId'];
-		        commonLoaderService.load_Data(null, 'https://eskaysoft.synectiks.com/api/v1/districts/', 'GET', null).then(function (searchContent) {
-					if(searchContent.length>0){
-						 vm.data = [];
-						angular.forEach(searchContent, function(item){
-							var tempDistrictData={};
-							tempDistrictData.districtId = item.districtId;
-							tempDistrictData.districtName = item.districtName;
-							angular.forEach(vm.statesDataArr, function(stateObj){
-								if(angular.equals(item.statesId, stateObj.id) ){
-									tempDistrictData.statesId= item.statesId;
-									tempDistrictData.stateName= stateObj.stateName;
 
-								}
-							});
-							vm.data.push(tempDistrictData);
-						});
-						
-						vm.noOfViewColumns = 2;
-						vm.selectedName = "";
-						vm.messageContainer = false;
-						vm.errorMessage = "";
-					}
+            vm.stateName = "0";
+            vm.statesDataArr = [];
+
+            vm.getStates = function () {
+                commonLoaderService.load_Data(null, 'https://eskaysoft.synectiks.com/api/v1/states/', 'GET', null).then(function (statesData) {
+                    angular.forEach(statesData, function (item) {
+                        var stateObj = {};
+                        stateObj.id = item.id;
+                        stateObj.stateName = item.stateName;
+                        vm.statesDataArr.push(stateObj);
+
+                    });
+                    vm.search();
                 }, function (error) { // jshint ignore:line
                     console.log("error", error);
                 });
             };
-			
-			vm.create = function () {
+
+            vm.search = function () {
+                vm.normalScreen = true;
+                vm.hiddenColArr = ['districtId', 'statesId'];
+                commonLoaderService.load_Data(null, 'https://eskaysoft.synectiks.com/api/v1/districts/', 'GET', null).then(function (searchContent) {
+                    if (searchContent.length > 0) {
+                        vm.data = [];
+                        angular.forEach(searchContent, function (item) {
+                            var tempDistrictData = {};
+                            tempDistrictData.districtId = item.districtId;
+                            tempDistrictData.districtName = item.districtName;
+                            angular.forEach(vm.statesDataArr, function (stateObj) {
+                                if (angular.equals(item.statesId, stateObj.id)) {
+                                    tempDistrictData.statesId = item.statesId;
+                                    tempDistrictData.stateName = stateObj.stateName;
+
+                                }
+                            });
+                            vm.data.push(tempDistrictData);
+                        });
+
+                        vm.noOfViewColumns = 2;
+                        vm.selectedName = "";
+                        vm.messageContainer = false;
+                        vm.errorMessage = "";
+                    }
+                }, function (error) { // jshint ignore:line
+                    console.log("error", error);
+                });
+            };
+
+            vm.create = function () {
                 var reqobj = {
                     "districtName": vm.districtName,
                     "statesId": vm.stateName
                 };
-				commonLoaderService.load_Data(reqobj, "https://eskaysoft.synectiks.com/api/v1/districts/", "POST", null).then(function(data) {
-				vm.getStates();
-			
-				 }, function (error) { // jshint ignore:line
-				console.log("error", error);
+                commonLoaderService.load_Data(reqobj, "https://eskaysoft.synectiks.com/api/v1/districts/", "POST", null).then(function (data) {
+                    vm.getStates();
+
+                }, function (error) { // jshint ignore:line
+                    console.log("error", error);
                 });
                 vm.messageContainer = true;
                 vm.errorMessage = "Schedule saved.";
             };
-			
-			vm.districtsList={};
-			
-			vm.onSelectRow = function (rowData, rowNum) {
-				
+
+            vm.districtsList = {};
+
+            vm.onSelectRow = function (rowData, rowNum) {
+
                 if (vm.selected && vm.districtsList.name == rowData.districtName) {
-				    vm.selectedName = null;
+                    vm.selectedName = null;
                     vm.selected = false;
                     vm.selectedRow = -1;
-					vm.districtsList={};
+                    vm.districtsList = {};
                     vm.districtName = "";
                     vm.stateName = "0";
-					
+
                 } else {
-				    vm.selected = true;
+                    vm.selected = true;
                     vm.selectedRow = rowNum;
                     vm.districtsList.districtName = rowData.districtName;
-					vm.districtsList.statesId = rowData.statesId;
-					vm.districtsList.districtId = rowData.districtId;
+                    vm.districtsList.statesId = rowData.statesId;
+                    vm.districtsList.districtId = rowData.districtId;
                     vm.messageContainer = false;
                     vm.errorMessage = "";
                 }
             };
-			
-			
-			vm.edit = function () {
-				vm.districtName = vm.districtsList.districtName;
 
-				var hasRecord= false;
-				angular.forEach(vm.statesDataArr, function(stateObj){
-					if(!hasRecord && angular.equals(vm.districtsList.statesId, stateObj.id) ){
-						vm.stateName=vm.districtsList.statesId;
-						hasRecord=true;
-					}
-				});
+
+            vm.edit = function () {
+                vm.districtName = vm.districtsList.districtName;
+
+                var hasRecord = false;
+                angular.forEach(vm.statesDataArr, function (stateObj) {
+                    if (!hasRecord && angular.equals(vm.districtsList.statesId, stateObj.id)) {
+                        vm.stateName = vm.districtsList.statesId;
+                        hasRecord = true;
+                    }
+                });
 
                 vm.editScreen = true;
                 vm.normalScreen = false;
                 vm.messageContainer = false;
                 vm.errorMessage = "";
             };
-			
-			vm.save = function () {
-				vm.editScreen = true;
-    		    var reqobj = {
+
+            vm.save = function () {
+                vm.editScreen = true;
+                var reqobj = {
                     "districtName": vm.districtName,
                     "statesId": vm.stateName,
                     "districtId": vm.districtsList.districtId
                 };
-				commonLoaderService.load_Data(reqobj, "https://eskaysoft.synectiks.com/api/v1/districts/", "PUT", null).then(function(data) {
-					vm.getStates();
-					
-				}, function (error) { // jshint ignore:line
-					console.log("error", error);
+                commonLoaderService.load_Data(reqobj, "https://eskaysoft.synectiks.com/api/v1/districts/", "PUT", null).then(function (data) {
+                    vm.getStates();
+
+                }, function (error) { // jshint ignore:line
+                    console.log("error", error);
                 });
                 vm.messageContainer = true;
                 vm.errorMessage = "Schedule saved.";
             };
-			
-			vm.delete = function () {
-               
+
+
+            //Reset
+            vm.reset = function () {
+                vm.districtsList = {};
+                vm.districtName = "";
+                vm.stateName = "0";
+                vm.selected = false;
+                vm.selectedName = "";
+                vm.selectedRow = -1;
+                vm.messageContainer = false;
+                vm.editScreen = false;
+                vm.search();
+            };
+
+            vm.delete = function () {
+
                 commonLoaderService.load_Data(null, "https://eskaysoft.synectiks.com/api/v1/districts/" + vm.districtsList.districtId, "DELETE", null).then(function (data) {
                     vm.getStates();
-					
+
                 }, function (error) { // jshint ignore:line
                     console.log("error", error);
                 });
@@ -138,9 +152,9 @@
                 vm.messageContainer = true;
                 vm.errorMessage = "Schedule saved.";
             };
-			
-			vm.getStates();
-           
+
+            vm.getStates();
+
 
 
 
