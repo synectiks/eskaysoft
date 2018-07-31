@@ -64,6 +64,7 @@
                 }, function (error) { // jshint ignore:line
                     console.log("error", error);
                 });
+                vm.reset();
                 vm.messageContainer = true;
                 vm.errorMessage = "Company Group saved.";
             };
@@ -81,6 +82,7 @@
                 }, function (error) { // jshint ignore:line
                     console.log("error", error);
                 });
+                vm.reset();
                 vm.messageContainer = true;
                 vm.errorMessage = "Company Group saved.";
             };
@@ -109,7 +111,8 @@
                 });
                 vm.selected = false;
                 vm.messageContainer = true;
-                vm.errorMessage = "Deleted.";
+                vm.errorMessage = "Company Group Deleted.";
+                vm.errorMessage = "Company Group Deleted.";
             };
 
             //Edit 

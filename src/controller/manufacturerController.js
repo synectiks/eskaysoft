@@ -4,12 +4,12 @@
     angular.module('com.synectiks.eskaySoft')
         .controller('manufacturerController', ['commonLoaderService', function (commonLoaderService) {
             var vm = this; // jshint ignore:line
-		
-		vm.selected = false;
+
+            vm.selected = false;
             vm.normalScreen = true;
             vm.messageContainer = false;
             vm.manufacInfoList = {};
-            
+
             //Select
             vm.onSelectRow = function (rowData, rowNum) {
                 if (vm.selected && vm.manufacInfoList.name == rowData.manfacturerName) {
@@ -17,20 +17,20 @@
                     vm.selected = false;
                     vm.selectedRow = -1;
                     vm.manufacInfoList = {};
-                    vm.manufacName= "";
-                    vm.manufacId= "";
+                    vm.manufacName = "";
+                    vm.manufacId = "";
 
                 } else {
                     vm.selected = true;
                     vm.selectedRow = rowNum;
                     vm.manufacInfoList.name = rowData.manfacturerName;
-                    vm.manufacInfoList.id= rowData.id;
+                    vm.manufacInfoList.id = rowData.id;
                     vm.messageContainer = false;
                     vm.errorMessage = "";
                 }
             };
-            
-                //Search
+
+            //Search
             vm.search = function () {
                 // vm.editScreen = false;
                 vm.normalScreen = true;
@@ -53,48 +53,50 @@
                     console.log("error", error);
                 });
             };
-            
-               //Create
+
+            //Create
             vm.create = function () {
                 var reqobj = {
                     "manfacturerName": vm.manufacName,
-                    
+
                 };
                 commonLoaderService.load_Data(reqobj, "https://eskaysoft.synectiks.com/api/v1/manfacturer/", "POST", null).then(function (data) {
                     vm.reset();
                 }, function (error) { // jshint ignore:line
                     console.log("error", error);
                 });
+                vm.reset();
                 vm.messageContainer = true;
                 vm.errorMessage = "Manfacturer Name saved.";
             };
-            
-              //Reset
+
+            //Reset
             vm.reset = function () {
                 vm.manufacInfoList = {};
                 vm.manufacName = "";
                 vm.selected = false;
                 vm.selectedName = "";
                 vm.selectedRow = -1;
-				 vm.manufacId ="";
+                vm.manufacId = "";
                 vm.messageContainer = false;
                 vm.editScreen = false;
                 vm.search();
             };
-
-			vm.save = function () {
+            //Save
+            vm.save = function () {
                 vm.editScreen = true;
                 var reqobj = {
                     "manfacturerName": vm.manufacName,
-                    "id":  vm.manufacId
+                    "id": vm.manufacId
                 };
                 commonLoaderService.load_Data(reqobj, "https://eskaysoft.synectiks.com/api/v1/manfacturer/", "PUT", null).then(function (data) {
                     vm.search();
                 }, function (error) { // jshint ignore:line
                     console.log("error", error);
                 });
+                vm.search();
                 vm.messageContainer = true;
-                vm.errorMessage = "Bank Information saved.";
+                vm.errorMessage = "Manufacturer saved.";
             };
             //Delete
             vm.delete = function () {
@@ -109,13 +111,13 @@
                 });
                 vm.selected = false;
                 vm.messageContainer = true;
-                vm.errorMessage = "Deleted.";
+                vm.errorMessage = "Manufacturer Deleted.";
             };
 
             //Edit 
             vm.edit = function () {
                 vm.manufacName = vm.manufacInfoList.name;
- vm.manufacId =vm.manufacInfoList.id
+                vm.manufacId = vm.manufacInfoList.id
                 vm.editScreen = true;
                 vm.normalScreen = false;
                 vm.messageContainer = false;

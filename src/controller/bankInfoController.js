@@ -64,6 +64,7 @@
                 }, function (error) { // jshint ignore:line
                     console.log("error", error);
                 });
+                vm.reset();
                 vm.messageContainer = true;
                 vm.errorMessage = "Bank Information saved.";
             };
@@ -81,6 +82,7 @@
                 }, function (error) { // jshint ignore:line
                     console.log("error", error);
                 });
+                vm.reset();
                 vm.messageContainer = true;
                 vm.errorMessage = "Bank Information saved.";
             };
@@ -112,7 +114,7 @@
                 });
                 vm.selected = false;
                 vm.messageContainer = true;
-                vm.errorMessage = "Deleted.";
+                vm.errorMessage = "Bank Information Deleted.";
             };
 
             //Edit 

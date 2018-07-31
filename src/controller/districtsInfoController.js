@@ -64,8 +64,9 @@
                 }, function (error) { // jshint ignore:line
                     console.log("error", error);
                 });
+                vm.reset();
                 vm.messageContainer = true;
-                vm.errorMessage = "Schedule saved.";
+                vm.errorMessage = "District saved.";
             };
 
             vm.districtsList = {};
@@ -122,8 +123,9 @@
                 }, function (error) { // jshint ignore:line
                     console.log("error", error);
                 });
+                vm.reset();
                 vm.messageContainer = true;
-                vm.errorMessage = "Schedule saved.";
+                vm.errorMessage = "District saved.";
             };
 
 
@@ -150,7 +152,7 @@
                 });
                 vm.selected = false;
                 vm.messageContainer = true;
-                vm.errorMessage = "Schedule saved.";
+                vm.errorMessage = "District Deleted.";
             };
 
             vm.getStates();

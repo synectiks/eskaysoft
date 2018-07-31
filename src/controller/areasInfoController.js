@@ -97,8 +97,9 @@
                 }, function (error) { // jshint ignore:line
                     console.log("error", error);
                 });
+                vm.reset();
                 vm.messageContainer = true;
-                vm.errorMessage = "Bank Information saved.";
+                vm.errorMessage = "Area Information saved.";
             };
             //Save
             vm.save = function () {
@@ -113,8 +114,9 @@
                 }, function (error) { // jshint ignore:line
                     console.log("error", error);
                 });
+                vm.reset();
                 vm.messageContainer = true;
-                vm.errorMessage = "Bank Information saved.";
+                vm.errorMessage = "Area Information saved.";
             };
             //Reset
             vm.reset = function () {
@@ -144,7 +146,7 @@
                 });
                 vm.selected = false;
                 vm.messageContainer = true;
-                vm.errorMessage = "Deleted.";
+                vm.errorMessage = "Area Deleted.";
             };
 
             //Edit 

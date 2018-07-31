@@ -71,6 +71,7 @@
                 }, function (error) { // jshint ignore:line
                     console.log("error", error);
                 });
+                vm.reset();
                 vm.messageContainer = true;
                 vm.errorMessage = "Schedule saved.";
             };
@@ -131,6 +132,7 @@
                 }, function (error) { // jshint ignore:line
                     console.log("error", error);
                 });
+                vm.reset();
                 vm.messageContainer = true;
                 vm.errorMessage = "Schedule saved.";
             };
@@ -161,7 +163,7 @@
                 });
                 vm.selected = false;
                 vm.messageContainer = true;
-                vm.errorMessage = "Schedule saved.";
+                vm.errorMessage = "Schedule Deleted.";
             };
 
             vm.validateSchIndex = function () {

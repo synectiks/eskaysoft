@@ -19,7 +19,7 @@
                 </div>
                 <div class="form-group">
                     <label class="col-form-label" for="mobile">{{'businessexecutivesform.label.mobile' | translate}}:*</label>
-                    <input type="number" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" min="0" maxlength="12" class="form-control form-control-lg" name="mobile" id="mobile" ng-model="vm.busExeMobile" required>
+                    <input type="number" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" min="0" maxlength="10" class="form-control form-control-lg" name="mobile" id="mobile" ng-model="vm.busExeMobile" required>
                 </div>
                 <div class="form-group">
                     <button type="submit" class="btn btn-primary mb5" ng-click="vm.reset()">{{'button.reset' | translate}}</button>
