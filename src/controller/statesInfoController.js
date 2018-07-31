@@ -45,7 +45,7 @@
                 });
             };
 
-          //Search
+            //Search
             vm.search = function () {
                 vm.normalScreen = true;
 
@@ -100,7 +100,7 @@
                     "stateName": vm.stateName,
                     "stateCode": vm.stateCode,
                     "zone": vm.stateZone,
-                    "id":vm.stateId 
+                    "id": vm.stateId
                 };
                 commonLoaderService.load_Data(reqobj, "https://eskaysoft.synectiks.com/api/v1/states/", "PUT", null).then(function (data) {
                     vm.search();
