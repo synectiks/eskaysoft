@@ -98,7 +98,7 @@
                 var hasRecord = false;
                 angular.forEach(vm.statesDataArr, function (stateObj) {
                     if (!hasRecord && angular.equals(vm.districtsList.statesId, stateObj.id)) {
-                        vm.stateName = vm.districtsList.statesId;
+                        vm.stateName = "" + vm.districtsList.statesId;
                         hasRecord = true;
                     }
                 });
