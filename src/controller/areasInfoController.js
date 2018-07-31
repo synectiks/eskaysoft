@@ -8,30 +8,30 @@
             vm.normalScreen = true;
             vm.messageContainer = false;
             vm.areaInfoList = {};
-			vm.businessExecutiveArr=[];
-			vm.businessExecutive = "0";
-						
-			vm.getScheduleNameArr = function () {
-		        commonLoaderService.load_Data(null, 'https://eskaysoft.synectiks.com/api/v1/businessexecutive/', 'GET', null).then(function (executiveData) {
-					if(executiveData.length>0){
-						angular.forEach(executiveData, function(item){
-							var executiveObj={};
-							executiveObj.executiveId =item.id;
-							executiveObj.executiveName =item.name;
-							vm.businessExecutiveArr.push(executiveObj);
-							
-						});
-						vm.search();
-					}
+            vm.businessExecutiveArr = [];
+            vm.businessExecutive = "0";
+
+            vm.getScheduleNameArr = function () {
+                commonLoaderService.load_Data(null, 'https://eskaysoft.synectiks.com/api/v1/businessexecutive/', 'GET', null).then(function (executiveData) {
+                    if (executiveData.length > 0) {
+                        angular.forEach(executiveData, function (item) {
+                            var executiveObj = {};
+                            executiveObj.executiveId = item.id;
+                            executiveObj.executiveName = item.name;
+                            vm.businessExecutiveArr.push(executiveObj);
+
+                        });
+                        vm.search();
+                    }
                 }, function (error) { // jshint ignore:line
                     console.log("error", error);
                 });
             };
-			
-			
+
+
             //Select
             vm.onSelectRow = function (rowData, rowNum) {
-				console.log(rowData);
+                console.log(rowData);
                 if (vm.selected && vm.areaInfoList.name == rowData.areaName) {
                     vm.selectedName = null;
                     vm.selected = false;
@@ -45,8 +45,8 @@
                     vm.selected = true;
                     vm.selectedRow = rowNum;
                     vm.areaInfoList.name = rowData.areaName;
-					vm.areaInfoList.areaId = rowData.areaId;
-                    vm.areaInfoList.businessExecutive = rowData.businessexecutiveId;
+                    vm.areaInfoList.areaId = rowData.areaId;
+                    vm.areaInfoList.businessExecutive = rowData.executiveId;
                     vm.messageContainer = false;
                     vm.errorMessage = "";
                 }
@@ -58,32 +58,28 @@
 
                 vm.hiddenColArr = ['executiveId', 'areaId'];
                 commonLoaderService.load_Data(null, 'https://eskaysoft.synectiks.com/api/v1/area/', 'GET', null).then(function (searchContent) {
-                    console.log(searchContent);
                     if (searchContent.length > 0) {
-                      
                         vm.noOfViewColumns = 2;
-                   
-						
-						vm.areInfoDataArr=[];
-						angular.forEach(searchContent, function(item){
-							var tempAreaInfoData={};
-							tempAreaInfoData.areaId= item.areaId;
-							tempAreaInfoData.areaName=item.areaName;
-							angular.forEach(vm.businessExecutiveArr, function(executiveObj){
-								if(angular.equals(item.businessexecutiveId, executiveObj.executiveId) ){
-									tempAreaInfoData.executiveId= item.businessexecutiveId;
-									tempAreaInfoData.executiveName= executiveObj.executiveName;
-								}
-							});
-	
-							vm.areInfoDataArr.push(tempAreaInfoData);
-							
-						});
-						
-						vm.selectedName = "";
+                        vm.areInfoDataArr = [];
+                        angular.forEach(searchContent, function (item) {
+                            var tempAreaInfoData = {};
+                            tempAreaInfoData.areaId = item.areaId;
+                            tempAreaInfoData.areaName = item.areaName;
+                            angular.forEach(vm.businessExecutiveArr, function (executiveObj) {
+                                if (angular.equals(item.businessexecutiveId, executiveObj.executiveId)) {
+                                    tempAreaInfoData.executiveId = item.businessexecutiveId;
+                                    tempAreaInfoData.executiveName = executiveObj.executiveName;
+                                }
+                            });
+
+                            vm.areInfoDataArr.push(tempAreaInfoData);
+
+                        });
+
+                        vm.selectedName = "";
                         vm.messageContainer = false;
                         vm.errorMessage = "";
-						
+
                     }
 
                 }, function (error) { // jshint ignore:line
@@ -154,7 +150,7 @@
             //Edit 
             vm.edit = function () {
                 vm.areaName = vm.areaInfoList.name;
-                vm.businessExecutive = vm.areaInfoList.businessExecutive;
+                vm.businessExecutive = "2";
                 vm.areaId = vm.areaInfoList.areaId;
                 vm.editScreen = true;
                 vm.normalScreen = false;
