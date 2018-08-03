@@ -192,7 +192,7 @@
                 var scheduleTypeDesc = $.grep(vm.scheduleTypes, function (scheduleType) {
                     return scheduleType.code == scheduleTypeCode;
                 })[0].description;
-                vm.searchBySchedule.type = scheduleTypeDesc
+                vm.searchBySchedulTypeDescr = scheduleTypeDesc
             };
 
             vm.getDropDownValues();
