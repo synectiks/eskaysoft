@@ -42,7 +42,7 @@
 
                 vm.hiddenColArr = ['id'];
                 commonLoaderService.load_Data(null, 'https://eskaysoft.synectiks.com/api/v1/businessexecutive/', 'GET', null).then(function (searchContent) {
-					
+
                     if (searchContent.length > 0) {
                         var jsonKeys = Object.keys(searchContent[0])
                         vm.noOfViewColumns = jsonKeys.length - vm.hiddenColArr.length;
@@ -60,42 +60,53 @@
             };
             //Create
             vm.create = function () {
-               
-                    var reqobj = {
-                        "name": vm.busExeName,
-                        "address": vm.busExeAddress,
-                        "town": vm.busExeTown,
-                        "mobile": vm.busExeMobile,
-						
-                    };
-                    commonLoaderService.load_Data(reqobj, "https://eskaysoft.synectiks.com/api/v1/businessexecutive/", "POST", null).then(function (data) {
-                        vm.reset();
-                    }, function (error) { // jshint ignore:line
-                        console.log("error", error);
-                    });
-                    vm.messageContainer = true;
-                    vm.errorMessage = "Business Executive Information saved.";
-           
+
+                var reqobj = {
+                    "name": vm.busExeName,
+                    "address": vm.busExeAddress,
+                    "town": vm.busExeTown,
+                    "mobile": vm.busExeMobile,
+
+                };
+                commonLoaderService.load_Data(reqobj, "https://eskaysoft.synectiks.com/api/v1/businessexecutive/", "POST", null).then(function (data) {
+                    vm.reset();
+                }, function (error) { // jshint ignore:line
+                    console.log("error", error);
+                });
+                vm.messageContainer = true;
+                vm.errorMessage = "Business Executive Information saved.";
+
             };
-            
+
+
+            //Confirm 
+            vm.confirm = function () {
+                if (confirm("Do you want to Delete?")) {
+                    vm.delete();
+                } else {
+                    vm.save();
+                }
+            }
+
+
             //Save
             vm.save = function () {
                 vm.editScreen = true;
-                    var reqobj = {
-                        "name": vm.busExeName,
-                        "address": vm.busExeAddress,
-                        "town": vm.busExeTown,
-                        "mobile": vm.busExeMobile,
-                        "id":vm.busExeId
-                    };
-                    commonLoaderService.load_Data(reqobj, "https://eskaysoft.synectiks.com/api/v1/businessexecutive/", "PUT", null).then(function (data) {
-                       vm.search();
-                    }, function (error) { // jshint ignore:line
-                        console.log("error", error);
-                    });
-                    vm.messageContainer = true;
-                    vm.errorMessage = "Business Executive Information saved.";
-            
+                var reqobj = {
+                    "name": vm.busExeName,
+                    "address": vm.busExeAddress,
+                    "town": vm.busExeTown,
+                    "mobile": vm.busExeMobile,
+                    "id": vm.busExeId
+                };
+                commonLoaderService.load_Data(reqobj, "https://eskaysoft.synectiks.com/api/v1/businessexecutive/", "PUT", null).then(function (data) {
+                    vm.search();
+                }, function (error) { // jshint ignore:line
+                    console.log("error", error);
+                });
+                vm.messageContainer = true;
+                vm.errorMessage = "Business Executive Information saved.";
+
             };
 
             //Reset
@@ -105,7 +116,7 @@
                 vm.busExeAddress = "";
                 vm.busExeTown = "";
                 vm.busExeMobile = "";
-				vm.busExeId ="";
+                vm.busExeId = "";
                 vm.selected = false;
                 vm.selectedName = "";
                 vm.selectedRow = -1;
@@ -136,7 +147,7 @@
                 vm.busExeAddress = vm.busExeInfoList.address;
                 vm.busExeTown = vm.busExeInfoList.town;
                 vm.busExeMobile = vm.busExeInfoList.mobile;
-vm.busExeId = vm.busExeInfoList.id;
+                vm.busExeId = vm.busExeInfoList.id;
 
                 vm.editScreen = true;
                 vm.normalScreen = false;

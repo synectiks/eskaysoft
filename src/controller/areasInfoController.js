@@ -101,6 +101,17 @@
                 vm.messageContainer = true;
                 vm.errorMessage = "Area Information saved.";
             };
+
+
+            //Confirm 
+            vm.confirm = function () {
+                if (confirm("Do you want to Delete?")) {
+                    vm.delete();
+                } else {
+                    vm.save();
+                }
+            }
+
             //Save
             vm.save = function () {
                 vm.editScreen = true;

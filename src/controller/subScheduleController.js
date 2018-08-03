@@ -117,6 +117,17 @@
                 vm.messageContainer = false;
                 vm.errorMessage = "";
             };
+
+
+            //Confirm 
+            vm.confirm = function () {
+                if (confirm("Do you want to Delete?")) {
+                    vm.delete();
+                } else {
+                    vm.save();
+                }
+            }
+
             //Save
             vm.save = function () {
                 vm.editScreen = true;

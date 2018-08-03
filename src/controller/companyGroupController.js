@@ -98,6 +98,17 @@
                 vm.search();
             };
 
+
+            //Confirm 
+            vm.confirm = function () {
+                if (confirm("Do you want to Delete?")) {
+                    vm.delete();
+                } else {
+                    vm.save();
+                }
+            }
+
+
             //Delete
             vm.delete = function () {
 

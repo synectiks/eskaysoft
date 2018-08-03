@@ -109,6 +109,17 @@
                 vm.errorMessage = "";
             };
 
+
+            //Confirm 
+            vm.confirm = function () {
+                if (confirm("Do you want to Delete the Schedule?")) {
+                    vm.delete();
+                } else {
+                    vm.save();
+                }
+            }
+
+            //Delete
             vm.delete = function () {
                 var reqobj = {
                     "id": 2
@@ -120,7 +131,7 @@
                 });
                 vm.selected = false;
                 vm.messageContainer = true;
-                vm.errorMessage = "Schedule saved.";
+                vm.errorMessage = "Schedule Deleted.";
             };
 
             vm.create = function () {
@@ -138,6 +149,7 @@
                 vm.errorMessage = "Schedule saved.";
             };
 
+            //Save
             vm.save = function () {
                 vm.editScreen = true;
                 var reqobj = {
