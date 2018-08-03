@@ -15,7 +15,7 @@
             vm.messageContainer = false;
             vm.scheduleList = {};
             vm.scheduleIndexArr = [];
-			vm.prevScheduleIndex="";
+            vm.prevScheduleIndex = "";
             vm.searchSelect = function () {
                 //  $('.selectpicker1').selectpicker('refresh');
             };
@@ -93,7 +93,7 @@
             vm.edit = function () {
                 vm.scheduleName = vm.scheduleList.name;
                 vm.scheduleNo = vm.scheduleList.index;
-				vm.prevScheduleIndex= vm.scheduleList.index;
+                vm.prevScheduleIndex = vm.scheduleList.index;
                 var hasRecord = false;
                 angular.forEach(vm.scheduleTypes, function (scheduleTypeObj) {
                     if (!hasRecord && angular.equals(vm.scheduleList.type, scheduleTypeObj.description)) {
@@ -159,18 +159,18 @@
 
             vm.validateSchIndex = function () {
                 vm.hasDuplicateScheIndex = false;
-				vm.errorMessage ="";
-				vm.messageContainer =false;
-				
-				if(!vm.hasDuplicateScheIndex){
-					angular.forEach(vm.scheduleIndexArr, function (scheduleIndex) {
-						if (angular.equals(vm.scheduleNo, scheduleIndex) && !angular.equals(vm.scheduleNo,  vm.prevScheduleIndex)){
-							vm.hasDuplicateScheIndex = true;
-							vm.messageContainer = true;
-							vm.errorMessage = "Duplicates in Schedule Index are not allowed ";
-						}
-					});
-				}
+                vm.errorMessage = "";
+                vm.messageContainer = false;
+
+                if (!vm.hasDuplicateScheIndex) {
+                    angular.forEach(vm.scheduleIndexArr, function (scheduleIndex) {
+                        if (angular.equals(vm.scheduleNo, scheduleIndex) && !angular.equals(vm.scheduleNo, vm.prevScheduleIndex)) {
+                            vm.hasDuplicateScheIndex = true;
+                            vm.messageContainer = true;
+                            vm.errorMessage = "Duplicates in Schedule Index are not allowed ";
+                        }
+                    });
+                }
             };
 
             vm.reset = function () {
@@ -186,6 +186,15 @@
                 vm.editScreen = false;
                 vm.search();
             };
+
+            $scope.GetValue = function (scheduleType) {
+                var scheduleTypeCode = vm.searchBySchedule.type;
+                var scheduleTypeDesc = $.grep(vm.scheduleTypes, function (scheduleType) {
+                    return scheduleType.code == scheduleTypeCode;
+                })[0].description;
+                vm.searchBySchedule.type = scheduleTypeDesc
+            };
+
             vm.getDropDownValues();
             vm.search();
     }]);
