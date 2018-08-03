@@ -109,13 +109,33 @@
                 vm.errorMessage = "";
             };
 
+            //Save
+            vm.save = function () {
+                vm.editScreen = true;
+                var reqobj = {
+                    "scheduleName": vm.scheduleName,
+                    "scheduleIndex": vm.scheduleNo,
+                    "scheduleType": vm.scheduleType,
+                    "id": vm.scheduleList.no
+                };
+                commonLoaderService.load_Data(reqobj, "https://eskaysoft.synectiks.com/api/v1/schedules/", "PUT", null).then(function (data) {
+                    vm.search();
+                }, function (error) { // jshint ignore:line
+                    console.log("error", error);
+                });
+
+                vm.messageContainer = true;
+                vm.errorMessage = "Schedule saved.";
+            };
+
+
 
             //Confirm 
             vm.confirm = function () {
                 if (confirm("Do you want to Delete the Schedule?")) {
                     vm.delete();
                 } else {
-                    vm.save();
+                    vm.errorMessage = "";
                 }
             }
 
@@ -145,25 +165,6 @@
                 }, function (error) { // jshint ignore:line
                     console.log("error", error);
                 });
-                vm.messageContainer = true;
-                vm.errorMessage = "Schedule saved.";
-            };
-
-            //Save
-            vm.save = function () {
-                vm.editScreen = true;
-                var reqobj = {
-                    "scheduleName": vm.scheduleName,
-                    "scheduleIndex": vm.scheduleNo,
-                    "scheduleType": vm.scheduleType,
-                    "id": vm.scheduleList.no
-                };
-                commonLoaderService.load_Data(reqobj, "https://eskaysoft.synectiks.com/api/v1/schedules/", "PUT", null).then(function (data) {
-                    vm.search();
-                }, function (error) { // jshint ignore:line
-                    console.log("error", error);
-                });
-
                 vm.messageContainer = true;
                 vm.errorMessage = "Schedule saved.";
             };

@@ -104,7 +104,7 @@
                 if (confirm("Do you want to Delete?")) {
                     vm.delete();
                 } else {
-                    vm.save();
+                    vm.errorMessage = "";
                 }
             }
 
@@ -123,7 +123,7 @@
                 vm.selected = false;
                 vm.messageContainer = true;
                 vm.errorMessage = "Company Group Deleted.";
-                vm.errorMessage = "Company Group Deleted.";
+
             };
 
             //Edit 

@@ -124,7 +124,7 @@
                 if (confirm("Do you want to Delete?")) {
                     vm.delete();
                 } else {
-                    vm.save();
+                    vm.errorMessage = "";
                 }
             }
 
