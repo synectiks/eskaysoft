@@ -98,6 +98,17 @@
                 vm.search();
             };
 
+
+            //Confirm 
+            vm.confirm = function () {
+                if (confirm("Do you want to Delete?")) {
+                    vm.delete();
+                } else {
+                    vm.errorMessage = "";
+                }
+            }
+
+
             //Delete
             vm.delete = function () {
 
@@ -112,7 +123,7 @@
                 vm.selected = false;
                 vm.messageContainer = true;
                 vm.errorMessage = "Company Group Deleted.";
-                vm.errorMessage = "Company Group Deleted.";
+
             };
 
             //Edit 

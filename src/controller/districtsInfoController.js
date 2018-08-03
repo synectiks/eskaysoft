@@ -110,6 +110,17 @@
                 vm.errorMessage = "";
             };
 
+
+            //Confirm 
+            vm.confirm = function () {
+                if (confirm("Do you want to Delete?")) {
+                    vm.delete();
+                } else {
+                    vm.errorMessage = "";
+                }
+            }
+
+            //Save
             vm.save = function () {
                 vm.editScreen = true;
                 var reqobj = {

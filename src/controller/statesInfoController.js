@@ -110,6 +110,17 @@
                 vm.messageContainer = true;
                 vm.errorMessage = "States Information saved.";
             };
+
+
+            //Confirm 
+            vm.confirm = function () {
+                if (confirm("Do you want to Delete?")) {
+                    vm.delete();
+                } else {
+                    vm.errorMessage = "";
+                }
+            }
+
             //Reset
             vm.reset = function () {
                 vm.stateList = {};

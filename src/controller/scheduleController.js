@@ -109,35 +109,7 @@
                 vm.errorMessage = "";
             };
 
-            vm.delete = function () {
-                var reqobj = {
-                    "id": 2
-                };
-                commonLoaderService.load_Data(null, "https://eskaysoft.synectiks.com/api/v1/schedules/" + vm.scheduleList.no, "DELETE", null).then(function (data) {
-                    vm.search();
-                }, function (error) { // jshint ignore:line
-                    console.log("error", error);
-                });
-                vm.selected = false;
-                vm.messageContainer = true;
-                vm.errorMessage = "Schedule saved.";
-            };
-
-            vm.create = function () {
-                var reqobj = {
-                    "scheduleName": vm.scheduleName,
-                    "scheduleIndex": vm.scheduleNo,
-                    "scheduleType": vm.scheduleType
-                };
-                commonLoaderService.load_Data(reqobj, "https://eskaysoft.synectiks.com/api/v1/schedules/", "POST", null).then(function (data) {
-                    vm.reset();
-                }, function (error) { // jshint ignore:line
-                    console.log("error", error);
-                });
-                vm.messageContainer = true;
-                vm.errorMessage = "Schedule saved.";
-            };
-
+            //Save
             vm.save = function () {
                 vm.editScreen = true;
                 var reqobj = {
@@ -152,6 +124,47 @@
                     console.log("error", error);
                 });
 
+                vm.messageContainer = true;
+                vm.errorMessage = "Schedule saved.";
+            };
+
+
+
+            //Confirm 
+            vm.confirm = function () {
+                if (confirm("Do you want to Delete the Schedule?")) {
+                    vm.delete();
+                } else {
+                    vm.errorMessage = "";
+                }
+            }
+
+            //Delete
+            vm.delete = function () {
+                var reqobj = {
+                    "id": 2
+                };
+                commonLoaderService.load_Data(null, "https://eskaysoft.synectiks.com/api/v1/schedules/" + vm.scheduleList.no, "DELETE", null).then(function (data) {
+                    vm.search();
+                }, function (error) { // jshint ignore:line
+                    console.log("error", error);
+                });
+                vm.selected = false;
+                vm.messageContainer = true;
+                vm.errorMessage = "Schedule Deleted.";
+            };
+
+            vm.create = function () {
+                var reqobj = {
+                    "scheduleName": vm.scheduleName,
+                    "scheduleIndex": vm.scheduleNo,
+                    "scheduleType": vm.scheduleType
+                };
+                commonLoaderService.load_Data(reqobj, "https://eskaysoft.synectiks.com/api/v1/schedules/", "POST", null).then(function (data) {
+                    vm.reset();
+                }, function (error) { // jshint ignore:line
+                    console.log("error", error);
+                });
                 vm.messageContainer = true;
                 vm.errorMessage = "Schedule saved.";
             };
