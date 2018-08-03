@@ -189,13 +189,12 @@
 
             $scope.GetValue = function (scheduleType) {
                 var scheduleTypeCode = vm.searchBySchedule.type;
+                vm.searchBySchedulTypeDescr = "";
                 if (vm.searchBySchedule.type.length > 1) {
                     var scheduleTypeDesc = $.grep(vm.scheduleTypes, function (scheduleType) {
                         return scheduleType.code == scheduleTypeCode;
                     })[0].description;
                     vm.searchBySchedulTypeDescr = scheduleTypeDesc;
-                } else {
-                    vm.searchBySchedulTypeDescr = "";
                 }
             };
 
