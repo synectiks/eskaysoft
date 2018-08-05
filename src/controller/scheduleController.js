@@ -187,8 +187,6 @@
 
                     });
 
-                    $('.selectpicker1').show();
-                    console.log("Srinivas");
                 }
             };
 
