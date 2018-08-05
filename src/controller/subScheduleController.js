@@ -20,7 +20,7 @@
 
                         });
                     }
-					
+					vm.search();
                 }, function (error) { // jshint ignore:line
                     console.log("error", error);
                 });
@@ -140,7 +140,7 @@
                     "subScheduleId": vm.subScheduleList.subScheduleId
                 };
                 commonLoaderService.load_Data(reqobj, "https://eskaysoft.synectiks.com/api/v1/subschedules/", "PUT", null).then(function (data) {
-                    vm.search();
+                    vm.getScheduleNameArr();
 
                 }, function (error) { // jshint ignore:line
                     console.log("error", error);
@@ -163,10 +163,8 @@
                 vm.selectedRow = -1;
                 vm.messageContainer = false;
                 vm.editScreen = false;
-				vm.scheduleNameArr = [];
-				vm.getScheduleNameArr();
-		
-				vm.search();
+				vm.getScheduleNameArr();		
+				
             };
             //Delete
             vm.delete = function () {
