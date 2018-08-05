@@ -7,7 +7,7 @@
                 </div>
                 <div class="form-group col-sm-12 mt10">
                     <label class="col-form-label" for="subScheduleName">{{'subscheduleform.label.name' | translate}}:*</label>
-                    <input type="text" class="form-control form-control-lg" name="Name" id="subScheduleName" maxlength="40" ng-model="vm.subScheduleName" required>
+                    <input type="text" class="form-control form-control-lg" name="Name" id="subScheduleName" maxlength="40" ng-model="vm.subScheduleName" ng-readonly="vm.editScreen" required>
                 </div>
 
                 <div class=" form-group col-sm-12">

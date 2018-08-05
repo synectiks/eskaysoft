@@ -9,14 +9,19 @@
         .controller('scheduleController', ['$scope', 'commonLoaderService', function ($scope, commonLoaderService) {
 
             var vm = this; // jshint ignore:line
-            vm.scheduleType = "0";
+            vm.scheduleType = "ASS";
+            vm.disable = true;
             vm.selected = false;
             vm.normalScreen = true;
             vm.messageContainer = false;
             vm.scheduleList = {};
             vm.scheduleIndexArr = [];
             vm.prevScheduleIndex = "";
-          
+            vm.searchSelect = function () {
+                // $('.selectpicker1').selectpicker('refresh');
+                //   $('.selectpicker1').show();
+            };
+
             vm.onSelectRow = function (rowData, rowNum) {
                 if (vm.selected && vm.scheduleList.name == rowData.scheduleName) {
                     vm.selectedName = null;
@@ -61,7 +66,6 @@
             vm.search = function () {
                 vm.normalScreen = true;
                 vm.hiddenColArr = ['id'];
-				vm.data=[];
                 commonLoaderService.load_Data(null, 'https://eskaysoft.synectiks.com/api/v1/schedules/', 'GET', null).then(function (searchContent) {
                     if (searchContent.length > 0) {
                         var jsonKeys = Object.keys(searchContent[0])
@@ -105,7 +109,6 @@
                 vm.normalScreen = false;
                 vm.messageContainer = false;
                 vm.errorMessage = "";
-
             };
 
             //Save
@@ -144,7 +147,7 @@
                     "id": 2
                 };
                 commonLoaderService.load_Data(null, "https://eskaysoft.synectiks.com/api/v1/schedules/" + vm.scheduleList.no, "DELETE", null).then(function (data) {
-                    vm.reset();
+                    vm.search();
                 }, function (error) { // jshint ignore:line
                     console.log("error", error);
                 });
@@ -184,6 +187,7 @@
 
                     });
 
+
                 }
             };
 
@@ -210,6 +214,17 @@
                     vm.searchTextType = "";
                 }
 
+            };
+            vm.autoCapitalize = function (val) {
+                vm.scheduleName = val.toUpperCase();
+            };
+
+            vm.selectChange = function () {
+                if (vm.scheduleType == "0") {
+                    vm.disable = true;
+                } else {
+                    vm.disable = false;
+                }
             };
 
             vm.getDropDownValues();

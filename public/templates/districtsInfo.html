@@ -7,7 +7,7 @@
                 </div>
                 <div class="form-group">
                     <label class="col-form-label" for="DistrictsName">{{'districtsform.label.dist.name' | translate}}:*</label>
-                    <input type="text" class="form-control form-control-lg" name="DistrictsName" id="districtName" ng-model="vm.districtName" maxlength="20" required>
+                    <input type="text" class="form-control form-control-lg" name="DistrictsName" id="districtName" ng-model="vm.districtName" maxlength="20" ng-readonly="vm.editScreen" required>
                 </div>
                 <div class="form-group">
                     <label class="col-form-label" for="StatName">{{'districtsform.label.state.name' | translate}}:</label>

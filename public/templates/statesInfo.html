@@ -7,7 +7,7 @@
                 </div>
                 <div class="form-group">
                     <label class="col-form-label" for="stateName">{{'stateinformation.label.name' | translate}}:*</label>
-                    <input type="text" class="form-control form-control-lg" name="stateName" id="stateName" maxlength="40" ng-model="vm.stateName" required>
+                    <input type="text" class="form-control form-control-lg" name="stateName" id="stateName" maxlength="40" ng-model="vm.stateName" ng-readonly="vm.editScreen" required>
                 </div>
                 <div class="form-group">
                     <label class="col-form-label" for="code">{{'stateinformation.label.code' | translate}}:*</label>
