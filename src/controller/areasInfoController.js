@@ -21,8 +21,9 @@
                             vm.businessExecutiveArr.push(executiveObj);
 
                         });
-                        vm.search();
+                        
                     }
+					vm.search();
                 }, function (error) { // jshint ignore:line
                     console.log("error", error);
                 });
@@ -31,7 +32,6 @@
 
             //Select
             vm.onSelectRow = function (rowData, rowNum) {
-                console.log(rowData);
                 if (vm.selected && vm.areaInfoList.name == rowData.areaName) {
                     vm.selectedName = null;
                     vm.selected = false;
@@ -58,9 +58,9 @@
 
                 vm.hiddenColArr = ['executiveId', 'areaId'];
                 commonLoaderService.load_Data(null, 'https://eskaysoft.synectiks.com/api/v1/area/', 'GET', null).then(function (searchContent) {
+					vm.areInfoDataArr = [];
                     if (searchContent.length > 0) {
                         vm.noOfViewColumns = 2;
-                        vm.areInfoDataArr = [];
                         angular.forEach(searchContent, function (item) {
                             var tempAreaInfoData = {};
                             tempAreaInfoData.areaId = item.areaId;

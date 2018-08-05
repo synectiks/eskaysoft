@@ -15,7 +15,7 @@
                 </div>
                 <div class="form-group">
                     <label class="col-form-label" for="ScheduleType ">{{'scheduleform.label.type' | translate}}:</label>
-                    <select ng-model="vm.scheduleType" ng-click="vm.searchSelect()" class="selectpicker1 form-control form-control-lg form-control form-control-lg" id="ScheduleType" data-live-search="true">
+                    <select ng-model="vm.scheduleType" class="selectpicker1 form-control form-control-lg form-control form-control-lg" id="ScheduleType" data-live-search="true">
 						<option value="0" required>Select</option>
 						<option ng-repeat="scheduleType in vm.scheduleTypes" value="{{scheduleType.code}}"
 								 data-content="{{scheduleType.description}}">{{scheduleType.description}}
