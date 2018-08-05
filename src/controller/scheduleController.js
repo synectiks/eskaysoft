@@ -17,7 +17,8 @@
             vm.scheduleIndexArr = [];
             vm.prevScheduleIndex = "";
             vm.searchSelect = function () {
-                //  $('.selectpicker1').selectpicker('refresh');
+                // $('.selectpicker1').selectpicker('refresh');
+                //   $('.selectpicker1').show();
             };
 
             vm.onSelectRow = function (rowData, rowNum) {
@@ -107,6 +108,7 @@
                 vm.normalScreen = false;
                 vm.messageContainer = false;
                 vm.errorMessage = "";
+
             };
 
             //Save
@@ -182,7 +184,11 @@
                             vm.messageContainer = true;
                             vm.errorMessage = "Duplicates in Schedule Index are not allowed ";
                         }
+
                     });
+
+                    $('.selectpicker1').show();
+                    console.log("Srinivas");
                 }
             };
 
@@ -200,19 +206,19 @@
                 vm.search();
             };
 
-            $scope.GetValue = function (scheduleType) {
-                var scheduleTypeCode = vm.searchBySchedule.type;
-                vm.searchBySchedulTypeDescr = "";
-                if (vm.searchBySchedule.type.length > 1) {
-                    var scheduleTypeDesc = $.grep(vm.scheduleTypes, function (scheduleType) {
-                        return scheduleType.code == scheduleTypeCode;
-                    })[0].description;
-                    vm.searchBySchedulTypeDescr = scheduleTypeDesc;
+            $scope.GetValue = function () {
+                if (vm.searchBySchedule == "scheduleType") {
+                    vm.searchTextType = vm.searchText;
+                    vm.searchTextName = "";
+                } else {
+                    vm.searchTextName = vm.searchText;
+                    vm.searchTextType = "";
                 }
+
             };
 
             vm.getDropDownValues();
             vm.search();
-    }]);
+                    }]);
 
 })();
