@@ -198,7 +198,7 @@
             };
 
             vm.getScheduleNameArr();
-			vm.search();
+			
 
 
      }]);

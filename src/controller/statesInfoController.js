@@ -11,7 +11,6 @@
             vm.messageContainer = false;
             vm.stateList = {};
 
-            //Select
             vm.onSelectRow = function (rowData, rowNum) {
                 if (vm.selected && vm.stateList.name == rowData.stateName) {
                     vm.selectedName = null;
@@ -22,6 +21,7 @@
                     vm.stateCode = "";
                     vm.stateZone = "0";
                     vm.stateId = "";
+					vm.editScreen=false;
 
                 } else {
                     vm.selected = true;
@@ -37,18 +37,20 @@
 
             //Get Dropdown Content
             vm.getDropDownValues = function () {
+				vm.stateZones=[];
                 commonLoaderService.load_Data(null, 'messages/stateInfoMockData.json', 'GET', null).then(function (dropDownContent) {
                     vm.stateZones = dropDownContent[0].stateZones;
-
+					vm.search();
                 }, function (error) { // jshint ignore:line
                     console.log("error", error);
+					vm.search();
                 });
             };
 
             //Search
             vm.search = function () {
                 vm.normalScreen = true;
-
+				vm.data=[];
                 vm.hiddenColArr = ['id'];
                 commonLoaderService.load_Data(null, 'https://eskaysoft.synectiks.com/api/v1/states/', 'GET', null).then(function (searchContent) {
 
@@ -86,7 +88,7 @@
                     "zone": vm.stateZone
                 };
                 commonLoaderService.load_Data(reqobj, "https://eskaysoft.synectiks.com/api/v1/states/", "POST", null).then(function (data) {
-                    vm.reset();
+					vm.reset();
                 }, function (error) { // jshint ignore:line
                     console.log("error", error);
                 });
@@ -111,7 +113,6 @@
                 vm.errorMessage = "States Information saved.";
             };
 
-
             //Confirm 
             vm.confirm = function () {
                 if (confirm("Do you want to Delete?")) {
@@ -123,17 +124,17 @@
 
             //Reset
             vm.reset = function () {
+				vm.stateZones=[];
                 vm.stateList = {};
                 vm.stateName = "";
                 vm.stateCode = "";
-                vm.stateZone = "";
-
+                vm.stateZone = "0";
                 vm.selected = false;
                 vm.selectedName = "";
                 vm.selectedRow = -1;
                 vm.messageContainer = false;
                 vm.editScreen = false;
-                vm.search();
+                vm.getDropDownValues();
             };
 
             //Delete
@@ -143,7 +144,7 @@
                     "id": 2
                 };
                 commonLoaderService.load_Data(null, "https://eskaysoft.synectiks.com/api/v1/states/" + vm.stateList.id, "DELETE", null).then(function (data) {
-                    vm.search();
+                    vm.reset();
                 }, function (error) { // jshint ignore:line
                     console.log("error", error);
                 });
@@ -175,6 +176,7 @@
                 vm.errorMessage = "";
             };
             vm.getDropDownValues();
-            vm.search();
+			vm.search();
+            
     }]);
 })();
