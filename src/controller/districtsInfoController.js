@@ -168,6 +168,10 @@
 
             vm.getStates();
 
+            vm.autoCapitalize = function (val) {
+                vm.districtName = val.toUpperCase();
+            };
+
 
 
 

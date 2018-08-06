@@ -7,12 +7,12 @@
                 </div>
                 <div class="form-group col-sm-12 mt10">
                     <label class="col-form-label" for="subScheduleName">{{'subscheduleform.label.name' | translate}}:*</label>
-                    <input type="text" class="form-control form-control-lg" name="Name" id="subScheduleName" maxlength="40" ng-model="vm.subScheduleName" ng-readonly="vm.editScreen" required>
+                    <input type="text" class="form-control form-control-lg" name="Name" id="subScheduleName" maxlength="40" ng-model="vm.subScheduleName" ng-readonly="vm.editScreen" ng-change="vm.autoCapitalize(vm.subScheduleName)" uppercase required>
                 </div>
 
                 <div class=" form-group col-sm-12">
                     <label class="col-form-label " for="scheduleName ">{{'subscheduleform.label.scheduleName' | translate}}:*</label>
-                    <select ng-model="vm.scheduleNameValue" class="selectpicker1 form-control form-control-lg form-control form-control-lg" id="scheduleNameValue" data-live-search="true">
+                    <select ng-model="vm.scheduleNameValue" ng-change="vm.selectChange()" class="selectpicker1 form-control form-control-lg form-control form-control-lg" id="scheduleNameValue" data-live-search="true">
 						<option value="0" required>Select</option>
 						<option ng-repeat="scheduleNameObj in vm.scheduleNameArr" value="{{scheduleNameObj.scheduleId}}"
 								 data-content="{{scheduleNameObj.scheduleName}}">{{scheduleNameObj.scheduleName}}
@@ -25,7 +25,7 @@
 
                 </div>
                 <div class="form-group  col-sm-12">
-                    <button type="submit" class="btn btn-primary mb5" ng-click="vm.reset()">{{'button.reset' | translate}}</button>
+                    <button type="button" class="btn btn-primary mb5" ng-click="vm.reset()">{{'button.reset' | translate}}</button>
                     <button ng-if="!vm.editScreen" type="submit" class="btn btn-primary  mb5" ng-click="vm.create()" ng-disabled="(form.$invalid || vm.hasDuplicateScheIndex)">{{'button.save' | translate}}
                     </button>
                     <button ng-if="vm.editScreen" type="submit" class="btn btn-primary mb5" ng-click="vm.save()" ng-disabled="(form.$invalid || vm.hasDuplicateScheIndex)">{{'button.save' | translate}}</button>

@@ -7,10 +7,10 @@
                 </div>
                 <div class="form-group">
                     <label class="col-form-label" for="companyGroup">{{'companygroupform.label.companyGroup ' | translate}}:*</label>
-                    <input type="text" class="form-control form-control-lg" name="companyGroup" id="companyGroup" ng-model="vm.companyGrp" required>
+                    <input type="text" class="form-control form-control-lg" name="companyGroup" id="companyGroup" ng-model="vm.companyGrp" ng-change="vm.autoCapitalize(vm.companyGrp)" uppercase required>
                 </div>
                 <div class="form-group">
-                    <button type="submit" class="btn btn-primary mb5" ng-click="vm.reset()" ng-disabled="form.$invalid">{{'button.reset' | translate}}</button>
+                    <button type="button" class="btn btn-primary mb5" ng-click="vm.reset()" ng-disabled="form.$invalid">{{'button.reset' | translate}}</button>
                     <button type="submit" class="btn btn-primary  mb10" ng-click="vm.create()" ng-disabled="form.$invalid">{{'button.save' | translate}}
                     </button>
                 </div>
@@ -31,7 +31,7 @@
             <common-grid-component filter-options="vm.searchByCompanyGrp" grid-data="vm.data" grid-call-back="vm.onSelectRow(value, index)" row-number="vm.selectedRow" hidden-column-keys="vm.hiddenColArr" no-of-view-columns="vm.noOfViewColumns"></common-grid-component>
 
             <div class="btn-align p0" ng-if="vm.selected">
-               <!--<button type="submit" class="btn btn-primary searchEdit btn-position" ng-click="vm.edit()">{{'button.edit' | translate}}</button>-->
+                <!--<button type="submit" class="btn btn-primary searchEdit btn-position" ng-click="vm.edit()">{{'button.edit' | translate}}</button>-->
                 <button type="submit" class="btn btn-primary btn-position" ng-click="vm.confirm()">{{'button.delete' | translate}}</button>
             </div>
         </div>

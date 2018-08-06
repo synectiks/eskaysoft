@@ -136,5 +136,10 @@
             };
             vm.search();
 
+            vm.autoCapitalize = function (val) {
+                vm.manufacName = val.toUpperCase();
+            };
+
+
     }]);
 })();

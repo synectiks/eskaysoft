@@ -21,9 +21,9 @@
                             vm.businessExecutiveArr.push(executiveObj);
 
                         });
-                        
+
                     }
-					vm.search();
+                    vm.search();
                 }, function (error) { // jshint ignore:line
                     console.log("error", error);
                 });
@@ -58,7 +58,7 @@
 
                 vm.hiddenColArr = ['executiveId', 'areaId'];
                 commonLoaderService.load_Data(null, 'https://eskaysoft.synectiks.com/api/v1/area/', 'GET', null).then(function (searchContent) {
-					vm.areInfoDataArr = [];
+                    vm.areInfoDataArr = [];
                     if (searchContent.length > 0) {
                         vm.noOfViewColumns = 2;
                         angular.forEach(searchContent, function (item) {
@@ -170,6 +170,14 @@
                 vm.messageContainer = false;
                 vm.errorMessage = "";
             };
+
+
+
+            vm.autoCapitalize = function (val) {
+                vm.areaName = val.toUpperCase();
+            };
+
+
             vm.getScheduleNameArr();
 	}])
 

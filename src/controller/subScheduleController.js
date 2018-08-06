@@ -3,13 +3,14 @@
     angular.module('com.synectiks.eskaySoft')
         .controller('subScheduleController', ['$scope', 'commonLoaderService', function ($scope, commonLoaderService) {
             var vm = this; // jshint ignore:line
-            
+
             vm.subScheduleIndexArr = [];
             vm.scheduleNameValue = "0";
             vm.prevSubScheduleIndex = "";
+            vm.disable = true;
 
             vm.getScheduleNameArr = function () {
-				vm.scheduleNameArr = [];
+                vm.scheduleNameArr = [];
                 commonLoaderService.load_Data(null, 'https://eskaysoft.synectiks.com/api/v1/schedules/', 'GET', null).then(function (scheduleData) {
                     if (scheduleData.length > 0) {
                         angular.forEach(scheduleData, function (item) {
@@ -20,7 +21,7 @@
 
                         });
                     }
-					vm.search();
+                    vm.search();
                 }, function (error) { // jshint ignore:line
                     console.log("error", error);
                 });
@@ -29,10 +30,10 @@
             vm.search = function () {
                 vm.normalScreen = true;
                 vm.hiddenColArr = ['subScheduleId', 'scheduleId'];
-				vm.subScheduleDataArr = [];
+                vm.subScheduleDataArr = [];
                 commonLoaderService.load_Data(null, 'https://eskaysoft.synectiks.com/api/v1/subschedules/', 'GET', null).then(function (searchContent) {
                     if (searchContent.length > 0) {
-                        
+
                         angular.forEach(searchContent, function (item) {
                             var tempSubScheduleData = {};
                             tempSubScheduleData.subScheduleId = item.subScheduleId;
@@ -68,12 +69,12 @@
                     "scheduleId": vm.scheduleNameValue
                 };
                 commonLoaderService.load_Data(reqobj, "https://eskaysoft.synectiks.com/api/v1/subschedules/", "POST", null).then(function (data) {
-                     vm.reset();
+                    vm.reset();
 
                 }, function (error) { // jshint ignore:line
                     console.log("error", error);
                 });
-               
+
                 vm.messageContainer = true;
                 vm.errorMessage = "Schedule saved.";
             };
@@ -145,9 +146,9 @@
                 }, function (error) { // jshint ignore:line
                     console.log("error", error);
                 });
-               
+
                 vm.messageContainer = true;
-                vm.errorMessage = "Schedule saved.";
+                vm.errorMessage = "Sub Schedule saved.";
             };
 
 
@@ -163,14 +164,14 @@
                 vm.selectedRow = -1;
                 vm.messageContainer = false;
                 vm.editScreen = false;
-				vm.getScheduleNameArr();		
-				
+                vm.getScheduleNameArr();
+
             };
             //Delete
             vm.delete = function () {
 
                 commonLoaderService.load_Data(null, "https://eskaysoft.synectiks.com/api/v1/subschedules/" + vm.subScheduleList.subScheduleId, "DELETE", null).then(function (data) {
-					
+
                     vm.reset();
 
                 }, function (error) { // jshint ignore:line
@@ -197,8 +198,21 @@
                 }
             };
 
+
+
+            vm.autoCapitalize = function (val) {
+                vm.subScheduleName = val.toUpperCase();
+            };
+
+            vm.selectChange = function () {
+                if (vm.scheduleNameValue == "0") {
+                    vm.disable = true;
+                } else {
+                    vm.disable = false;
+                }
+            };
+
             vm.getScheduleNameArr();
-			
 
 
      }]);

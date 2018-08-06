@@ -7,7 +7,7 @@
                 </div>
                 <div class="form-group">
                     <label class="col-form-label" for="stateName">{{'stateinformation.label.name' | translate}}:*</label>
-                    <input type="text" class="form-control form-control-lg" name="stateName" id="stateName" maxlength="40" ng-model="vm.stateName" ng-readonly="vm.editScreen" required>
+                    <input type="text" class="form-control form-control-lg" name="stateName" id="stateName" maxlength="40" ng-model="vm.stateName" ng-readonly="vm.editScreen" ng-change="vm.autoCapitalize(vm.stateName)" uppercase required>
                 </div>
                 <div class="form-group">
                     <label class="col-form-label" for="code">{{'stateinformation.label.code' | translate}}:*</label>
@@ -15,7 +15,7 @@
                 </div>
                 <div class="form-group">
                     <label class="col-form-label" for="Zone">{{'stateinformation.label.zone' | translate}}:</label>
-                    <select class="form-control form-control-lg" id="Zone" ng-model="vm.stateZone">
+                    <select class="form-control form-control-lg" id="Zone" ng-model="vm.stateZone" ng-change="vm.selectChange()">
                          
                         <option value="0">Select</option>
 						<option ng-repeat="stateZone in vm.stateZones" value="{{stateZone.code}}"
@@ -28,7 +28,7 @@
                     </select>
                 </div>
                 <div class="form-group">
-                    <button type="submit" class="btn btn-primary mb5" ng-click="vm.reset()">{{'button.reset' | translate}}</button>
+                    <button type="button" class="btn btn-primary mb5" ng-click="vm.reset()">{{'button.reset' | translate}}</button>
                     <button ng-if="!vm.editScreen" type="submit" class="btn btn-primary  mb5" ng-click="vm.create()" ng-disabled="form.$invalid">{{'button.save' | translate}}
                     </button>
                     <button ng-if="vm.editScreen" type="submit" class="btn btn-primary  mb5" ng-click="vm.save()" ng-disabled="form.$invalid">{{'button.save' | translate}}</button>

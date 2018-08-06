@@ -142,6 +142,10 @@
             };
 
             vm.search();
+
+            vm.autoCapitalize = function (val) {
+                vm.bankName = val.toUpperCase();
+            };
     }]);
 
 })();

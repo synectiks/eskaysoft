@@ -137,6 +137,10 @@
             };
             vm.search();
 
+            vm.autoCapitalize = function (val) {
+                vm.companyGrp = val.toUpperCase();
+            };
+
 
     }]);
 })();

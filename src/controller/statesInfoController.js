@@ -5,6 +5,7 @@
         .controller('statesInfoController', ['$scope', 'commonLoaderService', function ($scope, commonLoaderService) {
             var vm = this; // jshint ignore:line
 
+            vm.disable = true;
             vm.stateZone = "0";
             vm.selected = false;
             vm.normalScreen = true;
@@ -21,7 +22,7 @@
                     vm.stateCode = "";
                     vm.stateZone = "0";
                     vm.stateId = "";
-					vm.editScreen=false;
+                    vm.editScreen = false;
 
                 } else {
                     vm.selected = true;
@@ -37,20 +38,20 @@
 
             //Get Dropdown Content
             vm.getDropDownValues = function () {
-				vm.stateZones=[];
+                vm.stateZones = [];
                 commonLoaderService.load_Data(null, 'messages/stateInfoMockData.json', 'GET', null).then(function (dropDownContent) {
                     vm.stateZones = dropDownContent[0].stateZones;
-					vm.search();
+                    vm.search();
                 }, function (error) { // jshint ignore:line
                     console.log("error", error);
-					vm.search();
+                    vm.search();
                 });
             };
 
             //Search
             vm.search = function () {
                 vm.normalScreen = true;
-				vm.data=[];
+                vm.data = [];
                 vm.hiddenColArr = ['id'];
                 commonLoaderService.load_Data(null, 'https://eskaysoft.synectiks.com/api/v1/states/', 'GET', null).then(function (searchContent) {
 
@@ -88,7 +89,7 @@
                     "zone": vm.stateZone
                 };
                 commonLoaderService.load_Data(reqobj, "https://eskaysoft.synectiks.com/api/v1/states/", "POST", null).then(function (data) {
-					vm.reset();
+                    vm.reset();
                 }, function (error) { // jshint ignore:line
                     console.log("error", error);
                 });
@@ -124,7 +125,7 @@
 
             //Reset
             vm.reset = function () {
-				vm.stateZones=[];
+                vm.stateZones = [];
                 vm.stateList = {};
                 vm.stateName = "";
                 vm.stateCode = "";
@@ -176,7 +177,19 @@
                 vm.errorMessage = "";
             };
             vm.getDropDownValues();
-			vm.search();
-            
+            vm.search();
+
+            vm.autoCapitalize = function (val) {
+                vm.stateName = val.toUpperCase();
+            };
+
+            vm.selectChange = function () {
+                if (vm.stateZone == "0") {
+                    vm.disable = true;
+                } else {
+                    vm.disable = false;
+                }
+            };
+
     }]);
 })();

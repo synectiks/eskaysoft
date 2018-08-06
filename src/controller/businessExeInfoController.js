@@ -155,5 +155,10 @@
                 vm.errorMessage = "";
             };
             vm.search();
+
+
+            vm.autoCapitalize = function (val) {
+                vm.busExeName = val.toUpperCase();
+            };
                     }]);
 })();

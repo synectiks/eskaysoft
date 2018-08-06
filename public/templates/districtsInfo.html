@@ -7,7 +7,7 @@
                 </div>
                 <div class="form-group">
                     <label class="col-form-label" for="DistrictsName">{{'districtsform.label.dist.name' | translate}}:*</label>
-                    <input type="text" class="form-control form-control-lg" name="DistrictsName" id="districtName" ng-model="vm.districtName" maxlength="20" ng-readonly="vm.editScreen" required>
+                    <input type="text" class="form-control form-control-lg" name="DistrictsName" id="districtName" ng-model="vm.districtName" maxlength="20" ng-readonly="vm.editScreen" ng-change="vm.autoCapitalize(vm.districtName)" uppercase required>
                 </div>
                 <div class="form-group">
                     <label class="col-form-label" for="StatName">{{'districtsform.label.state.name' | translate}}:</label>
@@ -18,7 +18,7 @@
                     </select>
                 </div>
                 <div class="form-group">
-                    <button type="submit" class="btn btn-primary mb5" ng-click="vm.reset()">{{'button.reset' | translate}}</button>
+                    <button type="button" class="btn btn-primary mb5" ng-click="vm.reset()">{{'button.reset' | translate}}</button>
                     <button ng-if="!vm.editScreen" type="submit" class="btn btn-primary  mb5" ng-click="vm.create()" ng-disabled="form.$invalid">{{'button.save' | translate}}
                 </button>
                     <button ng-if="vm.editScreen" type="submit" class="btn btn-primary  mb5" ng-click="vm.save()" ng-disabled="form.$invalid">{{'button.save' | translate}}</button>

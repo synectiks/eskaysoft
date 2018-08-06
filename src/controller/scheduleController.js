@@ -51,7 +51,7 @@
             };
 
             vm.retrieveAllScheduleIndexs = function () {
-				vm.scheduleIndexList =[];
+                vm.scheduleIndexList = [];
                 commonLoaderService.load_Data(null, 'https://eskaysoft.synectiks.com/api/v1/schedulesIndexs', 'GET', null).then(function (searchContent) {
                     vm.scheduleIndexList = searchContent;
 
@@ -63,7 +63,7 @@
             vm.search = function () {
                 vm.normalScreen = true;
                 vm.hiddenColArr = ['id'];
-				vm.data=[];
+                vm.data = [];
                 commonLoaderService.load_Data(null, 'https://eskaysoft.synectiks.com/api/v1/schedules/', 'GET', null).then(function (searchContent) {
                     if (searchContent.length > 0) {
                         var jsonKeys = Object.keys(searchContent[0])
@@ -156,7 +156,7 @@
 
             vm.create = function () {
                 var reqobj = {
-                    "scheduleName": vm.scheduleName,
+                    "scheduleName ": vm.scheduleName,
                     "scheduleIndex": vm.scheduleNo,
                     "scheduleType": vm.scheduleType
                 };
