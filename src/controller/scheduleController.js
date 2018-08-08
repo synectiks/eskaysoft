@@ -156,7 +156,7 @@
 
             vm.create = function () {
                 var reqobj = {
-                    "scheduleName ": vm.scheduleName,
+                    "scheduleName": vm.scheduleName,
                     "scheduleIndex": vm.scheduleNo,
                     "scheduleType": vm.scheduleType
                 };
