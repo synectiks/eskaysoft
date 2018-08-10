@@ -38,29 +38,17 @@
                 }
                 $('th').css('width', 100 / vm.noOfViewColumns + '%');
                 $('td').css('width', 100 / vm.noOfViewColumns + '%');
-
-                /*if ($("th:first-child").width() > $("td:first-child").width()) {
-                    $('thead').css('overflow-y', 'scroll');
-
-                    if (screen.width > 1366) {
-                        $('th').css('margin-right', '-1px');
-                    }
-                } else {
-                    $('thead').css('overflow-y', 'hidden');
-                    $('th').css('margin-right', '-0px');
-                }*/
-
             };
 
-            $scope.sort = {
-                /* column: 'Name',*/
+            vm.sort = {
+                /*column: "scheduleName",*/
                 descending: false
             };
-            $scope.selectedCls = function (column) {
-                return column == $scope.sort.column && 'sort-' + $scope.sort.descending;
+            vm.selectedCls = function (column) {
+                return column == vm.sort.column && 'sort-' + vm.sort.descending;
             };
-            $scope.changeSorting = function (column) {
-                var sort = $scope.sort;
+            vm.changeSorting = function (column) {
+                var sort = vm.sort;
                 if (sort.column == column) {
                     sort.descending = !sort.descending;
                 } else {
@@ -69,6 +57,5 @@
                 }
             };
 
-
-            }]);
+                    }]);
 })();

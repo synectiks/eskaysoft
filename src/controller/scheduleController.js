@@ -7,10 +7,8 @@
 
     angular.module('com.synectiks.eskaySoft')
         .controller('scheduleController', ['$scope', 'commonLoaderService', function ($scope, commonLoaderService) {
-
             var vm = this; // jshint ignore:line
             vm.scheduleType = "ASS";
-            //vm.disable = true;
             vm.selected = false;
             vm.normalScreen = true;
             vm.messageContainer = false;
@@ -214,14 +212,6 @@
             vm.autoCapitalize = function (val) {
                 vm.scheduleName = val.toUpperCase();
             };
-
-            /*  vm.selectChange = function () {
-      if (vm.scheduleType == "0") {
-          vm.disable = true;
-      } else {
-          vm.disable = false;
-      }
-  };*/
 
             vm.getDropDownValues();
             vm.search();
