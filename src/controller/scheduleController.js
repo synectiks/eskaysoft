@@ -10,7 +10,7 @@
 
             var vm = this; // jshint ignore:line
             vm.scheduleType = "ASS";
-            vm.disable = true;
+            //vm.disable = true;
             vm.selected = false;
             vm.normalScreen = true;
             vm.messageContainer = false;
@@ -145,13 +145,14 @@
                     "id": 2
                 };
                 commonLoaderService.load_Data(null, "https://eskaysoft.synectiks.com/api/v1/schedules/" + vm.scheduleList.no, "DELETE", null).then(function (data) {
-                    vm.search();
+                    vm.reset();
                 }, function (error) { // jshint ignore:line
                     console.log("error", error);
                 });
                 vm.selected = false;
                 vm.messageContainer = true;
                 vm.errorMessage = "Schedule Deleted.";
+
             };
 
             vm.create = function () {
@@ -214,13 +215,13 @@
                 vm.scheduleName = val.toUpperCase();
             };
 
-            vm.selectChange = function () {
-                if (vm.scheduleType == "0") {
-                    vm.disable = true;
-                } else {
-                    vm.disable = false;
-                }
-            };
+            /*  vm.selectChange = function () {
+      if (vm.scheduleType == "0") {
+          vm.disable = true;
+      } else {
+          vm.disable = false;
+      }
+  };*/
 
             vm.getDropDownValues();
             vm.search();
