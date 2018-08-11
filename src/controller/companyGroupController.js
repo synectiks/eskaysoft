@@ -36,7 +36,7 @@
 vm.data=[];
                 vm.hiddenColArr = ['id'];
                 commonLoaderService.load_Data(null, 'https://eskaysoft.synectiks.com/api/v1/companygroup/', 'GET', null).then(function (searchContent) {
-                    console.log(searchContent);
+
                     if (searchContent.length > 0) {
                         var jsonKeys = Object.keys(searchContent[0])
                         vm.noOfViewColumns = jsonKeys.length - vm.hiddenColArr.length;

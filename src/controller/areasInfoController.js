@@ -68,8 +68,8 @@
                             tempAreaInfoData.areaId = item.areaId;
                             tempAreaInfoData.areaName = item.areaName;
                             angular.forEach(vm.businessExecutiveArr, function (executiveObj) {
-                                if (angular.equals(item.businessexecutiveId, executiveObj.executiveId)) {
-                                    tempAreaInfoData.executiveId = item.businessexecutiveId;
+                                if (angular.equals(item.businessExecutiveId, executiveObj.executiveId)) {
+                                    tempAreaInfoData.executiveId = item.businessExecutiveId;
                                     tempAreaInfoData.executiveName = executiveObj.executiveName;
                                 }
                             });
@@ -92,7 +92,7 @@
             vm.create = function () {
                 var reqobj = {
                     "areaName": vm.areaName,
-                    "businessexecutiveId": vm.businessExecutive
+                    "businessExecutiveId": vm.businessExecutive
                 };
                 commonLoaderService.load_Data(reqobj, "https://eskaysoft.synectiks.com/api/v1/area/", "POST", null).then(function (data) {
                     vm.reset();
@@ -119,7 +119,7 @@
                 vm.editScreen = true;
                 var reqobj = {
                     "areaName": vm.areaName,
-                    "businessexecutiveId": vm.businessExecutive,
+                    "businessExecutiveId": vm.businessExecutive,
                     "areaId": vm.areaId
                 };
                 commonLoaderService.load_Data(reqobj, "https://eskaysoft.synectiks.com/api/v1/area/", "PUT", null).then(function (data) {
@@ -127,7 +127,7 @@
                 }, function (error) { // jshint ignore:line
                     console.log("error", error);
                 });
-                vm.reset();
+               
                 vm.messageContainer = true;
                 vm.errorMessage = "Area Information saved.";
             };
