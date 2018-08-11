@@ -39,7 +39,7 @@
             vm.search = function () {
                 // vm.editScreen = false;
                 vm.normalScreen = true;
-
+vm.data=[];
                 vm.hiddenColArr = ['id'];
                 commonLoaderService.load_Data(null, 'https://eskaysoft.synectiks.com/api/v1/businessexecutive/', 'GET', null).then(function (searchContent) {
 

@@ -8,7 +8,8 @@
             vm.scheduleNameValue = "0";
             vm.prevSubScheduleIndex = "";
             vm.disable = true;
-
+			vm.selectedScheduleName = "Select";
+			
             vm.getScheduleNameArr = function () {
                 vm.scheduleNameArr = [];
                 commonLoaderService.load_Data(null, 'https://eskaysoft.synectiks.com/api/v1/schedules/', 'GET', null).then(function (scheduleData) {
@@ -18,6 +19,7 @@
                             scheduleObj.scheduleId = item.id;
                             scheduleObj.scheduleName = item.scheduleName;
                             vm.scheduleNameArr.push(scheduleObj);
+							vm.scheduleNameValue=vm.selectedScheduleName;
 
                         });
                     }
@@ -142,6 +144,7 @@
                 };
                 commonLoaderService.load_Data(reqobj, "https://eskaysoft.synectiks.com/api/v1/subschedules/", "PUT", null).then(function (data) {
                     vm.getScheduleNameArr();
+					vm.selectedScheduleName= data.scheduleId;
 
                 }, function (error) { // jshint ignore:line
                     console.log("error", error);
@@ -170,7 +173,7 @@
             //Delete
             vm.delete = function () {
 
-                commonLoaderService.load_Data(null, "https://eskaysoft.synectiks.com/api/v1/subschedules/" + vm.subScheduleList.subScheduleId, "DELETE", null).then(function (data) {
+                commonLoaderService.load_Data(null, "https://eskaysoft.synectiks.com/api/v1/subschedules/" + vm.subScheduleList.subScheduleId, "DELETE", null).then(function () {
 
                     vm.reset();
 

@@ -34,7 +34,7 @@
             vm.search = function () {
                 // vm.editScreen = false;
                 vm.normalScreen = true;
-
+vm.data=[];
                 vm.hiddenColArr = ['id'];
                 commonLoaderService.load_Data(null, 'https://eskaysoft.synectiks.com/api/v1/manfacturer/', 'GET', null).then(function (searchContent) {
                     console.log(searchContent);
@@ -116,7 +116,7 @@
                     "id": 2
                 };
                 commonLoaderService.load_Data(null, "https://eskaysoft.synectiks.com/api/v1/manfacturer/" + vm.manufacInfoList.id, "DELETE", null).then(function (data) {
-                    vm.search();
+                    vm.reset();
                 }, function (error) { // jshint ignore:line
                     console.log("error", error);
                 });

@@ -8,7 +8,7 @@
     angular.module('com.synectiks.eskaySoft')
         .controller('scheduleController', ['$scope', 'commonLoaderService', function ($scope, commonLoaderService) {
             var vm = this; // jshint ignore:line
-            vm.scheduleType = "ASS";
+            vm.selectedScheduleType = "Select";
             vm.selected = false;
             vm.normalScreen = true;
             vm.messageContainer = false;
@@ -24,7 +24,7 @@
                     vm.scheduleList = {};
                     vm.scheduleName = "";
                     vm.scheduleNo = "";
-                    vm.scheduleType = "0";
+                    vm.scheduleType = "Select";
                     vm.scheduleId = "";
 
                 } else {
@@ -40,9 +40,11 @@
             };
 
             vm.getDropDownValues = function () {
+				 vm.scheduleTypes=[];
                 commonLoaderService.load_Data(null, 'messages/scheduleMockData.json', 'GET', null).then(function (dropDownContent) {
                     vm.scheduleTypes = dropDownContent[0].scheduleTypes;
-
+					vm.scheduleType = vm.selectedScheduleType;
+					
                 }, function (error) { // jshint ignore:line
                     console.log("error", error);
                 });
@@ -117,7 +119,10 @@
                     "id": vm.scheduleList.no
                 };
                 commonLoaderService.load_Data(reqobj, "https://eskaysoft.synectiks.com/api/v1/schedules/", "PUT", null).then(function (data) {
+					vm.getDropDownValues();
                     vm.search();
+					vm.selectedScheduleType= data.scheduleType;
+					
                 }, function (error) { // jshint ignore:line
                     console.log("error", error);
                 });
@@ -191,7 +196,7 @@
                 vm.scheduleId = "";
                 vm.selected = false;
                 vm.scheduleNo = "";
-                vm.scheduleType = "0";
+                vm.scheduleType = "Select";
                 vm.selectedName = "";
                 vm.selectedRow = -1;
                 vm.messageContainer = false;

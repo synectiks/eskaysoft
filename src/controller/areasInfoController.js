@@ -8,10 +8,11 @@
             vm.normalScreen = true;
             vm.messageContainer = false;
             vm.areaInfoList = {};
-            vm.businessExecutiveArr = [];
+            
             vm.businessExecutive = "0";
 
             vm.getScheduleNameArr = function () {
+				vm.businessExecutiveArr = [];
                 commonLoaderService.load_Data(null, 'https://eskaysoft.synectiks.com/api/v1/businessexecutive/', 'GET', null).then(function (executiveData) {
                     if (executiveData.length > 0) {
                         angular.forEach(executiveData, function (item) {
@@ -57,8 +58,9 @@
                 vm.normalScreen = true;
 
                 vm.hiddenColArr = ['executiveId', 'areaId'];
+				vm.areInfoDataArr = [];
                 commonLoaderService.load_Data(null, 'https://eskaysoft.synectiks.com/api/v1/area/', 'GET', null).then(function (searchContent) {
-                    vm.areInfoDataArr = [];
+                    
                     if (searchContent.length > 0) {
                         vm.noOfViewColumns = 2;
                         angular.forEach(searchContent, function (item) {

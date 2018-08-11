@@ -6,10 +6,12 @@
             var vm = this; // jshint ignore:line
 
             vm.stateName = "0";
-            vm.statesDataArr = [];
+           
 
             vm.getStates = function () {
+				 vm.statesDataArr = [];
                 commonLoaderService.load_Data(null, 'https://eskaysoft.synectiks.com/api/v1/states/', 'GET', null).then(function (statesData) {
+					
                     angular.forEach(statesData, function (item) {
                         var stateObj = {};
                         stateObj.id = item.id;
