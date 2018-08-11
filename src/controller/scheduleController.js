@@ -8,7 +8,7 @@
     angular.module('com.synectiks.eskaySoft')
         .controller('scheduleController', ['$scope', 'commonLoaderService', function ($scope, commonLoaderService) {
             var vm = this; // jshint ignore:line
-            vm.selectedScheduleType = "Select";
+            vm.selectedScheduleType = "ASS";
             vm.selected = false;
             vm.normalScreen = true;
             vm.messageContainer = false;
@@ -24,7 +24,7 @@
                     vm.scheduleList = {};
                     vm.scheduleName = "";
                     vm.scheduleNo = "";
-                    vm.scheduleType = "Select";
+                    vm.scheduleType = "ASS";
                     vm.scheduleId = "";
 
                 } else {
@@ -196,7 +196,7 @@
                 vm.scheduleId = "";
                 vm.selected = false;
                 vm.scheduleNo = "";
-                vm.scheduleType = "Select";
+                vm.scheduleType = "ASS";
                 vm.selectedName = "";
                 vm.selectedRow = -1;
                 vm.messageContainer = false;
