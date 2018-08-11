@@ -45,6 +45,11 @@
                 descending: false
             };
             vm.selectedCls = function (column) {
+                if (vm.sort.descending) {
+                    return column == vm.sort.column && 'fa-sort-down';
+                } else {
+                    return column == vm.sort.column && 'fa-sort-up';
+                }
                 return column == vm.sort.column && 'sort-' + vm.sort.descending;
             };
             vm.changeSorting = function (column) {

@@ -2,8 +2,8 @@
     <table id="commonGrid" class="table table-fixedheader table-lg table-bordered scrollbar">
         <thead>
             <tr>
-                <th ng-repeat="(key, value) in vm.gridData[0]" ng-init="vm.gridAlign()" ng-show="!vm.containsColumnHiddenKey(key)" ng-class="vm.selectedCls(key)" class="sort-false" ng-click="vm.changeSorting(key)">
-                    {{key | translate}}
+                <th ng-repeat="(key, value) in vm.gridData[0]" ng-init="vm.gridAlign()" ng-show="!vm.containsColumnHiddenKey(key)" ng-click="vm.changeSorting(key)">
+                    {{key | translate}}<i ng-class="vm.selectedCls(key)" class="fa fa-sort float-right"></i>
                 </th>
                 <th ng-if="vm.noOfViewColumns <= 0 "> No data available.</th>
 
