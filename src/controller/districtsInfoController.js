@@ -136,7 +136,7 @@
                 }, function (error) { // jshint ignore:line
                     console.log("error", error);
                 });
-                vm.reset();
+                
                 vm.messageContainer = true;
                 vm.errorMessage = "District saved.";
             };

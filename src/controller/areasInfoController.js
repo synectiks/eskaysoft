@@ -127,7 +127,7 @@
                 }, function (error) { // jshint ignore:line
                     console.log("error", error);
                 });
-                vm.reset();
+               
                 vm.messageContainer = true;
                 vm.errorMessage = "Area Information saved.";
             };

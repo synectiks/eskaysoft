@@ -34,7 +34,7 @@
             vm.search = function () {
                 // vm.editScreen = false;
                 vm.normalScreen = true;
-vm.data=[];
+				vm.data=[];
                 vm.hiddenColArr = ['id'];
                 commonLoaderService.load_Data(null, 'https://eskaysoft.synectiks.com/api/v1/manfacturer/', 'GET', null).then(function (searchContent) {
 
