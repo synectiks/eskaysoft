@@ -8,7 +8,10 @@ angular
   'main',
    'pascalprecht.translate',
   //'ngMap',
-  'broadcast'
+  'broadcast',
+'ngAnimate',
+
+  'ui.bootstrap'
   ]).run(['$rootScope', '$state',
     function ($rootScope, $state) {
         $rootScope.$state = $state;

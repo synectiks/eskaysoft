@@ -6,7 +6,7 @@
     'use strict';
 
     angular.module('com.synectiks.eskaySoft')
-        .controller('scheduleController', ['$scope', 'commonLoaderService', function ($scope, commonLoaderService) {
+        .controller('scheduleController', [ 'commonLoaderService', function ( commonLoaderService) {
             var vm = this; // jshint ignore:line
             vm.selectedScheduleType = "ASS";
             vm.selected = false;
@@ -159,10 +159,11 @@
             };
 
             vm.create = function () {
+				console.log("vm.typeaheadSelected---", vm.typeaheadSelected);
                 var reqobj = {
                     "scheduleName": vm.scheduleName,
                     "scheduleIndex": vm.scheduleNo,
-                    "scheduleType": vm.scheduleType
+                    "scheduleType": vm.typeaheadSelected.code
                 };
                 commonLoaderService.load_Data(reqobj, "https://eskaysoft.synectiks.com/api/v1/schedules/", "POST", null).then(function (data) {
                     vm.reset();
@@ -204,7 +205,7 @@
                 vm.search();
             };
 
-            $scope.GetValue = function () {
+            vm.GetValue = function () {
                 if (vm.searchBySchedule == "scheduleType") {
                     vm.searchTextType = vm.searchText;
                     vm.searchTextName = "";
@@ -214,12 +215,19 @@
                 }
 
             };
+			
             vm.autoCapitalize = function (val) {
                 vm.scheduleName = val.toUpperCase();
             };
 
             vm.getDropDownValues();
             vm.search();
+			vm.typeaheadSelected = null;
+		
+			
+			
+			
+			
                     }]);
 
 })();

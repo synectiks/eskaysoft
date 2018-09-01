@@ -1,2 +1,22 @@
-fdg,dfng,dfng
-combobox
+<script type="text/ng-template" id="customTemplate.html">
+  <a>
+     <span ng-bind-html="match.label | uibTypeaheadHighlight:query"></span>
+  </a>
+</script>
+
+<div class="form-group">
+ 
+   <!-- <pre>Model: {{vm.typeaheadModel | json}}</pre>-->
+    <input type="text" 
+      ng-model="vm.typeaheadModel" 
+      placeholder="Select" 
+      typeahead-show-on-focus
+      uib-typeahead="state as state.description for state in vm.typeaheadList | filter:{code:$viewValue}" 
+      typeahead-template-url="customTemplate.html" 
+      class="form-control" 
+      typeahead-show-hint="true" 
+      typeahead-min-length="0"
+	  typeahead-focus-on-select="false">
+</div>
+	
+	

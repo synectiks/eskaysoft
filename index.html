@@ -12,20 +12,28 @@
     <!-- bower:css -->
     <link href="bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="bower_components/bootstrap-select/dist/css/bootstrap-select.min.css">
-    <link rel="stylesheet" href="bower_components/font-awesome-bower/css/font-awesome.css">
+    <!--<link rel="stylesheet" href="bower_components/font-awesome-bower/css/font-awesome.css">-->
 
     <!-- bower:js -->
     <script src="bower_components/angular/angular.min.js"></script>
+	<script src="bower_components/angular-animate/angular-animate.js"></script>
+
+	<script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
     <script src="bower_components/jquery/dist/jquery.min.js"></script>
     <script src="bower_components/angular-ui-router/release/angular-ui-router.min.js"></script>
+	<script src="bower_components/angular-bootstrap/ui-bootstrap.js"></script>
+	<script src="bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
     <script src="bower_components/angular-resource/angular-resource.js"></script>
     <script src="bower_components/angular-translate/angular-translate.js"></script>
     <script src="bower_components/angular-translate-loader-static-files/angular-translate-loader-static-files.js"></script>
     <script src="bower_components/tether/dist/js/tether.min.js"></script>
     <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
     <script src="bower_components/downloadjs/download.js"></script>
+	
     <script src="bower_components/bootstrap-select/dist/js/bootstrap-select.min.js"></script>
-
+	 <!--<script src="bower_components/ag-grid/packages/ag-grid/dist/ag-grid.min.js"></script>
+	 <script src="https://unpkg.com/ag-grid@18.1.1/dist/ag-grid.min.js"></script>-->
+<script src="https://unpkg.com/ag-grid@18.1.1/dist/ag-grid.min.js"></script>
     <script src="app.js"></script>
     <script src="src/_config/config.js"></script>
     <script src="src/_config/eskaysoftCommons.js"></script>
@@ -51,11 +59,13 @@
     <script src="src/controller/customerwiseDiscountController.js"></script>
     <script src="src/controller/purchaseFormController.js"></script>
     <script src="src/controller/accountsOpeningsController.js"></script>
-	<script src="src/controller/commonComboBoxController.js"></script>
+	<script src="src/controller/TypeaheadController.js"></script>
     
 	<script src="src/components/header/header.js"></script>
     <script src="src/components/footer/footer.js"></script>
-	<script src="src/components/comboBoxComponent/commonComboBoxComponent.js"></script>
+	<script src="src/components/commonTypeaheadDirective/commonTypeaheadDirective.js"></script>
+	<script src="src/components/commonTypeaheadDirective/commonTypeaheadComponent.js"></script>
+	
     <script src="src/components/headerMenuBar/headerMenuBar.js"></script>
     <script src="src/components/gridComponent/commonGridComponent.js"></script>
 
@@ -63,6 +73,8 @@
     <script src="src/modules/main/main.js"></script>
     <script src="src/providers/mainProvider.js"></script>
     <script src="src/services/mainService.js"></script>
+	
+	
 </head>
 
 <body>
@@ -70,6 +82,10 @@
         <header-menu-bar></header-menu-bar>
     </div>
     <ui-view></ui-view>
+	
+
+	
+	
     <div class="col-xs-12 fmt30 ">
         <!--Footer margin top below 768px-->
     </div>
