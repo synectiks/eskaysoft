@@ -16,14 +16,9 @@
                 <div class="form-group">
                     <label class="col-form-label" for="ScheduleType ">{{'scheduleform.label.type' | translate}}:*</label>
 					<common-typeahead-component typeahead-list="vm.scheduleTypes" 
-					typeahead-model="vm.typeaheadSelected" 
+					typeahead-model="vm.typeaheadSelected"  typeahead-on-change="vm.validateTypeahead()"
 					typeahead-value="code"></common-typeahead-component>
-                    <!--<select ng-model="vm.scheduleType" class="selectpicker1 form-control form-control-lg form-control form-control-lg" id="ScheduleType" data-live-search="true" required>
-						
-						<option ng-repeat="scheduleType in vm.scheduleTypes" value="{{scheduleType.code}}"
-								 data-content="{{scheduleType.description}}">{{scheduleType.description}}
-						</option>
-                    </select>-->
+              
                 </div>
                 <div class="form-group">
                     <button type="button" class="btn btn-primary mb5" ng-click="vm.reset()">{{'button.reset' | translate}}</button>
@@ -36,13 +31,6 @@
             </form>
         </div>
 
-		
-	
-	
-	
-
-		
-		
 		
         <div class='col-xs-12 col-sm-7 right-align'>
             <form id="searchScheduleForm" class="form-inline text-left mt25">

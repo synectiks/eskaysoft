@@ -118,6 +118,7 @@
                 vm.errorMessage = "";
             };
 
+			
             //Save
             vm.save = function () {
                 vm.editScreen = true;
@@ -168,18 +169,21 @@
             };
 
             vm.create = function () {
-                var reqobj = {
+				
+					var reqobj = {
                     "scheduleName": vm.scheduleName,
                     "scheduleIndex": vm.scheduleNo,
                     "scheduleType": vm.typeaheadSelected.code
-                };
-                commonLoaderService.load_Data(reqobj, "https://eskaysoft.synectiks.com/api/v1/schedules/", "POST", null).then(function (data) {
-                    vm.reset();
-                }, function (error) { // jshint ignore:line
-                    console.log("error", error);
-                });
-                vm.messageContainer = true;
-                vm.errorMessage = "Schedule saved.";
+					};
+					commonLoaderService.load_Data(reqobj, "https://eskaysoft.synectiks.com/api/v1/schedules/", "POST", null).then(function (data) {
+						vm.reset();
+					}, function (error) { // jshint ignore:line
+						console.log("error", error);
+					});
+					vm.messageContainer = true;
+					vm.errorMessage = "Schedule saved.";
+				
+                
             };
 
 
