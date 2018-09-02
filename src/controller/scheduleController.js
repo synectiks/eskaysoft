@@ -7,16 +7,19 @@
 
     angular.module('com.synectiks.eskaySoft')
         .controller('scheduleController', [ 'commonLoaderService', function ( commonLoaderService) {
+			
             var vm = this; // jshint ignore:line
-            vm.selectedScheduleType = "ASS";
+			vm.typeaheadSelected = {"code":"ASS","description":"Assets"};
+           
             vm.selected = false;
             vm.normalScreen = true;
             vm.messageContainer = false;
             vm.scheduleList = {};
             vm.scheduleIndexArr = [];
             vm.prevScheduleIndex = "";
-
+			
             vm.onSelectRow = function (rowData, rowNum) {
+				
                 if (vm.selected && vm.scheduleList.name == rowData.scheduleName) {
                     vm.selectedName = null;
                     vm.selected = false;
@@ -26,6 +29,8 @@
                     vm.scheduleNo = "";
                     vm.scheduleType = "ASS";
                     vm.scheduleId = "";
+					vm.typeaheadSelected = {"code":"ASS","description":"Assets"};
+					vm.editScreen = false;
 
                 } else {
                     vm.selected = true;
@@ -36,6 +41,7 @@
                     vm.scheduleList.index = rowData.scheduleIndex;
                     vm.messageContainer = false;
                     vm.errorMessage = "";
+
                 }
             };
 
@@ -43,7 +49,7 @@
 				 vm.scheduleTypes=[];
                 commonLoaderService.load_Data(null, 'messages/scheduleMockData.json', 'GET', null).then(function (dropDownContent) {
                     vm.scheduleTypes = dropDownContent[0].scheduleTypes;
-					vm.scheduleType = vm.selectedScheduleType;
+				
 					
                 }, function (error) { // jshint ignore:line
                     console.log("error", error);
@@ -64,7 +70,9 @@
                 vm.normalScreen = true;
                 vm.hiddenColArr = ['id'];
                 vm.data = [];
+				//
                 commonLoaderService.load_Data(null, 'https://eskaysoft.synectiks.com/api/v1/schedules/', 'GET', null).then(function (searchContent) {
+					
                     if (searchContent.length > 0) {
                         var jsonKeys = Object.keys(searchContent[0])
                         vm.noOfViewColumns = jsonKeys.length - vm.hiddenColArr.length;
@@ -98,6 +106,7 @@
                 angular.forEach(vm.scheduleTypes, function (scheduleTypeObj) {
                     if (!hasRecord && angular.equals(vm.scheduleList.type, scheduleTypeObj.description)) {
                         vm.scheduleList.type = scheduleTypeObj.code;
+						vm.typeaheadSelected =  {"code":scheduleTypeObj.code,"description":scheduleTypeObj.description};
                         hasRecord = true
                     }
                 });
@@ -115,13 +124,13 @@
                 var reqobj = {
                     "scheduleName": vm.scheduleName,
                     "scheduleIndex": vm.scheduleNo,
-                    "scheduleType": vm.scheduleType,
+                    "scheduleType": vm.typeaheadSelected.code,
                     "id": vm.scheduleList.no
                 };
                 commonLoaderService.load_Data(reqobj, "https://eskaysoft.synectiks.com/api/v1/schedules/", "PUT", null).then(function (data) {
 					vm.getDropDownValues();
                     vm.search();
-					vm.selectedScheduleType= data.scheduleType;
+				
 					
                 }, function (error) { // jshint ignore:line
                     console.log("error", error);
@@ -159,7 +168,6 @@
             };
 
             vm.create = function () {
-				console.log("vm.typeaheadSelected---", vm.typeaheadSelected);
                 var reqobj = {
                     "scheduleName": vm.scheduleName,
                     "scheduleIndex": vm.scheduleNo,
@@ -202,6 +210,7 @@
                 vm.selectedRow = -1;
                 vm.messageContainer = false;
                 vm.editScreen = false;
+				vm.typeaheadSelected = {"code":"ASS","description":"Assets"};
                 vm.search();
             };
 
@@ -222,7 +231,7 @@
 
             vm.getDropDownValues();
             vm.search();
-			vm.typeaheadSelected = null;
+			//vm.typeaheadSelected =  {"code":"LIA","description":"Liabilities"};
 		
 			
 			

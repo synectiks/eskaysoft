@@ -10,7 +10,7 @@ angular
   //'ngMap',
   'broadcast',
 'ngAnimate',
-
+'ngStorage',
   'ui.bootstrap'
   ]).run(['$rootScope', '$state',
     function ($rootScope, $state) {
