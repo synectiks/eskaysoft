@@ -8,7 +8,8 @@
 	var appModule = angular.module('com.synectiks.eskaySoft');
 	appModule.controller('TypeaheadCtrl', function() {
 
-	var vm = this; // jshint ignore:line
+		var vm = this; // jshint ignore:line
+
 	
 	});
    

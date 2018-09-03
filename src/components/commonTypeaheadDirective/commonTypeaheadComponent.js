@@ -11,7 +11,7 @@
                 typeaheadList: '=',
 				typeaheadModel: '=',
 				typeaheadValue:'=',
-				typeaheadOnChange:'&'
+				typeaheadOnSelect:'&'
             },
             controller: 'TypeaheadCtrl',
             controllerAs: 'vm'

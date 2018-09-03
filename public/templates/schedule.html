@@ -5,33 +5,33 @@
                 <div class='text-left pt7'>
                     <h2>{{'scheduleform.header.name' | translate}} </h2>
                 </div>
+				
                 <div class="form-group">
                     <label class="col-form-label" for="scheduleName">{{'scheduleform.label.name' | translate}}:*</label>
                     <input type="text" class="form-control form-control-lg" name="Name" id="scheduleName" maxlength="40" ng-model="vm.scheduleName" ng-readonly="vm.editScreen" ng-change="vm.autoCapitalize(vm.scheduleName)" uppercase required>
                 </div>
+				
                 <div class="form-group">
                     <label class="col-form-label" for="scheduleNumber">{{'scheduleform.label.index' | translate}}:*</label>
                     <input type="number" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" min="0" maxlength="2" class="form-control form-control-lg" name="Name" id="scheduleNumber" ng-blur="vm.validateSchIndex($event)" ng-model="vm.scheduleNo" required>
                 </div>
+
                 <div class="form-group">
                     <label class="col-form-label" for="ScheduleType ">{{'scheduleform.label.type' | translate}}:*</label>
 					<common-typeahead-component typeahead-list="vm.scheduleTypes" 
-					typeahead-model="vm.typeaheadSelected"  typeahead-on-change="vm.validateTypeahead()"
-					typeahead-value="code"></common-typeahead-component>
-              
+					typeahead-model="vm.typeaheadSelected"  typeahead-on-select="vm.SelectedTypeahead({value:vm.typeaheadModel})"
+					typeahead-value="vm.typeaheadStaticValue"></common-typeahead-component>
                 </div>
+				
                 <div class="form-group">
                     <button type="button" class="btn btn-primary mb5" ng-click="vm.reset()">{{'button.reset' | translate}}</button>
                     <button ng-if="!vm.editScreen" type="submit" class="btn btn-primary  mb5" ng-click="vm.create()" ng-disabled="(form.$invalid || vm.hasDuplicateScheIndex)">{{'button.save' | translate}}
-             
                     <button ng-if="vm.editScreen" type="submit" class="btn btn-primary  mb5" ng-click="vm.save()" ng-disabled="(form.$invalid|| vm.hasDuplicateScheIndex)">{{'button.save' | translate}}</button>
                     <label ng-if="vm.messageContainer" class="edit-delete-message">{{vm.errorMessage}}</label>
                 </div>
-
             </form>
         </div>
 
-		
         <div class='col-xs-12 col-sm-7 right-align'>
             <form id="searchScheduleForm" class="form-inline text-left mt25">
                 <div class="form-group">
@@ -40,9 +40,6 @@
                          <option value="">Select</option>
                         <option value="scheduleType">{{'scheduleform.label.type' | translate}}</option>
                          <option value="scheduleName">{{'scheduleform.label.name' | translate}}</option>
-                      <!--<option ng-repeat="scheduleType in vm.scheduleTypes" value="{{scheduleType.code}}">{{scheduleType.description}}
-
-</option>-->
                     </select>
                 </div>
                 <div class="form-group mx-sm-3">
@@ -52,6 +49,7 @@
             </form>
 
             <common-grid-component filter-options="{scheduleType:vm.searchTextType, scheduleName: vm.searchTextName}" grid-data="vm.data" grid-call-back="vm.onSelectRow(value, index)" row-number="vm.selectedRow" hidden-column-keys="vm.hiddenColArr" no-of-view-columns="vm.noOfViewColumns"></common-grid-component>
+			
             <div class="btn-align p0" ng-if="vm.selected">
                 <button type="submit" class="btn btn-primary searchEdit btn-position" ng-click="vm.edit()">{{'button.edit' | translate}}</button>
 

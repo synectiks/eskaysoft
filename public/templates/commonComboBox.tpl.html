@@ -4,7 +4,7 @@
   </a>
 </script>
 
-<div class="form-group">
+<div ng-if="vm.typeaheadValue === 'Schedule'">
  
    <!-- <pre>Model: {{vm.typeaheadModel | json}}</pre>-->
     <input type="text" 
@@ -12,10 +12,55 @@
       placeholder="Select" 
       uib-typeahead="state as state.description for state in vm.typeaheadList" 
       typeahead-template-url="customTemplate.html" 
+	  typeahead-on-select="vm.typeaheadOnSelect({value: vm.typeaheadModel})"
       class="form-control" 
       typeahead-show-hint="true" 
       typeahead-min-length="0"
 	  typeahead-focus-on-select="false">
 </div>
+
+<div ng-if="vm.typeaheadValue === 'SubSchedule'">
+ 
+   <!-- <pre>Model: {{vm.typeaheadModel | json}}</pre>-->
+    <input type="text" 
+      ng-model="vm.typeaheadModel" 
+      placeholder="Select" 
+      uib-typeahead="state as state.scheduleName  for state in vm.typeaheadList" 
+      typeahead-template-url="customTemplate.html" 
+	  typeahead-on-select="vm.typeaheadOnSelect({value: vm.typeaheadModel})"
+      class="form-control" 
+      typeahead-show-hint="true" 
+      typeahead-min-length="0"
+	  typeahead-focus-on-select="false">
+</div>	
 	
+<div ng-if="vm.typeaheadValue === 'Districts'">
+ 
+   <!-- <pre>Model: {{vm.typeaheadModel | json}}</pre>-->
+    <input type="text" 
+      ng-model="vm.typeaheadModel" 
+      placeholder="Select" 
+      uib-typeahead="state as state.stateName  for state in vm.typeaheadList" 
+      typeahead-template-url="customTemplate.html" 
+	  typeahead-on-select="vm.typeaheadOnSelect({value: vm.typeaheadModel})"
+      class="form-control" 
+      typeahead-show-hint="true" 
+      typeahead-min-length="0"
+	  typeahead-focus-on-select="false">
+</div>	
+
+<div ng-if="vm.typeaheadValue === 'Area'">
+ 
+   <!-- <pre>Model: {{vm.typeaheadModel | json}}</pre>-->
+    <input type="text" 
+      ng-model="vm.typeaheadModel" 
+      placeholder="Select" 
+      uib-typeahead="state as state.executiveName  for state in vm.typeaheadList" 
+      typeahead-template-url="customTemplate.html" 
+	  typeahead-on-select="vm.typeaheadOnSelect({value: vm.typeaheadModel})"
+      class="form-control" 
+      typeahead-show-hint="true" 
+      typeahead-min-length="0"
+	  typeahead-focus-on-select="false">
+</div>	
 	

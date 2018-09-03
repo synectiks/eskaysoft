@@ -13,12 +13,9 @@
 
                 <div class=" form-group">
                     <label class="col-form-label" for="ExecutiveName">{{'areaform.label.executive.name' | translate}}:*</label>
-                    <select ng-model="vm.businessExecutive" class="selectpicker1 form-control form-control-lg form-control form-control-lg" id="businessExecutive" data-live-search="true">
-						<option value="0" required>Select</option>
-						<option ng-repeat="businessExecutive in vm.businessExecutiveArr" value="{{businessExecutive.executiveId}}"
-								 data-content="{{businessExecutive.executiveName}}">{{businessExecutive.executiveName}}
-						</option>
-					</select>
+                   <common-typeahead-component typeahead-list="vm.businessExecutiveArr" 
+					typeahead-model="vm.typeaheadSelected"  typeahead-on-select="vm.SelectedTypeahead({value:vm.typeaheadModel})"
+					typeahead-value="vm.typeaheadStaticValue"></common-typeahead-component>
                 </div>
 
 

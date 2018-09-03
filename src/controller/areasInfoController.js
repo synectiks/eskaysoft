@@ -8,8 +8,9 @@
             vm.normalScreen = true;
             vm.messageContainer = false;
             vm.areaInfoList = {};
-            
-            vm.businessExecutive = "0";
+            vm.typeaheadStaticValue= "Area";
+			vm.typeaheadSelected =null;
+           
 
             vm.getScheduleNameArr = function () {
 				vm.businessExecutiveArr = [];
@@ -39,8 +40,9 @@
                     vm.selectedRow = -1;
                     vm.areaInfoList = {};
                     vm.areaName = "";
-                    vm.businessExecutive = "0";
+                   vm.editScreen = false;
                     vm.areaId = "";
+					vm.typeaheadSelected =null;
 
                 } else {
                     vm.selected = true;
@@ -92,7 +94,7 @@
             vm.create = function () {
                 var reqobj = {
                     "areaName": vm.areaName,
-                    "businessExecutiveId": vm.businessExecutive
+                    "businessExecutiveId": vm.typeaheadSelected.executiveId
                 };
                 commonLoaderService.load_Data(reqobj, "https://eskaysoft.synectiks.com/api/v1/area/", "POST", null).then(function (data) {
                     vm.reset();
@@ -119,7 +121,7 @@
                 vm.editScreen = true;
                 var reqobj = {
                     "areaName": vm.areaName,
-                    "businessExecutiveId": vm.businessExecutive,
+                    "businessExecutiveId": vm.typeaheadSelected.executiveId,
                     "areaId": vm.areaId
                 };
                 commonLoaderService.load_Data(reqobj, "https://eskaysoft.synectiks.com/api/v1/area/", "PUT", null).then(function (data) {
@@ -135,7 +137,7 @@
             vm.reset = function () {
                 vm.areaInfoList = {};
                 vm.areaName = "";
-                vm.businessExecutive = "";
+                vm.typeaheadSelected=null;
                 vm.areaId = "";
 
                 vm.selected = false;
@@ -164,8 +166,15 @@
 
             //Edit 
             vm.edit = function () {
+				 var hasRecord = false;
+                angular.forEach(vm.businessExecutiveArr, function (businessExecutiveObj) {
+                    if (!hasRecord && angular.equals(vm.areaInfoList.businessExecutive, businessExecutiveObj.executiveId)) {
+                        vm.typeaheadSelected =  {"executiveId":businessExecutiveObj.executiveId,"executiveName":businessExecutiveObj.executiveName};
+                        hasRecord = true
+                    }
+                });
+
                 vm.areaName = vm.areaInfoList.name;
-                vm.businessExecutive = "2";
                 vm.areaId = vm.areaInfoList.areaId;
                 vm.editScreen = true;
                 vm.normalScreen = false;

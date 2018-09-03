@@ -10,13 +10,13 @@
 			
             var vm = this; // jshint ignore:line
 			vm.typeaheadSelected = {"code":"ASS","description":"Assets"};
-           
             vm.selected = false;
             vm.normalScreen = true;
             vm.messageContainer = false;
             vm.scheduleList = {};
             vm.scheduleIndexArr = [];
             vm.prevScheduleIndex = "";
+			vm.typeaheadStaticValue= "Schedule";
 			
             vm.onSelectRow = function (rowData, rowNum) {
 				
@@ -27,8 +27,6 @@
                     vm.scheduleList = {};
                     vm.scheduleName = "";
                     vm.scheduleNo = "";
-                    vm.scheduleType = "ASS";
-                    vm.scheduleId = "";
 					vm.typeaheadSelected = {"code":"ASS","description":"Assets"};
 					vm.editScreen = false;
 
@@ -41,7 +39,6 @@
                     vm.scheduleList.index = rowData.scheduleIndex;
                     vm.messageContainer = false;
                     vm.errorMessage = "";
-
                 }
             };
 
@@ -49,8 +46,6 @@
 				 vm.scheduleTypes=[];
                 commonLoaderService.load_Data(null, 'messages/scheduleMockData.json', 'GET', null).then(function (dropDownContent) {
                     vm.scheduleTypes = dropDownContent[0].scheduleTypes;
-				
-					
                 }, function (error) { // jshint ignore:line
                     console.log("error", error);
                 });
@@ -76,7 +71,6 @@
                     if (searchContent.length > 0) {
                         var jsonKeys = Object.keys(searchContent[0])
                         vm.noOfViewColumns = jsonKeys.length - vm.hiddenColArr.length;
-
                         angular.forEach(searchContent, function (item) {
                             var hasScheduleType = false;
                             vm.scheduleIndexArr.push(item.scheduleIndex);
@@ -110,15 +104,12 @@
                         hasRecord = true
                     }
                 });
-                vm.scheduleType = vm.scheduleList.type;
-                vm.scheduleId = vm.scheduleList.no;
                 vm.editScreen = true;
                 vm.normalScreen = false;
                 vm.messageContainer = false;
                 vm.errorMessage = "";
             };
 
-			
             //Save
             vm.save = function () {
                 vm.editScreen = true;
@@ -131,8 +122,7 @@
                 commonLoaderService.load_Data(reqobj, "https://eskaysoft.synectiks.com/api/v1/schedules/", "PUT", null).then(function (data) {
 					vm.getDropDownValues();
                     vm.search();
-				
-					
+
                 }, function (error) { // jshint ignore:line
                     console.log("error", error);
                 });
@@ -140,8 +130,6 @@
                 vm.messageContainer = true;
                 vm.errorMessage = "Schedule saved.";
             };
-
-
 
             //Confirm 
             vm.confirm = function () {
@@ -168,22 +156,24 @@
 
             };
 
+			vm.SelectedTypeahead = function(data){
+				console.log("--", vm.typeaheadSelected);
+				console.log("--", data);
+			};
+			
             vm.create = function () {
-				
-					var reqobj = {
-                    "scheduleName": vm.scheduleName,
-                    "scheduleIndex": vm.scheduleNo,
-                    "scheduleType": vm.typeaheadSelected.code
-					};
-					commonLoaderService.load_Data(reqobj, "https://eskaysoft.synectiks.com/api/v1/schedules/", "POST", null).then(function (data) {
-						vm.reset();
-					}, function (error) { // jshint ignore:line
-						console.log("error", error);
-					});
-					vm.messageContainer = true;
-					vm.errorMessage = "Schedule saved.";
-				
-                
+				var reqobj = {
+				"scheduleName": vm.scheduleName,
+				"scheduleIndex": vm.scheduleNo,
+				"scheduleType": vm.typeaheadSelected.code
+				};
+				commonLoaderService.load_Data(reqobj, "https://eskaysoft.synectiks.com/api/v1/schedules/", "POST", null).then(function (data) {
+					vm.reset();
+				}, function (error) { // jshint ignore:line
+					console.log("error", error);
+				});
+				vm.messageContainer = true;
+				vm.errorMessage = "Schedule saved.";
             };
 
 
@@ -206,10 +196,8 @@
             vm.reset = function () {
                 vm.scheduleList = {};
                 vm.scheduleName = "";
-                vm.scheduleId = "";
                 vm.selected = false;
                 vm.scheduleNo = "";
-                vm.scheduleType = "ASS";
                 vm.selectedName = "";
                 vm.selectedRow = -1;
                 vm.messageContainer = false;
@@ -236,11 +224,7 @@
             vm.getDropDownValues();
             vm.search();
 			//vm.typeaheadSelected =  {"code":"LIA","description":"Liabilities"};
-		
 			
-			
-			
-			
-                    }]);
+	}]);
 
 })();

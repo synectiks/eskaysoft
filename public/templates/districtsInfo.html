@@ -11,11 +11,15 @@
                 </div>
                 <div class="form-group">
                     <label class="col-form-label" for="StatName">{{'districtsform.label.state.name' | translate}}:</label>
+					<common-typeahead-component typeahead-list="vm.statesDataArr" 
+					typeahead-model="vm.typeaheadSelected"  typeahead-on-select="vm.SelectedTypeahead({value:vm.typeaheadModel})"
+					typeahead-value="vm.typeaheadStaticValue"></common-typeahead-component>
+					<!--
                     <select ng-model="vm.stateName" class="form-control form-control-lg" id="StatName" maxlength="40">
                          <option value="0">Select</option>
 						 <option ng-repeat="states in vm.statesDataArr" value="{{states.id}}" 
 							ng-selected="states.stateName === vm.stateName" >{{states.stateName}}</option>
-                    </select>
+                    </select>-->
                 </div>
                 <div class="form-group">
                     <button type="button" class="btn btn-primary mb5" ng-click="vm.reset()">{{'button.reset' | translate}}</button>
@@ -39,7 +43,7 @@
                     <input type="text" class="form-control" id="stateName" placeholder="{{'districtsform.label.state.name' | translate}}" ng-model="vm.searchByStateName" required>
                 </div>
             </form>
-            <common-grid-component filter-options="{districtName: vm.searchByDistrictName, state: vm.searchByStateName}" grid-data="vm.data" grid-call-back="vm.onSelectRow(value, index)" row-number="vm.selectedRow" hidden-column-keys="vm.hiddenColArr" no-of-view-columns="vm.noOfViewColumns"></common-grid-component>
+            <common-grid-component filter-options="{districtName: vm.searchByDistrictName, stateName: vm.searchByStateName}" grid-data="vm.data" grid-call-back="vm.onSelectRow(value, index)" row-number="vm.selectedRow" hidden-column-keys="vm.hiddenColArr" no-of-view-columns="vm.noOfViewColumns"></common-grid-component>
 
             <div class="btn-align p0" ng-if="vm.selected">
                 <button type="submit" class="btn btn-primary searchEdit btn-position" ng-click="vm.edit()">{{'button.edit' | translate}}</button>
