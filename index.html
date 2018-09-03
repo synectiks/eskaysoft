@@ -82,7 +82,7 @@
 </head>
 
 <body>
-    <div ng-if="$state.current.name !== 'home' && $state.current.name !== 'login' && $state.current.name !== ''">
+    <div ng-if="$state.current.name !== 'home' && $state.current.name !== 'login' && $state.current.name !== 'unAuthorized' && $state.current.name !== ''">
         <header-menu-bar></header-menu-bar>
     </div>
     <ui-view></ui-view>
