@@ -199,6 +199,11 @@
                             url: '/product',
                             templateUrl: 'public/templates/product.html',
                             controller: 'productController'
+					},
+					{
+                            name: 'unAuthorized',
+                            url: '/unAuthorized',
+                            templateUrl: 'public/templates/unAuthorized.html'
 					}
 			];
                     angular.forEach(statesList, function (state) {

@@ -1,5 +1,5 @@
 angular.module('com.synectiks.eskaySoft')
-  .factory('commonLoaderService', ['$q', '$resource', '$sessionStorage', function($q, $resource, $sessionStorage) {
+  .factory('commonLoaderService', ['$q', '$resource', '$sessionStorage','$state', function($q, $resource, $sessionStorage, $state) {
     'use strict';
         return {
           load_Data: function(parameter, endPointUrl, methodType, requestObject) {
@@ -33,6 +33,9 @@ angular.module('com.synectiks.eskaySoft')
               defer.resolve(data);
             });
             node.$promise.catch(function(error) {
+			console.log("error", error);
+			$state.go('unAuthorized');
+			
               defer.reject(error);
             });
             return rs;
