@@ -219,9 +219,9 @@
 					return;
 				}
 				else{
-					if (vm.searchBySchedule == "scheduleType") {
-                    vm.searchTextType = vm.searchText;
-                    vm.searchTextName = "";
+					if (vm.searchBy == "scheduleType") {
+						vm.searchTextType = vm.searchText;
+						vm.searchTextName = "";
 					} else {
 						vm.searchTextName = vm.searchText;
 						vm.searchTextType = "";
