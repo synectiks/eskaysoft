@@ -108,7 +108,7 @@
                     "id": vm.stateId
                 };
                 commonLoaderService.load_Data(reqobj, "https://eskaysoft.synectiks.com/api/v1/states/", "PUT", null).then(function (data) {
-                    vm.search();
+                     vm.reset();
                 }, function (error) { // jshint ignore:line
                     console.log("error", error);
                 });

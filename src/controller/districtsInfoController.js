@@ -127,7 +127,7 @@
                     "districtId": vm.districtsList.districtId
                 };
                 commonLoaderService.load_Data(reqobj, "https://eskaysoft.synectiks.com/api/v1/districts/", "PUT", null).then(function (data) {
-                    vm.getStates();
+                    vm.reset();
 
                 }, function (error) { // jshint ignore:line
                     console.log("error", error);

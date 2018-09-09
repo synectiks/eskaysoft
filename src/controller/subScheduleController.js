@@ -138,7 +138,7 @@
                     "subScheduleId": vm.subScheduleList.subScheduleId
                 };
                 commonLoaderService.load_Data(reqobj, "https://eskaysoft.synectiks.com/api/v1/subschedules/", "PUT", null).then(function (data) {
-                    vm.getScheduleNameArr();
+                    vm.reset();
                 }, function (error) { // jshint ignore:line
                     console.log("error", error);
                 });

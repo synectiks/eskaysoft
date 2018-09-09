@@ -115,7 +115,7 @@
 
             //Save
             vm.save = function () {
-                vm.editScreen = true;
+               
                 var reqobj = {
                     "scheduleName": vm.scheduleName,
                     "scheduleIndex": vm.scheduleNo,
@@ -123,8 +123,7 @@
                     "id": vm.scheduleList.no
                 };
                 commonLoaderService.load_Data(reqobj, "https://eskaysoft.synectiks.com/api/v1/schedules/", "PUT", null).then(function (data) {
-					vm.getDropDownValues();
-                    vm.search();
+					vm.reset();
 
                 }, function (error) { // jshint ignore:line
                     console.log("error", error);

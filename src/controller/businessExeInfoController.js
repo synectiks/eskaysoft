@@ -103,7 +103,7 @@ vm.data=[];
                     "id": vm.busExeId
                 };
                 commonLoaderService.load_Data(reqobj, "https://eskaysoft.synectiks.com/api/v1/businessexecutive/", "PUT", null).then(function (data) {
-                    vm.search();
+                     vm.reset();
                 }, function (error) { // jshint ignore:line
                     console.log("error", error);
                 });
