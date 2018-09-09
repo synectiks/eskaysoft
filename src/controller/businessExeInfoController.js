@@ -24,12 +24,15 @@
 
                 } else {
                     vm.selected = true;
-                    vm.selectedRow = rowNum;
-                    vm.busExeInfoList.name = rowData.name;
-                    vm.busExeInfoList.address = rowData.address;
-                    vm.busExeInfoList.town = rowData.town;
-                    vm.busExeInfoList.mobile = rowData.mobile;
-                    vm.busExeInfoList.id = rowData.id;
+					if(!vm.editScreen){
+						vm.selectedRow = rowNum;
+						vm.busExeInfoList.name = rowData.name;
+						vm.busExeInfoList.address = rowData.address;
+						vm.busExeInfoList.town = rowData.town;
+						vm.busExeInfoList.mobile = rowData.mobile;
+						vm.busExeInfoList.id = rowData.id;
+					}
+                   
                     vm.messageContainer = false;
                     vm.errorMessage = "";
                 }

@@ -82,10 +82,12 @@
 
                 } else {
                     vm.selected = true;
-                    vm.selectedRow = rowNum;
-                    vm.districtsList.districtName = rowData.districtName;
-                    vm.districtsList.statesId = rowData.statesId;
-                    vm.districtsList.districtId = rowData.districtId;
+					if(!vm.editScreen){
+						vm.selectedRow = rowNum;
+						vm.districtsList.districtName = rowData.districtName;
+						vm.districtsList.statesId = rowData.statesId;
+						vm.districtsList.districtId = rowData.districtId;
+					}
                     vm.messageContainer = false;
                     vm.errorMessage = "";
                 }
@@ -146,6 +148,10 @@
                 vm.messageContainer = false;
                 vm.editScreen = false;
 				vm.typeaheadSelected = null;
+				vm.searchBy="";
+				vm.searchText="";
+				vm.searchByStateName="";
+				vm.searchByDistrictName="";
                 vm.search();
             };
 
@@ -170,13 +176,17 @@
             };
 			
 			vm.GetValue = function () {
-                if (vm.searchBy == "stateName") {
-                    vm.searchByStateName = vm.searchText;
-                    vm.searchByDistrictName = "";
-                } else {
-                    vm.searchByDistrictName = vm.searchText;
-                    vm.searchByStateName = "";
-                }
+				if(angular.isUndefined(vm.searchBy)){
+					return;
+				}else {
+					if (vm.searchBy == "stateName") {
+						vm.searchByStateName = vm.searchText;
+						vm.searchByDistrictName = "";
+					} else {
+						vm.searchByDistrictName = vm.searchText;
+						vm.searchByStateName = "";
+					}
+				}
             };
 			
 	}]);

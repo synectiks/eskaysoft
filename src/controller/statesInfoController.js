@@ -26,11 +26,13 @@
 
                 } else {
                     vm.selected = true;
-                    vm.selectedRow = rowNum;
-                    vm.stateList.name = rowData.stateName;
-                    vm.stateList.code = rowData.stateCode;
-                    vm.stateList.zone = rowData.zone;
-                    vm.stateList.id = rowData.id;
+					if(!vm.editScreen){
+						 vm.stateList.name = rowData.stateName;
+						vm.stateList.code = rowData.stateCode;
+						vm.stateList.zone = rowData.zone;
+						vm.stateList.id = rowData.id;
+						 vm.selectedRow = rowNum;
+					}
                     vm.messageContainer = false;
                     vm.errorMessage = "";
                 }
@@ -135,6 +137,10 @@
                 vm.selectedRow = -1;
                 vm.messageContainer = false;
                 vm.editScreen = false;
+				vm.searchBy="";
+				vm.searchText="";
+				vm.searchByStateName="";
+				vm.searchByZone="";
                 vm.getDropDownValues();
             };
 
@@ -192,13 +198,18 @@
             };
 			
 			vm.GetValue = function () {
-                if (vm.searchBy == "stateName") {
-                    vm.searchByStateName = vm.searchText;
-                    vm.searchByZone = "";
-                } else {
-                    vm.searchByZone = vm.searchText;
-                    vm.searchByStateName = "";
-                }
+				if(angular.isUndefined(vm.searchBy)){
+					return;
+				}
+				else{
+					if (vm.searchBy == "stateName") {
+						vm.searchByStateName = vm.searchText;
+						vm.searchByZone = "";
+					} else {
+						vm.searchByZone = vm.searchText;
+						vm.searchByStateName = "";
+					}
+				}
             };
 
     }]);

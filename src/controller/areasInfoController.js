@@ -46,10 +46,13 @@
 
                 } else {
                     vm.selected = true;
-                    vm.selectedRow = rowNum;
-                    vm.areaInfoList.name = rowData.areaName;
-                    vm.areaInfoList.areaId = rowData.areaId;
-                    vm.areaInfoList.businessExecutive = rowData.executiveId;
+					if(!vm.editScreen){
+						vm.selectedRow = rowNum;
+						vm.areaInfoList.name = rowData.areaName;
+						vm.areaInfoList.areaId = rowData.areaId;
+						vm.areaInfoList.businessExecutive = rowData.executiveId;
+					}
+                    
                     vm.messageContainer = false;
                     vm.errorMessage = "";
                 }
@@ -145,6 +148,10 @@
                 vm.selectedRow = -1;
                 vm.messageContainer = false;
                 vm.editScreen = false;
+				vm.searchBy="";
+				vm.searchText="";
+				vm.searchByExecutives="";
+				vm.searchByAreaName="";
                 vm.getScheduleNameArr();
             };
 
@@ -189,13 +196,17 @@
             };
 
 			vm.GetValue = function () {
-                if (vm.searchBy == "executiveName") {
-                    vm.searchByExecutives = vm.searchText;
-                    vm.searchByAreaName = "";
-                } else {
-                    vm.searchByAreaName = vm.searchText;
-                    vm.searchByExecutives = "";
-                }
+				if(angular.isUndefined(vm.searchBy)){
+					return;
+				}else {
+					if (vm.searchBy == "executiveName") {
+						vm.searchByExecutives = vm.searchText;
+						vm.searchByAreaName = "";
+					} else {
+						vm.searchByAreaName = vm.searchText;
+						vm.searchByExecutives = "";
+					}
+				}
             };
             vm.getScheduleNameArr();
 	}])

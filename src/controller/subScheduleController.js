@@ -88,12 +88,14 @@
 					vm.editScreen=false;
 
                 } else {
+					if(!vm.editScreen){
+						vm.selectedRow = rowNum;
+						vm.subScheduleList.subScheduleName = rowData.subScheduleName;
+						vm.subScheduleList.subScheduleIndex = rowData.subScheduleIndex;
+						vm.subScheduleList.scheduleId = rowData.scheduleId;
+						vm.subScheduleList.subScheduleId = rowData.subScheduleId;
+					}
                     vm.selected = true;
-                    vm.selectedRow = rowNum;
-                    vm.subScheduleList.subScheduleName = rowData.subScheduleName;
-                    vm.subScheduleList.subScheduleIndex = rowData.subScheduleIndex;
-                    vm.subScheduleList.scheduleId = rowData.scheduleId;
-                    vm.subScheduleList.subScheduleId = rowData.subScheduleId;
                     vm.messageContainer = false;
                     vm.errorMessage = "";
                 }
@@ -157,6 +159,10 @@
                 vm.messageContainer = false;
                 vm.editScreen = false;
 				vm.typeaheadSelected=null;
+				vm.searchBy="";
+				vm.searchText="";
+				vm.searchSubScheduleName="";
+				vm.searchScheduleName="";
                 vm.getScheduleNameArr();
 
             };
@@ -176,13 +182,19 @@
             };
 
 			vm.GetValue = function () {
-                if (vm.searchBy == "subScheduleName") {
-                    vm.searchSubScheduleName = vm.searchText;
-                    vm.searchScheduleName = "";
-                } else {
-                    vm.searchScheduleName = vm.searchText;
-                    vm.searchSubScheduleName = "";
-                }
+				
+				if(angular.isUndefined(vm.searchBy)){
+					return;
+				}
+				else{
+					if (vm.searchBy == "subScheduleName") {
+						vm.searchSubScheduleName = vm.searchText;
+						vm.searchScheduleName = "";
+					} else {
+						vm.searchScheduleName = vm.searchText;
+						vm.searchSubScheduleName = "";
+					}
+				}
             };
 			
             vm.validateSchIndex = function () {

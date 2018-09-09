@@ -10,7 +10,7 @@
     <input type="text" 
       ng-model="vm.typeaheadModel" 
       placeholder="Select" 
-      uib-typeahead="state as state.description for state in vm.typeaheadList  | filter:$viewValue | limitTo:8"" 
+      uib-typeahead="state as state.description for state in vm.typeaheadList" 
       typeahead-template-url="customTemplate.html" 
 	  typeahead-on-select="vm.typeaheadOnSelect({value: vm.typeaheadModel})"
       class="form-control" 

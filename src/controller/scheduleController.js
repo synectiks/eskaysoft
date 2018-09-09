@@ -9,7 +9,7 @@
         .controller('scheduleController', [ 'commonLoaderService', function ( commonLoaderService) {
 			
             var vm = this; // jshint ignore:line
-			vm.typeaheadSelected = {"code":"ASS","description":"Assets"};
+			vm.typeaheadSelected=null;
             vm.selected = false;
             vm.normalScreen = true;
             vm.messageContainer = false;
@@ -19,24 +19,27 @@
 			vm.typeaheadStaticValue= "Schedule";
 			
             vm.onSelectRow = function (rowData, rowNum) {
-				
+				console.log("vm.editScreen", vm.editScreen)
                 if (vm.selected && vm.scheduleList.name == rowData.scheduleName) {
+					console.log("vm.editScriieen", vm.editScreen)
                     vm.selectedName = null;
                     vm.selected = false;
                     vm.selectedRow = -1;
                     vm.scheduleList = {};
                     vm.scheduleName = "";
                     vm.scheduleNo = "";
-					vm.typeaheadSelected = {"code":"ASS","description":"Assets"};
+					vm.typeaheadSelected=null;
 					vm.editScreen = false;
 
                 } else {
                     vm.selected = true;
-                    vm.selectedRow = rowNum;
-                    vm.scheduleList.name = rowData.scheduleName;
-                    vm.scheduleList.no = rowData.id;
-                    vm.scheduleList.type = rowData.scheduleType;
-                    vm.scheduleList.index = rowData.scheduleIndex;
+					if(!vm.editScreen){
+						vm.selectedRow = rowNum;
+						vm.scheduleList.name = rowData.scheduleName;
+						vm.scheduleList.no = rowData.id;
+						vm.scheduleList.type = rowData.scheduleType;
+						vm.scheduleList.index = rowData.scheduleIndex;
+					}
                     vm.messageContainer = false;
                     vm.errorMessage = "";
                 }
@@ -202,18 +205,29 @@
                 vm.selectedRow = -1;
                 vm.messageContainer = false;
                 vm.editScreen = false;
-				vm.typeaheadSelected = {"code":"ASS","description":"Assets"};
+				vm.searchBy="";
+				vm.searchText="";
+				vm.searchTextType="";
+				vm.searchTextName="";
+				vm.typeaheadSelected=null;
                 vm.search();
             };
 
             vm.GetValue = function () {
-                if (vm.searchBySchedule == "scheduleType") {
+				
+				if(angular.isUndefined(vm.searchBy)){
+					return;
+				}
+				else{
+					if (vm.searchBySchedule == "scheduleType") {
                     vm.searchTextType = vm.searchText;
                     vm.searchTextName = "";
-                } else {
-                    vm.searchTextName = vm.searchText;
-                    vm.searchTextType = "";
-                }
+					} else {
+						vm.searchTextName = vm.searchText;
+						vm.searchTextType = "";
+					}
+				}
+                
 
             };
 			

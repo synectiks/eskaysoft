@@ -21,10 +21,13 @@
 
                 } else {
                     vm.selected = true;
-                    vm.selectedRow = rowNum;
-                    vm.bankInfoList.name = rowData.name;
-                    vm.bankInfoList.address = rowData.address;
-                    vm.bankInfoList.bankId = rowData.id;
+					if(!vm.editScreen){
+						vm.selectedRow = rowNum;
+						vm.bankInfoList.name = rowData.name;
+						vm.bankInfoList.address = rowData.address;
+						vm.bankInfoList.bankId = rowData.id;
+					}
+ 
                     vm.messageContainer = false;
                     vm.errorMessage = "";
                 }
