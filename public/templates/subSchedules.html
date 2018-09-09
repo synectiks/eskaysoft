@@ -35,25 +35,30 @@
             </form>
         </div>
 
-        <div class='col-xs-12 col-sm-7'>
+		<div class='col-xs-12 col-sm-7 right-align'>
             <form class="form-inline text-left mt25">
-                <label class="col-form-label" for="ScheduleType">{{'common.label.searchby' | translate}}:</label>
-                <div class="form-group mx-sm-3">
-                    <label for="subScheduleName" class="sr-only mt10">{{'subscheduleform.label.name' | translate}}</label>
-                    <input type="text" class="form-control" id="subScheduleName" placeholder=" Sub Schedule Name" ng-model="vm.searchBySubScheduleName" required>
+                <div class="form-group">
+                    <label class="col-form-label" for="ScheduleType">{{'common.label.searchby' | translate}}:</label>
+                    <select ng-model="vm.searchBy" class="form-control form-control-lg" id="searchby" name="searchBy">
+                         <option value="">Select</option>
+                        <option value="scheduleName">{{'subscheduleform.label.scheduleName' | translate}}</option>
+                         <option value="subScheduleName">{{'subscheduleform.label.name' | translate}}</option>
+                    </select>
                 </div>
                 <div class="form-group mx-sm-3">
-                    <label for="scheduleName" class="sr-only mt10">{{'subscheduleform.label.scheduleName' | translate}}</label>
-                    <input type="text" class="form-control" id="scheduleName" placeholder="Schedule Name" ng-model="vm.searchByScheduleName" required>
+                    <label for="searchText" class="sr-only mt10">{{'scheduleform.label.name' | translate}}</label>
+                    <input type="text" class="form-control"  placeholder="Enter text to search" ng-model="vm.searchText" ng-change="vm.GetValue()" required>
                 </div>
             </form>
-			
-            <common-grid-component filter-options="{subScheduleName: vm.searchBySubScheduleName, scheduleName: vm.searchByScheduleName}" grid-data="vm.subScheduleDataArr" grid-call-back="vm.onSelectRow(value, index)" row-number="vm.selectedRow" hidden-column-keys="vm.hiddenColArr" no-of-view-columns="vm.noOfViewColumns"></common-grid-component>
+
+            <common-grid-component filter-options="{subScheduleName: vm.searchSubScheduleName, scheduleName: vm.searchScheduleName}" grid-data="vm.subScheduleDataArr" grid-call-back="vm.onSelectRow(value, index)" row-number="vm.selectedRow" hidden-column-keys="vm.hiddenColArr" no-of-view-columns="vm.noOfViewColumns"></common-grid-component>
 			
             <div class="btn-align p0" ng-if="vm.selected">
                 <button type="submit" class="btn btn-primary searchEdit btn-position" ng-click="vm.edit()">{{'button.edit' | translate}}</button>
+
                 <button type="submit" class="btn btn-primary btn-position" ng-click="vm.confirm()">{{'button.delete' | translate}}</button>
             </div>
         </div>
+		
     </div>
 </div>

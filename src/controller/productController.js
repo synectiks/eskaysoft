@@ -11,6 +11,29 @@
 		}, function (error) { // jshint ignore:line
 			console.log("error", error);
 		});
+		vm.GetValue = function () {
+			if (vm.searchBy == "group") {
+				vm.searchByExecutives = "";
+				vm.searchByGroup = vm.searchText;
+				vm.searchByCategory = "";
+				vm.searchByCompany = "";
+			} else if (vm.searchBy == "category") {
+				vm.searchByExecutives = "";
+				vm.searchByGroup = "";
+				vm.searchByCategory = vm.searchText;
+				vm.searchByCompany = "";
+			} else if (vm.searchBy == "executiveName") {
+				vm.searchByExecutives = vm.searchText;
+				vm.searchByGroup = "";
+				vm.searchByCategory = "";
+				vm.searchByCompany = "";
+			} else {
+				vm.searchByExecutives = "";
+				vm.searchByGroup = "";
+				vm.searchByCategory = "";
+				vm.searchByCompany = vm.searchText;
+			}
+		};
 		
     }]);
 })();

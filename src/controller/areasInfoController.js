@@ -188,7 +188,15 @@
                 vm.areaName = val.toUpperCase();
             };
 
-
+			vm.GetValue = function () {
+                if (vm.searchBy == "executiveName") {
+                    vm.searchByExecutives = vm.searchText;
+                    vm.searchByAreaName = "";
+                } else {
+                    vm.searchByAreaName = vm.searchText;
+                    vm.searchByExecutives = "";
+                }
+            };
             vm.getScheduleNameArr();
 	}])
 

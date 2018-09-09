@@ -175,6 +175,16 @@
                 vm.errorMessage = "Schedule Deleted.";
             };
 
+			vm.GetValue = function () {
+                if (vm.searchBy == "subScheduleName") {
+                    vm.searchSubScheduleName = vm.searchText;
+                    vm.searchScheduleName = "";
+                } else {
+                    vm.searchScheduleName = vm.searchText;
+                    vm.searchSubScheduleName = "";
+                }
+            };
+			
             vm.validateSchIndex = function () {
                 vm.hasDuplicateScheIndex = false;
                 vm.errorMessage = "";
@@ -191,16 +201,11 @@
                 }
             };
 
-
-
             vm.autoCapitalize = function (val) {
                 vm.subScheduleName = val.toUpperCase();
             };
 
-            
-
             vm.getScheduleNameArr();
-
 
      }]);
 })();

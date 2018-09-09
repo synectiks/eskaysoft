@@ -190,6 +190,16 @@
                     vm.disable = false;
                 }
             };
+			
+			vm.GetValue = function () {
+                if (vm.searchBy == "stateName") {
+                    vm.searchByStateName = vm.searchText;
+                    vm.searchByZone = "";
+                } else {
+                    vm.searchByZone = vm.searchText;
+                    vm.searchByStateName = "";
+                }
+            };
 
     }]);
 })();

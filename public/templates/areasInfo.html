@@ -28,33 +28,35 @@
                 </div>
             </form>
         </div>
+		
+		<div class='col-xs-12 col-sm-7 right-align'>
+			<form class="form-inline text-left mt25">
+				<div class="form-group">
+					<label class="col-form-label" for="SearchBy">{{'common.label.searchby' | translate}}:</label>
+					<select ng-model="vm.searchBy" class="form-control form-control-lg" id="searchby" name="searchBy">
+						 <option value="">Select</option>
+						<option value="executiveName">{{'areaform.label.executive.name' | translate}}</option>
+						 <option value="areaName">{{'areaform.label.area.name' | translate}}</option>
+					</select>
+				</div>
+				<div class="form-group mx-sm-3">
+					<label for="searchText" class="sr-only mt10">{{'scheduleform.label.name' | translate}}</label>
+					<input type="text" class="form-control"  placeholder="Enter text to search" ng-model="vm.searchText" ng-change="vm.GetValue()" required>
+				</div>
+			</form>
 
-        <div class='col-xs-12 col-sm-7'>
-            <form class="form-inline mt25">
+			   <common-grid-component filter-options="{areaName:vm.searchByAreaName, executiveName:vm.searchByExecutives}" grid-data="vm.areInfoDataArr" grid-call-back="vm.onSelectRow(value, index)" row-number="vm.selectedRow" hidden-column-keys="vm.hiddenColArr" no-of-view-columns="vm.noOfViewColumns"></common-grid-component>
+			
+			<div class="btn-align p0" ng-if="vm.selected">
+				<button type="submit" class="btn btn-primary searchEdit btn-position" ng-click="vm.edit()">{{'button.edit' | translate}}</button>
 
-                <div class="form-group">
-                    <label class="col-form-label" for="ScheduleType">{{'common.label.searchby' | translate}}:</label>
-                    <select ng-model="vm.searchByExecutives" class="form-control form-control-lg" id="searchByExecutives" name="searchByExecutives">
-                        <option value="">{{'areaform.label.executive.name' | translate}}</option>
-                       <option ng-repeat="businessExecutive in vm.businessExecutiveArr" value="{{businessExecutive.executiveId}}"
-                       >{{businessExecutive.executiveName}}
-                        </option>
-                    </select>
-                </div>
-                <div class="form-group mx-sm-3">
-                    <label for="searchByAreaName" class="sr-only mt10">{{'areaform.label.area.name' | translate}}</label>
-                    <input type="text" class="form-control" id="searchByAreaName" placeholder="{{'areaform.label.area.name' | translate}}" ng-model="vm.searchByAreaName" required>
-                </div>
+				<button type="submit" class="btn btn-primary btn-position" ng-click="vm.confirm()">{{'button.delete' | translate}}</button>
+			</div>
+		</div>
 
-            </form>
-
-            <common-grid-component filter-options="{areaName:vm.searchByAreaName, executiveName:vm.searchByExecutives}" grid-data="vm.areInfoDataArr" grid-call-back="vm.onSelectRow(value, index)" row-number="vm.selectedRow" hidden-column-keys="vm.hiddenColArr" no-of-view-columns="vm.noOfViewColumns"></common-grid-component>
-
-
-            <div class="btn-align p0" ng-if="vm.selected">
-                <button type="submit" class="btn btn-primary searchEdit btn-position" ng-click="vm.edit()">{{'button.edit' | translate}}</button>
-                <button type="submit" class="btn btn-primary btn-position" ng-click="vm.confirm()">{{'button.delete' | translate}}</button>
-            </div>
-        </div>
+		
+		
+		
+		
     </div>
 </div>

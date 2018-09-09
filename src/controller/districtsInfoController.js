@@ -168,5 +168,16 @@
 					vm.districtName = val.toUpperCase();
 				} 
             };
+			
+			vm.GetValue = function () {
+                if (vm.searchBy == "stateName") {
+                    vm.searchByStateName = vm.searchText;
+                    vm.searchByDistrictName = "";
+                } else {
+                    vm.searchByDistrictName = vm.searchText;
+                    vm.searchByStateName = "";
+                }
+            };
+			
 	}]);
 })();
